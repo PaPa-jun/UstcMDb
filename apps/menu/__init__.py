@@ -1,0 +1,1 @@
+from apps.menu.view import blueprint

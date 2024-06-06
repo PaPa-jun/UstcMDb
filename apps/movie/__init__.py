@@ -1,0 +1,1 @@
+from apps.movie.view import blueprint
