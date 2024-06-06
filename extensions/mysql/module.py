@@ -1,6 +1,5 @@
 import pymysql
 from flask import g
-import pymysql.cursors
 
 class DataBase:
     """
@@ -45,6 +44,9 @@ class DataBase:
         db = self.get_db()
         with open(schema_path, 'r') as f:
             sql = f.read()
+        sql_commands = sql.split(";")
         with db.cursor() as cursor:
-            cursor.execute(sql)
+            for command in sql_commands:
+                if command.strip():
+                    cursor.execute(command)
         db.commit()

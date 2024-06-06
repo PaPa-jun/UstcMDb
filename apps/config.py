@@ -6,7 +6,7 @@ class Base:
         "port" : 3306,
         "user" : "root", 
         "password" : "Pyf20030317",
-        "schema" : "USTC_Movies",
+        "schema" : "ustcMDb",
         "charset" : 'utf8mb4'
     }
     DEBUG = False

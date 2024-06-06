@@ -38,4 +38,4 @@ def register():
 
 @blueprint.route("/profile")
 def profile():
-    return "用户个人中心"
+    return render_template("./user/profile.html")
