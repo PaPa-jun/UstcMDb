@@ -9,37 +9,53 @@
 ```bash
 .
 ├── README.md
-├── apps    # 应用代码
+├── apps
 │   ├── __init__.py
-│   ├── config.py   # 配置文件
-│   ├── main    # 住视图
+│   ├── config.py
+│   ├── main
 │   │   ├── __init__.py
 │   │   └── view.py
-│   └── user    # 用户视图
+│   ├── menu
+│   │   ├── __init__.py
+│   │   └── view.py
+│   ├── movie
+│   │   ├── __init__.py
+│   │   └── view.py
+│   └── user
 │       ├── __init__.py
 │       ├── module.py
 │       └── view.py
-├── assets  # 静态文件
+├── assets
 │   ├── css
+│   │   └── base.css
 │   └── js
-├── extensions  # 扩展
+│       └── base.js
+├── data
+│   ├── movies
+│   │   └── imdb_top250.json
+│   └── src
+│       ├── main.py
+│       └── module.py
+├── extensions
 │   ├── __init__.py
-│   └── mysql   # 数据库
+│   └── mysql
 │       ├── __init__.py
-│       ├── module.py
-│       └── schema.sql
+│       └── module.py
 ├── requirements.txt
-├── run.py  # 应用入口
-└── templates   # 网页模板
+├── run.py
+├── schema.sql
+└── templates
     ├── base.html
     ├── main
+    │   └── index.html
+    ├── menu
     │   └── index.html
     └── user
         ├── login.html
         ├── profile.html
         └── register.html
 
-12 directories, 19 files
+17 directories, 29 files
 ```
 
 ## 项目运行
@@ -68,4 +84,4 @@ options:
 
 ## 更新日志
 
-- 2024-6-6：完成基础用户登陆验证模块
+- 2024-6-6：完成基础用户登陆验证模块，创建 IMDb 对象爬取 Top 25 的电影；
