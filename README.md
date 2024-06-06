@@ -12,7 +12,7 @@
 ├── apps    # 应用代码
 │   ├── __init__.py
 │   ├── config.py   # 配置文件
-│   ├── main    # 住视图
+│   ├── main    # 主视图
 │   │   ├── __init__.py
 │   │   └── view.py
 │   └── user    # 用户视图
