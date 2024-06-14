@@ -28,6 +28,10 @@
 ├── assets
 │   ├── css
 │   │   └── base.css
+│   ├── images
+│   │   ├── avatars
+│   │   │   └── usr_17791ad2-5.png
+│   │   └── posters
 │   └── js
 │       └── base.js
 ├── data
@@ -38,6 +42,9 @@
 │       └── module.py
 ├── extensions
 │   ├── __init__.py
+│   ├── interface
+│   │   ├── __init__.py
+│   │   └── module.py
 │   └── mysql
 │       ├── __init__.py
 │       └── module.py
@@ -53,9 +60,10 @@
     └── user
         ├── login.html
         ├── profile.html
+        ├── profile_modify.html
         └── register.html
 
-17 directories, 29 files
+22 directories, 33 files
 ```
 
 ## 项目运行
@@ -85,3 +93,4 @@ options:
 ## 更新日志
 
 - 2024-6-6：完成基础用户登陆验证模块，创建 IMDb 对象爬取 Top 25 的电影；
+- 2024-6-15：优化数据库表结构，完成用户信息展示与修改，定义基础用户交互接口； 

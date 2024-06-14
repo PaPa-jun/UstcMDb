@@ -21,11 +21,11 @@ def create_app(mode="default"):
         # 加载用户信息
         user_id = session.get('user_id')
         if user_id is None:
-            g.user = None
+            g.current_user = None
         else:
             with g.db.cursor() as cursor:
-                cursor.execute('SELECT id, username, email FROM user WHERE id=%s', (user_id,))
-                g.user = cursor.fetchone()
+                cursor.execute('SELECT id, username FROM user WHERE id=%s', (user_id))
+                g.current_user = cursor.fetchone()
 
     app.register_blueprint(main_bp)
     app.register_blueprint(user_bp, url_prefix="/user")

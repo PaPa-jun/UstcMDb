@@ -33,7 +33,6 @@ class Auth:
         else:
             session.clear()
             session['user_id'] = user['id']
-            g.user = user
 
     def register(self):
         if not self.username:
