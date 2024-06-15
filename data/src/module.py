@@ -76,6 +76,38 @@ class IMDb:
         except Exception as e:
             print(f"Error fetching trailer for movie {movie_title}: {e}")
         return None
+    
+    def search_person(self, name):
+        search_results = self.ia.search_person(name)
+        if not search_results:
+            return None
+        
+        return self.fetch_person_info(search_results[0])
+    
+    def fetch_person_info(self, person):
+        person_id = person.personID
+        try:
+            person_info = self.ia.get_person(person_id)
+            gender = person_info.get('gender')
+            birth_date = person_info.get('birth date')
+            bio = " ".join(person_info.get('mini biography', [])) if 'mini biography' in person_info else None
+            other_works = " ".join(person_info.get('other works', [])) if 'other works' in person_info else None
+            job = other_works if other_works else None
+            person_details = {
+                'id': 'wrk_' + str(uuid.uuid4())[:10],
+                'name': person_info.get('name'),
+                'birth': birth_date,
+                'avatar': person_info.get('headshot'),
+                'gender': gender[0].upper() if gender else None,
+                'job': job,
+                'bio': bio
+            }
+        except Exception as e:
+            print(f"Error fetching info for person {person}: {e}")
+            return None
+        
+        return person_details
+        
 
 class DataBase:
     """
