@@ -64,7 +64,7 @@
     <div class="video-container">
         <h2>点击预告片链接播放视频</h2>
         <!-- YouTube 嵌入式播放器 -->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/JNwNXF9Y6kY" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="{{ movie.trailer }}" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="relative_pics">电影相关图片</div>
     <div class="container">
@@ -84,6 +84,15 @@
         {% endfor %}
     </div>
     <div class="relative_comments">
-
+        <div>{{ movie.title }}的短评</div>
+        <div class="one_comments">
+            <div>
+                <h3>
+                    <span class="who"></span>
+                    <span class="likes">200</span>
+                </h3>
+                <p class="comment_content">这个电影不错！</p>
+            </div>
+        </div>
     </div>
 {% endblock %}
