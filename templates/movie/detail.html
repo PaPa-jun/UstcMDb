@@ -2,10 +2,15 @@
 
 {% block title %}电影详情{% endblock %}
 
-{% block header %}
-    <h1>{{ movie.title }}</h1>
-{% endblock %}
-
 {% block  main %}
-    详情页面
+    <p>
+        <span> {{ movie.title }} </span> 
+        <span> ({{ movie.year }})</span>
+    </p>
+    <div class="movie_details">
+        
+    </div>
+    <div class="relative_pics">这里是相关图片</div>
+    <div class="relative_persons">这里是相关人员</div>
+    <div class="relative_comments">这里是相关评论</div>
 {% endblock %}
