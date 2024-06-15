@@ -10,7 +10,7 @@ class IMDb:
 
     def __init__(self) -> None:
         self.ia = Cinemagoer()
-        self.youtube_api_key = 'AIzaSyDVuoeGmXOgitKNWmJlnSFoFjPMShLN9dQ'  # 替换为你的 YouTube API 密钥
+        self.youtube_api_key = 'AIzaSyDVuoeGmXOgitKNWmJlnSFoFjPMShLN9dQ'
         self.youtube_service = build('youtube', 'v3', developerKey=self.youtube_api_key)
 
     def fetch_movie_info(self, movie):
@@ -71,7 +71,7 @@ class IMDb:
             )
             response = request.execute()
             if response['items']:
-                trailer_url = f"https://www.youtube.com/watch?v={response['items'][0]['id']['videoId']}"
+                trailer_url = f"https://www.youtube.com/embed/{response['items'][0]['id']['videoId']}"
                 return trailer_url
         except Exception as e:
             print(f"Error fetching trailer for movie {movie_title}: {e}")
@@ -107,7 +107,6 @@ class IMDb:
             return None
         
         return person_details
-        
 
 class DataBase:
     """
