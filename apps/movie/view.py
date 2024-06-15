@@ -10,6 +10,17 @@ def top25():
 
     return render_template("movie/top.html", movies_info = movies)
 
+@blueprint.route("/recent25")
+def recent25():
+    movie = Movie()
+    movies = movie.recent(g.db, 25)
+    return render_template("movie/recent.html", movies = movies)
+
+@blueprint.route("/classification")
+def classification():
+    return "电影分类"
+
+
 @blueprint.route("/<id>")
 def movie_detail(id):
     movie = Movie()
@@ -17,10 +28,3 @@ def movie_detail(id):
 
     return render_template("movie/detail.html", movie = current_movie)
 
-@blueprint.route("/recent25")
-def recent25():
-    return "最近25部电影"
-
-@blueprint.route("/classification")
-def classification():
-    return "电影分类"
