@@ -1,6 +1,6 @@
 -- 用户表
 CREATE TABLE IF NOT EXISTS user (
-    id CHAR(14) PRIMARY KEY,  -- 使用UUID
+    id CHAR(14) PRIMARY KEY,
     avatar VARCHAR(255),
     username VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
@@ -17,12 +17,12 @@ CREATE TABLE IF NOT EXISTS admin(
 
 -- 电影表
 CREATE TABLE IF NOT EXISTS movie (
-    id CHAR(14) PRIMARY KEY,  -- 使用UUID
+    id CHAR(14) PRIMARY KEY,
     poster VARCHAR(255),
     title VARCHAR(255) NOT NULL,
     year INT,
-    duration INT,  -- 使用duration代替time
-    rating DECIMAL(2, 1),  -- 使用DECIMAL类型以表示精确的评分
+    duration INT,
+    rating DECIMAL(2, 1),
     plot TEXT,
     trailer VARCHAR(255),
     genres TEXT
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS movie (
 
 -- 工作人员表
 CREATE TABLE IF NOT EXISTS worker (
-    id CHAR(14) PRIMARY KEY,  -- 使用UUID
+    id CHAR(14) PRIMARY KEY,
     avatar VARCHAR(255),
     name VARCHAR(255) NOT NULL,
     gender CHAR(1),

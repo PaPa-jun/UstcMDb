@@ -7,4 +7,4 @@ if __name__ == "__main__":
     
     db = DataBase(host='localhost', password='Pyf20030317', database='ustcMDb')
     connection = db.connect_db()
-    db.load_json_into_db('/Users/pengyufeng/Desktop/UstcMDb/data/movies/imdb_top_250_movies.json', connection)
+    db.load_json_into_db('/home/yufengpeng-wsl/UstcMDb/data/movies/imdb_top_250_movies.json', connection)

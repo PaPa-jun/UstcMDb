@@ -25,3 +25,26 @@ class User:
         with db.cursor() as cursor:
             cursor.execute(query, (content, self.id))
             db.commit()
+
+class Movie:
+    """
+    电影接口
+    """
+    def __init__(self) -> None:
+        pass
+    
+    def get_info(self, db, id):
+        with db.cursor() as cursor:
+            cursor.execute("SELECT * FROM movie WHERE id=%s", (id,))
+            movie_info = cursor.fetchone()
+        return movie_info
+
+    def top(self, db, range):
+        with db.cursor() as cursor:
+            cursor.execute("SELECT id FROM movie ORDER BY rating DESC LIMIT %s", (range,))
+            movies = cursor.fetchall()  # fetchall instead of fetchone to get multiple records
+            
+        movies_info = []
+        for movie in movies:
+            movies_info.append(self.get_info(db, movie['id']))
+        return movies_info
