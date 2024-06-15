@@ -65,3 +65,23 @@ class Movie:
         for movie in movies:
             movies_info.append(self.get_info(db, movie['id']))
         return movies_info
+    
+    def recent(self, db, range):
+        with db.cursor() as cursor:
+            cursor.execute("SELECT id FROM movie ORDER BY year DESC LIMIT %s", (range,))
+            movies = cursor.fetchall()  # fetchall instead of fetchone to get multiple records
+            
+        movies_info = []
+        for movie in movies:
+            movies_info.append(self.get_info(db, movie['id']))
+        return movies_info
+    
+    def random_movie(self, db, range):
+        with db.cursor() as cursor:
+            cursor.execute("SELECT id FROM movie ORDER BY RAND(%s) LIMIT %s", (42,range,))
+            movies = cursor.fetchall()  # fetchall instead of fetchone to get multiple records
+            
+        movies_info = []
+        for movie in movies:
+            movies_info.append(self.get_info(db, movie['id']))
+        return movies_info

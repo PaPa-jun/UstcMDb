@@ -200,3 +200,10 @@ class DataBase:
             connection.rollback()
         finally:
             connection.close()
+
+class Scraper:
+    """
+    爬虫
+    """
+
+    
