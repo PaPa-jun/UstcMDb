@@ -1,0 +1,1535 @@
+[
+    {
+        "id": "mov_090ecd58-e",
+        "title": "The Shawshank Redemption",
+        "year": 1994,
+        "rating": 9.3,
+        "directors": [
+            {
+                "id": "cas_71275ba6-9",
+                "name": "Frank Darabont"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_0aad0b41-4",
+                "name": "Tim Robbins"
+            },
+            {
+                "id": "cas_50950cf7-8",
+                "name": "Morgan Freeman"
+            },
+            {
+                "id": "cas_b0df5c71-f",
+                "name": "Bob Gunton"
+            },
+            {
+                "id": "cas_b54e53ee-c",
+                "name": "William Sadler"
+            },
+            {
+                "id": "cas_80b1a8f9-8",
+                "name": "Clancy Brown"
+            },
+            {
+                "id": "cas_a2ee85dc-4",
+                "name": "Gil Bellows"
+            },
+            {
+                "id": "cas_6bf4a3bb-0",
+                "name": "Mark Rolston"
+            },
+            {
+                "id": "cas_340f2e50-3",
+                "name": "James Whitmore"
+            },
+            {
+                "id": "cas_e15549c4-1",
+                "name": "Jeffrey DeMunn"
+            },
+            {
+                "id": "cas_0a6788bc-7",
+                "name": "Larry Brandenburg"
+            }
+        ],
+        "genres": "Drama",
+        "plot": "Chronicles the experiences of a formerly successful banker as a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit. The film portrays the man's unique way of dealing with his new, torturous life; along the way he befriends a number of fellow prisoners, most notably a wise long-term inmate named Red.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@.jpg",
+        "duration": [
+            "142"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=PLl99DlL6b4"
+    },
+    {
+        "id": "mov_95eec5e3-6",
+        "title": "The Godfather",
+        "year": 1972,
+        "rating": 9.2,
+        "directors": [
+            {
+                "id": "cas_52c12c57-6",
+                "name": "Francis Ford Coppola"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_b64c333d-9",
+                "name": "Marlon Brando"
+            },
+            {
+                "id": "cas_a3d7594d-f",
+                "name": "Al Pacino"
+            },
+            {
+                "id": "cas_f119b9a6-a",
+                "name": "James Caan"
+            },
+            {
+                "id": "cas_feb82161-3",
+                "name": "Richard S. Castellano"
+            },
+            {
+                "id": "cas_a6b05e28-2",
+                "name": "Robert Duvall"
+            },
+            {
+                "id": "cas_8da09037-9",
+                "name": "Sterling Hayden"
+            },
+            {
+                "id": "cas_b36b2dc0-6",
+                "name": "John Marley"
+            },
+            {
+                "id": "cas_7ee56ae7-b",
+                "name": "Richard Conte"
+            },
+            {
+                "id": "cas_6cd58846-8",
+                "name": "Al Lettieri"
+            },
+            {
+                "id": "cas_95a68663-1",
+                "name": "Diane Keaton"
+            }
+        ],
+        "genres": "Crime, Drama",
+        "plot": "The Godfather \"Don\" Vito Corleone is the head of the Corleone mafia family in New York. He is at the event of his daughter's wedding. Michael, Vito's youngest son and a decorated WWII Marine is also present at the wedding. Michael seems to be uninterested in being a part of the family business. Vito is a powerful man, and is kind to all those who give him respect but is ruthless against those who do not. But when a powerful and treacherous rival wants to sell drugs and needs the Don's influence for the same, Vito refuses to do it. What follows is a clash between Vito's fading old values and the new ways which may cause Michael to do the thing he was most reluctant in doing and wage a mob war against all the other mafia families which could tear the Corleone family apart.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
+        "duration": [
+            "175"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=UaVTIH8mujA"
+    },
+    {
+        "id": "mov_def61b05-8",
+        "title": "The Dark Knight",
+        "year": 2008,
+        "rating": 9.0,
+        "directors": [
+            {
+                "id": "cas_a85abf65-c",
+                "name": "Christopher Nolan"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_6827d7bf-8",
+                "name": "Christian Bale"
+            },
+            {
+                "id": "cas_c58e049b-5",
+                "name": "Heath Ledger"
+            },
+            {
+                "id": "cas_b6e77de6-7",
+                "name": "Aaron Eckhart"
+            },
+            {
+                "id": "cas_be5bdb77-8",
+                "name": "Michael Caine"
+            },
+            {
+                "id": "cas_82081f32-4",
+                "name": "Maggie Gyllenhaal"
+            },
+            {
+                "id": "cas_3ad47fcf-e",
+                "name": "Gary Oldman"
+            },
+            {
+                "id": "cas_79d079de-5",
+                "name": "Morgan Freeman"
+            },
+            {
+                "id": "cas_88878036-c",
+                "name": "Monique Gabriela Curnen"
+            },
+            {
+                "id": "cas_ca688dcf-f",
+                "name": "Ron Dean"
+            },
+            {
+                "id": "cas_5d52b858-5",
+                "name": "Cillian Murphy"
+            }
+        ],
+        "genres": "Action, Crime, Drama, Thriller",
+        "plot": "Set within a year after the events of Batman Begins (2005), Batman, Lieutenant James Gordon, and new District Attorney Harvey Dent successfully begin to round up the criminals that plague Gotham City, until a mysterious and sadistic criminal mastermind known only as \"The Joker\" appears in Gotham, creating a new wave of chaos. Batman's struggle against The Joker becomes deeply personal, forcing him to \"confront everything he believes\" and improve his technology to stop him. A love triangle develops between Bruce Wayne, Dent, and Rachel Dawes.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@.jpg",
+        "duration": [
+            "152"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=EXeTwQWrcwY"
+    },
+    {
+        "id": "mov_cace21ad-a",
+        "title": "The Godfather Part II",
+        "year": 1974,
+        "rating": 9.0,
+        "directors": [
+            {
+                "id": "cas_485a48ed-7",
+                "name": "Francis Ford Coppola"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_eb3e36aa-7",
+                "name": "Al Pacino"
+            },
+            {
+                "id": "cas_d2eff9eb-2",
+                "name": "Robert Duvall"
+            },
+            {
+                "id": "cas_42d14f2e-9",
+                "name": "Diane Keaton"
+            },
+            {
+                "id": "cas_5f430aa0-0",
+                "name": "Robert De Niro"
+            },
+            {
+                "id": "cas_eb955180-4",
+                "name": "John Cazale"
+            },
+            {
+                "id": "cas_0d8b79ad-8",
+                "name": "Talia Shire"
+            },
+            {
+                "id": "cas_142337cc-a",
+                "name": "Lee Strasberg"
+            },
+            {
+                "id": "cas_2643ab02-5",
+                "name": "Michael V. Gazzo"
+            },
+            {
+                "id": "cas_fc34fdcb-7",
+                "name": "G.D. Spradlin"
+            },
+            {
+                "id": "cas_dad1e31b-3",
+                "name": "Richard Bright"
+            }
+        ],
+        "genres": "Crime, Drama",
+        "plot": "The continuing saga of the Corleone crime family tells the story of a young Vito Corleone growing up in Sicily and in 1910s New York; and follows Michael Corleone in the 1950s as he attempts to expand the family business into Las Vegas, Hollywood and Cuba.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
+        "duration": [
+            "202"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=9O1Iy9od7-A"
+    },
+    {
+        "id": "mov_68cc6dae-d",
+        "title": "12 Angry Men",
+        "year": 1957,
+        "rating": 9.0,
+        "directors": [
+            {
+                "id": "cas_43854ff8-1",
+                "name": "Sidney Lumet"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_aa5d5683-7",
+                "name": "Martin Balsam"
+            },
+            {
+                "id": "cas_004d8c30-6",
+                "name": "John Fiedler"
+            },
+            {
+                "id": "cas_1702fd76-a",
+                "name": "Lee J. Cobb"
+            },
+            {
+                "id": "cas_628d16b8-d",
+                "name": "E.G. Marshall"
+            },
+            {
+                "id": "cas_bb2c17b3-d",
+                "name": "Jack Klugman"
+            },
+            {
+                "id": "cas_9e413736-c",
+                "name": "Edward Binns"
+            },
+            {
+                "id": "cas_b7ba6f7e-8",
+                "name": "Jack Warden"
+            },
+            {
+                "id": "cas_09a901bf-0",
+                "name": "Henry Fonda"
+            },
+            {
+                "id": "cas_1ebdc010-4",
+                "name": "Joseph Sweeney"
+            },
+            {
+                "id": "cas_df475512-6",
+                "name": "Ed Begley"
+            }
+        ],
+        "genres": "Crime, Drama",
+        "plot": "The defense and the prosecution have rested, and the jury is filing into the jury room to decide if a young man is guilty or innocent of murdering his father. What begins as an open-and-shut case of murder soon becomes a detective story that presents a succession of clues creating doubt, and a mini-drama of each of the jurors' prejudices and preconceptions about the trial, the accused, AND each other. Based on the play, all of the action takes place on the stage of the jury room.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
+        "duration": [
+            "96"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=TEN-2uTi2c0"
+    },
+    {
+        "id": "mov_922884a0-6",
+        "title": "Schindler's List",
+        "year": 1993,
+        "rating": 9.0,
+        "directors": [
+            {
+                "id": "cas_13542b6b-4",
+                "name": "Steven Spielberg"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_88a14359-7",
+                "name": "Liam Neeson"
+            },
+            {
+                "id": "cas_e982a1e0-2",
+                "name": "Ben Kingsley"
+            },
+            {
+                "id": "cas_7e8ea49f-9",
+                "name": "Ralph Fiennes"
+            },
+            {
+                "id": "cas_95ca26f1-5",
+                "name": "Caroline Goodall"
+            },
+            {
+                "id": "cas_3add1a05-7",
+                "name": "Jonathan Sagall"
+            },
+            {
+                "id": "cas_9f0134da-9",
+                "name": "Embeth Davidtz"
+            },
+            {
+                "id": "cas_3ff769a4-2",
+                "name": "Malgorzata Gebel"
+            },
+            {
+                "id": "cas_cf01fa32-e",
+                "name": "Shmuel Levy"
+            },
+            {
+                "id": "cas_3a1788c1-9",
+                "name": "Mark Ivanir"
+            },
+            {
+                "id": "cas_8be5fdcd-d",
+                "name": "Béatrice Macola"
+            }
+        ],
+        "genres": "Biography, Drama, History",
+        "plot": "Oskar Schindler is a vain and greedy German businessman who becomes an unlikely humanitarian amid the barbaric German Nazi reign when he feels compelled to turn his factory into a refuge for Jews. Based on the true story of Oskar Schindler who managed to save about 1100 Jews from being gassed at the Auschwitz concentration camp, it is a testament to the good in all of us.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
+        "duration": [
+            "195"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=mxphAlJID9U"
+    },
+    {
+        "id": "mov_48191bd7-0",
+        "title": "The Lord of the Rings: The Return of the King",
+        "year": 2003,
+        "rating": 9.0,
+        "directors": [
+            {
+                "id": "cas_9832d271-3",
+                "name": "Peter Jackson"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_c2093177-7",
+                "name": "Noel Appleby"
+            },
+            {
+                "id": "cas_631bd8d4-c",
+                "name": "Ali Astin"
+            },
+            {
+                "id": "cas_90a1b503-6",
+                "name": "Sean Astin"
+            },
+            {
+                "id": "cas_db81ef17-2",
+                "name": "David Aston"
+            },
+            {
+                "id": "cas_9ab296c2-4",
+                "name": "John Bach"
+            },
+            {
+                "id": "cas_96629001-8",
+                "name": "Sean Bean"
+            },
+            {
+                "id": "cas_acea1aba-1",
+                "name": "Cate Blanchett"
+            },
+            {
+                "id": "cas_54ebc6a9-1",
+                "name": "Orlando Bloom"
+            },
+            {
+                "id": "cas_21c7c2ae-0",
+                "name": "Billy Boyd"
+            },
+            {
+                "id": "cas_923bcfbe-b",
+                "name": "Sadwyn Brophy"
+            }
+        ],
+        "genres": "Action, Adventure, Drama, Fantasy",
+        "plot": "The final confrontation between the forces of good and evil fighting for control of the future of Middle-earth. Frodo and Sam reach Mordor in their quest to destroy the One Ring, while Aragorn leads the forces of good against Sauron's evil army at the stone city of Minas Tirith.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
+        "duration": [
+            "201"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=r5X-hFf6Bwo"
+    },
+    {
+        "id": "mov_42d6c889-d",
+        "title": "Pulp Fiction",
+        "year": 1994,
+        "rating": 8.9,
+        "directors": [
+            {
+                "id": "cas_c9b72e71-1",
+                "name": "Quentin Tarantino"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_f491f8c0-e",
+                "name": "Tim Roth"
+            },
+            {
+                "id": "cas_6254ff47-a",
+                "name": "Amanda Plummer"
+            },
+            {
+                "id": "cas_7d3088d6-d",
+                "name": "Laura Lovelace"
+            },
+            {
+                "id": "cas_b67705a4-2",
+                "name": "John Travolta"
+            },
+            {
+                "id": "cas_329d08c4-a",
+                "name": "Samuel L. Jackson"
+            },
+            {
+                "id": "cas_84e560be-c",
+                "name": "Phil LaMarr"
+            },
+            {
+                "id": "cas_c29afa54-2",
+                "name": "Frank Whaley"
+            },
+            {
+                "id": "cas_2bc4e4e0-9",
+                "name": "Burr Steers"
+            },
+            {
+                "id": "cas_1da33b91-8",
+                "name": "Bruce Willis"
+            },
+            {
+                "id": "cas_27963113-2",
+                "name": "Ving Rhames"
+            }
+        ],
+        "genres": "Crime, Drama",
+        "plot": "Jules Winnfield (Samuel L. Jackson) and Vincent Vega (John Travolta) are two hitmen who are out to retrieve a suitcase stolen from their employer, mob boss Marsellus Wallace (Ving Rhames). Wallace has also asked Vincent to take his wife Mia (Uma Thurman) out a few days later when Wallace himself will be out of town. Butch Coolidge (Bruce Willis) is an aging boxer who is paid by Wallace to lose his fight. The lives of these seemingly unrelated people are woven together comprising of a series of funny, bizarre and uncalled-for incidents.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
+        "duration": [
+            "154"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=s7EdQ4FqbhY"
+    },
+    {
+        "id": "mov_a3902d4d-6",
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "year": 2001,
+        "rating": 8.9,
+        "directors": [
+            {
+                "id": "cas_b9b9abd7-d",
+                "name": "Peter Jackson"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_8c5327a1-e",
+                "name": "Alan Howard"
+            },
+            {
+                "id": "cas_8cf2a60d-8",
+                "name": "Noel Appleby"
+            },
+            {
+                "id": "cas_b0781768-e",
+                "name": "Sean Astin"
+            },
+            {
+                "id": "cas_5973db7b-3",
+                "name": "Sala Baker"
+            },
+            {
+                "id": "cas_ca111eff-8",
+                "name": "Sean Bean"
+            },
+            {
+                "id": "cas_e8980a7a-7",
+                "name": "Billy Boyd"
+            },
+            {
+                "id": "cas_f912dd66-5",
+                "name": "Andy Serkis"
+            },
+            {
+                "id": "cas_5d4afc8d-e",
+                "name": "Marton Csokas"
+            },
+            {
+                "id": "cas_2ad934b7-8",
+                "name": "Viggo Mortensen"
+            },
+            {
+                "id": "cas_be802357-d",
+                "name": "Orlando Bloom"
+            }
+        ],
+        "genres": "Action, Adventure, Drama, Fantasy",
+        "plot": "An ancient Ring thought lost for centuries has been found, and through a strange twist of fate has been given to a small Hobbit named Frodo. When Gandalf discovers the Ring is in fact the One Ring of the Dark Lord Sauron, Frodo must make an epic quest to the Cracks of Doom in order to destroy it. However, he does not go alone. He is joined by Gandalf, Legolas the elf, Gimli the Dwarf, Aragorn, Boromir, and his three Hobbit friends Merry, Pippin, and Samwise. Through mountains, snow, darkness, forests, rivers and plains, facing evil and danger at every corner the Fellowship of the Ring must go. Their quest to destroy the One Ring is the only hope for the end of the Dark Lords reign.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@.jpg",
+        "duration": [
+            "178"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=V75dMMIW2B4"
+    },
+    {
+        "id": "mov_662b1f11-2",
+        "title": "The Good, the Bad and the Ugly",
+        "year": 1966,
+        "rating": 8.8,
+        "directors": [
+            {
+                "id": "cas_4cd832ec-b",
+                "name": "Sergio Leone"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_cacd2273-a",
+                "name": "Eli Wallach"
+            },
+            {
+                "id": "cas_1e3a4ffb-4",
+                "name": "Clint Eastwood"
+            },
+            {
+                "id": "cas_52b3fb5d-6",
+                "name": "Lee Van Cleef"
+            },
+            {
+                "id": "cas_55f864e7-9",
+                "name": "Aldo Giuffrè"
+            },
+            {
+                "id": "cas_152a9cb2-9",
+                "name": "Luigi Pistilli"
+            },
+            {
+                "id": "cas_bf8fc15b-7",
+                "name": "Rada Rassimov"
+            },
+            {
+                "id": "cas_811f4c9c-0",
+                "name": "Enzo Petito"
+            },
+            {
+                "id": "cas_12258afd-1",
+                "name": "Claudio Scarchilli"
+            },
+            {
+                "id": "cas_5b73af86-f",
+                "name": "John Bartha"
+            },
+            {
+                "id": "cas_442ee6d7-9",
+                "name": "Livio Lorenzon"
+            }
+        ],
+        "genres": "Adventure, Drama, Western",
+        "plot": "During the American Civil War, three men set off to find $200,000.00 in buried gold coins. Tuco and Blondie have known each other for some time now, having used the reward on Tuco's head as a way of earning money. They come across a dying man, Bill Carson, who tells them of a treasure in gold coins. By chance, he reveals the name of the cemetery and the name of the grave where the gold is buried. Now rivals, the two men have good reason to keep each other alive. The third man, Angel Eyes, hears of the gold stash from someone he's been hired to kill. All he knows is to look for someone named Bill Carson. The three ultimately meet in a showdown that takes place amid a major battle between Confederate and Union forces.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MjlmLTk5NmQtNjg1NmM2ODU4OTMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@.jpg",
+        "duration": [
+            "161"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=WCN5JJY_wiA"
+    },
+    {
+        "id": "mov_53fb501d-a",
+        "title": "Forrest Gump",
+        "year": 1994,
+        "rating": 8.8,
+        "directors": [
+            {
+                "id": "cas_523d3662-5",
+                "name": "Robert Zemeckis"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_772ec0cd-a",
+                "name": "Tom Hanks"
+            },
+            {
+                "id": "cas_f22f9e7c-f",
+                "name": "Rebecca Williams"
+            },
+            {
+                "id": "cas_18ab8220-0",
+                "name": "Sally Field"
+            },
+            {
+                "id": "cas_d9d3f00b-0",
+                "name": "Michael Conner Humphreys"
+            },
+            {
+                "id": "cas_7e61df62-f",
+                "name": "Harold G. Herthum"
+            },
+            {
+                "id": "cas_7e9648d2-8",
+                "name": "George Kelly"
+            },
+            {
+                "id": "cas_c99711f3-0",
+                "name": "Bob Penny"
+            },
+            {
+                "id": "cas_c0559011-f",
+                "name": "John Randall"
+            },
+            {
+                "id": "cas_ada0e364-4",
+                "name": "Sam Anderson"
+            },
+            {
+                "id": "cas_69ca13ed-3",
+                "name": "Margo Moorer"
+            }
+        ],
+        "genres": "Drama, Romance",
+        "plot": "Forrest Gump is a simple man with a low I.Q. but good intentions. He is running through childhood with his best and only friend Jenny. His 'mama' teaches him the ways of life and leaves him to choose his destiny. Forrest joins the army for service in Vietnam, finding new friends called Dan and Bubba, he wins medals, creates a famous shrimp fishing fleet, inspires people to jog, starts a ping-pong craze, creates the smiley, writes bumper stickers and songs, donates to people and meets the president several times. However, this is all irrelevant to Forrest who can only think of his childhood sweetheart Jenny Curran, who has messed up her life. Although in the end all he wants to prove is that anyone can love anyone.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
+        "duration": [
+            "142"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=bLvqoHBptjg"
+    },
+    {
+        "id": "mov_b69c0734-a",
+        "title": "The Lord of the Rings: The Two Towers",
+        "year": 2002,
+        "rating": 8.8,
+        "directors": [
+            {
+                "id": "cas_f406e4b4-6",
+                "name": "Peter Jackson"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_e4058afc-9",
+                "name": "Bruce Allpress"
+            },
+            {
+                "id": "cas_b489b21f-3",
+                "name": "Sean Astin"
+            },
+            {
+                "id": "cas_d4fc2a1b-b",
+                "name": "John Bach"
+            },
+            {
+                "id": "cas_d1f17b94-2",
+                "name": "Sala Baker"
+            },
+            {
+                "id": "cas_f3d82ebe-3",
+                "name": "Cate Blanchett"
+            },
+            {
+                "id": "cas_8314edb2-2",
+                "name": "Orlando Bloom"
+            },
+            {
+                "id": "cas_b3f22b64-3",
+                "name": "Billy Boyd"
+            },
+            {
+                "id": "cas_a0bdfd14-d",
+                "name": "Jed Brophy"
+            },
+            {
+                "id": "cas_66fb3c98-0",
+                "name": "Sam Comery"
+            },
+            {
+                "id": "cas_843c2662-d",
+                "name": "Brad Dourif"
+            }
+        ],
+        "genres": "Action, Adventure, Drama, Fantasy",
+        "plot": "The continuing quest of Frodo and the Fellowship to destroy the One Ring. Frodo and Sam discover they are being followed by the mysterious Gollum. Aragorn, the Elf archer Legolas, and Gimli the Dwarf encounter the besieged Rohan kingdom, whose once great King Theoden has fallen under Saruman's deadly spell.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
+        "duration": [
+            "179"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=LbfMDwc4azU"
+    },
+    {
+        "id": "mov_0cec3cc5-f",
+        "title": "Fight Club",
+        "year": 1999,
+        "rating": 8.8,
+        "directors": [
+            {
+                "id": "cas_3adb9e39-6",
+                "name": "David Fincher"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_8be0ae82-e",
+                "name": "Edward Norton"
+            },
+            {
+                "id": "cas_b40e1a0f-c",
+                "name": "Brad Pitt"
+            },
+            {
+                "id": "cas_02acb79d-f",
+                "name": "Meat Loaf"
+            },
+            {
+                "id": "cas_a875f8b6-2",
+                "name": "Zach Grenier"
+            },
+            {
+                "id": "cas_0049968c-b",
+                "name": "Richmond Arquette"
+            },
+            {
+                "id": "cas_122a0633-6",
+                "name": "David Andrews"
+            },
+            {
+                "id": "cas_9eda2a99-0",
+                "name": "George Maguire"
+            },
+            {
+                "id": "cas_f7878f58-d",
+                "name": "Eugenie Bondurant"
+            },
+            {
+                "id": "cas_cfb6a29e-a",
+                "name": "Christina Cabot"
+            },
+            {
+                "id": "cas_a3be640d-d",
+                "name": "Helena Bonham Carter"
+            }
+        ],
+        "genres": "Drama",
+        "plot": "A nameless first person narrator (Edward Norton) attends support groups in attempt to subdue his emotional state and relieve his insomniac state. When he meets Marla (Helena Bonham Carter), another fake attendee of support groups, his life seems to become a little more bearable. However when he associates himself with Tyler (Brad Pitt) he is dragged into an underground fight club and soap making scheme. Together the two men spiral out of control and engage in competitive rivalry for love and power.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
+        "duration": [
+            "139"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=qtRKdVHc-cE"
+    },
+    {
+        "id": "mov_b4896641-8",
+        "title": "Inception",
+        "year": 2010,
+        "rating": 8.8,
+        "directors": [
+            {
+                "id": "cas_4bb35196-e",
+                "name": "Christopher Nolan"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_28cc9ed8-2",
+                "name": "Leonardo DiCaprio"
+            },
+            {
+                "id": "cas_fcab35b5-8",
+                "name": "Joseph Gordon-Levitt"
+            },
+            {
+                "id": "cas_a798044b-b",
+                "name": "Elliot Page"
+            },
+            {
+                "id": "cas_a1d97785-9",
+                "name": "Tom Hardy"
+            },
+            {
+                "id": "cas_e932af58-c",
+                "name": "Ken Watanabe"
+            },
+            {
+                "id": "cas_2c8386ef-7",
+                "name": "Dileep Rao"
+            },
+            {
+                "id": "cas_77eb8f2a-8",
+                "name": "Cillian Murphy"
+            },
+            {
+                "id": "cas_53240df4-9",
+                "name": "Tom Berenger"
+            },
+            {
+                "id": "cas_c1019f40-c",
+                "name": "Marion Cotillard"
+            },
+            {
+                "id": "cas_b2a80e1b-d",
+                "name": "Pete Postlethwaite"
+            }
+        ],
+        "genres": "Action, Adventure, Sci-Fi, Thriller",
+        "plot": "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible, inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea, but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@.jpg",
+        "duration": [
+            "148"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0"
+    },
+    {
+        "id": "mov_24147a15-5",
+        "title": "Star Wars: Episode V - The Empire Strikes Back",
+        "year": 1980,
+        "rating": 8.7,
+        "directors": [
+            {
+                "id": "cas_b848f2b3-7",
+                "name": "Irvin Kershner"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_ccad840e-2",
+                "name": "Mark Hamill"
+            },
+            {
+                "id": "cas_e8c9c53a-c",
+                "name": "Harrison Ford"
+            },
+            {
+                "id": "cas_1e3a90c2-6",
+                "name": "Carrie Fisher"
+            },
+            {
+                "id": "cas_465908cb-6",
+                "name": "Billy Dee Williams"
+            },
+            {
+                "id": "cas_478a357a-a",
+                "name": "Anthony Daniels"
+            },
+            {
+                "id": "cas_73183042-3",
+                "name": "David Prowse"
+            },
+            {
+                "id": "cas_c690490d-2",
+                "name": "Peter Mayhew"
+            },
+            {
+                "id": "cas_3fce45e0-5",
+                "name": "Kenny Baker"
+            },
+            {
+                "id": "cas_2fc9b683-0",
+                "name": "Frank Oz"
+            },
+            {
+                "id": "cas_4abd26d0-4",
+                "name": "Alec Guinness"
+            }
+        ],
+        "genres": "Action, Adventure, Fantasy, Sci-Fi",
+        "plot": "The legendary saga continues as the Rebel Alliance faces increasing challenges from the powerful Galactic Empire. Luke Skywalker, Han Solo, and Princess Leia Organa find themselves confronting new trials that test their courage, friendships, and beliefs. The Rebel Alliance has established a hidden base on the icy planet of Hoth, where they hope to regroup and plan their next moves against the Empire. Luke Skywalker receives a message from a familiar source, prompting him to seek further guidance in understanding his connection to the Force. Han Solo and Princess Leia's journey takes them on a perilous path as they navigate through a galaxy under Imperial control. Their actions and decisions lead to unforeseen consequences that will impact the fate of the Rebellion. Meanwhile, the dark presence of Darth Vader looms, as he relentlessly pursues the Rebels while dealing with inner conflicts of his own.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
+        "duration": [
+            "124"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=JNwNXF9Y6kY"
+    },
+    {
+        "id": "mov_23cdcf3b-7",
+        "title": "The Matrix",
+        "year": 1999,
+        "rating": 8.7,
+        "directors": [
+            {
+                "id": "cas_a959e0c2-d",
+                "name": "Lana Wachowski"
+            },
+            {
+                "id": "cas_0744389d-a",
+                "name": "Lilly Wachowski"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_349fc034-1",
+                "name": "Keanu Reeves"
+            },
+            {
+                "id": "cas_433109db-f",
+                "name": "Laurence Fishburne"
+            },
+            {
+                "id": "cas_47f78a5c-2",
+                "name": "Carrie-Anne Moss"
+            },
+            {
+                "id": "cas_1b9bd761-3",
+                "name": "Hugo Weaving"
+            },
+            {
+                "id": "cas_2b6230a3-c",
+                "name": "Gloria Foster"
+            },
+            {
+                "id": "cas_3b2b2763-0",
+                "name": "Joe Pantoliano"
+            },
+            {
+                "id": "cas_4b2ef3f3-9",
+                "name": "Marcus Chong"
+            },
+            {
+                "id": "cas_17fcdb4e-d",
+                "name": "Julian Arahanga"
+            },
+            {
+                "id": "cas_262976e6-f",
+                "name": "Matt Doran"
+            },
+            {
+                "id": "cas_23ac1f9b-4",
+                "name": "Belinda McClory"
+            }
+        ],
+        "genres": "Action, Sci-Fi",
+        "plot": "Thomas A. Anderson is a man living two lives. By day he is an average computer programmer and by night a hacker known as Neo. Neo has always questioned his reality, but the truth is far beyond his imagination. Neo finds himself targeted by the police when he is contacted by Morpheus, a legendary computer hacker branded a terrorist by the government. As a rebel against the machines, Neo must confront the agents: super-powerful computer programs devoted to stopping Neo and the entire human rebellion.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
+        "duration": [
+            "136"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=vKQi3bBA1y8"
+    },
+    {
+        "id": "mov_90f225e7-6",
+        "title": "Goodfellas",
+        "year": 1990,
+        "rating": 8.7,
+        "directors": [
+            {
+                "id": "cas_abbddcb5-3",
+                "name": "Martin Scorsese"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_9a718e0e-5",
+                "name": "Robert De Niro"
+            },
+            {
+                "id": "cas_c34a3731-d",
+                "name": "Ray Liotta"
+            },
+            {
+                "id": "cas_88000f2e-d",
+                "name": "Joe Pesci"
+            },
+            {
+                "id": "cas_454c0aed-7",
+                "name": "Lorraine Bracco"
+            },
+            {
+                "id": "cas_2ff04aa6-3",
+                "name": "Paul Sorvino"
+            },
+            {
+                "id": "cas_9d6540bf-b",
+                "name": "Frank Sivero"
+            },
+            {
+                "id": "cas_d4284b8d-d",
+                "name": "Tony Darrow"
+            },
+            {
+                "id": "cas_38ba8b48-9",
+                "name": "Mike Starr"
+            },
+            {
+                "id": "cas_e1b058fc-7",
+                "name": "Frank Vincent"
+            },
+            {
+                "id": "cas_06101dd9-0",
+                "name": "Chuck Low"
+            }
+        ],
+        "genres": "Biography, Crime, Drama",
+        "plot": "Henry Hill might be a small time gangster, who may have taken part in a robbery with Jimmy Conway and Tommy De Vito, two other gangsters who might have set their sights a bit higher. His two partners could kill off everyone else involved in the robbery, and slowly start to think about climbing up through the hierarchy of the Mob. Henry, however, might be badly affected by his partners' success, but will he consider stooping low enough to bring about the downfall of Jimmy and Tommy?",
+        "poster": "https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
+        "duration": [
+            "145"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=2ilzidi_J8Q"
+    },
+    {
+        "id": "mov_94688022-c",
+        "title": "One Flew Over the Cuckoo's Nest",
+        "year": 1975,
+        "rating": 8.7,
+        "directors": [
+            {
+                "id": "cas_9a86d41a-8",
+                "name": "Milos Forman"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_4590b50a-b",
+                "name": "Michael Berryman"
+            },
+            {
+                "id": "cas_f4aa22a4-2",
+                "name": "Peter Brocco"
+            },
+            {
+                "id": "cas_9da9616b-9",
+                "name": "Dean R. Brooks"
+            },
+            {
+                "id": "cas_25d776e6-1",
+                "name": "Alonzo Brown"
+            },
+            {
+                "id": "cas_2653f797-2",
+                "name": "Scatman Crothers"
+            },
+            {
+                "id": "cas_7c7d2e8f-a",
+                "name": "Mwako Cumbuka"
+            },
+            {
+                "id": "cas_f5b45b75-c",
+                "name": "Danny DeVito"
+            },
+            {
+                "id": "cas_e5ae8f06-3",
+                "name": "William Duell"
+            },
+            {
+                "id": "cas_54c6d5fb-c",
+                "name": "Josip Elic"
+            },
+            {
+                "id": "cas_d3924e8f-1",
+                "name": "Lan Fendors"
+            }
+        ],
+        "genres": "Drama",
+        "plot": "McMurphy has a criminal past and has once again gotten himself into trouble and is sentenced by the court. To escape labor duties in prison, McMurphy pleads insanity and is sent to a ward for the mentally unstable. Once here, McMurphy both endures and stands witness to the abuse and degradation of the oppressive Nurse Ratched, who gains superiority and power through the flaws of the other inmates. McMurphy and the other inmates band together to make a rebellious stance against the atrocious Nurse.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjA0OWVhOTAtYWQxNi00YzNhLWI4ZjYtNjFjZTEyYjJlNDVlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
+        "duration": [
+            "133"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=OXrcDonY-B8"
+    },
+    {
+        "id": "mov_37cb1572-0",
+        "title": "Se7en",
+        "year": 1995,
+        "rating": 8.6,
+        "directors": [
+            {
+                "id": "cas_64ff2f44-8",
+                "name": "David Fincher"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_db150b85-2",
+                "name": "Morgan Freeman"
+            },
+            {
+                "id": "cas_b5e9ebc4-c",
+                "name": "Andrew Kevin Walker"
+            },
+            {
+                "id": "cas_f197ae12-7",
+                "name": "Daniel Zacapa"
+            },
+            {
+                "id": "cas_12df1ca2-2",
+                "name": "Brad Pitt"
+            },
+            {
+                "id": "cas_ff5b7627-3",
+                "name": "Gwyneth Paltrow"
+            },
+            {
+                "id": "cas_cfb604d8-b",
+                "name": "John Cassini"
+            },
+            {
+                "id": "cas_79de2168-7",
+                "name": "Bob Mack"
+            },
+            {
+                "id": "cas_db3ba174-5",
+                "name": "Peter Crombie"
+            },
+            {
+                "id": "cas_b08546e5-f",
+                "name": "Reg E. Cathey"
+            },
+            {
+                "id": "cas_402275d5-a",
+                "name": "R. Lee Ermey"
+            }
+        ],
+        "genres": "Crime, Drama, Mystery, Thriller",
+        "plot": "A film about two homicide detectives' (Morgan Freeman and Brad Pitt) desperate hunt for a serial killer who justifies his crimes as absolution for the world's ignorance of the Seven Deadly Sins. The movie takes us from the tortured remains of one victim to the next as the sociopathic \"John Doe\" (Kevin Spacey) sermonizes to Detectives Somerset and Mills -- one sin at a time. The sin of Gluttony comes first and the murderer's terrible capacity is graphically demonstrated in the dark and subdued tones characteristic of film noir. The seasoned and cultured but jaded Somerset researches the Seven Deadly Sins in an effort to understand the killer's modus operandi while the bright but green and impulsive Detective Mills (Pitt) scoffs at his efforts to get inside the mind of a killer...",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
+        "duration": [
+            "127"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=znmZoVkCjpI"
+    },
+    {
+        "id": "mov_48563eaa-0",
+        "title": "Interstellar",
+        "year": 2014,
+        "rating": 8.7,
+        "directors": [
+            {
+                "id": "cas_3b85ff60-0",
+                "name": "Christopher Nolan"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_2740417d-0",
+                "name": "Ellen Burstyn"
+            },
+            {
+                "id": "cas_989fbe9a-f",
+                "name": "Matthew McConaughey"
+            },
+            {
+                "id": "cas_5d052713-1",
+                "name": "Mackenzie Foy"
+            },
+            {
+                "id": "cas_3258dc9b-8",
+                "name": "John Lithgow"
+            },
+            {
+                "id": "cas_126a4bd5-d",
+                "name": "Timothée Chalamet"
+            },
+            {
+                "id": "cas_fdb770f7-4",
+                "name": "David Oyelowo"
+            },
+            {
+                "id": "cas_434784eb-3",
+                "name": "Collette Wolfe"
+            },
+            {
+                "id": "cas_9af3c9e6-3",
+                "name": "Francis X. McCarthy"
+            },
+            {
+                "id": "cas_1309ecbf-b",
+                "name": "Bill Irwin"
+            },
+            {
+                "id": "cas_254bd103-9",
+                "name": "Anne Hathaway"
+            }
+        ],
+        "genres": "Adventure, Drama, Sci-Fi",
+        "plot": "Earth's future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankind's survival: Interstellar travel. A newly discovered wormhole in the far reaches of our solar system allows a team of astronauts to go where no man has gone before, a planet that may have the right environment to sustain human life.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
+        "duration": [
+            "169"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=2LqzF5WauAw"
+    },
+    {
+        "id": "mov_9219026c-d",
+        "title": "It's a Wonderful Life",
+        "year": 1946,
+        "rating": 8.6,
+        "directors": [
+            {
+                "id": "cas_4b3b5f20-f",
+                "name": "Frank Capra"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_93f23f57-c",
+                "name": "James Stewart"
+            },
+            {
+                "id": "cas_8613d794-f",
+                "name": "Donna Reed"
+            },
+            {
+                "id": "cas_91be62ab-5",
+                "name": "Lionel Barrymore"
+            },
+            {
+                "id": "cas_4d0373ec-a",
+                "name": "Thomas Mitchell"
+            },
+            {
+                "id": "cas_0ccfe5dc-e",
+                "name": "Henry Travers"
+            },
+            {
+                "id": "cas_e9a0e590-9",
+                "name": "Beulah Bondi"
+            },
+            {
+                "id": "cas_4e952416-c",
+                "name": "Frank Faylen"
+            },
+            {
+                "id": "cas_eff488ce-4",
+                "name": "Ward Bond"
+            },
+            {
+                "id": "cas_196f687b-3",
+                "name": "Gloria Grahame"
+            },
+            {
+                "id": "cas_ad00f69e-f",
+                "name": "H.B. Warner"
+            }
+        ],
+        "genres": "Drama, Family, Fantasy, Romance",
+        "plot": "George Bailey has spent his entire life giving of himself to the people of Bedford Falls. He has always longed to travel but never had the opportunity in order to prevent rich skinflint Mr. Potter from taking over the entire town. All that prevents him from doing so is George's modest building and loan company, which was founded by his generous father. But on Christmas Eve, George's Uncle Billy loses the business's $8,000 while intending to deposit it in the bank. Mr. Potter finds the misplaced money and hides it from Uncle Billy. When the bank examiner discovers the shortage later that night, George realizes that he will be held responsible and sent to jail and the company will collapse, finally allowing Mr. Potter to take over the town. Thinking of his wife, Mary, their four children, and others he loves will be better off with him dead, he contemplates suicide. But the prayers of his loved ones result in his guardian angel named Clarence Odbody coming to Earth to help him, with the promise of earning his wings. He shows him what things would have been like if he had never been born.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjc4NDZhZWMtNGEzYS00ZWU2LThlM2ItNTA0YzQ0OTExMTE2XkEyXkFqcGdeQXVyNjUwMzI2NzU@.jpg",
+        "duration": [
+            "130"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=iLR3gZrU2Xo"
+    },
+    {
+        "id": "mov_887e75a3-6",
+        "title": "Seven Samurai",
+        "year": 1954,
+        "rating": 8.6,
+        "directors": [
+            {
+                "id": "cas_32618f36-a",
+                "name": "Akira Kurosawa"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_07fa16d4-2",
+                "name": "Toshirô Mifune"
+            },
+            {
+                "id": "cas_6b10c7fa-4",
+                "name": "Takashi Shimura"
+            },
+            {
+                "id": "cas_58453beb-b",
+                "name": "Keiko Tsushima"
+            },
+            {
+                "id": "cas_1c7520cd-5",
+                "name": "Yukiko Shimazaki"
+            },
+            {
+                "id": "cas_f14de197-5",
+                "name": "Kamatari Fujiwara"
+            },
+            {
+                "id": "cas_afe2ae4d-7",
+                "name": "Daisuke Katô"
+            },
+            {
+                "id": "cas_d8f809cc-3",
+                "name": "Isao Kimura"
+            },
+            {
+                "id": "cas_2a178a63-4",
+                "name": "Minoru Chiaki"
+            },
+            {
+                "id": "cas_e4ea3544-e",
+                "name": "Seiji Miyaguchi"
+            },
+            {
+                "id": "cas_46cf2aed-2",
+                "name": "Yoshio Kosugi"
+            }
+        ],
+        "genres": "Action, Drama",
+        "plot": "A veteran samurai, who has fallen on hard times, answers a village's request for protection from bandits. He gathers 6 other samurai to help him, and they teach the townspeople how to defend themselves, and they supply the samurai with three small meals a day. The film culminates in a giant battle when 40 bandits attack the village.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNTkwY2I5NWMtMjNlNi00ZThjLWI4NzQtNDI4M2I4OGM1YjAzXkEyXkFqcGdeQXVyNzYxODE3NTQ@.jpg",
+        "duration": [
+            "207"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=wJ1TOratCTo"
+    },
+    {
+        "id": "mov_20774fd3-2",
+        "title": "The Silence of the Lambs",
+        "year": 1991,
+        "rating": 8.6,
+        "directors": [
+            {
+                "id": "cas_527888a8-d",
+                "name": "Jonathan Demme"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_1298bc52-e",
+                "name": "Jodie Foster"
+            },
+            {
+                "id": "cas_291aa12d-9",
+                "name": "Anthony Hopkins"
+            },
+            {
+                "id": "cas_29f11e98-b",
+                "name": "Scott Glenn"
+            },
+            {
+                "id": "cas_5629823b-3",
+                "name": "Ted Levine"
+            },
+            {
+                "id": "cas_3da7113c-6",
+                "name": "Anthony Heald"
+            },
+            {
+                "id": "cas_7c4febfb-8",
+                "name": "Brooke Smith"
+            },
+            {
+                "id": "cas_359e0cf3-5",
+                "name": "Diane Baker"
+            },
+            {
+                "id": "cas_5d0ac6f7-0",
+                "name": "Kasi Lemmons"
+            },
+            {
+                "id": "cas_696ac7ee-e",
+                "name": "Charles Napier"
+            },
+            {
+                "id": "cas_59d3bfc5-3",
+                "name": "Tracey Walter"
+            }
+        ],
+        "genres": "Crime, Drama, Thriller",
+        "plot": "F.B.I. trainee Clarice Starling (Jodie Foster) works hard to advance her career, while trying to hide or put behind her West Virginia roots, of which if some knew, would automatically classify her as being backward or white trash. After graduation, she aspires to work in the agency's Behavioral Science Unit under the leadership of Jack Crawford (Scott Glenn). While she is still a trainee, Crawford asks her to question Dr. Hannibal Lecter (Sir Anthony Hopkins), a psychiatrist imprisoned, thus far, for eight years in maximum security isolation for being a serial killer who cannibalized his victims. Clarice is able to figure out the assignment is to pick Lecter's brains to help them solve another serial murder case, that of someone coined by the media as \"Buffalo Bill\" (Ted Levine), who has so far killed five victims, all located in the eastern U.S., all young women, who are slightly overweight (especially around the hips), all who were drowned in natural bodies of water, and all who were stripped of large swaths of skin. She also figures that Crawford chose her, as a woman, to be able to trigger some emotional response from Lecter. After speaking to Lecter for the first time, she realizes that everything with him will be a psychological game, with her often having to read between the very cryptic lines he provides. She has to decide how much she will play along, as his request in return for talking to him is to expose herself emotionally to him. The case takes a more dire turn when a sixth victim is discovered, this one from who they are able to retrieve a key piece of evidence, if Lecter is being forthright as to its meaning. A potential seventh victim is high profile Catherine Martin (Brooke Smith), the daughter of Senator Ruth Martin (Diane Baker), which places greater scrutiny on the case as they search for a hopefully still alive Catherine. Who may factor into what happens is Dr. Frederick Chilton (Anthony Heald), the warden at the prison, an opportunist who sees the higher profile with Catherine, meaning a higher profile for himself if he can insert himself successfully into the proceedings.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
+        "duration": [
+            "118"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=6iB21hsprAQ"
+    },
+    {
+        "id": "mov_89e2e585-4",
+        "title": "Saving Private Ryan",
+        "year": 1998,
+        "rating": 8.6,
+        "directors": [
+            {
+                "id": "cas_5de36f02-d",
+                "name": "Steven Spielberg"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_bcd178ee-6",
+                "name": "Tom Hanks"
+            },
+            {
+                "id": "cas_625962b7-7",
+                "name": "Tom Sizemore"
+            },
+            {
+                "id": "cas_bb214d82-2",
+                "name": "Edward Burns"
+            },
+            {
+                "id": "cas_d8f3c2ab-d",
+                "name": "Barry Pepper"
+            },
+            {
+                "id": "cas_9da2752c-9",
+                "name": "Adam Goldberg"
+            },
+            {
+                "id": "cas_dd419809-a",
+                "name": "Vin Diesel"
+            },
+            {
+                "id": "cas_5cea7fc0-5",
+                "name": "Giovanni Ribisi"
+            },
+            {
+                "id": "cas_ffc3f6f3-9",
+                "name": "Jeremy Davies"
+            },
+            {
+                "id": "cas_010b6036-f",
+                "name": "Matt Damon"
+            },
+            {
+                "id": "cas_338fb2a0-8",
+                "name": "Ted Danson"
+            }
+        ],
+        "genres": "Drama, War",
+        "plot": "Opening with the Allied invasion of Normandy on 6 June 1944, members of the 2nd Ranger Battalion under Cpt. Miller fight ashore to secure a beachhead. Amidst the fighting, two brothers are killed in action. Earlier in New Guinea, a third brother is KIA. Their mother, Mrs. Ryan, is to receive all three of the grave telegrams on the same day. The United States Army Chief of Staff, George C. Marshall, is given an opportunity to alleviate some of her grief when he learns of a fourth brother, Private James Ryan, and decides to send out 8 men (Cpt. Miller and select members from 2nd Rangers) to find him and bring him back home to his mother...",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@.jpg",
+        "duration": [
+            "169"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=9CiW_DgxCnQ"
+    },
+    {
+        "id": "mov_f15ed04a-d",
+        "title": "City of God",
+        "year": 2002,
+        "rating": 8.6,
+        "directors": [
+            {
+                "id": "cas_54595df6-b",
+                "name": "Fernando Meirelles"
+            },
+            {
+                "id": "cas_ef3594c1-9",
+                "name": "Kátia Lund"
+            }
+        ],
+        "cast": [
+            {
+                "id": "cas_1b97e7e1-3",
+                "name": "Alexandre Rodrigues"
+            },
+            {
+                "id": "cas_8bd17b90-0",
+                "name": "Leandro Firmino"
+            },
+            {
+                "id": "cas_6ff4882b-1",
+                "name": "Phellipe Haagensen"
+            },
+            {
+                "id": "cas_e4638deb-5",
+                "name": "Douglas Silva"
+            },
+            {
+                "id": "cas_3061a4f6-b",
+                "name": "Jonathan Haagensen"
+            },
+            {
+                "id": "cas_fe713661-f",
+                "name": "Matheus Nachtergaele"
+            },
+            {
+                "id": "cas_fc83aafe-0",
+                "name": "Seu Jorge"
+            },
+            {
+                "id": "cas_2a519501-b",
+                "name": "Jefechander Suplino"
+            },
+            {
+                "id": "cas_b5776da9-e",
+                "name": "Alice Braga"
+            },
+            {
+                "id": "cas_df6e1e8f-2",
+                "name": "Emerson Gomes"
+            }
+        ],
+        "genres": "Crime, Drama",
+        "plot": "Brazil, 1960s, City of God. The Tender Trio robs motels and gas trucks. Younger kids watch and learn well...too well. 1970s: Li'l Zé has prospered very well and owns the city. He causes violence and fear as he wipes out rival gangs without mercy. His best friend Bené is the only one to keep him on the good side of sanity. Rocket has watched these two gain power for years, and he wants no part of it. he keeps getting swept up in the madness. All he wants to do is take pictures. 1980s: Things are out of control between the last two remaining gangs...will it ever end? Welcome to the City of God.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMGU5OWEwZDItNmNkMC00NzZmLTk1YTctNzVhZTJjM2NlZTVmXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
+        "duration": [
+            "130"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=dcUOO4Itgmw"
+    }
+]

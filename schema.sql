@@ -24,7 +24,8 @@ CREATE TABLE IF NOT EXISTS movie (
     duration INT,  -- 使用duration代替time
     rating DECIMAL(2, 1),  -- 使用DECIMAL类型以表示精确的评分
     plot TEXT,
-    video VARCHAR(255)
+    trailer VARCHAR(255),
+    genres TEXT
 );
 
 -- 工作人员表
