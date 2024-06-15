@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}{% endblock %}</title>
-        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
         {% block extra_css %}{% endblock %}
     </head>
     <body>
@@ -34,9 +34,10 @@
             {% endfor %}
             {% block main %}{% endblock %}
         </main>
-        <footer>
-            <p>彭煜峰</p>
-            <p>张哲</p>
+        <footer style="border-top: 2px dashed black; padding: 10px">
+            <div class="footer-container">
+                <p>制作人：彭煜峰 and 张哲</p>
+            </div>
         </footer>
     </body>
 </html>

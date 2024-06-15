@@ -2,7 +2,8 @@
 
 {% block  main %}
     <ul>
-        <h1>电影</h1>
-        <li><a href="{{ url_for('movie.top25') }}">Top 25</a></li>
+        <li><a href="{{ url_for('movie.top25') }}">Top 25的电影</a></li>
+        <li><a href="{{ url_for('movie.recent25') }}">最新上映的25部电影</a></li>
+        <li><a href="{{ url_for('movie.classification') }}">电影分类</a></li>
     </ul>
 {% endblock %}

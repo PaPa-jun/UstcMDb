@@ -15,12 +15,13 @@
         未上传头像
     {% endif %}
     {% if current_user.bio %}
+        <p>个人简介：</p>
         <p>{{ current_user.bio }}</p>
     {% else %}
         <p>暂无介绍</p>
     {% endif %}
     {% if current_user.birthday %}
-        <p>{{ current_user.birthday }}</p>
+        <p>生日：{{ current_user.birthday }}</p>
     {% else %}
         <p>未设置出生日期</p>
     {% endif %}
