@@ -37,6 +37,23 @@ class Movie:
         with db.cursor() as cursor:
             cursor.execute("SELECT * FROM movie WHERE id=%s", (id,))
             movie_info = cursor.fetchone()
+            cursor.execute("SELECT * FROM movie_worker WHERE movie_id=%s", (id,))
+            movie_workers = cursor.fetchall()
+        
+        movie_info['director'] = []
+        movie_info['casts'] = []
+        for worker in movie_workers:
+            if worker['job'] == 'director':
+                with db.cursor() as cursor:
+                    cursor.execute("SELECT name FROM worker WHERE id=%s", (worker['worker_id'],))
+                    name = cursor.fetchone()['name']
+                movie_info['director'].append(name)
+            if worker['job'] == 'actor':
+                with db.cursor() as cursor:
+                    cursor.execute("SELECT name FROM worker WHERE id=%s", (worker['worker_id'],))
+                    name = cursor.fetchone()['name']
+                movie_info['casts'].append(name)
+
         return movie_info
 
     def top(self, db, range):
