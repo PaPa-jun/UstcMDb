@@ -1,7 +1,7 @@
 -- 用户表
 CREATE TABLE IF NOT EXISTS user (
     id CHAR(14) PRIMARY KEY,
-    avatar VARCHAR(255),
+    avatar TEXT,
     username VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
@@ -18,24 +18,23 @@ CREATE TABLE IF NOT EXISTS admin(
 -- 电影表
 CREATE TABLE IF NOT EXISTS movie (
     id CHAR(14) PRIMARY KEY,
-    poster VARCHAR(255),
+    poster TEXT,
     title VARCHAR(255) NOT NULL,
     year INT,
     duration INT,
     rating DECIMAL(2, 1),
     plot TEXT,
-    trailer VARCHAR(255),
+    trailer TEXT,
     genres TEXT
 );
 
 -- 工作人员表
 CREATE TABLE IF NOT EXISTS worker (
     id CHAR(14) PRIMARY KEY,
-    avatar VARCHAR(255),
+    avatar TEXT,
     name VARCHAR(255) NOT NULL,
-    gender CHAR(1),
     birth DATE,
-    job VARCHAR(255),
+    job TEXT,
     bio TEXT
 );
 
@@ -43,7 +42,7 @@ CREATE TABLE IF NOT EXISTS worker (
 CREATE TABLE IF NOT EXISTS movie_worker (
     movie_id CHAR(14),  -- 外键指向movie
     worker_id CHAR(14),  -- 外键指向worker
-    job VARCHAR(255),
+    job TEXT,
     PRIMARY KEY (movie_id, worker_id),
     FOREIGN KEY (movie_id) REFERENCES movie(id),
     FOREIGN KEY (worker_id) REFERENCES worker(id)
@@ -68,6 +67,7 @@ CREATE TABLE IF NOT EXISTS review (
 CREATE TABLE IF NOT EXISTS movie_figure (
     id CHAR(14) PRIMARY KEY,  -- 使用UUID
     movie_id CHAR(14),  -- 外键指向movie
+    path TEXT,
     FOREIGN KEY (movie_id) REFERENCES movie(id)
 );
 
@@ -75,5 +75,6 @@ CREATE TABLE IF NOT EXISTS movie_figure (
 CREATE TABLE IF NOT EXISTS worker_figure (
     id CHAR(14) PRIMARY KEY,  -- 使用UUID
     worker_id CHAR(14),  -- 外键指向worker
+    path TEXT,
     FOREIGN KEY (worker_id) REFERENCES worker(id)
 );
