@@ -7,7 +7,23 @@
 {% endblock %}
 
 {% block  main %}
-    {% for movie in movies_info %}
-        <p>{{ movie.title }}</p>
+    {% for movie in movies_info %}  
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="#"><img src="{{ movie.poster}}" alt="电影的图片" width="300"></a>
+                        </td>
+                        <td>
+                            <div class="movie_text">
+                                <a href="#"> {{ movie.title }} </a>
+                            </div>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     {% endfor %}
 {% endblock %}
