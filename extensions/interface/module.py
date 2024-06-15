@@ -1,6 +1,6 @@
 class User:
     """
-    用户对象
+    用户接口
     """
     def __init__(self, id) -> None:
         self.id = id

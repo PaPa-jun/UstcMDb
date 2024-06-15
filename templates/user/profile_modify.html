@@ -7,12 +7,16 @@
 {% endblock %}
 
 {% block main %}
-<form action="{{ url_for('user.profile_modify') }}" method="post" enctype="multipart/form-data">
+<form action="{{ url_for('user.profile_modify', username=current_user.username) }}" method="post" enctype="multipart/form-data">
     <p>当前用户名：{{ current_user.username }}，修改为：<input type="text" name="username" placeholder="新用户名" /></p>
     <p>当前邮箱：{{ current_user.email }}，修改为：<input type="email" name="email" placeholder="新邮箱" /></p>
     <p>当前头像：
         <p>
-            <img src="{{ url_for('static', filename=current_user.avatar) }}" width="400" height="400" alt="未上传头像"/>
+            {% if current_user.avatar %}
+                <img src="{{ url_for('static', filename=current_user.avatar) }}" width="400" height="400" alt="你的头像被外星人偷走了～"/>
+            {% else %}
+                未上传头像
+            {% endif %}
         </p>
         <p><input type="file" name="avatar"/></p>
     </p>
@@ -38,7 +42,7 @@
 </form>
 <script>
     function redirectToProfile() {
-        window.location.href = "{{ url_for('user.profile') }}";
+        window.location.href = "{{ url_for('user.profile', username=current_user.username) }}";
     }
 </script>
 {% endblock %}

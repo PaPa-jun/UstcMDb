@@ -38,16 +38,16 @@ def register():
 
     return render_template("/user/register.html")
 
-@blueprint.route("/profile")
-def profile():
+@blueprint.route("/<username>/profile")
+def profile(username):
     # 加载用户信息
     current_user = User(g.current_user['id'])
 
     current_user.get_info(g.db)
     return render_template("./user/profile.html", current_user = current_user)
 
-@blueprint.route("/profile/modify", methods=['GET', 'POST'])
-def profile_modify():
+@blueprint.route("/<username>/profile/modify", methods=['GET', 'POST'])
+def profile_modify(username):
     current_user = User(g.current_user['id'])
     current_user.get_info(g.db)
     
@@ -73,7 +73,7 @@ def profile_modify():
                 current_user.update_info(g.db, 'avatar', 'images/avatars/' + g.current_user['id'] + '.' + new_avatar.filename.split('.')[-1])
             else:
                 flash('请传入正确的文件格式（png, jpg, jpeg, bmp）')
-
-        return redirect(url_for('user.profile'))
+        current_user.get_info(g.db)
+        return redirect(url_for('user.profile', username = current_user.username))
 
     return render_template('user/profile_modify.html', current_user = current_user)

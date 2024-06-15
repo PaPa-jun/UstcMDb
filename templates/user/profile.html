@@ -9,7 +9,11 @@
 {% endblock %}
 
 {% block main %}
-    <img src="{{ url_for('static', filename=current_user.avatar) }}" width="400" height="400" alt="未上传头像"/>
+    {% if current_user.avatar %}
+        <img src="{{ url_for('static', filename=current_user.avatar) }}" width="400" height="400" alt="你的头像被外星人偷走了～"/>
+    {% else %}
+        未上传头像
+    {% endif %}
     {% if current_user.bio %}
         <p>{{ current_user.bio }}</p>
     {% else %}
@@ -25,7 +29,7 @@
 
     <script>
         function redirectToModify() {
-            window.location.href = "{{ url_for('user.profile_modify') }}";
+            window.location.href = "{{ url_for('user.profile_modify', username = current_user.username) }}";
         }
     </script>
 {% endblock %}
