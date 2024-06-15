@@ -1,0 +1,13 @@
+header {
+    color: blue;
+    background-color: gray;
+}
+
+main {
+    background-color: blue;
+}
+
+footer {
+    background-color: green;
+    color: red;
+}
