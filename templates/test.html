@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show Input Example</title>
+<style>
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .input-container {
+        display: none; /* 默认隐藏输入框 */
+        margin-left: 10px; /* 调整输入框与按钮之间的间距 */
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <button id="showInputBtn" onclick="toggleInput()">显示输入框</button>
+    
+    <div class="input-container" id="inputContainer">
+        <input type="text" id="inputField" placeholder="请输入内容">
+    </div>
+</div>
+
+<script>
+    function toggleInput() {
+        var inputContainer = document.getElementById("inputContainer");
+        inputContainer.style.display = (inputContainer.style.display === "none") ? "block" : "none";
+    }
+</script>
+
+</body>
+</html>

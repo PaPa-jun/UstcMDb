@@ -7,7 +7,7 @@ class User:
 
     def get_info(self, db):
         with db.cursor() as cursor:
-            cursor.execute('SELECT username, avatar, email, bio, birthday FROM user WHERE id=%s', (self.id))
+            cursor.execute('SELECT username, avatar, email, bio, birthday FROM user WHERE id=%s', (self.id,))
             current_user = cursor.fetchone()
 
         self.username = current_user['username']
@@ -39,20 +39,18 @@ class Movie:
             movie_info = cursor.fetchone()
             cursor.execute("SELECT * FROM movie_worker WHERE movie_id=%s", (id,))
             movie_workers = cursor.fetchall()
-        
-        movie_info['director'] = []
-        movie_info['casts'] = []
-        for worker in movie_workers:
-            if worker['job'] == 'director':
-                with db.cursor() as cursor:
+            movie_info['director'] = []
+            movie_info['casts'] = []
+            for worker in movie_workers:
+                if worker['job'] == 'director':
                     cursor.execute("SELECT name FROM worker WHERE id=%s", (worker['worker_id'],))
                     name = cursor.fetchone()['name']
-                movie_info['director'].append(name)
-            if worker['job'] == 'actor':
-                with db.cursor() as cursor:
+
+                    movie_info['director'].append(name)
+                if worker['job'] == 'actor':
                     cursor.execute("SELECT name FROM worker WHERE id=%s", (worker['worker_id'],))
                     name = cursor.fetchone()['name']
-                movie_info['casts'].append(name)
+                    movie_info['casts'].append(name)
 
         return movie_info
 
@@ -89,6 +87,44 @@ class Movie:
 class Cast:
     """
     演职人员接口
+    """
+
+    def __init__(self) -> None:
+        pass
+
+    def get_info(self, id, db):
+        with db.cursor() as cursor:
+            cursor.execute('SELECT * FROM worker WHERE id=%s', (id,))
+            worker_info = cursor.fetchone()
+            cursor.execute('SELECT movie_id FROM movie_worker WHERE worker_id=%s', (id,))
+            attended_movies = cursor.fetchall()
+            worker_info['movies'] = []
+            for movie in attended_movies:
+                for value in movie.values():
+                    cursor.execute("SELECT title FROM movie WHERE id=%s", (value,))
+                    movie_title = cursor.fetchone()
+                    worker_info['movies'].append(movie_title['title'] if movie_title else None)
+        return worker_info
+
+    def get_id_by_name(self, name, db):
+        with db.cursor() as cursor:
+            cursor.execute('SELECT id FROM worker WHERE name=%s', (name,))
+            name = cursor.fetchone()
+        return name['id']
+    
+    def get_role(self, worker_id, movie_id, db):
+        with db.cursor() as cursor:
+            cursor.execute('SELECT role FROM movie_worker WHERE movie_id=%s AND worker_id=%s', (movie_id, worker_id))
+            roles_list = cursor.fetchall()
+        roles = []
+        for roles_dic in roles_list:
+            if roles_dic:
+                roles.append(roles_dic['role'])
+        return roles
+    
+class Review:
+    """
+    评论接口
     """
 
     def __init__(self) -> None:

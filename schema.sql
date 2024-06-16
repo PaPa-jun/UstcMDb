@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS movie (
 CREATE TABLE IF NOT EXISTS worker (
     id CHAR(14) PRIMARY KEY,
     avatar TEXT,
+    srcset TEXT,
     name VARCHAR(255) NOT NULL,
     birth DATE,
     job TEXT,
@@ -43,6 +44,7 @@ CREATE TABLE IF NOT EXISTS movie_worker (
     movie_id CHAR(14),  -- 外键指向movie
     worker_id CHAR(14),  -- 外键指向worker
     job TEXT,
+    role TEXT,
     PRIMARY KEY (movie_id, worker_id),
     FOREIGN KEY (movie_id) REFERENCES movie(id),
     FOREIGN KEY (worker_id) REFERENCES worker(id)

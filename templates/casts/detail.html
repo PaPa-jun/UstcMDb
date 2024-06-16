@@ -1,18 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}电影详情{% endblock %}
+{% block title %}演职员个人界面{% endblock %}
 
 {% block main %}
-    <p>
-        <span> {{ movie.title }} </span> 
-        <span> ({{ movie.year }})</span>
-    </p>
-    <div class="movie_details">
+    <h2>
+        <span> {{ cast.name }} </span> 
+    </h2>
+    <div class="cast_details">
         <table>
             <tbody>
                 <tr>
                     <td>
-                        <img src="{{ movie.poster }}" alt="电影海报" width="250">
+                        <img src="{{ cast.avatar }}" alt="演职员图片" width="250">
                     </td>
                     <td>
                         <div>
@@ -86,7 +85,7 @@
                 {% if worker.name == one_actor %}
                     <div class="person">
                         <div>
-                            <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_actor }}图片" width="150px"></a>
+                            <a href="url_for('')"><img src="{{ worker.avatar }}" alt="{{ one_actor }}图片" width="150px"></a>
                         </div>
                         <div>{{ one_actor }}</div>
                         <div>角色: {{ worker.role }}</div>
