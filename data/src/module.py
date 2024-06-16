@@ -242,7 +242,7 @@ class DataBase:
                     worker['id'],
                     worker['name']
                 ))
-        self.connection.commit()
+            self.connection.commit()
 
 class PersonScraper:
     """
