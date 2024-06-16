@@ -129,6 +129,12 @@ database_password = "your password"
 database_schema = "your schema"
 ```
 
+更新 Google YouTube API Key：
+
+```py
+GOOGLE_YOUTUBE_API_KEY = "Your API Key"
+```
+
 ### 网站运行
 
 ```bash

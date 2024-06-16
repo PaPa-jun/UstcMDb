@@ -7,13 +7,15 @@ from faker import Faker
 from werkzeug.security import generate_password_hash
 import json, pymysql, uuid, requests
 
+GOOGLE_YOUTUBE_API_KEY = 'AIzaSyDVuoeGmXOgitKNWmJlnSFoFjPMShLN9dQ'
+
 class IMDb:
     """
     访问 IMDb 数据
     """
     def __init__(self) -> None:
         self.ia = Cinemagoer()
-        self.youtube_api_key = 'AIzaSyDVuoeGmXOgitKNWmJlnSFoFjPMShLN9dQ'
+        self.youtube_api_key = GOOGLE_YOUTUBE_API_KEY
         self.youtube_service = build('youtube', 'v3', developerKey=self.youtube_api_key)
 class HtmlScraper(IMDb):
     """
