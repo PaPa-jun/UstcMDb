@@ -3,6 +3,8 @@ from googleapiclient.discovery import build
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 from datetime import datetime
+from faker import Faker
+from werkzeug.security import generate_password_hash
 import json, pymysql, uuid, requests
 
 class IMDb:
@@ -141,8 +143,6 @@ class DataBase:
         self.port = port
         self.database = database
         self.charset = charset
-
-    def connect_db(self):
         self.connection = pymysql.connect(
             host=self.host,
             port=self.port,
@@ -244,13 +244,103 @@ class DataBase:
                 ))
         self.connection.commit()
 
+    def load_user_from_json(self, json_file):
+        with open(json_file, 'r', encoding='utf-8') as file:
+            users = json.load(file)
+
+        try:
+            with self.connection.cursor() as cursor:
+                for user in tqdm(users, desc="Inserting users into database"):
+                    sql_query = """
+                    INSERT INTO user (id, avatar, username, password, email, bio, birthday)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    ON DUPLICATE KEY UPDATE
+                        avatar = VALUES(avatar),
+                        username = VALUES(username),
+                        password = VALUES(password),
+                        email = VALUES(email),
+                        bio = VALUES(bio),
+                        birthday = VALUES(birthday);
+                    """
+                    cursor.execute(sql_query, (
+                        user['id'],
+                        user['avatar'],
+                        user['username'],
+                        user['password'],
+                        user['email'],
+                        user['bio'],
+                        user['birthday']
+                    ))
+            self.connection.commit()
+        except Exception as e:
+            print(f"Error inserting data into the database: {e}")
+            self.connection.rollback()
+        finally:
+            self.connection.close()
+
+    def load_review_from_json(self, json_file):
+        with open(json_file, 'r', encoding='utf-8') as file:
+            reviews = json.load(file)
+
+        try:
+            with self.connection.cursor() as cursor:
+                for movie_title, movie_reviews in tqdm(reviews.items(), desc="Inserting reviews into database"):
+                    # 获取 movie_id，假设电影表中有 title 字段
+                    cursor.execute("SELECT id FROM movie WHERE title = %s", (movie_title,))
+                    movie_result = cursor.fetchone()
+                    if movie_result:
+                        movie_id = movie_result['id']
+                    else:
+                        print(f"Movie '{movie_title}' not found in the database.")
+                        continue
+
+                    for review in movie_reviews:
+                        user_id = self.get_user_id(review['author'], cursor)
+                        sql_query = """
+                        INSERT INTO review (id, movie_id, user_id, content, writer_id, likes, date, rating)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                        ON DUPLICATE KEY UPDATE
+                            movie_id = VALUES(movie_id),
+                            user_id = VALUES(user_id),
+                            content = VALUES(content),
+                            writer_id = VALUES(writer_id),
+                            likes = VALUES(likes),
+                            date = VALUES(date),
+                            rating = VALUES(rating);
+                        """
+                        cursor.execute(sql_query, (
+                            'rev_' + str(uuid.uuid4())[:10],
+                            movie_id,
+                            None,
+                            review['text'],
+                            user_id,
+                            0,
+                            review['date'],
+                            review['rating']
+                        ))
+            self.connection.commit()
+        except Exception as e:
+            print(f"Error inserting data into the database: {e}")
+            self.connection.rollback()
+        finally:
+            self.connection.close()
+
+    def get_user_id(self, username, cursor):
+        cursor.execute("SELECT id FROM user WHERE username = %s", (username,))
+        user_result = cursor.fetchone()
+        if user_result:
+            return user_result['id']
+        else:
+            return None
+
+
 class PersonScraper:
     """
     爬虫
     """
 
     def __init__(self, id) -> None:
-        self.url = "https://www.imdb.com/name/nm" + id + "/"
+        self.url = f"https://www.imdb.com/name/nm{id}/"
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
             'Accept-Language': 'en-US,en;q=0.9',
@@ -313,3 +403,144 @@ class PersonScraper:
                 if bio_div:
                     return bio_div.text.strip()
         return None
+
+
+class ReviewScraper:
+    """
+    爬取评论
+    """
+
+    def __init__(self) -> None:
+        pass
+
+    def get_response(self, movie_id):
+        self.url = f"https://www.imdb.com/title/tt{movie_id}/reviews/"
+        self.headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Connection': 'keep-alive',
+            'DNT': '1',
+        }
+        self.response = requests.get(self.url, headers=self.headers)
+        if self.response.status_code == 200:
+            self.html = self.response.content
+            self.soup = BeautifulSoup(self.html, 'html.parser')
+        else:
+            print(f"Failed to retrieve content: {self.response.status_code}")
+            self.soup = None
+
+    def get_reviews(self):
+        reviews = []
+        if self.soup:
+            review_containers = self.soup.find_all('div', class_='lister-item-content')
+            for container in review_containers:
+                title_tag = container.find('a', class_='title')
+                title = title_tag.text.strip() if title_tag else None
+
+                rating_tag = container.find('span', class_='rating-other-user-rating')
+                rating = rating_tag.find('span').text.strip() if rating_tag else None
+                # 转换评分为浮点数并限制范围在0到9.9
+                if rating:
+                    try:
+                        rating = float(rating)
+                        if rating > 9.9:
+                            rating = 9.9
+                    except ValueError:
+                        rating = None
+
+                text_tag = container.find('div', class_='text')
+                text = text_tag.text.strip() if text_tag else None
+
+                date_tag = container.find('span', class_='review-date')
+                date = date_tag.text.strip() if date_tag else None
+                # 转换日期格式
+                if date:
+                    try:
+                        date = datetime.strptime(date, '%d %B %Y').strftime('%Y-%m-%d')
+                    except ValueError:
+                        date = None
+
+                author_tag = container.find('span', class_='display-name-link')
+                author = author_tag.text.strip() if author_tag else None
+
+                reviews.append({
+                    'title': title,
+                    'rating': rating,
+                    'text': text,
+                    'date': date,
+                    'author': author
+                })
+        return reviews
+
+    def fetch_all_reviews(self, db):
+        all_reviews = {}
+        imdb = IMDb()
+        try:
+            with db.cursor() as cursor:
+                cursor.execute("SELECT title FROM movie;")
+                movie_titles = cursor.fetchall()
+
+            for movie in tqdm(movie_titles, desc="Fetching reviews"):
+                movie_title = movie['title']
+                movie_id = imdb.ia.search_movie(movie_title)[0].movieID
+                self.get_response(movie_id)
+                reviews = self.get_reviews()
+                all_reviews[movie_title] = reviews
+
+        except Exception as e:
+            print(f"Error fetching reviews for all movies: {e}")
+            db.rollback()
+        
+        return all_reviews
+    
+class User:
+    """
+    生成用户
+    """
+
+    def __init__(self) -> None:
+        self.fake = Faker()
+    
+    def gen_fake_user(self, username, email, id=None):
+        user = {
+            'id': id if id else 'usr_' + str(uuid.uuid4())[:10],
+            'avatar': self.fake.image_url(width=480, height=480),
+            'username': username,
+            'password': generate_password_hash(self.fake.password()),
+            'email': email,
+            'bio': "I'm a fake user.",
+            'birthday': self.fake.date_of_birth().strftime('%Y-%m-%d')
+        }
+        return user
+    
+    def create_user_from_views(self, reviews):
+        users = []
+        usernames = set()
+        emails = set()
+
+        with open(reviews, 'r', encoding='utf-8') as file:
+            movies = json.load(file)
+
+        total_reviews = sum(len(movie_reviews) for movie_reviews in movies.values())
+
+        with tqdm(total=total_reviews, desc="Creating users") as pbar:
+            for movie_title, movie_reviews in movies.items():
+                for review in movie_reviews:
+                    username = review['author']
+                    if not username:
+                        username = self.fake.user_name()
+                    while username in usernames:
+                        username = self.fake.user_name()
+                    usernames.add(username)
+
+                    email = self.fake.email()
+                    while email in emails:
+                        email = self.fake.email()
+                    emails.add(email)
+
+                    user = self.gen_fake_user(username=username, email=email)
+                    users.append(user)
+                    pbar.update(1)
+        
+        return users
