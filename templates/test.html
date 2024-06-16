@@ -1,55 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>搜索框选择器</title>
-    <style>
-        /* 可选的 CSS 样式 */
-        .search-form {
-            margin: 20px;
-        }
-        .search-form select, .search-form input[type="text"] {
-            padding: 8px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .search-form button {
-            padding: 8px 16px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show Input Example</title>
+<style>
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .input-container {
+        display: none; /* 默认隐藏输入框 */
+        margin-left: 10px; /* 调整输入框与按钮之间的间距 */
+    }
+</style>
 </head>
 <body>
 
-<div class="search-form">
-    <select id="searchType">
-        <option value="movies">搜索电影</option>
-        <option value="actors">搜索演员</option>
-        <!-- 可以根据需要添加更多选项 -->
-    </select>
-    <input type="text" id="searchKeyword" placeholder="请输入关键词">
-    <button type="button" onclick="search()">搜索</button>
+<div class="container">
+    <button id="showInputBtn" onclick="toggleInput()">显示输入框</button>
+    
+    <div class="input-container" id="inputContainer">
+        <input type="text" id="inputField" placeholder="请输入内容">
+    </div>
 </div>
 
 <script>
-    function search() {
-        var searchType = document.getElementById("searchType").value;
-        var keyword = document.getElementById("searchKeyword").value;
-        
-        // 根据选择的搜索类型执行相应的搜索操作，这里只是示例，具体实现需根据实际情况调整
-        if (searchType === "movies") {
-            alert("搜索电影: " + keyword);
-            // 可以添加实际的搜索逻辑，例如跳转到搜索结果页面等
-        } else if (searchType === "actors") {
-            alert("搜索演员: " + keyword);
-            // 可以添加实际的搜索逻辑，例如跳转到搜索结果页面等
-        }
+    function toggleInput() {
+        var inputContainer = document.getElementById("inputContainer");
+        inputContainer.style.display = (inputContainer.style.display === "none") ? "block" : "none";
     }
 </script>
 
