@@ -121,3 +121,11 @@ class Cast:
             if roles_dic:
                 roles.append(roles_dic['role'])
         return roles
+    
+class Review:
+    """
+    评论接口
+    """
+
+    def __init__(self) -> None:
+        pass
