@@ -7,7 +7,7 @@ from faker import Faker
 from werkzeug.security import generate_password_hash
 import json, pymysql, uuid, requests
 
-GOOGLE_YOUTUBE_API_KEY = 'AIzaSyDVuoeGmXOgitKNWmJlnSFoFjPMShLN9dQ'
+GOOGLE_YOUTUBE_API_KEY = "Your API Key"
 
 class IMDb:
     """

@@ -2,11 +2,11 @@ class Base:
     SECRET_KEY = "you-shall-no-pass"
     ENV = "base"
     SQL = {
-        "host" : "localhost",
+        "host" : "your host",
         "port" : 3306,
         "user" : "root", 
-        "password" : "Pyf20030317",
-        "schema" : "ustcMDb",
+        "password" : "your password",
+        "schema" : "your schema",
         "charset" : 'utf8mb4'
     }
     DEBUG = False
