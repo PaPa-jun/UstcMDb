@@ -23,14 +23,13 @@
                     <a href="{{ url_for('menu.index') }}">菜单</a>
                 </div>
                 <div class="search-form">
-                    <form action="{{ url_for(search.search) }}" method="get">
-                        <select id="searchType">
+                    <form action="{{ url_for('search.search') }}" method="get">
+                        <select id="searchType" name="type">
                             <option value="movies">搜索电影</option>
                             <option value="actors">搜索演员</option>
-                            <!-- 可以根据需要添加更多选项 -->
                         </select>
-                        <input type="text" id="searchKeyword" placeholder="请输入关键词">
-                        <button type="button" onclick="search()">搜索</button>
+                        <input type="text" id="searchKeyword" name="keyword" placeholder="请输入关键词">
+                        <button type="submit">搜索</button>
                     </form>
                 </div>
                 <div class="user">

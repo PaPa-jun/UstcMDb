@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}搜索结果{% endblock %}
+
+{% block main %}
+    <h1>搜索结果</h1>
+    <p>搜索关键词: {{ keyword }}</p>
+    <ul>
+        {% for result in results %}
+            <li>{{ result }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
