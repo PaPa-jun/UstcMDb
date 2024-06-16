@@ -7,9 +7,13 @@ path_casts = "data/casts/casts.json"
 path_reviews = "data/reviews/reviews.json"
 path_users = "data/users/users.json"
 
+database_host = "localhost"
+database_password = "Pyf20030317"
+database_schema = "ustcMDb"
+
 def main():
     scraper = Scraper()
-    database = DataBase("localhost", "Pyf20030317", "ustcMDb")
+    database = DataBase(database_host, database_password, database_schema)
     user = User()
     india_movies = scraper.movie_scraper.fetch_india_movies()
     scraper.to_json(india_movies, path_top_india)
