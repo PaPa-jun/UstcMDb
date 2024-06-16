@@ -2,47 +2,48 @@
 
 {% block title %}修改用户资料{% endblock %}
 
-{% block header %}
-    <h1>修改用户资料</h1>
-{% endblock %}
-
 {% block main %}
-<form action="{{ url_for('user.profile_modify', username=current_user.username) }}" method="post" enctype="multipart/form-data">
-    <p>当前用户名：{{ current_user.username }}，修改为：<input type="text" name="username" placeholder="新用户名" /></p>
-    <p>当前邮箱：{{ current_user.email }}，修改为：<input type="email" name="email" placeholder="新邮箱" /></p>
-    <p>当前头像：
-        <p>
-            {% if current_user.avatar %}
-                <img src="{{ url_for('static', filename=current_user.avatar) }}" width="400" height="400" alt="你的头像被外星人偷走了～"/>
-            {% else %}
-                未上传头像
-            {% endif %}
-        </p>
-        <p><input type="file" name="avatar"/></p>
-    </p>
-    <p>当前个人详情：
-        {% if current_user.bio %}
-            <p>{{ current_user.bio }}</p>
-        {% else %}
-            暂无记录
-        {% endif %}
-    </p>
-    <p>修改为：<input type="text" name="bio" placeholder="个人详情" /></p>
-    <p>当前出生日期：
-        {% if current_user.birthday %}
-            {{ current_user.birthday }}
-        {% else %}
-            暂无记录
-        {% endif %}
-        ，修改为：<input type="date" name="birthday" placeholder="出生日期" /></p>
-    <p>
-        <input type="submit" value="确认修改"/>
-        <input type="button" value="取消修改" onclick="redirectToProfile()"/>
-    </p>
-</form>
-<script>
-    function redirectToProfile() {
-        window.location.href = "{{ url_for('user.profile', username=current_user.username) }}";
-    }
-</script>
+<div class="container">
+    <h1>修改个人资料</h1>
+    <div class="profile_modify">
+        <form action="{{ url_for('user.profile_modify', username=current_user.username) }}" method="post" enctype="multipart/form-data">
+            <p>当前用户名：{{ current_user.username }}，修改为：<input type="text" name="username" placeholder="新用户名" /></p>
+            <p>当前邮箱：{{ current_user.email }}，修改为：<input type="email" name="email" placeholder="新邮箱" /></p>
+            <p>当前头像：
+                <p>
+                    {% if current_user.avatar %}
+                        <img src="{{ url_for('static', filename=current_user.avatar) }}" width="400" height="400" alt="你的头像被外星人偷走了～"/>
+                    {% else %}
+                        未上传头像
+                    {% endif %}
+                </p>
+                <p><input type="file" name="avatar"/></p>
+            </p>
+            <p>当前个人详情：
+                {% if current_user.bio %}
+                    <p>{{ current_user.bio }}</p>
+                {% else %}
+                    暂无记录
+                {% endif %}
+            </p>
+            <p>修改为：<input type="text" name="bio" placeholder="个人详情" /></p>
+            <p>当前出生日期：
+                {% if current_user.birthday %}
+                    {{ current_user.birthday }}
+                {% else %}
+                    暂无记录
+                {% endif %}
+                ，修改为：<input type="date" name="birthday" placeholder="出生日期" /></p>
+            <p>
+                <input type="submit" value="确认修改"/>
+                <input type="button" value="取消修改" onclick="redirectToProfile()"/>
+            </p>
+        </form>
+        <script>
+            function redirectToProfile() {
+                window.location.href = "{{ url_for('user.profile', username=current_user.username) }}";
+            }
+        </script>
+    </div>
+</div>
 {% endblock %}
