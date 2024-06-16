@@ -1,0 +1,1 @@
+from apps.search.view import blueprint
