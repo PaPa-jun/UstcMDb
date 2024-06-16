@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
@@ -10,23 +11,35 @@
     <body>
         <header>
             <nav>
-                <ul>
-                    <li><a href="{{ url_for('main.index') }}">主页</a></li>
-                    <li><a href="{{ url_for('menu.index') }}">菜单</a></li>
-                    <form action="#" method="post">
-                        <!-- 搜索栏是站点内导航的一个非线性的方式。 -->
-                        <input type="search" name="searchbar" placeholder="搜索站内" />
-                        <input type="submit" value="搜索" />
+                <div class="logo">
+                    <a href="{{ url_for('main.index') }}">
+                        <img src="{{ url_for('static', filename='images/avatars/fixed_pics/logo.jpg') }}" alt="logo" width="50px">
+                    </a>
+                </div>
+                <div class="main">
+                    <a href="{{ url_for('main.index') }}">主页</a>
+                </div>
+                <div class="menu">
+                    <a href="{{ url_for('menu.index') }}">菜单</a>
+                </div>
+                <div class="search-form">
+                    <form action="{{ url_for('search.search') }}" method="get">
+                        <select id="searchType" name="type">
+                            <option value="movies">搜索电影</option>
+                            <option value="actors">搜索演员</option>
+                        </select>
+                        <input type="text" id="searchKeyword" name="keyword" placeholder="请输入关键词">
+                        <button type="submit">搜索</button>
                     </form>
-                    <li><a href="{{ url_for('main.index') }}">联系我们</a></li>
-                    {% if g.user %}
-                        <li><a href="{{ url_for('user.profile') }}">{{ g.user.username }}</a></li>
+                </div>
+                <div class="user">
+                    {% if g.current_user %}
+                        <a href="{{ url_for('user.profile', username = g.current_user.username) }}">{{ g.current_user.username }}</a>
                     {% else %}
-                        <li><a href="{{ url_for('user.login') }}">登陆</a></li>
+                        <a href="{{ url_for('user.login') }}">登陆</a>
                     {% endif %}
-                </ul>
+                </div>
             </nav>
-            {% block header %}{% endblock %}
         </header>
         <main>
             {% for message in get_flashed_messages() %}
@@ -34,9 +47,29 @@
             {% endfor %}
             {% block main %}{% endblock %}
         </main>
+        <script>
+            function search() {
+                var searchType = document.getElementById("searchType").value;
+                var keyword = document.getElementById("searchKeyword").value;
+                
+                // 根据选择的搜索类型执行相应的搜索操作，这里只是示例，具体实现需根据实际情况调整
+                if (searchType === "movies") {
+                    alert("搜索电影: " + keyword);
+                    // 可以添加实际的搜索逻辑，例如跳转到搜索结果页面等
+                } else if (searchType === "actors") {
+                    alert("搜索演员: " + keyword);
+                    // 可以添加实际的搜索逻辑，例如跳转到搜索结果页面等
+                }
+            }
+        </script>
         <footer>
-            <p>彭煜峰</p>
-            <p>张哲</p>
+            <div>
+                制作人：彭煜峰 and 张哲
+            </div>
+            <div>
+                <a href="#">联系我们</a>    
+            </div>
         </footer>
+        
     </body>
 </html>

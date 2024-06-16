@@ -1,33 +1,82 @@
+-- 用户表
 CREATE TABLE IF NOT EXISTS user (
     id CHAR(14) PRIMARY KEY,
     avatar TEXT,
-    username VARCHAR(255) NOT NULL,
-    password TEXT NOT NULL,
-    email VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
     bio TEXT,
-    UNIQUE (username(255)),
-    UNIQUE (email(255))
+    birthday DATE
 );
 
+-- 管理员表
+CREATE TABLE IF NOT EXISTS admin(
+    id CHAR(14) PRIMARY KEY,
+    FOREIGN KEY (id) REFERENCES user(id)
+);
+
+-- 电影表
 CREATE TABLE IF NOT EXISTS movie (
     id CHAR(14) PRIMARY KEY,
+    poster TEXT,
     title VARCHAR(255) NOT NULL,
-    year INT NOT NULL,
-    rating INT,
-    plot TEXT
+    year INT,
+    duration INT,
+    rating DECIMAL(2, 1),
+    plot TEXT,
+    trailer TEXT,
+    genres TEXT
 );
 
-CREATE TABLE IF NOT EXISTS director (
+-- 工作人员表
+CREATE TABLE IF NOT EXISTS worker (
     id CHAR(14) PRIMARY KEY,
-    name VARCHAR(255)
+    avatar TEXT,
+    srcset TEXT,
+    name VARCHAR(255) NOT NULL,
+    birth DATE,
+    job TEXT,
+    bio TEXT
 );
 
-CREATE TABLE IF NOT EXISTS cast (
-    id CHAR(14) PRIMARY KEY,
-    name VARCHAR(255)
+-- 电影和工作人员关系表
+CREATE TABLE IF NOT EXISTS movie_worker (
+    movie_id CHAR(14),  -- 外键指向movie
+    worker_id CHAR(14),  -- 外键指向worker
+    job TEXT,
+    role TEXT,
+    PRIMARY KEY (movie_id, worker_id),
+    FOREIGN KEY (movie_id) REFERENCES movie(id),
+    FOREIGN KEY (worker_id) REFERENCES worker(id)
 );
 
-CREATE TABLE IF NOT EXISTS genre (
-    id CHAR(14) PRIMARY KEY,
-    genre VARCHAR(255)
+-- 影评表
+CREATE TABLE IF NOT EXISTS review (
+    id CHAR(14) PRIMARY KEY,  -- 使用UUID
+    movie_id CHAR(14),  -- 外键指向movie
+    user_id CHAR(14),  -- 外键指向user
+    content TEXT NOT NULL,
+    writer_id CHAR(14),
+    likes INT DEFAULT 0,
+    date DATE,
+    rating DECIMAL(2, 1),
+    FOREIGN KEY (movie_id) REFERENCES movie(id),
+    FOREIGN KEY (user_id) REFERENCES user(id),
+    FOREIGN KEY (writer_id) REFERENCES user(id)
+);
+
+-- 电影图表
+CREATE TABLE IF NOT EXISTS movie_figure (
+    id CHAR(14) PRIMARY KEY,  -- 使用UUID
+    movie_id CHAR(14),  -- 外键指向movie
+    path TEXT,
+    FOREIGN KEY (movie_id) REFERENCES movie(id)
+);
+
+-- 工作人员图表
+CREATE TABLE IF NOT EXISTS worker_figure (
+    id CHAR(14) PRIMARY KEY,  -- 使用UUID
+    worker_id CHAR(14),  -- 外键指向worker
+    path TEXT,
+    FOREIGN KEY (worker_id) REFERENCES worker(id)
 );

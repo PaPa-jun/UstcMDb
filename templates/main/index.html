@@ -2,10 +2,107 @@
 
 {% block title %}首页{% endblock %}
 
-{% block header %}
-    <h1>欢迎来到 USTCMDb！欢迎交流~</h1>
-{% endblock %}
 
 {% block  main %}
-    这里是首页，会放一些电影在这里！
+    <div class="content_right">
+        <div>
+            <h1>欢迎来到USTC电影交流平台!</h1>
+            <div class="recent_hot">
+                <h2>正在热映</h2>
+                {% for onemovie in recent[:5] %}
+                <div>
+                    <div>
+                        <a href="{{ url_for('movie.movie_detail', id=onemovie.id) }}">
+                            <img src="{{ onemovie.poster }}" alt="电影的图片" width="180">
+                        </a>
+                    </div>
+                    <div>
+                        <p>{{onemovie.title}}</p>
+                        <p>
+                            {{onemovie.rating}}
+                            {% set rating_int = onemovie.rating | int %}
+                            {% set full_stars = rating_int // 2 %}
+                            {% set empty_stars = 5 - full_stars %}
+                                    
+                            {# 显示完整星星 #}
+                            {% for _ in range(full_stars) %}
+                                ★
+                            {% endfor %}
+                                    
+                            {# 显示空星 #}
+                            {% for _ in range(empty_stars) %}
+                                ☆
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="recommendation">
+                <h2>今日推荐</h2>
+                {% for onemovie in random[:5] %}
+                <div>
+                    <div>
+                        <a href="{{ url_for('movie.movie_detail', id=onemovie.id) }}">
+                            <img src="{{ onemovie.poster }}" alt="电影的图片" width="180">
+                        </a>
+                    </div>
+                    <div>
+                        <p>{{onemovie.title}}</p>
+                        <p>
+                            {{onemovie.rating}}
+                            {% set rating_int = onemovie.rating | int %}
+                            {% set full_stars = rating_int // 2 %}
+                            {% set empty_stars = 5 - full_stars %}
+                                    
+                            {# 显示完整星星 #}
+                            {% for _ in range(full_stars) %}
+                                ★
+                            {% endfor %}
+                                    
+                            {# 显示空星 #}
+                            {% for _ in range(empty_stars) %}
+                                ☆
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="classic">
+                <h2>影史经典</h2>
+                {% for onemovie in top[:5] %}
+                <div>
+                    <div>
+                        <a href="{{ url_for('movie.movie_detail', id=onemovie.id) }}">
+                            <img src="{{ onemovie.poster }}" alt="电影的图片" width="180">
+                        </a>
+                    </div>
+                    <div>
+                        <p>{{onemovie.title}}</p>
+                        <p>
+                            {{onemovie.rating}}
+                            {% set rating_int = onemovie.rating | int %}
+                            {% set full_stars = rating_int // 2 %}
+                            {% set empty_stars = 5 - full_stars %}
+                                    
+                            {# 显示完整星星 #}
+                            {% for _ in range(full_stars) %}
+                                ★
+                            {% endfor %}
+                                    
+                            {# 显示空星 #}
+                            {% for _ in range(empty_stars) %}
+                                ☆
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="content_left">
+        <h2>这里是侧边栏</h2>
+    </div>
 {% endblock %}

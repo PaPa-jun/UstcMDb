@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}电影 top 25{% endblock %}
+
+{% block  main %}
+    <h1>
+        Top 25的电影
+    </h1>
+    {% for movie_info in movies_info %}  
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="{{ url_for('movie.movie_detail', id=movie_info.id) }}"><img src="{{ movie_info.poster}}" alt="电影的图片" width="180"></a>
+                        </td>
+                        <td>
+                            <div class="movie_info_text">
+                                <a href="{{ url_for('movie.movie_detail', id=movie_info.id) }}"> {{ movie_info.title }} </a>
+                            </div>
+                            <div>上映年份 {{ movie_info.year }}</div>
+                            <div>时长 {{ movie_info.duration }}min</div>
+                            <div>
+                                导演
+                                {% for one_director in movie_info.director %}
+                                    {{ one_director }}{% if not loop.last %} / {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div>
+                                演员
+                                {% for one_actor in movie_info.casts[:3] %}
+                                    {{ one_actor }}{% if not loop.last %} / {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div>类型 {{ movie_info.genres }}</div>
+                            <div>评分 {{ movie_info.rating }}</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    {% endfor %}
+{% endblock %}
