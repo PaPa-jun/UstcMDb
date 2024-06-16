@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS movie (
 CREATE TABLE IF NOT EXISTS worker (
     id CHAR(14) PRIMARY KEY,
     avatar TEXT,
+    srcset TEXT,
     name VARCHAR(255) NOT NULL,
     birth DATE,
     job TEXT,
