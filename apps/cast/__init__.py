@@ -1,0 +1,1 @@
+from apps.cast.view import blueprint
