@@ -29,7 +29,13 @@ class IMDb:
                 'year': movie_info.get('year'),
                 'rating': movie_info.get('rating'),
                 'directors': [{'id': 'cas_' + str(uuid.uuid4())[:10], 'name': director['name']} for director in movie_info.get('directors', [])],
-                'cast': [{'id': 'cas_' + str(uuid.uuid4())[:10], 'name': actor['name']} for actor in movie_info.get('cast', [])[:10]],  # 只获取前10个演员
+                'casts': [
+                    {
+                        'id': 'cas_' + str(uuid.uuid4())[:10],
+                        'name': actor['name'],
+                        'character': str(actor.currentRole) if actor.currentRole else None  # 添加角色信息
+                    } for actor in movie_info.get('cast', [])[:10]
+                ],
                 'genres': ", ".join(movie_info.get('genres', [])),  # 将 genres 列表转换为逗号分隔的字符串
                 'plot': movie_info.get('plot outline'),
                 'poster': movie_info.get('full-size cover url'),
@@ -91,7 +97,7 @@ class IMDb:
         try:
             scraper = PersonScraper(person_id)
             person_details = {
-                'birth': scraper.get_birth_date(),
+                'birth': scraper.get_birth_date().strftime("%Y-%m-%d"),
                 'avatar': scraper.get_avatar_url()['srcset'],
                 'job': scraper.get_other_works(),
                 'bio': scraper.get_bio()
@@ -105,28 +111,23 @@ class IMDb:
     def fetch_all_casts_info_from_db(self, db):
         try:
             with db.cursor() as cursor:
-                cursor.execute("SELECT name FROM worker;")
+                cursor.execute("SELECT id, name FROM worker;")
                 worker_names = cursor.fetchall()
 
-            # 添加进度条
+            workers_info = []
             for worker in tqdm(worker_names, desc="Fetching and updating worker info"):
                 worker_info = self.search_person(worker['name'])
-                if worker_info:
-                    query = """
-                    UPDATE worker
-                    SET avatar = %s,
-                        birth = %s,
-                        job = %s,
-                        bio = %s
-                    WHERE name = %s;
-                    """
-                    with db.cursor() as cursor:
-                        cursor.execute(query, (worker_info['avatar'], worker_info['birth'], worker_info['job'], worker_info['bio'], worker['name']))
-            
-            db.commit()
+                if worker_info is not None:
+                    worker_info['id'] = worker['id']
+                    worker_info['name'] = worker['name']
+                    workers_info.append(worker_info)
+                else:
+                    print(f"Warning: No info found for worker {worker['name']} (ID: {worker['id']})")
         except Exception as e:
             db.rollback()
             print(f"Error fetching and updating worker info: {e}")
+        
+        return workers_info
 
 class DataBase:
     """
@@ -142,7 +143,7 @@ class DataBase:
         self.charset = charset
 
     def connect_db(self):
-        connection = pymysql.connect(
+        self.connection = pymysql.connect(
             host=self.host,
             port=self.port,
             user=self.user,
@@ -151,14 +152,13 @@ class DataBase:
             charset=self.charset,
             cursorclass=pymysql.cursors.DictCursor
         )
-        return connection
     
-    def load_movie_from_json(self, json_file, connection):
+    def load_movie_from_json(self, json_file):
         with open(json_file, 'r', encoding='utf-8') as file:
             movies = json.load(file)
         
         try:
-            with connection.cursor() as cursor:
+            with self.connection.cursor() as cursor:
                 for movie in movies:
                     # 插入电影信息
                     sql_movie = """
@@ -187,15 +187,15 @@ class DataBase:
                         cursor.execute(sql_worker, (director['id'], director['name']))
                         
                         sql_movie_worker = """
-                        INSERT INTO movie_worker (movie_id, worker_id, job)
-                        VALUES (%s, %s, %s)
+                        INSERT INTO movie_worker (movie_id, worker_id, job, role)
+                        VALUES (%s, %s, %s, %s)
                         ON DUPLICATE KEY UPDATE
                             job = VALUES(job);
                         """
-                        cursor.execute(sql_movie_worker, (movie['id'], director['id'], 'director'))
+                        cursor.execute(sql_movie_worker, (movie['id'], director['id'], 'director', None))
                     
                     # 插入演员信息并建立关系
-                    for actor in movie['cast']:
+                    for actor in movie['casts']:
                         sql_worker = """
                         INSERT INTO worker (id, name)
                         VALUES (%s, %s)
@@ -205,22 +205,44 @@ class DataBase:
                         cursor.execute(sql_worker, (actor['id'], actor['name']))
                         
                         sql_movie_worker = """
-                        INSERT INTO movie_worker (movie_id, worker_id, job)
-                        VALUES (%s, %s, %s)
+                        INSERT INTO movie_worker (movie_id, worker_id, job, role)
+                        VALUES (%s, %s, %s, %s)
                         ON DUPLICATE KEY UPDATE
-                            job = VALUES(job);
+                            job = VALUES(job),
+                            role = VALUES(role);
                         """
-                        cursor.execute(sql_movie_worker, (movie['id'], actor['id'], 'actor'))
+                        cursor.execute(sql_movie_worker, (movie['id'], actor['id'], 'actor', actor['character']))
                 
-                connection.commit()
+                self.connection.commit()
         except Exception as e:
             print(f"Error inserting data into the database: {e}")
-            connection.rollback()
+            self.connection.rollback()
         finally:
-            connection.close()
+            self.connection.close()
 
-    def update_casts_from_json(self):
-        pass
+    def update_worker_from_json(self, json_file):
+        with open(json_file, 'r', encoding='utf-8') as file:
+            workers = json.load(file)
+
+        with self.connection.cursor() as cursor:
+            for worker in workers:
+                sql_query = """
+                UPDATE worker
+                SET birth = %s,
+                    avatar = %s,
+                    bio = %s,
+                    job = %s
+                WHERE id = %s AND name = %s
+                """
+                cursor.execute(sql_query, (
+                    worker.get('birth'),
+                    worker.get('avatar'),
+                    worker.get('bio'),
+                    worker.get('job'),
+                    worker['id'],
+                    worker['name']
+                ))
+        self.connection.commit()
 
 class PersonScraper:
     """

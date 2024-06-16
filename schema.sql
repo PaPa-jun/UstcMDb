@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS movie_worker (
     movie_id CHAR(14),  -- 外键指向movie
     worker_id CHAR(14),  -- 外键指向worker
     job TEXT,
+    role TEXT,
     PRIMARY KEY (movie_id, worker_id),
     FOREIGN KEY (movie_id) REFERENCES movie(id),
     FOREIGN KEY (worker_id) REFERENCES worker(id)

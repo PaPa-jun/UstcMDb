@@ -1,1 +1,1 @@
-from extensions.interface.module import User, Movie
+from extensions.interface.module import User, Movie, Cast

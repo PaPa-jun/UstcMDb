@@ -69,18 +69,31 @@
     <div class="relative_pics">电影相关图片</div>
     <div class="container">
         {% for one_director in movie.director %}
-            <div class="person">
-                <div><a href="#"><img src="#" alt="导演图片"></a></div>
-                <div>{{ one_director }}</div>
-                <div>导演</div>
-            </div>
+            {% for worker in workers %}
+                {% if worker.name == one_director %}
+                    <div class="person">
+                        <div>
+                            <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_director }}图片"></a>
+                        </div>
+                        <div>{{ one_director }}</div>
+                        <div>导演</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
         {% for one_actor in movie.casts[:3] %}
-            <div class="person">
-                <div><a href="#"><img src="#" alt="演员图片"></a></div>
-                <div>{{ one_actor }}</div>
-                <div>导演</div>
-        </div>
+            {% for worker in workers %}
+                {% if worker.name == one_actor %}
+                    <div class="person">
+                        <div>
+                            <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_actor }}图片"></a>
+                        </div>
+                        <div>{{ one_actor }}</div>
+                        <div>角色: {{ worker.role }}</div>
+                        <div>演员</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
     </div>
     <div class="relative_comments">
