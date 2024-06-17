@@ -43,20 +43,22 @@ class Movie:
             movie_info['casts'] = []
             for worker in movie_workers:
                 if worker['job'] == 'director':
-                    cursor.execute("SELECT name FROM worker WHERE id=%s", (worker['worker_id'],))
-                    name = cursor.fetchone()['name']
-
-                    movie_info['director'].append(name)
+                    cursor.execute("SELECT name, imdbID FROM worker WHERE id=%s", (worker['worker_id'],))
+                    info = cursor.fetchone()
+                    name = info['name']
+                    imdbID = info['imdbID']
+                    movie_info['director'].append({'name':name, 'imdbID':imdbID})
                 if worker['job'] == 'actor':
-                    cursor.execute("SELECT name FROM worker WHERE id=%s", (worker['worker_id'],))
-                    name = cursor.fetchone()['name']
-                    movie_info['casts'].append(name)
-
+                    cursor.execute("SELECT name, imdbID FROM worker WHERE id=%s", (worker['worker_id'],))
+                    info = cursor.fetchone()
+                    name = info['name']
+                    imdbID = info['imdbID']
+                    movie_info['casts'].append({'name':name, 'imdbID':imdbID})
         return movie_info
 
     def top(self, db, range):
         with db.cursor() as cursor:
-            cursor.execute("SELECT id FROM movie ORDER BY rating DESC LIMIT %s", (range,))
+            cursor.execute("SELECT id FROM movie ORDER BY imdb_rating DESC, local_rating DESC LIMIT %s", (range,))
             movies = cursor.fetchall()  # fetchall instead of fetchone to get multiple records
             
         movies_info = []

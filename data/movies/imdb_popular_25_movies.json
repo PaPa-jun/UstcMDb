@@ -1,0 +1,2054 @@
+[
+    {
+        "id": "mov_4fdff077-1",
+        "title": "Furiosa: A Mad Max Saga",
+        "year": 2024,
+        "imdb_rating": 7.8,
+        "directors": [
+            {
+                "id": "cas_d633e009-e",
+                "name": "George Miller",
+                "imdbID": "nm0004306"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_c4a487e1-6",
+                "name": "Anya Taylor-Joy",
+                "character": "Furiosa",
+                "imdbID": "nm5896355"
+            },
+            {
+                "id": "cas_71992955-e",
+                "name": "Chris Hemsworth",
+                "character": "Dementus",
+                "imdbID": "nm1165110"
+            },
+            {
+                "id": "cas_dd7d5469-5",
+                "name": "Tom Burke",
+                "character": "Praetorian Jack",
+                "imdbID": "nm0121895"
+            },
+            {
+                "id": "cas_62518717-1",
+                "name": "Alyla Browne",
+                "character": "Young Furiosa",
+                "imdbID": "nm10752061"
+            },
+            {
+                "id": "cas_fca8cabc-a",
+                "name": "George Shevtsov",
+                "character": "The History Man",
+                "imdbID": "nm0792964"
+            },
+            {
+                "id": "cas_b2345b25-b",
+                "name": "Lachy Hulme",
+                "character": "Immortan Joe / Rizzdale Pell",
+                "imdbID": "nm0401522"
+            },
+            {
+                "id": "cas_2cec1414-4",
+                "name": "John Howard",
+                "character": "The People Eater",
+                "imdbID": "nm0397398"
+            },
+            {
+                "id": "cas_e663f2f5-c",
+                "name": "Angus Sampson",
+                "character": "The Organic Mechanic",
+                "imdbID": "nm0760151"
+            },
+            {
+                "id": "cas_068341f7-0",
+                "name": "Charlee Fraser",
+                "character": "Mary Jabassa",
+                "imdbID": "nm9471695"
+            },
+            {
+                "id": "cas_3d18303e-9",
+                "name": "Elsa Pataky",
+                "character": "Vuvalini General / Mr Norton",
+                "imdbID": "nm0665235"
+            }
+        ],
+        "genres": "Action, Adventure, Sci-Fi, Thriller",
+        "plot": "As the world fell, young Furiosa is snatched from the Green Place of Many Mothers and falls into the hands of a great Biker Horde led by the Warlord Dementus. Sweeping through the Wasteland they come across the Citadel presided over by The Immortan Joe. While the two Tyrants war for dominance, Furiosa must survive many trials as she puts together the means to find her way home.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNmYzMWVjNmQtNjJjNy00M2Y4LTkzZjQtZWQ5NmYzMjRjMDIzXkEyXkFqcGdeQXVyMTM1NjM2ODg1.jpg",
+        "duration": [
+            "148"
+        ],
+        "trailer": "https://www.youtube.com/embed/FVswuip0-co",
+        "imdbID": "tt12037194"
+    },
+    {
+        "id": "mov_c380e23d-8",
+        "title": "Hit Man",
+        "year": 2023,
+        "imdb_rating": 7.0,
+        "directors": [
+            {
+                "id": "cas_49c80e14-6",
+                "name": "Richard Linklater",
+                "imdbID": "nm0000500"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_f82d899f-5",
+                "name": "Glen Powell",
+                "character": "Gary Johnson",
+                "imdbID": "nm1412974"
+            },
+            {
+                "id": "cas_cd3361b6-d",
+                "name": "Adria Arjona",
+                "character": "Madison Figueroa Masters",
+                "imdbID": "nm5245722"
+            },
+            {
+                "id": "cas_080aca94-9",
+                "name": "Austin Amelio",
+                "character": "Jasper",
+                "imdbID": "nm3994184"
+            },
+            {
+                "id": "cas_d51d4ea1-0",
+                "name": "Retta",
+                "character": "Claudette",
+                "imdbID": "nm0802876"
+            },
+            {
+                "id": "cas_8d6085f7-b",
+                "name": "Sanjay Rao",
+                "character": "Phil",
+                "imdbID": "nm8277180"
+            },
+            {
+                "id": "cas_daea64a0-5",
+                "name": "Molly Bernard",
+                "character": "Alicia",
+                "imdbID": "nm0076331"
+            },
+            {
+                "id": "cas_d2e86b25-1",
+                "name": "Evan Holtzman",
+                "character": "Ray",
+                "imdbID": "nm5558414"
+            },
+            {
+                "id": "cas_bbbee7da-9",
+                "name": "Gralen Bryant Banks",
+                "character": "Sergeant Hank",
+                "imdbID": "nm2505507"
+            },
+            {
+                "id": "cas_7e2f7bec-8",
+                "name": "Mike Markoff",
+                "character": "Craig",
+                "imdbID": "nm1517840"
+            },
+            {
+                "id": "cas_52ea2fd4-c",
+                "name": "Bryant Carroll",
+                "character": "Walt",
+                "imdbID": "nm0140755"
+            }
+        ],
+        "genres": "Action, Comedy, Crime, Romance",
+        "plot": "Gary Johnson is the most sought-after professional killer in New Orleans. To his clients, he is like something out of a movie: the mysterious gun for hire. But if you pay him to rub out a cheating spouse or an abusive boss, you'd better watch out, he works for the cops. When he breaks protocol to help a desperate woman trying to flee an abusive husband, he finds himself becoming one of his false personas, falling for the woman and flirting with becoming a criminal.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYTJmMDM4YWItMGM2YS00MzQ0LTliM2ItZDE1NzVlMjNjNDVlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@.jpg",
+        "duration": [
+            "115"
+        ],
+        "trailer": "https://www.youtube.com/embed/DXwa8DKIK7g",
+        "imdbID": "tt20215968"
+    },
+    {
+        "id": "mov_76e62adc-d",
+        "title": "Godzilla Minus One",
+        "year": 2023,
+        "imdb_rating": 7.8,
+        "directors": [
+            {
+                "id": "cas_2c4de390-7",
+                "name": "Takashi Yamazaki",
+                "imdbID": "nm0945724"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_b0b24dd6-6",
+                "name": "Minami Hamabe",
+                "character": "Noriko Oishi",
+                "imdbID": "nm4947538"
+            },
+            {
+                "id": "cas_6c3e2881-e",
+                "name": "Ryunosuke Kamiki",
+                "character": "Koichi Shikishima",
+                "imdbID": "nm1126340"
+            },
+            {
+                "id": "cas_a28c8139-b",
+                "name": "Munetaka Aoki",
+                "character": "Sosaku Tachibana",
+                "imdbID": "nm1328568"
+            },
+            {
+                "id": "cas_67fcebe6-f",
+                "name": "Sakura Andô",
+                "character": "Sumiko Ota",
+                "imdbID": "nm2747232"
+            },
+            {
+                "id": "cas_dc0af706-3",
+                "name": "Kuranosuke Sasaki",
+                "character": "Seiji Akitsu",
+                "imdbID": "nm1482259"
+            },
+            {
+                "id": "cas_8efb1328-5",
+                "name": "Rikako Miura",
+                "character": "Minami Hamabe's stand-in",
+                "imdbID": "nm14820418"
+            },
+            {
+                "id": "cas_c57405ac-5",
+                "name": "Hidetaka Yoshioka",
+                "character": "Kenji Noda",
+                "imdbID": "nm0949069"
+            },
+            {
+                "id": "cas_26b5ae0c-b",
+                "name": "Yuki Yamada",
+                "character": "Shiro Mizushima",
+                "imdbID": "nm4290253"
+            },
+            {
+                "id": "cas_0aa4bc3d-e",
+                "name": "Kagga Jayson",
+                "character": "Boy #5",
+                "imdbID": "nm14893768"
+            },
+            {
+                "id": "cas_7e409ca7-d",
+                "name": "Yûya Endô",
+                "character": "Tadamasa Saito",
+                "imdbID": "nm1209657"
+            }
+        ],
+        "genres": "Action, Adventure, Drama, Horror, Sci-Fi",
+        "plot": "Feeling as if he unfairly cheated death too many times, Shikishima, a surviving Kamikaze pilot, is attacked on Odo Island along with many war plane engineers by a gargantuan monster. After the engineers die because of Shikishima failing to distract the monster, an overwhelming amount of guilt weighs on him, especially after a homeless woman and a baby move into his home when he returns. Shikishima, now on a personal mission, teams up with a large group of veterans to finally take down the monster known as Godzilla.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOTI5MjNjMTMtN2NiNC00YjBlLTgzMWQtMGRhZDZkYmY1NGU2XkEyXkFqcGdeQXVyNTgyNTA4MjM@.jpg",
+        "duration": [
+            "124"
+        ],
+        "trailer": "https://www.youtube.com/embed/nAYKaslCXPc",
+        "imdbID": "tt23289160"
+    },
+    {
+        "id": "mov_27e96745-e",
+        "title": "Bad Boys: Ride or Die",
+        "year": 2024,
+        "imdb_rating": 7.0,
+        "directors": [
+            {
+                "id": "cas_3c52ed02-1",
+                "name": "Adil El Arbi",
+                "imdbID": "nm4816401"
+            },
+            {
+                "id": "cas_4280cc28-7",
+                "name": "Bilall Fallah",
+                "imdbID": "nm4263190"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_3f6b2dee-1",
+                "name": "Will Smith",
+                "character": "Mike Lowrey",
+                "imdbID": "nm0000226"
+            },
+            {
+                "id": "cas_377eed95-d",
+                "name": "Martin Lawrence",
+                "character": "Marcus Burnett",
+                "imdbID": "nm0001454"
+            },
+            {
+                "id": "cas_323c2a31-b",
+                "name": "Vanessa Hudgens",
+                "character": "Kelly",
+                "imdbID": "nm1227814"
+            },
+            {
+                "id": "cas_a5c6bfa2-5",
+                "name": "Alexander Ludwig",
+                "character": "Dorn",
+                "imdbID": "nm1573253"
+            },
+            {
+                "id": "cas_df9ee2fb-e",
+                "name": "Paola Núñez",
+                "character": "Rita",
+                "imdbID": "nm1214769"
+            },
+            {
+                "id": "cas_d4842e3b-2",
+                "name": "Eric Dane",
+                "character": "McGrath",
+                "imdbID": "nm0199312"
+            },
+            {
+                "id": "cas_70d4f6f1-d",
+                "name": "Ioan Gruffudd",
+                "character": "Lockwood",
+                "imdbID": "nm0344435"
+            },
+            {
+                "id": "cas_ca237f0e-7",
+                "name": "Jacob Scipio",
+                "character": "Armando",
+                "imdbID": "nm0778501"
+            },
+            {
+                "id": "cas_1830e45c-f",
+                "name": "Melanie Liburd",
+                "character": "Christine",
+                "imdbID": "nm4927489"
+            },
+            {
+                "id": "cas_6f9f7de0-a",
+                "name": "Tasha Smith",
+                "character": "Theresa",
+                "imdbID": "nm0810103"
+            }
+        ],
+        "genres": "Action, Adventure, Comedy, Crime, Thriller",
+        "plot": null,
+        "poster": "https://m.media-amazon.com/images/M/MV5BY2U5YmQ3YjgtM2I2OC00YmM5LTkyM2MtN2I5Zjg2MDE0ODkwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@.jpg",
+        "duration": [
+            "115"
+        ],
+        "trailer": "https://www.youtube.com/embed/hRFY_Fesa9Q",
+        "imdbID": "tt4919268"
+    },
+    {
+        "id": "mov_516267da-8",
+        "title": "The Fall Guy",
+        "year": 2024,
+        "imdb_rating": 7.0,
+        "directors": [
+            {
+                "id": "cas_7965fef0-1",
+                "name": "David Leitch",
+                "imdbID": "nm0500610"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_294cf84d-2",
+                "name": "Ryan Gosling",
+                "character": "Colt Seavers",
+                "imdbID": "nm0331516"
+            },
+            {
+                "id": "cas_26d3c8d5-9",
+                "name": "Emily Blunt",
+                "character": "Jody Moreno",
+                "imdbID": "nm1289434"
+            },
+            {
+                "id": "cas_240b009f-b",
+                "name": "Aaron Taylor-Johnson",
+                "character": "Tom Ryder",
+                "imdbID": "nm1093951"
+            },
+            {
+                "id": "cas_6fd7f4c3-4",
+                "name": "Hannah Waddingham",
+                "character": "Gail Meyer",
+                "imdbID": "nm1821446"
+            },
+            {
+                "id": "cas_42be1b27-e",
+                "name": "Teresa Palmer",
+                "character": "Iggy Starr",
+                "imdbID": "nm1954240"
+            },
+            {
+                "id": "cas_b5ceb834-5",
+                "name": "Stephanie Hsu",
+                "character": "Alma Milan",
+                "imdbID": "nm3513533"
+            },
+            {
+                "id": "cas_61cbca61-5",
+                "name": "Winston Duke",
+                "character": "Dan Tucker",
+                "imdbID": "nm6328300"
+            },
+            {
+                "id": "cas_6fa0a4f3-d",
+                "name": "Ben Knight",
+                "character": "Dressler",
+                "imdbID": "nm7399799"
+            },
+            {
+                "id": "cas_cff0a34d-1",
+                "name": "Matuse",
+                "character": "Doone",
+                "imdbID": "nm2158275"
+            },
+            {
+                "id": "cas_f744a7fe-5",
+                "name": "Adam Dunn",
+                "character": "Nigel",
+                "imdbID": "nm4350784"
+            }
+        ],
+        "genres": "Action, Comedy, Drama",
+        "plot": "He's a stuntman, and like everyone in the stunt community, he gets blown up, shot, crashed, thrown through windows and dropped from the highest of heights, all for our entertainment. And now, fresh off an almost career-ending accident, this working-class hero has to track down a missing movie star, solve a conspiracy and try to win back the love of his life while still doing his day job. What could possibly go right?",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjA5ZjA3ZjMtMzg2ZC00ZDc4LTk3MTctYTE1ZTUzZDIzMjQyXkEyXkFqcGdeQXVyMTM1NjM2ODg1.jpg",
+        "duration": [
+            "126"
+        ],
+        "trailer": "https://www.youtube.com/embed/j7jPnwVGdZ8",
+        "imdbID": "tt1684562"
+    },
+    {
+        "id": "mov_68f44f51-9",
+        "title": "Civil War",
+        "year": 2024,
+        "imdb_rating": 7.2,
+        "directors": [
+            {
+                "id": "cas_e7c574ec-5",
+                "name": "Alex Garland",
+                "imdbID": "nm0307497"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_8b85931a-3",
+                "name": "Nick Offerman",
+                "character": "President",
+                "imdbID": "nm0644406"
+            },
+            {
+                "id": "cas_f0d83a1f-b",
+                "name": "Kirsten Dunst",
+                "character": "Lee",
+                "imdbID": "nm0000379"
+            },
+            {
+                "id": "cas_a716d6ce-3",
+                "name": "Wagner Moura",
+                "character": "Joel",
+                "imdbID": "nm0609944"
+            },
+            {
+                "id": "cas_69b10bfc-a",
+                "name": "Jefferson White",
+                "character": "Dave",
+                "imdbID": "nm6366417"
+            },
+            {
+                "id": "cas_8e3e914d-4",
+                "name": "Nelson Lee",
+                "character": "Tony",
+                "imdbID": "nm1116914"
+            },
+            {
+                "id": "cas_a0603f1e-f",
+                "name": "Evan Lai",
+                "character": "Bohai",
+                "imdbID": "nm1224253"
+            },
+            {
+                "id": "cas_4aee84da-b",
+                "name": "Cailee Spaeny",
+                "character": "Jessie",
+                "imdbID": "nm8314228"
+            },
+            {
+                "id": "cas_2d79893e-2",
+                "name": "Stephen McKinley Henderson",
+                "character": "Sammy",
+                "imdbID": "nm0376610"
+            },
+            {
+                "id": "cas_ad443844-0",
+                "name": "Vince Pisani",
+                "character": "Concierge",
+                "imdbID": "nm2079627"
+            },
+            {
+                "id": "cas_19c5afa4-b",
+                "name": "Justin James Boykin",
+                "character": "American Soldier",
+                "imdbID": "nm6352869"
+            }
+        ],
+        "genres": "Action, Adventure, Thriller",
+        "plot": "Civil War is a 2024 dystopian thriller film written and directed by Alex Garland. It follows a team of journalists traveling from New York City to Washington, D.C. during a civil war fought across the United States between an authoritarian federal government and several regional factions.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYTYyODhlODktYjUzNC00NjUyLWI1MzYtNmI0MTY3YTUxYjY2XkEyXkFqcGdeQXVyMTkxNjUyNQ@@.jpg",
+        "duration": [
+            "109"
+        ],
+        "trailer": "https://www.youtube.com/embed/U7_0-Su-pus",
+        "imdbID": "tt17279496"
+    },
+    {
+        "id": "mov_7ab61356-3",
+        "title": "Venom: The Last Dance",
+        "year": 2024,
+        "imdb_rating": null,
+        "directors": [
+            {
+                "id": "cas_c124f9c8-1",
+                "name": "Kelly Marcel",
+                "imdbID": "nm0545150"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_9b47bf1a-4",
+                "name": "Tom Hardy",
+                "character": "Eddie Brock / Venom",
+                "imdbID": "nm0362766"
+            },
+            {
+                "id": "cas_dab01d62-a",
+                "name": "Juno Temple",
+                "character": null,
+                "imdbID": "nm1017334"
+            },
+            {
+                "id": "cas_4df6c4bf-2",
+                "name": "Alanna Ubach",
+                "character": null,
+                "imdbID": "nm0005513"
+            },
+            {
+                "id": "cas_6f767c47-3",
+                "name": "Rhys Ifans",
+                "character": null,
+                "imdbID": "nm0406975"
+            },
+            {
+                "id": "cas_77c5b5ba-3",
+                "name": "Stephen Graham",
+                "character": "Detective Mulligan",
+                "imdbID": "nm0334318"
+            },
+            {
+                "id": "cas_c1e08ab4-9",
+                "name": "Chiwetel Ejiofor",
+                "character": null,
+                "imdbID": "nm0252230"
+            },
+            {
+                "id": "cas_97e210f6-5",
+                "name": "Cristo Fernández",
+                "character": "Bartender",
+                "imdbID": "nm9434831"
+            },
+            {
+                "id": "cas_83ba25a1-8",
+                "name": "Clark Backo",
+                "character": null,
+                "imdbID": "nm5318871"
+            },
+            {
+                "id": "cas_9b2493b5-3",
+                "name": "Peggy Lu",
+                "character": "Mrs. Chen",
+                "imdbID": "nm0523742"
+            },
+            {
+                "id": "cas_82754508-c",
+                "name": "Hala Finley",
+                "character": null,
+                "imdbID": "nm6442629"
+            }
+        ],
+        "genres": "Action, Adventure, Sci-Fi, Thriller",
+        "plot": "In Venom: The Last Dance, Tom Hardy returns as Venom, one of Marvel's greatest and most complex characters, for the final film in the trilogy. Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZDMyYWU4NzItZDY0MC00ODE2LTkyYTMtMzNkNDdmYmFhZDg0XkEyXkFqcGc@.jpg",
+        "duration": null,
+        "trailer": "https://www.youtube.com/embed/STScKOUpXR8",
+        "imdbID": "tt16366836"
+    },
+    {
+        "id": "mov_8c07e4d5-3",
+        "title": "Under Paris",
+        "year": 2024,
+        "imdb_rating": 5.3,
+        "directors": [
+            {
+                "id": "cas_45d0716e-c",
+                "name": "Xavier Gens",
+                "imdbID": "nm1164755"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_aebfab8e-2",
+                "name": "Bérénice Bejo",
+                "character": "Sophia Assalas",
+                "imdbID": "nm0067367"
+            },
+            {
+                "id": "cas_9e57fa4f-2",
+                "name": "Nassim Lyes",
+                "character": "Adil",
+                "imdbID": "nm4051466"
+            },
+            {
+                "id": "cas_88d26ec4-0",
+                "name": "Léa Léviant",
+                "character": "Mika",
+                "imdbID": "nm6434640"
+            },
+            {
+                "id": "cas_ffe9b8e5-b",
+                "name": "Sandra Parfait",
+                "character": "Caro",
+                "imdbID": "nm7942430"
+            },
+            {
+                "id": "cas_a9ff33df-7",
+                "name": "Aksel Ustun",
+                "character": "Nils",
+                "imdbID": "nm5199322"
+            },
+            {
+                "id": "cas_f57b6121-a",
+                "name": "Aurélia Petit",
+                "character": "Angèle",
+                "imdbID": "nm0677546"
+            },
+            {
+                "id": "cas_eb4b3a8b-4",
+                "name": "Marvin Dubart",
+                "character": "Markus",
+                "imdbID": "nm10387724"
+            },
+            {
+                "id": "cas_ca77df6e-e",
+                "name": "Daouda Keita",
+                "character": "Léopold",
+                "imdbID": "nm8587052"
+            },
+            {
+                "id": "cas_b943ae73-8",
+                "name": "Ibrahima Ba",
+                "character": "Adama",
+                "imdbID": "nm9058453"
+            },
+            {
+                "id": "cas_065c9495-2",
+                "name": "Anne Marivin",
+                "character": "La maire de Paris",
+                "imdbID": "nm0548156"
+            }
+        ],
+        "genres": "Action, Drama, Horror, Sport, Thriller",
+        "plot": "Summer 2024. Paris is hosting the World Triathlon Championships on the Seine for the first time. Sophia, a brilliant scientist, learns from Mika, a young environmental activist, that a large shark is swimming deep in the river. To avoid a bloodbath at the heart of the city, they have no choice but to join forces with Adil, the Seine river police commander.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDM5ODBiN2ItOTk4Yi00NzgyLWE2YTktYzhjYTc2ODE4ZTE4XkEyXkFqcGc@.jpg",
+        "duration": [
+            "104"
+        ],
+        "trailer": "https://www.youtube.com/embed/jnCefPQIH98",
+        "imdbID": "tt13964390"
+    },
+    {
+        "id": "mov_8a6ccd5e-8",
+        "title": "The First Omen",
+        "year": 2024,
+        "imdb_rating": 6.5,
+        "directors": [
+            {
+                "id": "cas_f9612553-3",
+                "name": "Arkasha Stevenson",
+                "imdbID": "nm6674331"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_5970f7b9-2",
+                "name": "Nell Tiger Free",
+                "character": "Margaret",
+                "imdbID": "nm4836100"
+            },
+            {
+                "id": "cas_d0e5757a-0",
+                "name": "Ralph Ineson",
+                "character": "Father Brennan",
+                "imdbID": "nm0408591"
+            },
+            {
+                "id": "cas_89f20ff0-2",
+                "name": "Sonia Braga",
+                "character": "Sister Silva",
+                "imdbID": "nm0000968"
+            },
+            {
+                "id": "cas_2ce4c833-6",
+                "name": "Tawfeek Barhom",
+                "character": "Father Gabriel",
+                "imdbID": "nm5601350"
+            },
+            {
+                "id": "cas_c2d659d8-2",
+                "name": "Maria Caballero",
+                "character": "Luz",
+                "imdbID": "nm8954229"
+            },
+            {
+                "id": "cas_8184acf5-5",
+                "name": "Charles Dance",
+                "character": "Father Harris",
+                "imdbID": "nm0001097"
+            },
+            {
+                "id": "cas_6aa1b939-1",
+                "name": "Bill Nighy",
+                "character": "Cardinal Lawrence",
+                "imdbID": "nm0631490"
+            },
+            {
+                "id": "cas_3d08674b-b",
+                "name": "Nicole Sorace",
+                "character": "Carlita Scianna",
+                "imdbID": "nm15233283"
+            },
+            {
+                "id": "cas_d0d1d753-1",
+                "name": "Ishtar Currie-Wilson",
+                "character": "Sister Anjelica",
+                "imdbID": "nm12391361"
+            },
+            {
+                "id": "cas_47c3fc9d-a",
+                "name": "Andrea Arcangeli",
+                "character": "Paolo",
+                "imdbID": "nm5585519"
+            }
+        ],
+        "genres": "Horror",
+        "plot": null,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMzI2YmYwZWYtNzgzNi00ODU2LWE1NWMtZmY4NTJjYzIyNTIxXkEyXkFqcGdeQXVyMTM1NjM2ODg1.jpg",
+        "duration": [
+            "119"
+        ],
+        "trailer": "https://www.youtube.com/embed/6GMiIRitv5s",
+        "imdbID": "tt5672290"
+    },
+    {
+        "id": "mov_b806b689-f",
+        "title": "Kingdom of the Planet of the Apes",
+        "year": 2024,
+        "imdb_rating": 7.2,
+        "directors": [
+            {
+                "id": "cas_134a3cca-4",
+                "name": "Wes Ball",
+                "imdbID": "nm1226871"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_134fc6fe-a",
+                "name": "Owen Teague",
+                "character": "Noa",
+                "imdbID": "nm4977122"
+            },
+            {
+                "id": "cas_fead2809-4",
+                "name": "Freya Allan",
+                "character": "Nova / Mae",
+                "imdbID": "nm8463347"
+            },
+            {
+                "id": "cas_51bf00af-e",
+                "name": "Kevin Durand",
+                "character": "Proximus Caesar",
+                "imdbID": "nm0243806"
+            },
+            {
+                "id": "cas_c13ea019-3",
+                "name": "Peter Macon",
+                "character": "Raka",
+                "imdbID": "nm0534167"
+            },
+            {
+                "id": "cas_1a6dbe3f-8",
+                "name": "William H. Macy",
+                "character": "Trevathan",
+                "imdbID": "nm0000513"
+            },
+            {
+                "id": "cas_ff5d1bb3-4",
+                "name": "Eka Darville",
+                "character": "Sylva",
+                "imdbID": "nm2794212"
+            },
+            {
+                "id": "cas_6ec7c3a8-0",
+                "name": "Travis Jeffery",
+                "character": "Anaya",
+                "imdbID": "nm4255507"
+            },
+            {
+                "id": "cas_daed94ed-7",
+                "name": "Lydia Peckham",
+                "character": "Soona",
+                "imdbID": "nm8808118"
+            },
+            {
+                "id": "cas_559dddc4-2",
+                "name": "Neil Sandilands",
+                "character": "Koro",
+                "imdbID": "nm1442644"
+            },
+            {
+                "id": "cas_8770dff8-7",
+                "name": "Ras-Samuel",
+                "character": "Lightning",
+                "imdbID": "nm8890083"
+            }
+        ],
+        "genres": "Action, Adventure, Sci-Fi",
+        "plot": "The new Apes movie is set many years after the conclusion of 2017's War for the Planet of the Apes. Many apes societies have grown from when the Moses-like Caesar brought his people to an oasis, while humans have been reduced to a feral-like existence. Some ape groups have never heard of Caesar, while others have contorted his teaching to build burgeoning empires. In this setting, one ape leader begins to enslave other groups to find human technology, while another ape, who watched his clan be taken, embarks on a journey to find freedom. A young human woman becomes key to the latter's quest, although she has plans of her own.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZGI4NTEwNTAtZDcwMi00MDkxLTg1OGYtNTZmMzE3ZDljNzVlXkEyXkFqcGdeQXVyMTEyMjM2NDc2.jpg",
+        "duration": [
+            "145"
+        ],
+        "trailer": "https://www.youtube.com/embed/XtFI7SNtVpY",
+        "imdbID": "tt11389872"
+    },
+    {
+        "id": "mov_b27513d9-1",
+        "title": "Dune: Part Two",
+        "year": 2024,
+        "imdb_rating": 8.6,
+        "directors": [
+            {
+                "id": "cas_9bb8241a-a",
+                "name": "Denis Villeneuve",
+                "imdbID": "nm0898288"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_59a03ce7-3",
+                "name": "Timothée Chalamet",
+                "character": "Paul Atreides",
+                "imdbID": "nm3154303"
+            },
+            {
+                "id": "cas_b59d1602-0",
+                "name": "Zendaya",
+                "character": "Chani",
+                "imdbID": "nm3918035"
+            },
+            {
+                "id": "cas_a9341863-2",
+                "name": "Rebecca Ferguson",
+                "character": "Jessica",
+                "imdbID": "nm0272581"
+            },
+            {
+                "id": "cas_369bc8e9-d",
+                "name": "Javier Bardem",
+                "character": "Stilgar",
+                "imdbID": "nm0000849"
+            },
+            {
+                "id": "cas_5c961066-6",
+                "name": "Josh Brolin",
+                "character": "Gurney Halleck",
+                "imdbID": "nm0000982"
+            },
+            {
+                "id": "cas_7811bc74-2",
+                "name": "Austin Butler",
+                "character": "Feyd-Rautha",
+                "imdbID": "nm2581521"
+            },
+            {
+                "id": "cas_39a34bb5-7",
+                "name": "Florence Pugh",
+                "character": "Princess Irulan",
+                "imdbID": "nm6073955"
+            },
+            {
+                "id": "cas_f4ee7ac6-2",
+                "name": "Dave Bautista",
+                "character": "Beast Rabban",
+                "imdbID": "nm1176985"
+            },
+            {
+                "id": "cas_dc481c87-e",
+                "name": "Christopher Walken",
+                "character": "Emperor",
+                "imdbID": "nm0000686"
+            },
+            {
+                "id": "cas_3a5e6b23-b",
+                "name": "Léa Seydoux",
+                "character": "Lady Margot Fenring",
+                "imdbID": "nm2244205"
+            }
+        ],
+        "genres": "Action, Adventure, Drama, Sci-Fi",
+        "plot": "Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, he endeavors to prevent a terrible future only he can foresee.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2QyZGU4ZDctOWMzMy00NTc5LThlOGQtODhmNDI1NmY5YzAwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@.jpg",
+        "duration": [
+            "166"
+        ],
+        "trailer": "https://www.youtube.com/embed/Way9Dexny3w",
+        "imdbID": "tt15239678"
+    },
+    {
+        "id": "mov_6e7e97f1-1",
+        "title": "MaXXXine",
+        "year": 2024,
+        "imdb_rating": null,
+        "directors": [
+            {
+                "id": "cas_61500c57-8",
+                "name": "Ti West",
+                "imdbID": "nm1488800"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_ef1e65f5-0",
+                "name": "Mia Goth",
+                "character": "Maxine Minx",
+                "imdbID": "nm5301405"
+            },
+            {
+                "id": "cas_209a2a2b-e",
+                "name": "Elizabeth Debicki",
+                "character": "Elizabeth Bender",
+                "imdbID": "nm4456120"
+            },
+            {
+                "id": "cas_c5b19420-1",
+                "name": "Moses Sumney",
+                "character": "Leon Green",
+                "imdbID": "nm6938015"
+            },
+            {
+                "id": "cas_ad9e07c2-2",
+                "name": "Michelle Monaghan",
+                "character": "Detective Williams",
+                "imdbID": "nm1157358"
+            },
+            {
+                "id": "cas_3fec89b4-c",
+                "name": "Bobby Cannavale",
+                "character": "Detective Torres",
+                "imdbID": "nm0134072"
+            },
+            {
+                "id": "cas_56fa0d25-e",
+                "name": "Lily Collins",
+                "character": "Molly Bennett",
+                "imdbID": "nm2934314"
+            },
+            {
+                "id": "cas_c60e3707-0",
+                "name": "Halsey",
+                "character": "Tabby Martin",
+                "imdbID": "nm7214498"
+            },
+            {
+                "id": "cas_6debe65e-8",
+                "name": "Giancarlo Esposito",
+                "character": "Teddy Night",
+                "imdbID": "nm0002064"
+            },
+            {
+                "id": "cas_eb883473-c",
+                "name": "Kevin Bacon",
+                "character": "John Labat",
+                "imdbID": "nm0000102"
+            },
+            {
+                "id": "cas_11f550ab-4",
+                "name": "Chloe Farnworth",
+                "character": "Amber",
+                "imdbID": "nm3776906"
+            }
+        ],
+        "genres": "Crime, Horror",
+        "plot": null,
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjBmYzFmODktNDIyZC00NWFmLTk2NTctYmZiY2E2OTA2OTc0XkEyXkFqcGc@.jpg",
+        "duration": [
+            "103"
+        ],
+        "trailer": "https://www.youtube.com/embed/qGxKjwAnn5I",
+        "imdbID": "tt22048412"
+    },
+    {
+        "id": "mov_ee95a790-0",
+        "title": "The Watchers",
+        "year": 2024,
+        "imdb_rating": 5.8,
+        "directors": [
+            {
+                "id": "cas_ce691ff9-4",
+                "name": "Ishana Shyamalan",
+                "imdbID": "nm10064730"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_c809f96a-d",
+                "name": "Dakota Fanning",
+                "character": "Mina",
+                "imdbID": "nm0266824"
+            },
+            {
+                "id": "cas_23daf682-f",
+                "name": "Georgina Campbell",
+                "character": "Ciara",
+                "imdbID": "nm3569284"
+            },
+            {
+                "id": "cas_f2ffd013-3",
+                "name": "Olwen Fouéré",
+                "character": "Madeline",
+                "imdbID": "nm0288260"
+            },
+            {
+                "id": "cas_15ba0a70-6",
+                "name": "Oliver Finnegan",
+                "character": "Daniel",
+                "imdbID": "nm9148177"
+            },
+            {
+                "id": "cas_6a62d29f-e",
+                "name": "Alistair Brammer",
+                "character": "John",
+                "imdbID": "nm4337810"
+            },
+            {
+                "id": "cas_6da222be-1",
+                "name": "John Lynch",
+                "character": "Kilmartin",
+                "imdbID": "nm0001487"
+            },
+            {
+                "id": "cas_7b7bbfb4-f",
+                "name": "Siobhan Hewlett",
+                "character": "Mina's Mother",
+                "imdbID": "nm1305192"
+            },
+            {
+                "id": "cas_2734c449-4",
+                "name": "Hannah Dargan",
+                "character": "Young Mina",
+                "imdbID": "nm15154318"
+            },
+            {
+                "id": "cas_bbabd14b-9",
+                "name": "Emily Dargan",
+                "character": "Young Lucy",
+                "imdbID": "nm15154136"
+            },
+            {
+                "id": "cas_44a50fcd-f",
+                "name": "Joel Figueroa",
+                "character": "Darwin",
+                "imdbID": "nm7638561"
+            }
+        ],
+        "genres": "Fantasy, Horror, Mystery, Thriller",
+        "plot": "This forest isn't charted on any map. Every car breaks down at its treeline. Mina's is no different. Left stranded, she is forced into the dark woodland only to find a woman shouting, urging Mina to run to a concrete bunker. As the door slams behind her, the building is besieged by screams. Mina finds herself in a room with a wall of glass, and an electric light that activates at nightfall, when the Watchers come above ground. These creatures emerge to observe their captive humans and terrible things happen to anyone who doesn't reach the bunker in time.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjNlYjg5YzYtMmU4ZC00MzA4LWE5YWYtNTJlOTkyZmQ0YzdkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@.jpg",
+        "duration": [
+            "102"
+        ],
+        "trailer": "https://www.youtube.com/embed/dYo91Fq9tKY",
+        "imdbID": "tt26736843"
+    },
+    {
+        "id": "mov_5d050d60-a",
+        "title": "Atlas",
+        "year": 2024,
+        "imdb_rating": 5.6,
+        "directors": [
+            {
+                "id": "cas_87cde272-1",
+                "name": "Brad Peyton",
+                "imdbID": "nm0679031"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_a47f477f-d",
+                "name": "Jennifer Lopez",
+                "character": "Atlas Shepherd",
+                "imdbID": "nm0000182"
+            },
+            {
+                "id": "cas_ef107f34-4",
+                "name": "Simu Liu",
+                "character": "Harlan Shepherd",
+                "imdbID": "nm4855517"
+            },
+            {
+                "id": "cas_d0bc7c68-a",
+                "name": "Sterling K. Brown",
+                "character": "Colonel Elias Banks",
+                "imdbID": "nm1250791"
+            },
+            {
+                "id": "cas_ccca60ef-d",
+                "name": "Gregory James Cohan",
+                "character": "Smith / Dhiib Pilot",
+                "imdbID": "nm4497612"
+            },
+            {
+                "id": "cas_de51e2e9-3",
+                "name": "Abraham Popoola",
+                "character": "Casca Decius",
+                "imdbID": "nm6554076"
+            },
+            {
+                "id": "cas_e109f4c6-d",
+                "name": "Lana Parrilla",
+                "character": "Val Shepherd",
+                "imdbID": "nm0663469"
+            },
+            {
+                "id": "cas_ceb2a675-5",
+                "name": "Mark Strong",
+                "character": "Gen. Jake Boothe",
+                "imdbID": "nm0835016"
+            },
+            {
+                "id": "cas_4db403cb-8",
+                "name": "Briella Guiza",
+                "character": "Young Atlas Shepherd",
+                "imdbID": "nm10885888"
+            },
+            {
+                "id": "cas_9cf60d00-7",
+                "name": "Adia Smith-Eriksson",
+                "character": "Ranger West",
+                "imdbID": "nm5119720"
+            },
+            {
+                "id": "cas_5a9abc49-f",
+                "name": "Logan Hunt",
+                "character": "Ranger Hughes",
+                "imdbID": "nm4277225"
+            }
+        ],
+        "genres": "Action, Adventure, Drama, Sci-Fi, Thriller",
+        "plot": "Atlas Shepherd (Lopez), a brilliant but misanthropic data analyst with a deep distrust of artificial intelligence, joins a mission to capture a renegade robot with whom she shares a mysterious past. But when plans go awry, her only hope of saving the future of humanity from AI is to trust it.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOWM5OGE3NGMtODc4Yi00NThjLWE2NTMtMDE5YjBhYmY5ZTE3XkEyXkFqcGdeQXVyMDc5ODIzMw@@.jpg",
+        "duration": [
+            "118"
+        ],
+        "trailer": "https://www.youtube.com/embed/Jokpt_LJpbw",
+        "imdbID": "tt14856980"
+    },
+    {
+        "id": "mov_5ed58726-8",
+        "title": "Mad Max: Fury Road",
+        "year": 2015,
+        "imdb_rating": 8.1,
+        "directors": [
+            {
+                "id": "cas_d633e009-e",
+                "name": "George Miller",
+                "imdbID": "nm0004306"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_9b47bf1a-4",
+                "name": "Tom Hardy",
+                "character": "Max Rockatansky",
+                "imdbID": "nm0362766"
+            },
+            {
+                "id": "cas_cc251075-7",
+                "name": "Charlize Theron",
+                "character": "Imperator Furiosa",
+                "imdbID": "nm0000234"
+            },
+            {
+                "id": "cas_4e49950e-7",
+                "name": "Nicholas Hoult",
+                "character": "Nux",
+                "imdbID": "nm0396558"
+            },
+            {
+                "id": "cas_0ff72082-c",
+                "name": "Hugh Keays-Byrne",
+                "character": "Immortan Joe",
+                "imdbID": "nm0117412"
+            },
+            {
+                "id": "cas_4cbe82b7-d",
+                "name": "Josh Helman",
+                "character": "Slit",
+                "imdbID": "nm2890541"
+            },
+            {
+                "id": "cas_b938f2d5-a",
+                "name": "Nathan Jones",
+                "character": "Rictus Erectus",
+                "imdbID": "nm0428923"
+            },
+            {
+                "id": "cas_cd2a9b69-3",
+                "name": "Zoë Kravitz",
+                "character": "Toast the Knowing",
+                "imdbID": "nm2368789"
+            },
+            {
+                "id": "cas_fcd1166e-5",
+                "name": "Rosie Huntington-Whiteley",
+                "character": "The Splendid Angharad",
+                "imdbID": "nm2492819"
+            },
+            {
+                "id": "cas_0c453218-f",
+                "name": "Riley Keough",
+                "character": "Capable",
+                "imdbID": "nm2142336"
+            },
+            {
+                "id": "cas_d548ad1d-3",
+                "name": "Abbey Lee",
+                "character": "The Dag",
+                "imdbID": "nm3880181"
+            }
+        ],
+        "genres": "Action, Adventure, Sci-Fi, Thriller",
+        "plot": "An apocalyptic story set in the furthest reaches of our planet, in a stark desert landscape where humanity is broken, and almost everyone is crazed fighting for the necessities of life. Within this world exist two rebels on the run who just might be able to restore order. There's Max, a man of action and a man of few words, who seeks peace of mind following the loss of his wife and child in the aftermath of the chaos. And Furiosa, a woman of action and a woman who believes her path to survival may be achieved if she can make it across the desert back to her childhood homeland.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMGQyMi00Zjg1LWJkNTctZTdjYTA4OGUwZjMyXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
+        "duration": [
+            "120"
+        ],
+        "trailer": "https://www.youtube.com/embed/hEJnMQG9ev8",
+        "imdbID": "tt1392190"
+    },
+    {
+        "id": "mov_1a4786b4-c",
+        "title": "Alien: Romulus",
+        "year": 2024,
+        "imdb_rating": null,
+        "directors": [
+            {
+                "id": "cas_0c1b6da5-9",
+                "name": "Fede Alvarez",
+                "imdbID": "nm1793079"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_4aee84da-b",
+                "name": "Cailee Spaeny",
+                "character": "Rain Carradine",
+                "imdbID": "nm8314228"
+            },
+            {
+                "id": "cas_a5e206ee-9",
+                "name": "Isabela Merced",
+                "character": "Kay",
+                "imdbID": "nm5097044"
+            },
+            {
+                "id": "cas_3b1e8084-6",
+                "name": "Archie Renaux",
+                "character": "Tyler",
+                "imdbID": "nm8850556"
+            },
+            {
+                "id": "cas_a861f2bd-9",
+                "name": "David Jonsson",
+                "character": "Andy",
+                "imdbID": "nm9657438"
+            },
+            {
+                "id": "cas_3fea309b-4",
+                "name": "Aileen Wu",
+                "character": "Navarro",
+                "imdbID": "nm12495816"
+            },
+            {
+                "id": "cas_de34cc12-4",
+                "name": "Spike Fearn",
+                "character": "Bjorn",
+                "imdbID": "nm10514458"
+            }
+        ],
+        "genres": "Horror, Sci-Fi",
+        "plot": null,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDU0NjcwOGQtNjNjOS00NzQ3LWIwM2YtYWVmODZjMzQzN2ExXkEyXkFqcGc@.jpg",
+        "duration": null,
+        "trailer": "https://www.youtube.com/embed/6rQi8W3_VDk",
+        "imdbID": "tt18412256"
+    },
+    {
+        "id": "mov_a4658d65-5",
+        "title": "Challengers",
+        "year": 2024,
+        "imdb_rating": 7.3,
+        "directors": [
+            {
+                "id": "cas_9b7196dc-0",
+                "name": "Luca Guadagnino",
+                "imdbID": "nm0345174"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_8329dd64-3",
+                "name": "Mike Faist",
+                "character": "Art Donaldson",
+                "imdbID": "nm4576311"
+            },
+            {
+                "id": "cas_773e50b0-d",
+                "name": "Josh O'Connor",
+                "character": "Patrick Zweig",
+                "imdbID": "nm4853066"
+            },
+            {
+                "id": "cas_b59d1602-0",
+                "name": "Zendaya",
+                "character": "Tashi Donaldson",
+                "imdbID": "nm3918035"
+            },
+            {
+                "id": "cas_288e6a77-f",
+                "name": "Darnell Appling",
+                "character": "Umpire",
+                "imdbID": "nm5534173"
+            },
+            {
+                "id": "cas_741fa05e-c",
+                "name": "Bryan Doo",
+                "character": "Art's Physiotherapist",
+                "imdbID": "nm15831662"
+            },
+            {
+                "id": "cas_dcff7828-e",
+                "name": "Shane T Harris",
+                "character": "Art's Security Guard",
+                "imdbID": "nm9609803"
+            },
+            {
+                "id": "cas_e8bc8f85-7",
+                "name": "Nada Despotovich",
+                "character": "Tashi's Mother",
+                "imdbID": "nm0221631"
+            },
+            {
+                "id": "cas_39c62cb2-3",
+                "name": "Joan Mcshane",
+                "character": "Line Judge",
+                "imdbID": "nm15831663"
+            },
+            {
+                "id": "cas_0dbe628e-2",
+                "name": "Chris Fowler",
+                "character": "TV Sports Commentator",
+                "imdbID": "nm0288679"
+            },
+            {
+                "id": "cas_8e7c2a5d-1",
+                "name": "Mary Joe Fernandez",
+                "character": "TV Sports Commentator",
+                "imdbID": "nm1821101"
+            }
+        ],
+        "genres": "Drama, Romance, Sport",
+        "plot": "From visionary filmmaker Luca Guadagnino, Challengers stars Zendaya as Tashi Duncan, a former tennis prodigy turned coach and a force of nature who makes no apologies for her game on and off the court. Married to a champion on a losing streak (Mike Faist - West Side Story), Tashi's strategy for her husband's redemption takes a surprising turn when he must face off against the washed-up Patrick (Josh O'Connor - The Crown) - his former best friend and Tashi's former boyfriend. As their pasts and presents collide, and tensions run high, Tashi must ask herself, what will it cost to win.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNTk1MTdmYzctNzlkOS00ZTNmLWI4ZTMtMzc3OWFkMDI0MTJkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@.jpg",
+        "duration": [
+            "131"
+        ],
+        "trailer": "https://www.youtube.com/embed/-2N3hmRmwHQ",
+        "imdbID": "tt16426418"
+    },
+    {
+        "id": "mov_7967648e-b",
+        "title": "IF",
+        "year": 2024,
+        "imdb_rating": 6.7,
+        "directors": [
+            {
+                "id": "cas_cfc2313d-d",
+                "name": "John Krasinski",
+                "imdbID": "nm1024677"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_c1d6b7fe-b",
+                "name": "Cailey Fleming",
+                "character": "Bea",
+                "imdbID": "nm7282126"
+            },
+            {
+                "id": "cas_325f2184-c",
+                "name": "Ryan Reynolds",
+                "character": "Cal",
+                "imdbID": "nm0005351"
+            },
+            {
+                "id": "cas_cfc2313d-d",
+                "name": "John Krasinski",
+                "character": "Dad / Marshmallow",
+                "imdbID": "nm1024677"
+            },
+            {
+                "id": "cas_86ddf8a7-e",
+                "name": "Fiona Shaw",
+                "character": "Grandmother",
+                "imdbID": "nm0789716"
+            },
+            {
+                "id": "cas_4490dab8-2",
+                "name": "Steve Carell",
+                "character": "Blue",
+                "imdbID": "nm0136797"
+            },
+            {
+                "id": "cas_c191b743-f",
+                "name": "Phoebe Waller-Bridge",
+                "character": "Blossom",
+                "imdbID": "nm3564817"
+            },
+            {
+                "id": "cas_8c8038a2-7",
+                "name": "Louis Gossett Jr.",
+                "character": "Lewis",
+                "imdbID": "nm0001283"
+            },
+            {
+                "id": "cas_cdbb0b74-5",
+                "name": "Alan Kim",
+                "character": "Benjamin",
+                "imdbID": "nm10910136"
+            },
+            {
+                "id": "cas_d1ddd20b-9",
+                "name": "Liza Colón-Zayas",
+                "character": "Janet",
+                "imdbID": "nm1154919"
+            },
+            {
+                "id": "cas_0e4d0cf4-d",
+                "name": "Bobby Moynihan",
+                "character": "Jeremy",
+                "imdbID": "nm1293885"
+            }
+        ],
+        "genres": "Animation, Comedy, Drama, Family, Fantasy",
+        "plot": null,
+        "poster": "https://m.media-amazon.com/images/M/MV5BYWQ4OGI2MmQtZjUxMC00Njg2LWJiZTQtYmFmZjI5ZmI1Y2U1XkEyXkFqcGdeQXVyMTA1NjE5MTAz.jpg",
+        "duration": [
+            "104"
+        ],
+        "trailer": "https://www.youtube.com/embed/mb2187ZQtBE",
+        "imdbID": "tt11152168"
+    },
+    {
+        "id": "mov_0627f6d4-7",
+        "title": "In a Violent Nature",
+        "year": 2024,
+        "imdb_rating": 6.3,
+        "directors": [
+            {
+                "id": "cas_edf988c0-2",
+                "name": "Chris Nash",
+                "imdbID": "nm1854288"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_6210bf96-0",
+                "name": "Ry Barrett",
+                "character": "Johnny",
+                "imdbID": "nm2028004"
+            },
+            {
+                "id": "cas_5b8626a0-f",
+                "name": "Andrea Pavlovic",
+                "character": "Kris",
+                "imdbID": "nm9026235"
+            },
+            {
+                "id": "cas_4d6d7483-1",
+                "name": "Cameron Love",
+                "character": "Colt",
+                "imdbID": "nm7496550"
+            },
+            {
+                "id": "cas_e3d70b2f-d",
+                "name": "Reece Presley",
+                "character": "The Ranger",
+                "imdbID": "nm6601763"
+            },
+            {
+                "id": "cas_cc8b150f-1",
+                "name": "Liam Leone",
+                "character": "Troy",
+                "imdbID": "nm8893544"
+            },
+            {
+                "id": "cas_c90aa873-7",
+                "name": "Charlotte Creaghan",
+                "character": "Aurora",
+                "imdbID": "nm10026997"
+            },
+            {
+                "id": "cas_2b92d51f-f",
+                "name": "Lea Rose Sebastianis",
+                "character": "Brodie",
+                "imdbID": "nm15929274"
+            },
+            {
+                "id": "cas_faf9bd1f-8",
+                "name": "Sam Roulston",
+                "character": "Ehren",
+                "imdbID": "nm7527169"
+            },
+            {
+                "id": "cas_3c1916a5-6",
+                "name": "Alexander Oliver",
+                "character": "Evan",
+                "imdbID": "nm10067934"
+            },
+            {
+                "id": "cas_83dafeab-5",
+                "name": "Timothy Paul McCarthy",
+                "character": "Chuck",
+                "imdbID": "nm3243853"
+            }
+        ],
+        "genres": "Drama, Horror, Thriller",
+        "plot": null,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDRkMDczOWYtZTkxYi00YzZkLTk0MzAtODA0ZTE3ODMwYjkxXkEyXkFqcGdeQXVyMTEyMjM2NDc2.jpg",
+        "duration": [
+            "94"
+        ],
+        "trailer": "https://www.youtube.com/embed/WyXuRmXbS7U",
+        "imdbID": "tt30321146"
+    },
+    {
+        "id": "mov_f2299483-c",
+        "title": "The Garfield Movie",
+        "year": 2024,
+        "imdb_rating": 5.8,
+        "directors": [
+            {
+                "id": "cas_c40a131c-a",
+                "name": "Mark Dindal",
+                "imdbID": "nm0227540"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_d24a0fa6-f",
+                "name": "Chris Pratt",
+                "character": "Garfield",
+                "imdbID": "nm0695435"
+            },
+            {
+                "id": "cas_6fe1c0cd-9",
+                "name": "Samuel L. Jackson",
+                "character": "Vic",
+                "imdbID": "nm0000168"
+            },
+            {
+                "id": "cas_6fd7f4c3-4",
+                "name": "Hannah Waddingham",
+                "character": "Jinx",
+                "imdbID": "nm1821446"
+            },
+            {
+                "id": "cas_5e4840b7-d",
+                "name": "Ving Rhames",
+                "character": "Otto",
+                "imdbID": "nm0000609"
+            },
+            {
+                "id": "cas_4e49950e-7",
+                "name": "Nicholas Hoult",
+                "character": "Jon",
+                "imdbID": "nm0396558"
+            },
+            {
+                "id": "cas_592f07c2-9",
+                "name": "Cecily Strong",
+                "character": "Marge Malone",
+                "imdbID": "nm5198446"
+            },
+            {
+                "id": "cas_41ac38ca-b",
+                "name": "Harvey Guillén",
+                "character": "Odie",
+                "imdbID": "nm2957490"
+            },
+            {
+                "id": "cas_1f390f8e-5",
+                "name": "Brett Goldstein",
+                "character": "Roland",
+                "imdbID": "nm2073429"
+            },
+            {
+                "id": "cas_8386fbeb-e",
+                "name": "Bowen Yang",
+                "character": "Nolan",
+                "imdbID": "nm6299248"
+            },
+            {
+                "id": "cas_273c0633-4",
+                "name": "Snoop Dogg",
+                "character": "Maurice",
+                "imdbID": "nm0004879"
+            }
+        ],
+        "genres": "Animation, Adventure, Comedy, Family, Fantasy",
+        "plot": "Garfield (voiced by Chris Pratt), the world-famous, Monday-hating, lasagna-loving indoor cat, is about to have a wild outdoor adventure. After an unexpected reunion with his long-lost father - scruffy street cat Vic (voiced by Samuel L. Jackson) - Garfield and his canine friend Odie are forced from their perfectly pampered life into joining Vic in a hilarious, high-stakes heist.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZDdlNTIwNjYtNzVhNS00MGVmLTk1ZGYtZmZiMjhiMmQ1ZjkwXkEyXkFqcGdeQXVyMTY3ODkyNDkz.jpg",
+        "duration": [
+            "101"
+        ],
+        "trailer": "https://www.youtube.com/embed/IeFWNtMo1Fs",
+        "imdbID": "tt5779228"
+    },
+    {
+        "id": "mov_0e7aeabe-2",
+        "title": "The Ministry of Ungentlemanly Warfare",
+        "year": 2024,
+        "imdb_rating": 6.9,
+        "directors": [
+            {
+                "id": "cas_4caf1ce7-f",
+                "name": "Guy Ritchie",
+                "imdbID": "nm0005363"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_ecb6bbdc-0",
+                "name": "Henry Cavill",
+                "character": "Gus March-Phillips",
+                "imdbID": "nm0147147"
+            },
+            {
+                "id": "cas_b141017a-5",
+                "name": "Alan Ritchson",
+                "character": "Anders Lassen",
+                "imdbID": "nm2024927"
+            },
+            {
+                "id": "cas_f6a655ab-3",
+                "name": "Alex Pettyfer",
+                "character": "Geoffrey Appleyard",
+                "imdbID": "nm1641117"
+            },
+            {
+                "id": "cas_d69ca9cb-c",
+                "name": "Eiza González",
+                "character": "Marjorie Stewart",
+                "imdbID": "nm2555462"
+            },
+            {
+                "id": "cas_edd48a04-8",
+                "name": "Babs Olusanmokun",
+                "character": "Heron",
+                "imdbID": "nm2129802"
+            },
+            {
+                "id": "cas_3f1d95b5-1",
+                "name": "Cary Elwes",
+                "character": "Brigadier Gubbins 'M'",
+                "imdbID": "nm0000144"
+            },
+            {
+                "id": "cas_5fffe723-5",
+                "name": "Hero Fiennes Tiffin",
+                "character": "Henry Hayes",
+                "imdbID": "nm2842005"
+            },
+            {
+                "id": "cas_3e551723-7",
+                "name": "Henry Golding",
+                "character": "Freddy Alvarez",
+                "imdbID": "nm6525901"
+            },
+            {
+                "id": "cas_e810fbc8-8",
+                "name": "Rory Kinnear",
+                "character": "Churchill",
+                "imdbID": "nm1239499"
+            },
+            {
+                "id": "cas_aebbde8d-2",
+                "name": "Til Schweiger",
+                "character": "Heinrich Luhr",
+                "imdbID": "nm0001709"
+            }
+        ],
+        "genres": "Action, Drama, War",
+        "plot": "Billed as a true story about a secret British World War II organization; the Special Operations Executive. Founded by Winston Churchill, their irregular warfare against the Germans helped to change the course of the war, and gave birth to modern black operations.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOWI5YTlkNTktOTJlMC00MmYyLThkNzQtYmExOGZkZDE1ZjgwXkEyXkFqcGdeQXVyMjM4NTM5NDY@.jpg",
+        "duration": [
+            "120"
+        ],
+        "trailer": "https://www.youtube.com/embed/zvwDen1Wrx8",
+        "imdbID": "tt5177120"
+    },
+    {
+        "id": "mov_e8642f48-9",
+        "title": "The Strangers: Chapter 1",
+        "year": 2024,
+        "imdb_rating": 4.7,
+        "directors": [
+            {
+                "id": "cas_05b1c2ee-f",
+                "name": "Renny Harlin",
+                "imdbID": "nm0001317"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_b3267647-7",
+                "name": "Ryan Bown",
+                "character": "Jeff Morell",
+                "imdbID": "nm7635170"
+            },
+            {
+                "id": "cas_089de797-6",
+                "name": "Matus Lajcak",
+                "character": "Scarecrow Double",
+                "imdbID": "nm8598157"
+            },
+            {
+                "id": "cas_a2376870-f",
+                "name": "Olivia Kreutzova",
+                "character": "Dollface Double",
+                "imdbID": "nm14316067"
+            },
+            {
+                "id": "cas_aa67a4db-a",
+                "name": "Letizia Fabbri",
+                "character": "Pin-Up Double",
+                "imdbID": "nm9967472"
+            },
+            {
+                "id": "cas_82d9acdd-6",
+                "name": "Madelaine Petsch",
+                "character": "Maya",
+                "imdbID": "nm6663708"
+            },
+            {
+                "id": "cas_2bb3a809-9",
+                "name": "Froy Gutierrez",
+                "character": "Ryan",
+                "imdbID": "nm7624235"
+            },
+            {
+                "id": "cas_d7fcea47-d",
+                "name": "Ben Cartwright",
+                "character": "Rudy",
+                "imdbID": "nm1408455"
+            },
+            {
+                "id": "cas_d415b3c8-c",
+                "name": "Stevee Davies",
+                "character": "Dougie",
+                "imdbID": "nm3482517"
+            },
+            {
+                "id": "cas_9711f848-0",
+                "name": "Richard Brake",
+                "character": "Sheriff Rotter",
+                "imdbID": "nm0104114"
+            },
+            {
+                "id": "cas_c4019c90-1",
+                "name": "Pedro Leandro",
+                "character": "Deputy Walters",
+                "imdbID": "nm7797052"
+            }
+        ],
+        "genres": "Horror",
+        "plot": "After their car breaks down in an eerie small town, a young couple (Madelaine Petsch and Froy Gutierrez) are forced to spend the night in a remote cabin. Panic ensues as they are terrorized by three masked strangers who strike with no mercy and seemingly no motive in THE STRANGERS: CHAPTER 1, the chilling first entry of this upcoming horror feature film series.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNDVkZTM0NDAtNTQxMS00NWIyLTgyM2ItNjAxOTllYTAzNTVjXkEyXkFqcGdeQXVyMjM4NTM5NDY@.jpg",
+        "duration": [
+            "91"
+        ],
+        "trailer": "https://www.youtube.com/embed/3pZUQmZdOi4",
+        "imdbID": "tt22050754"
+    },
+    {
+        "id": "mov_4c645a78-e",
+        "title": "Colors of Evil: Red",
+        "year": 2024,
+        "imdb_rating": 6.3,
+        "directors": [
+            {
+                "id": "cas_88f8adff-c",
+                "name": "Adrian Panek",
+                "imdbID": "nm3423765"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_adc15f29-9",
+                "name": "Jakub Gierszal",
+                "character": "Leopold Bilski",
+                "imdbID": "nm3617350"
+            },
+            {
+                "id": "cas_cee52792-1",
+                "name": "Maja Ostaszewska",
+                "character": "Helena Bogucka",
+                "imdbID": "nm0652292"
+            },
+            {
+                "id": "cas_0b93b87d-c",
+                "name": "Zofia Jastrzebska",
+                "character": "Monika Bogucka",
+                "imdbID": "nm11219070"
+            },
+            {
+                "id": "cas_f3e0d98c-2",
+                "name": "Andrzej Konopka",
+                "character": "Tadeusz Dubiela",
+                "imdbID": "nm1293137"
+            },
+            {
+                "id": "cas_096ae4bd-c",
+                "name": "Przemyslaw Bluszcz",
+                "character": "Lukasz Kazarski 'Kazar'",
+                "imdbID": "nm1669753"
+            },
+            {
+                "id": "cas_e8d31d26-3",
+                "name": "Wojciech Zielinski",
+                "character": "Waldemar Mila",
+                "imdbID": "nm1460660"
+            },
+            {
+                "id": "cas_042df1d1-6",
+                "name": "Andrzej Zielinski",
+                "character": "Roman Bogucki",
+                "imdbID": "nm0956190"
+            },
+            {
+                "id": "cas_c3b01ee6-9",
+                "name": "Jan Wieteska",
+                "character": "Mario Dubiela",
+                "imdbID": "nm8941035"
+            },
+            {
+                "id": "cas_86594132-b",
+                "name": "Michal Karmowski",
+                "character": "Muscleman at the club",
+                "imdbID": "nm10066600"
+            },
+            {
+                "id": "cas_75c1ce3d-e",
+                "name": "Natalia Iwanska",
+                "character": "Mario's girlfriend at the club",
+                "imdbID": "nm6115393"
+            }
+        ],
+        "genres": "Crime, Drama, Mystery, Thriller",
+        "plot": "A Tri-City beach becomes a place of dramatic discovery when the sea washes up the body of a young girl. The victim's unusual mutilation points to murder. The investigation is headed by an ambitious and tenacious prosecutor, Leopold Bilski. The victim's mother, Judge Helena Bogucka, is also involved in the investigation. All clues lead to one of the seaside clubs, which turns out to be related to the murder of a woman from 15 years ago. From the information collected during the investigation and the evidence concealed for years, the dark face of the criminal Tri-City slowly emerges. Bilski and Bogucka's discoveries begin to be very inconvenient for the local police.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZWQ0OTAzMjMtNTJkYS00ODUwLTg5NGYtYTUwOWMzZjU1NThlXkEyXkFqcGc@.jpg",
+        "duration": [
+            "111"
+        ],
+        "trailer": "https://www.youtube.com/embed/wI_HbMOZRic",
+        "imdbID": "tt27578157"
+    },
+    {
+        "id": "mov_e7a4057e-a",
+        "title": "Inside Out 2",
+        "year": 2024,
+        "imdb_rating": 8.0,
+        "directors": [
+            {
+                "id": "cas_2559a3f2-e",
+                "name": "Kelsey Mann",
+                "imdbID": "nm1626375"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_af5f99bb-1",
+                "name": "Amy Poehler",
+                "character": "Joy",
+                "imdbID": "nm0688132"
+            },
+            {
+                "id": "cas_f046356c-3",
+                "name": "Maya Hawke",
+                "character": "Anxiety",
+                "imdbID": "nm1638321"
+            },
+            {
+                "id": "cas_dc9039b4-3",
+                "name": "Kensington Tallman",
+                "character": "Riley",
+                "imdbID": "nm10143485"
+            },
+            {
+                "id": "cas_0edbebab-3",
+                "name": "Liza Lapira",
+                "character": "Disgust",
+                "imdbID": "nm0487594"
+            },
+            {
+                "id": "cas_346e1269-e",
+                "name": "Tony Hale",
+                "character": "Fear",
+                "imdbID": "nm0355024"
+            },
+            {
+                "id": "cas_26100d25-d",
+                "name": "Lewis Black",
+                "character": "Anger",
+                "imdbID": "nm0085400"
+            },
+            {
+                "id": "cas_c849d219-f",
+                "name": "Phyllis Smith",
+                "character": "Sadness",
+                "imdbID": "nm0809613"
+            },
+            {
+                "id": "cas_769f8127-f",
+                "name": "Ayo Edebiri",
+                "character": "Envy",
+                "imdbID": "nm8731249"
+            },
+            {
+                "id": "cas_76b4eb16-d",
+                "name": "Lilimar",
+                "character": "Valentina",
+                "imdbID": "nm5391232"
+            },
+            {
+                "id": "cas_41c75013-8",
+                "name": "Grace Lu",
+                "character": "Grace",
+                "imdbID": "nm10838946"
+            }
+        ],
+        "genres": "Animation, Adventure, Comedy, Drama, Family, Fantasy",
+        "plot": "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions. Joy, Sadness, Anger, Fear and Disgust, who've long been running a successful operation by all accounts, aren't sure how to feel when Anxiety shows up. And it looks like she's not alone.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYTc1MDQ3NjAtOWEzMi00YzE1LWI2OWUtNjQ0OWJkMzI3MDhmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@.jpg",
+        "duration": [
+            "96"
+        ],
+        "trailer": "https://www.youtube.com/embed/LEjhY15eCx0",
+        "imdbID": "tt22022452"
+    },
+    {
+        "id": "mov_e533706f-4",
+        "title": "Godzilla x Kong: The New Empire",
+        "year": 2024,
+        "imdb_rating": 6.2,
+        "directors": [
+            {
+                "id": "cas_48fcf6c3-6",
+                "name": "Adam Wingard",
+                "imdbID": "nm1417392"
+            }
+        ],
+        "casts": [
+            {
+                "id": "cas_e776aaad-4",
+                "name": "Rebecca Hall",
+                "character": "Ilene Andrews",
+                "imdbID": "nm0356017"
+            },
+            {
+                "id": "cas_5d7b7a7d-7",
+                "name": "Brian Tyree Henry",
+                "character": "Bernie Hayes",
+                "imdbID": "nm3109964"
+            },
+            {
+                "id": "cas_f9ce1efe-a",
+                "name": "Dan Stevens",
+                "character": "Trapper",
+                "imdbID": "nm1405398"
+            },
+            {
+                "id": "cas_a440f170-8",
+                "name": "Kaylee Hottle",
+                "character": "Jia",
+                "imdbID": "nm10544447"
+            },
+            {
+                "id": "cas_818cb986-c",
+                "name": "Alex Ferns",
+                "character": "Mikael",
+                "imdbID": "nm0273159"
+            },
+            {
+                "id": "cas_f65f848e-6",
+                "name": "Fala Chen",
+                "character": "Iwi Queen",
+                "imdbID": "nm2371196"
+            },
+            {
+                "id": "cas_35f6e5fb-c",
+                "name": "Rachel House",
+                "character": "Hampton",
+                "imdbID": "nm1344302"
+            },
+            {
+                "id": "cas_6eb8b4c6-7",
+                "name": "Ron Smyck",
+                "character": "Harris",
+                "imdbID": "nm3768337"
+            },
+            {
+                "id": "cas_693f0443-a",
+                "name": "Chantelle Jamieson",
+                "character": "Jayne",
+                "imdbID": "nm3873278"
+            },
+            {
+                "id": "cas_1473194e-c",
+                "name": "Greg Hatton",
+                "character": "Lewis",
+                "imdbID": "nm3028193"
+            }
+        ],
+        "genres": "Action, Adventure, Fantasy, Sci-Fi, Thriller",
+        "plot": "The new installment in the Monsterverse puts the mighty Kong and the fearsome Godzilla against a colossal deadly threat hidden within our world that threatens the existence of their species and our very own, as well as diving deep into the mysteries of Skull Island and beyond. Delving straight into the origins of Hollow Earth, this film will explore the ancient Titan battle that brought man and monster together forever.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BY2QwOGE2NGQtMWQwNi00M2IzLThlNWItYWMzNGQ5YWNiZDA4XkEyXkFqcGdeQXVyNTE1NjY5Mg@@.jpg",
+        "duration": [
+            "115"
+        ],
+        "trailer": "https://www.youtube.com/embed/lV1OOlGwExM",
+        "imdbID": "tt14539740"
+    }
+]

@@ -1,65 +1,76 @@
 [
     {
-        "id": "mov_cec61a5c-6",
+        "id": "mov_4625e78c-4",
         "title": "The Shawshank Redemption",
         "year": 1994,
-        "rating": 9.3,
+        "imdb_rating": 9.3,
         "directors": [
             {
-                "id": "cas_0de38793-8",
-                "name": "Frank Darabont"
+                "id": "cas_6ddb5cba-2",
+                "name": "Frank Darabont",
+                "imdbID": "nm0001104"
             }
         ],
         "casts": [
             {
-                "id": "cas_61b7bd41-b",
+                "id": "cas_3173da8e-6",
                 "name": "Tim Robbins",
-                "character": "Andy Dufresne"
+                "character": "Andy Dufresne",
+                "imdbID": "nm0000209"
             },
             {
-                "id": "cas_1a47a3bb-b",
+                "id": "cas_7f2fcd08-7",
                 "name": "Morgan Freeman",
-                "character": "Ellis Boyd 'Red' Redding"
+                "character": "Ellis Boyd 'Red' Redding",
+                "imdbID": "nm0000151"
             },
             {
-                "id": "cas_8db85f5b-a",
+                "id": "cas_1f94c7cb-0",
                 "name": "Bob Gunton",
-                "character": "Warden Norton"
+                "character": "Warden Norton",
+                "imdbID": "nm0348409"
             },
             {
-                "id": "cas_4736751d-c",
+                "id": "cas_e6a03cf5-7",
                 "name": "William Sadler",
-                "character": "Heywood"
+                "character": "Heywood",
+                "imdbID": "nm0006669"
             },
             {
-                "id": "cas_c927f028-a",
+                "id": "cas_0d06c4fa-1",
                 "name": "Clancy Brown",
-                "character": "Captain Hadley"
+                "character": "Captain Hadley",
+                "imdbID": "nm0000317"
             },
             {
-                "id": "cas_f7b09f29-c",
+                "id": "cas_ccc24725-1",
                 "name": "Gil Bellows",
-                "character": "Tommy"
+                "character": "Tommy",
+                "imdbID": "nm0004743"
             },
             {
-                "id": "cas_534b883b-f",
+                "id": "cas_bcbdafb0-2",
                 "name": "Mark Rolston",
-                "character": "Bogs Diamond"
+                "character": "Bogs Diamond",
+                "imdbID": "nm0001679"
             },
             {
-                "id": "cas_9240a9a9-5",
+                "id": "cas_5570db7a-0",
                 "name": "James Whitmore",
-                "character": "Brooks Hatlen"
+                "character": "Brooks Hatlen",
+                "imdbID": "nm0926235"
             },
             {
-                "id": "cas_a9abac5a-6",
+                "id": "cas_cbf20be2-9",
                 "name": "Jeffrey DeMunn",
-                "character": "1946 D.A."
+                "character": "1946 D.A.",
+                "imdbID": "nm0218810"
             },
             {
-                "id": "cas_7c596d05-7",
+                "id": "cas_747b9be2-3",
                 "name": "Larry Brandenburg",
-                "character": "Skeet"
+                "character": "Skeet",
+                "imdbID": "nm0104594"
             }
         ],
         "genres": "Drama",
@@ -68,69 +79,81 @@
         "duration": [
             "142"
         ],
-        "trailer": "https://www.youtube.com/embed/PLl99DlL6b4"
+        "trailer": "https://www.youtube.com/embed/PLl99DlL6b4",
+        "imdbID": "tt0111161"
     },
     {
-        "id": "mov_11cc5aa7-d",
+        "id": "mov_27172d35-b",
         "title": "The Godfather",
         "year": 1972,
-        "rating": 9.2,
+        "imdb_rating": 9.2,
         "directors": [
             {
-                "id": "cas_697204e2-7",
-                "name": "Francis Ford Coppola"
+                "id": "cas_d64402c1-0",
+                "name": "Francis Ford Coppola",
+                "imdbID": "nm0000338"
             }
         ],
         "casts": [
             {
-                "id": "cas_b7a05c08-2",
+                "id": "cas_77073b79-2",
                 "name": "Marlon Brando",
-                "character": "Don Vito Corleone"
+                "character": "Don Vito Corleone",
+                "imdbID": "nm0000008"
             },
             {
-                "id": "cas_5724969e-3",
+                "id": "cas_2fbcd539-4",
                 "name": "Al Pacino",
-                "character": "Michael Corleone"
+                "character": "Michael Corleone",
+                "imdbID": "nm0000199"
             },
             {
-                "id": "cas_19e22f58-d",
+                "id": "cas_5eb59060-7",
                 "name": "James Caan",
-                "character": "Sonny Corleone"
+                "character": "Sonny Corleone",
+                "imdbID": "nm0001001"
             },
             {
-                "id": "cas_4746d63a-2",
+                "id": "cas_d04c9219-c",
                 "name": "Richard S. Castellano",
-                "character": "Clemenza"
+                "character": "Clemenza",
+                "imdbID": "nm0144710"
             },
             {
-                "id": "cas_aa712136-8",
+                "id": "cas_c35b4dd3-5",
                 "name": "Robert Duvall",
-                "character": "Tom Hagen"
+                "character": "Tom Hagen",
+                "imdbID": "nm0000380"
             },
             {
-                "id": "cas_60dbdf1c-e",
+                "id": "cas_fc593d2a-0",
                 "name": "Sterling Hayden",
-                "character": "Capt. McCluskey"
+                "character": "Capt. McCluskey",
+                "imdbID": "nm0001330"
             },
             {
-                "id": "cas_178a57e0-b",
+                "id": "cas_6d896eb5-f",
                 "name": "John Marley",
-                "character": "Jack Woltz"
+                "character": "Jack Woltz",
+                "imdbID": "nm0549134"
             },
             {
-                "id": "cas_827146b1-7",
+                "id": "cas_afc75274-6",
                 "name": "Richard Conte",
-                "character": "Barzini"
+                "character": "Barzini",
+                "imdbID": "nm0002017"
             },
             {
-                "id": "cas_9fdd2d00-8",
+                "id": "cas_dc07cf5d-e",
                 "name": "Al Lettieri",
-                "character": "Sollozzo"
+                "character": "Sollozzo",
+                "imdbID": "nm0504803"
             },
             {
-                "id": "cas_1307fb78-8",
+                "id": "cas_ccebc70f-6",
                 "name": "Diane Keaton",
-                "character": "Kay Adams"
+                "character": "Kay Adams",
+                "imdbID": "nm0000473"
             }
         ],
         "genres": "Crime, Drama",
@@ -139,69 +162,81 @@
         "duration": [
             "175"
         ],
-        "trailer": "https://www.youtube.com/embed/UaVTIH8mujA"
+        "trailer": "https://www.youtube.com/embed/UaVTIH8mujA",
+        "imdbID": "tt0068646"
     },
     {
-        "id": "mov_7dad8829-3",
+        "id": "mov_8304c89b-d",
         "title": "The Dark Knight",
         "year": 2008,
-        "rating": 9.0,
+        "imdb_rating": 9.0,
         "directors": [
             {
-                "id": "cas_aefde8c9-7",
-                "name": "Christopher Nolan"
+                "id": "cas_0974e4d9-8",
+                "name": "Christopher Nolan",
+                "imdbID": "nm0634240"
             }
         ],
         "casts": [
             {
-                "id": "cas_f6fb3176-3",
+                "id": "cas_7724d16d-a",
                 "name": "Christian Bale",
-                "character": "Bruce Wayne / Batman"
+                "character": "Bruce Wayne / Batman",
+                "imdbID": "nm0000288"
             },
             {
-                "id": "cas_bc3746bc-5",
+                "id": "cas_a9f95448-2",
                 "name": "Heath Ledger",
-                "character": "Joker"
+                "character": "Joker",
+                "imdbID": "nm0005132"
             },
             {
-                "id": "cas_9a988f13-4",
+                "id": "cas_0cd695fe-d",
                 "name": "Aaron Eckhart",
-                "character": "Harvey Dent"
+                "character": "Harvey Dent",
+                "imdbID": "nm0001173"
             },
             {
-                "id": "cas_0cdb02ae-d",
+                "id": "cas_92ee48b4-b",
                 "name": "Michael Caine",
-                "character": "Alfred"
+                "character": "Alfred",
+                "imdbID": "nm0000323"
             },
             {
-                "id": "cas_93c844ca-a",
+                "id": "cas_384a7cb0-6",
                 "name": "Maggie Gyllenhaal",
-                "character": "Rachel"
+                "character": "Rachel",
+                "imdbID": "nm0350454"
             },
             {
-                "id": "cas_f5ab5211-0",
+                "id": "cas_ddb8dbf4-8",
                 "name": "Gary Oldman",
-                "character": "Gordon"
+                "character": "Gordon",
+                "imdbID": "nm0000198"
             },
             {
-                "id": "cas_51ef9a99-2",
+                "id": "cas_7f2fcd08-7",
                 "name": "Morgan Freeman",
-                "character": "Lucius Fox"
+                "character": "Lucius Fox",
+                "imdbID": "nm0000151"
             },
             {
-                "id": "cas_09fe8076-4",
+                "id": "cas_5aa1d163-7",
                 "name": "Monique Gabriela Curnen",
-                "character": "Ramirez"
+                "character": "Ramirez",
+                "imdbID": "nm1010931"
             },
             {
-                "id": "cas_a2a927f4-6",
+                "id": "cas_2b6d1bc6-d",
                 "name": "Ron Dean",
-                "character": "Wuertz"
+                "character": "Wuertz",
+                "imdbID": "nm0212939"
             },
             {
-                "id": "cas_5e62564d-6",
+                "id": "cas_fd9bb774-e",
                 "name": "Cillian Murphy",
-                "character": "Scarecrow"
+                "character": "Scarecrow",
+                "imdbID": "nm0614165"
             }
         ],
         "genres": "Action, Crime, Drama, Thriller",
@@ -210,69 +245,81 @@
         "duration": [
             "152"
         ],
-        "trailer": "https://www.youtube.com/embed/EXeTwQWrcwY"
+        "trailer": "https://www.youtube.com/embed/EXeTwQWrcwY",
+        "imdbID": "tt0468569"
     },
     {
-        "id": "mov_362f14a5-1",
+        "id": "mov_6b011a8c-7",
         "title": "The Godfather Part II",
         "year": 1974,
-        "rating": 9.0,
+        "imdb_rating": 9.0,
         "directors": [
             {
-                "id": "cas_5519af2f-b",
-                "name": "Francis Ford Coppola"
+                "id": "cas_d64402c1-0",
+                "name": "Francis Ford Coppola",
+                "imdbID": "nm0000338"
             }
         ],
         "casts": [
             {
-                "id": "cas_076b0fb8-2",
+                "id": "cas_2fbcd539-4",
                 "name": "Al Pacino",
-                "character": "Michael"
+                "character": "Michael",
+                "imdbID": "nm0000199"
             },
             {
-                "id": "cas_b4c749a8-e",
+                "id": "cas_c35b4dd3-5",
                 "name": "Robert Duvall",
-                "character": "Tom Hagen"
+                "character": "Tom Hagen",
+                "imdbID": "nm0000380"
             },
             {
-                "id": "cas_a058bcc9-b",
+                "id": "cas_ccebc70f-6",
                 "name": "Diane Keaton",
-                "character": "Kay"
+                "character": "Kay",
+                "imdbID": "nm0000473"
             },
             {
-                "id": "cas_188e419f-9",
+                "id": "cas_41fe3215-e",
                 "name": "Robert De Niro",
-                "character": "Vito Corleone"
+                "character": "Vito Corleone",
+                "imdbID": "nm0000134"
             },
             {
-                "id": "cas_622ef131-9",
+                "id": "cas_9055cfd8-5",
                 "name": "John Cazale",
-                "character": "Fredo Corleone"
+                "character": "Fredo Corleone",
+                "imdbID": "nm0001030"
             },
             {
-                "id": "cas_993d0002-4",
+                "id": "cas_492d7aaf-2",
                 "name": "Talia Shire",
-                "character": "Connie Corleone"
+                "character": "Connie Corleone",
+                "imdbID": "nm0001735"
             },
             {
-                "id": "cas_9595b9be-1",
+                "id": "cas_c0e5f4e8-9",
                 "name": "Lee Strasberg",
-                "character": "Hyman Roth"
+                "character": "Hyman Roth",
+                "imdbID": "nm0833448"
             },
             {
-                "id": "cas_2744fa10-3",
+                "id": "cas_7011d30e-8",
                 "name": "Michael V. Gazzo",
-                "character": "Frankie Pentangeli"
+                "character": "Frankie Pentangeli",
+                "imdbID": "nm0311155"
             },
             {
-                "id": "cas_105ca04b-b",
+                "id": "cas_23462723-4",
                 "name": "G.D. Spradlin",
-                "character": "Sen. Pat Geary"
+                "character": "Sen. Pat Geary",
+                "imdbID": "nm0819525"
             },
             {
-                "id": "cas_665171d2-0",
+                "id": "cas_c714be0c-f",
                 "name": "Richard Bright",
-                "character": "Al Neri"
+                "character": "Al Neri",
+                "imdbID": "nm0109175"
             }
         ],
         "genres": "Crime, Drama",
@@ -281,69 +328,81 @@
         "duration": [
             "202"
         ],
-        "trailer": "https://www.youtube.com/embed/9O1Iy9od7-A"
+        "trailer": "https://www.youtube.com/embed/9O1Iy9od7-A",
+        "imdbID": "tt0071562"
     },
     {
-        "id": "mov_1db3146c-1",
+        "id": "mov_46f57ac6-d",
         "title": "12 Angry Men",
         "year": 1957,
-        "rating": 9.0,
+        "imdb_rating": 9.0,
         "directors": [
             {
-                "id": "cas_b67be371-5",
-                "name": "Sidney Lumet"
+                "id": "cas_dee50794-a",
+                "name": "Sidney Lumet",
+                "imdbID": "nm0001486"
             }
         ],
         "casts": [
             {
-                "id": "cas_b3dd9563-8",
+                "id": "cas_feabdea3-5",
                 "name": "Martin Balsam",
-                "character": "Juror 1"
+                "character": "Juror 1",
+                "imdbID": "nm0000842"
             },
             {
-                "id": "cas_bb17cb6b-a",
+                "id": "cas_ecb9d2aa-e",
                 "name": "John Fiedler",
-                "character": "Juror 2"
+                "character": "Juror 2",
+                "imdbID": "nm0275835"
             },
             {
-                "id": "cas_06290f49-e",
+                "id": "cas_0f2a39cc-5",
                 "name": "Lee J. Cobb",
-                "character": "Juror 3"
+                "character": "Juror 3",
+                "imdbID": "nm0002011"
             },
             {
-                "id": "cas_abad2506-f",
+                "id": "cas_a919205e-0",
                 "name": "E.G. Marshall",
-                "character": "Juror 4"
+                "character": "Juror 4",
+                "imdbID": "nm0550855"
             },
             {
-                "id": "cas_2c2af521-c",
+                "id": "cas_105831d9-1",
                 "name": "Jack Klugman",
-                "character": "Juror 5"
+                "character": "Juror 5",
+                "imdbID": "nm0001430"
             },
             {
-                "id": "cas_2f9fca7a-2",
+                "id": "cas_fec187dd-d",
                 "name": "Edward Binns",
-                "character": "Juror 6"
+                "character": "Juror 6",
+                "imdbID": "nm0083081"
             },
             {
-                "id": "cas_e0d53fcc-b",
+                "id": "cas_f042e3ae-b",
                 "name": "Jack Warden",
-                "character": "Juror 7"
+                "character": "Juror 7",
+                "imdbID": "nm0912001"
             },
             {
-                "id": "cas_30e849c7-5",
+                "id": "cas_37590462-7",
                 "name": "Henry Fonda",
-                "character": "Juror 8"
+                "character": "Juror 8",
+                "imdbID": "nm0000020"
             },
             {
-                "id": "cas_5ed31441-8",
+                "id": "cas_cf9197e3-1",
                 "name": "Joseph Sweeney",
-                "character": "Juror 9"
+                "character": "Juror 9",
+                "imdbID": "nm0842137"
             },
             {
-                "id": "cas_dfc6a82b-3",
+                "id": "cas_df1f431a-a",
                 "name": "Ed Begley",
-                "character": "Juror 10"
+                "character": "Juror 10",
+                "imdbID": "nm0003225"
             }
         ],
         "genres": "Crime, Drama",
@@ -352,69 +411,81 @@
         "duration": [
             "96"
         ],
-        "trailer": "https://www.youtube.com/embed/TEN-2uTi2c0"
+        "trailer": "https://www.youtube.com/embed/TEN-2uTi2c0",
+        "imdbID": "tt0050083"
     },
     {
-        "id": "mov_24bb3053-1",
+        "id": "mov_07461c67-2",
         "title": "Schindler's List",
         "year": 1993,
-        "rating": 9.0,
+        "imdb_rating": 9.0,
         "directors": [
             {
-                "id": "cas_98999d59-6",
-                "name": "Steven Spielberg"
+                "id": "cas_df366f5d-2",
+                "name": "Steven Spielberg",
+                "imdbID": "nm0000229"
             }
         ],
         "casts": [
             {
-                "id": "cas_d93043ac-9",
+                "id": "cas_8fb115f7-9",
                 "name": "Liam Neeson",
-                "character": "Oskar Schindler"
+                "character": "Oskar Schindler",
+                "imdbID": "nm0000553"
             },
             {
-                "id": "cas_963a604f-b",
+                "id": "cas_d372c880-c",
                 "name": "Ben Kingsley",
-                "character": "Itzhak Stern"
+                "character": "Itzhak Stern",
+                "imdbID": "nm0001426"
             },
             {
-                "id": "cas_c9d5ee66-0",
+                "id": "cas_b04aa7a8-c",
                 "name": "Ralph Fiennes",
-                "character": "Amon Goeth"
+                "character": "Amon Goeth",
+                "imdbID": "nm0000146"
             },
             {
-                "id": "cas_35c8e255-7",
+                "id": "cas_149affde-9",
                 "name": "Caroline Goodall",
-                "character": "Emilie Schindler"
+                "character": "Emilie Schindler",
+                "imdbID": "nm0328751"
             },
             {
-                "id": "cas_6be623c6-3",
+                "id": "cas_bdc8b862-8",
                 "name": "Jonathan Sagall",
-                "character": "Poldek Pfefferberg"
+                "character": "Poldek Pfefferberg",
+                "imdbID": "nm0755974"
             },
             {
-                "id": "cas_fb2051d5-b",
+                "id": "cas_628773b5-7",
                 "name": "Embeth Davidtz",
-                "character": "Helen Hirsch"
+                "character": "Helen Hirsch",
+                "imdbID": "nm0001110"
             },
             {
-                "id": "cas_24115f61-3",
+                "id": "cas_082f827d-c",
                 "name": "Malgorzata Gebel",
-                "character": "Wiktoria Klonowska"
+                "character": "Wiktoria Klonowska",
+                "imdbID": "nm0311343"
             },
             {
-                "id": "cas_26e44b89-3",
+                "id": "cas_8d11bbdd-7",
                 "name": "Shmuel Levy",
-                "character": "Wilek Chilowicz"
+                "character": "Wilek Chilowicz",
+                "imdbID": "nm0506616"
             },
             {
-                "id": "cas_f1d3c31b-f",
+                "id": "cas_bb083507-d",
                 "name": "Mark Ivanir",
-                "character": "Marcel Goldberg"
+                "character": "Marcel Goldberg",
+                "imdbID": "nm0411980"
             },
             {
-                "id": "cas_21fe71b9-1",
+                "id": "cas_78370875-a",
                 "name": "Béatrice Macola",
-                "character": "Ingrid"
+                "character": "Ingrid",
+                "imdbID": "nm0534151"
             }
         ],
         "genres": "Biography, Drama, History",
@@ -423,69 +494,81 @@
         "duration": [
             "195"
         ],
-        "trailer": "https://www.youtube.com/embed/gG22XNhtnoY"
+        "trailer": "https://www.youtube.com/embed/gG22XNhtnoY",
+        "imdbID": "tt0108052"
     },
     {
-        "id": "mov_092e4e43-a",
+        "id": "mov_434db0b4-9",
         "title": "The Lord of the Rings: The Return of the King",
         "year": 2003,
-        "rating": 9.0,
+        "imdb_rating": 9.0,
         "directors": [
             {
-                "id": "cas_69a02a7c-f",
-                "name": "Peter Jackson"
+                "id": "cas_5cbdebfe-0",
+                "name": "Peter Jackson",
+                "imdbID": "nm0001392"
             }
         ],
         "casts": [
             {
-                "id": "cas_9e2acc69-f",
+                "id": "cas_bb539b43-6",
                 "name": "Noel Appleby",
-                "character": "Everard Proudfoot"
+                "character": "Everard Proudfoot",
+                "imdbID": "nm0032370"
             },
             {
-                "id": "cas_bfb3d933-7",
+                "id": "cas_22d4d3a0-2",
                 "name": "Ali Astin",
-                "character": "Elanor Gamgee"
+                "character": "Elanor Gamgee",
+                "imdbID": "nm0040012"
             },
             {
-                "id": "cas_6ffaac6e-e",
+                "id": "cas_2e470508-c",
                 "name": "Sean Astin",
-                "character": "Sam"
+                "character": "Sam",
+                "imdbID": "nm0000276"
             },
             {
-                "id": "cas_95f1b6c8-7",
+                "id": "cas_f9d2c974-f",
                 "name": "David Aston",
-                "character": "Gondorian Soldier 3"
+                "character": "Gondorian Soldier 3",
+                "imdbID": "nm0040058"
             },
             {
-                "id": "cas_b142a805-b",
+                "id": "cas_4c18a956-5",
                 "name": "John Bach",
-                "character": "Madril"
+                "character": "Madril",
+                "imdbID": "nm0045324"
             },
             {
-                "id": "cas_e989255c-a",
+                "id": "cas_3c7aa477-b",
                 "name": "Sean Bean",
-                "character": "Boromir"
+                "character": "Boromir",
+                "imdbID": "nm0000293"
             },
             {
-                "id": "cas_d71ee6f8-5",
+                "id": "cas_9ca972d1-9",
                 "name": "Cate Blanchett",
-                "character": "Galadriel"
+                "character": "Galadriel",
+                "imdbID": "nm0000949"
             },
             {
-                "id": "cas_59641343-c",
+                "id": "cas_38f50642-d",
                 "name": "Orlando Bloom",
-                "character": "Legolas"
+                "character": "Legolas",
+                "imdbID": "nm0089217"
             },
             {
-                "id": "cas_92d3226c-a",
+                "id": "cas_5d3411cd-0",
                 "name": "Billy Boyd",
-                "character": "Pippin"
+                "character": "Pippin",
+                "imdbID": "nm0101710"
             },
             {
-                "id": "cas_a28a5959-c",
+                "id": "cas_ea1cf6c5-6",
                 "name": "Sadwyn Brophy",
-                "character": "Eldarion"
+                "character": "Eldarion",
+                "imdbID": "nm1480092"
             }
         ],
         "genres": "Action, Adventure, Drama, Fantasy",
@@ -494,69 +577,81 @@
         "duration": [
             "201"
         ],
-        "trailer": "https://www.youtube.com/embed/r5X-hFf6Bwo"
+        "trailer": "https://www.youtube.com/embed/r5X-hFf6Bwo",
+        "imdbID": "tt0167260"
     },
     {
-        "id": "mov_ee4a4708-e",
+        "id": "mov_251a94fc-8",
         "title": "Pulp Fiction",
         "year": 1994,
-        "rating": 8.9,
+        "imdb_rating": 8.9,
         "directors": [
             {
-                "id": "cas_34aeed6e-7",
-                "name": "Quentin Tarantino"
+                "id": "cas_ad3f72b1-2",
+                "name": "Quentin Tarantino",
+                "imdbID": "nm0000233"
             }
         ],
         "casts": [
             {
-                "id": "cas_97854ba3-0",
+                "id": "cas_f0da5f9a-4",
                 "name": "Tim Roth",
-                "character": "Pumpkin"
+                "character": "Pumpkin",
+                "imdbID": "nm0000619"
             },
             {
-                "id": "cas_f25075b8-f",
+                "id": "cas_a04986f6-d",
                 "name": "Amanda Plummer",
-                "character": "Honey Bunny"
+                "character": "Honey Bunny",
+                "imdbID": "nm0001625"
             },
             {
-                "id": "cas_33e6611e-a",
+                "id": "cas_f9bdc09b-8",
                 "name": "Laura Lovelace",
-                "character": "Waitress"
+                "character": "Waitress",
+                "imdbID": "nm0522503"
             },
             {
-                "id": "cas_64ed2475-d",
+                "id": "cas_39eecb94-a",
                 "name": "John Travolta",
-                "character": "Vincent Vega"
+                "character": "Vincent Vega",
+                "imdbID": "nm0000237"
             },
             {
-                "id": "cas_5c94dcfd-3",
+                "id": "cas_6fe1c0cd-9",
                 "name": "Samuel L. Jackson",
-                "character": "Jules Winnfield"
+                "character": "Jules Winnfield",
+                "imdbID": "nm0000168"
             },
             {
-                "id": "cas_88846ad3-4",
+                "id": "cas_5a454ce6-a",
                 "name": "Phil LaMarr",
-                "character": "Marvin"
+                "character": "Marvin",
+                "imdbID": "nm0482851"
             },
             {
-                "id": "cas_7fc60892-f",
+                "id": "cas_68ab8f8a-b",
                 "name": "Frank Whaley",
-                "character": "Brett"
+                "character": "Brett",
+                "imdbID": "nm0001844"
             },
             {
-                "id": "cas_f0236af6-4",
+                "id": "cas_de5f10c6-8",
                 "name": "Burr Steers",
-                "character": "Roger"
+                "character": "Roger",
+                "imdbID": "nm0824882"
             },
             {
-                "id": "cas_625e37b7-f",
+                "id": "cas_e2d9531c-7",
                 "name": "Bruce Willis",
-                "character": "Butch Coolidge"
+                "character": "Butch Coolidge",
+                "imdbID": "nm0000246"
             },
             {
-                "id": "cas_621520b2-9",
+                "id": "cas_5e4840b7-d",
                 "name": "Ving Rhames",
-                "character": "Marsellus Wallace"
+                "character": "Marsellus Wallace",
+                "imdbID": "nm0000609"
             }
         ],
         "genres": "Crime, Drama",
@@ -565,69 +660,81 @@
         "duration": [
             "154"
         ],
-        "trailer": "https://www.youtube.com/embed/s7EdQ4FqbhY"
+        "trailer": "https://www.youtube.com/embed/s7EdQ4FqbhY",
+        "imdbID": "tt0110912"
     },
     {
-        "id": "mov_15e8d3da-e",
+        "id": "mov_579db8ff-5",
         "title": "The Lord of the Rings: The Fellowship of the Ring",
         "year": 2001,
-        "rating": 8.9,
+        "imdb_rating": 8.9,
         "directors": [
             {
-                "id": "cas_406e94bb-c",
-                "name": "Peter Jackson"
+                "id": "cas_5cbdebfe-0",
+                "name": "Peter Jackson",
+                "imdbID": "nm0001392"
             }
         ],
         "casts": [
             {
-                "id": "cas_24b68761-d",
+                "id": "cas_c0cc3e45-a",
                 "name": "Alan Howard",
-                "character": "Voice of the Ring"
+                "character": "Voice of the Ring",
+                "imdbID": "nm0397102"
             },
             {
-                "id": "cas_e56aae32-e",
+                "id": "cas_bb539b43-6",
                 "name": "Noel Appleby",
-                "character": "Everard Proudfoot"
+                "character": "Everard Proudfoot",
+                "imdbID": "nm0032370"
             },
             {
-                "id": "cas_c6117ebb-c",
+                "id": "cas_2e470508-c",
                 "name": "Sean Astin",
-                "character": "Sam"
+                "character": "Sam",
+                "imdbID": "nm0000276"
             },
             {
-                "id": "cas_ce7997a6-1",
+                "id": "cas_a939475d-3",
                 "name": "Sala Baker",
-                "character": "Sauron / Goblin / Uruk-hai"
+                "character": "Sauron / Goblin / Uruk-hai",
+                "imdbID": "nm1019674"
             },
             {
-                "id": "cas_f07fd8e2-c",
+                "id": "cas_3c7aa477-b",
                 "name": "Sean Bean",
-                "character": "Boromir"
+                "character": "Boromir",
+                "imdbID": "nm0000293"
             },
             {
-                "id": "cas_c2eb3253-b",
+                "id": "cas_5d3411cd-0",
                 "name": "Billy Boyd",
-                "character": "Pippin"
+                "character": "Pippin",
+                "imdbID": "nm0101710"
             },
             {
-                "id": "cas_fb7dbb83-1",
+                "id": "cas_6e55dc70-b",
                 "name": "Andy Serkis",
-                "character": "Gollum"
+                "character": "Gollum",
+                "imdbID": "nm0785227"
             },
             {
-                "id": "cas_41ae9977-6",
+                "id": "cas_91c9509c-3",
                 "name": "Marton Csokas",
-                "character": "Celeborn"
+                "character": "Celeborn",
+                "imdbID": "nm0190744"
             },
             {
-                "id": "cas_0db6e873-1",
+                "id": "cas_d23a6cf6-b",
                 "name": "Viggo Mortensen",
-                "character": "Aragorn"
+                "character": "Aragorn",
+                "imdbID": "nm0001557"
             },
             {
-                "id": "cas_687af0b1-f",
+                "id": "cas_38f50642-d",
                 "name": "Orlando Bloom",
-                "character": "Legolas"
+                "character": "Legolas",
+                "imdbID": "nm0089217"
             }
         ],
         "genres": "Action, Adventure, Drama, Fantasy",
@@ -636,69 +743,81 @@
         "duration": [
             "178"
         ],
-        "trailer": "https://www.youtube.com/embed/V75dMMIW2B4"
+        "trailer": "https://www.youtube.com/embed/V75dMMIW2B4",
+        "imdbID": "tt0120737"
     },
     {
-        "id": "mov_c75467b1-c",
+        "id": "mov_70c4d7be-5",
         "title": "The Good, the Bad and the Ugly",
         "year": 1966,
-        "rating": 8.8,
+        "imdb_rating": 8.8,
         "directors": [
             {
-                "id": "cas_33e439e6-d",
-                "name": "Sergio Leone"
+                "id": "cas_d46ce443-a",
+                "name": "Sergio Leone",
+                "imdbID": "nm0001466"
             }
         ],
         "casts": [
             {
-                "id": "cas_853d81dc-9",
+                "id": "cas_d1563cb5-9",
                 "name": "Eli Wallach",
-                "character": "Tuco"
+                "character": "Tuco",
+                "imdbID": "nm0908919"
             },
             {
-                "id": "cas_17653e64-a",
+                "id": "cas_c9e1f469-0",
                 "name": "Clint Eastwood",
-                "character": "Blondie"
+                "character": "Blondie",
+                "imdbID": "nm0000142"
             },
             {
-                "id": "cas_d4dc0743-d",
+                "id": "cas_3ee587fe-c",
                 "name": "Lee Van Cleef",
-                "character": "Sentenza / Angel Eyes"
+                "character": "Sentenza / Angel Eyes",
+                "imdbID": "nm0001812"
             },
             {
-                "id": "cas_58e5cc14-2",
+                "id": "cas_3037bfc5-4",
                 "name": "Aldo Giuffrè",
-                "character": "Alcoholic Union Captain"
+                "character": "Alcoholic Union Captain",
+                "imdbID": "nm0321294"
             },
             {
-                "id": "cas_765d51a8-f",
+                "id": "cas_1a702a0e-d",
                 "name": "Luigi Pistilli",
-                "character": "Father Pablo Ramirez"
+                "character": "Father Pablo Ramirez",
+                "imdbID": "nm0685559"
             },
             {
-                "id": "cas_50e1b56b-b",
+                "id": "cas_82080b23-4",
                 "name": "Rada Rassimov",
-                "character": "Maria"
+                "character": "Maria",
+                "imdbID": "nm0711502"
             },
             {
-                "id": "cas_baeefde8-3",
+                "id": "cas_16b3e746-0",
                 "name": "Enzo Petito",
-                "character": "Storekeeper"
+                "character": "Storekeeper",
+                "imdbID": "nm0677654"
             },
             {
-                "id": "cas_abb0ccda-f",
+                "id": "cas_3602fd8d-5",
                 "name": "Claudio Scarchilli",
-                "character": "Mexican Peon"
+                "character": "Mexican Peon",
+                "imdbID": "nm0769116"
             },
             {
-                "id": "cas_448c520e-d",
+                "id": "cas_fcc11670-e",
                 "name": "John Bartha",
-                "character": "Sheriff"
+                "character": "Sheriff",
+                "imdbID": "nm0058384"
             },
             {
-                "id": "cas_8d00e104-2",
+                "id": "cas_45260aad-8",
                 "name": "Livio Lorenzon",
-                "character": "Baker"
+                "character": "Baker",
+                "imdbID": "nm0520859"
             }
         ],
         "genres": "Adventure, Drama, Western",
@@ -707,69 +826,81 @@
         "duration": [
             "161"
         ],
-        "trailer": "https://www.youtube.com/embed/WCN5JJY_wiA"
+        "trailer": "https://www.youtube.com/embed/WCN5JJY_wiA",
+        "imdbID": "tt0060196"
     },
     {
-        "id": "mov_552e662c-d",
+        "id": "mov_332cd4af-c",
         "title": "Forrest Gump",
         "year": 1994,
-        "rating": 8.8,
+        "imdb_rating": 8.8,
         "directors": [
             {
-                "id": "cas_6aa63c0d-b",
-                "name": "Robert Zemeckis"
+                "id": "cas_2a04d8ec-4",
+                "name": "Robert Zemeckis",
+                "imdbID": "nm0000709"
             }
         ],
         "casts": [
             {
-                "id": "cas_96544e52-2",
+                "id": "cas_eb077494-b",
                 "name": "Tom Hanks",
-                "character": "Forrest Gump"
+                "character": "Forrest Gump",
+                "imdbID": "nm0000158"
             },
             {
-                "id": "cas_e10aefa4-a",
+                "id": "cas_47a9a6b2-9",
                 "name": "Rebecca Williams",
-                "character": "Nurse at Park Bench"
+                "character": "Nurse at Park Bench",
+                "imdbID": "nm0931508"
             },
             {
-                "id": "cas_d67fde26-6",
+                "id": "cas_5f9d9417-b",
                 "name": "Sally Field",
-                "character": "Mrs. Gump"
+                "character": "Mrs. Gump",
+                "imdbID": "nm0000398"
             },
             {
-                "id": "cas_0f30afc1-9",
+                "id": "cas_49e6166d-e",
                 "name": "Michael Conner Humphreys",
-                "character": "Young Forrest"
+                "character": "Young Forrest",
+                "imdbID": "nm0402011"
             },
             {
-                "id": "cas_7b81a9d3-8",
+                "id": "cas_c8abed92-c",
                 "name": "Harold G. Herthum",
-                "character": "Doctor"
+                "character": "Doctor",
+                "imdbID": "nm0381041"
             },
             {
-                "id": "cas_ed335909-d",
+                "id": "cas_3bb4a4e3-d",
                 "name": "George Kelly",
-                "character": "Barber"
+                "character": "Barber",
+                "imdbID": "nm0446404"
             },
             {
-                "id": "cas_25520a19-c",
+                "id": "cas_359d66b5-a",
                 "name": "Bob Penny",
-                "character": "Crony"
+                "character": "Crony",
+                "imdbID": "nm0672225"
             },
             {
-                "id": "cas_9189e0c7-f",
+                "id": "cas_2fa98934-0",
                 "name": "John Randall",
-                "character": "Crony"
+                "character": "Crony",
+                "imdbID": "nm0709615"
             },
             {
-                "id": "cas_92ad8d5e-5",
+                "id": "cas_2577ee1f-c",
                 "name": "Sam Anderson",
-                "character": "Principal"
+                "character": "Principal",
+                "imdbID": "nm0027402"
             },
             {
-                "id": "cas_73f74de3-e",
+                "id": "cas_2bbb4cdf-5",
                 "name": "Margo Moorer",
-                "character": "Louise"
+                "character": "Louise",
+                "imdbID": "nm0602071"
             }
         ],
         "genres": "Drama, Romance",
@@ -778,69 +909,81 @@
         "duration": [
             "142"
         ],
-        "trailer": "https://www.youtube.com/embed/bLvqoHBptjg"
+        "trailer": "https://www.youtube.com/embed/bLvqoHBptjg",
+        "imdbID": "tt0109830"
     },
     {
-        "id": "mov_112bc8c3-2",
+        "id": "mov_124c9dd6-2",
         "title": "The Lord of the Rings: The Two Towers",
         "year": 2002,
-        "rating": 8.8,
+        "imdb_rating": 8.8,
         "directors": [
             {
-                "id": "cas_645daab4-1",
-                "name": "Peter Jackson"
+                "id": "cas_5cbdebfe-0",
+                "name": "Peter Jackson",
+                "imdbID": "nm0001392"
             }
         ],
         "casts": [
             {
-                "id": "cas_6f4b5323-8",
+                "id": "cas_1c1978db-a",
                 "name": "Bruce Allpress",
-                "character": "Aldor"
+                "character": "Aldor",
+                "imdbID": "nm0021600"
             },
             {
-                "id": "cas_df8166ad-d",
+                "id": "cas_2e470508-c",
                 "name": "Sean Astin",
-                "character": "Sam"
+                "character": "Sam",
+                "imdbID": "nm0000276"
             },
             {
-                "id": "cas_ad0d4d7a-7",
+                "id": "cas_4c18a956-5",
                 "name": "John Bach",
-                "character": "Madril"
+                "character": "Madril",
+                "imdbID": "nm0045324"
             },
             {
-                "id": "cas_7f515432-a",
+                "id": "cas_a939475d-3",
                 "name": "Sala Baker",
-                "character": "Man Flesh Uruk"
+                "character": "Man Flesh Uruk",
+                "imdbID": "nm1019674"
             },
             {
-                "id": "cas_7f038c29-0",
+                "id": "cas_9ca972d1-9",
                 "name": "Cate Blanchett",
-                "character": "Galadriel"
+                "character": "Galadriel",
+                "imdbID": "nm0000949"
             },
             {
-                "id": "cas_65ca4553-7",
+                "id": "cas_38f50642-d",
                 "name": "Orlando Bloom",
-                "character": "Legolas"
+                "character": "Legolas",
+                "imdbID": "nm0089217"
             },
             {
-                "id": "cas_62827565-1",
+                "id": "cas_5d3411cd-0",
                 "name": "Billy Boyd",
-                "character": "Pippin"
+                "character": "Pippin",
+                "imdbID": "nm0101710"
             },
             {
-                "id": "cas_9a50e8d9-7",
+                "id": "cas_feb2f4ac-2",
                 "name": "Jed Brophy",
-                "character": "Sharku / Snaga"
+                "character": "Sharku / Snaga",
+                "imdbID": "nm0112400"
             },
             {
-                "id": "cas_206199d1-f",
+                "id": "cas_dc721905-1",
                 "name": "Sam Comery",
-                "character": "Eothain"
+                "character": "Eothain",
+                "imdbID": "nm1275186"
             },
             {
-                "id": "cas_2743204f-f",
+                "id": "cas_b581e9d4-6",
                 "name": "Brad Dourif",
-                "character": "Wormtongue"
+                "character": "Wormtongue",
+                "imdbID": "nm0000374"
             }
         ],
         "genres": "Action, Adventure, Drama, Fantasy",
@@ -849,69 +992,81 @@
         "duration": [
             "179"
         ],
-        "trailer": "https://www.youtube.com/embed/LbfMDwc4azU"
+        "trailer": "https://www.youtube.com/embed/LbfMDwc4azU",
+        "imdbID": "tt0167261"
     },
     {
-        "id": "mov_b07164ab-6",
+        "id": "mov_c2d5c60f-f",
         "title": "Fight Club",
         "year": 1999,
-        "rating": 8.8,
+        "imdb_rating": 8.8,
         "directors": [
             {
-                "id": "cas_d388d6af-e",
-                "name": "David Fincher"
+                "id": "cas_19719b7b-d",
+                "name": "David Fincher",
+                "imdbID": "nm0000399"
             }
         ],
         "casts": [
             {
-                "id": "cas_0f47d572-1",
+                "id": "cas_ad0fc7f8-3",
                 "name": "Edward Norton",
-                "character": "Narrator"
+                "character": "Narrator",
+                "imdbID": "nm0001570"
             },
             {
-                "id": "cas_5544fc60-5",
+                "id": "cas_7ef4976a-c",
                 "name": "Brad Pitt",
-                "character": "Tyler Durden"
+                "character": "Tyler Durden",
+                "imdbID": "nm0000093"
             },
             {
-                "id": "cas_319d7c00-5",
+                "id": "cas_ae691ce9-5",
                 "name": "Meat Loaf",
-                "character": "Robert Paulsen"
+                "character": "Robert Paulsen",
+                "imdbID": "nm0001533"
             },
             {
-                "id": "cas_9101f15a-3",
+                "id": "cas_2b9a83bc-f",
                 "name": "Zach Grenier",
-                "character": "Richard Chesler"
+                "character": "Richard Chesler",
+                "imdbID": "nm0340260"
             },
             {
-                "id": "cas_e5bdbdae-c",
+                "id": "cas_a8ce765d-6",
                 "name": "Richmond Arquette",
-                "character": "Intern at Hospital"
+                "character": "Intern at Hospital",
+                "imdbID": "nm0037118"
             },
             {
-                "id": "cas_a1f4cacd-7",
+                "id": "cas_a4951caf-7",
                 "name": "David Andrews",
-                "character": "Thomas at Remaining Men Together"
+                "character": "Thomas at Remaining Men Together",
+                "imdbID": "nm0028625"
             },
             {
-                "id": "cas_aa0a2443-0",
+                "id": "cas_32a6522c-a",
                 "name": "George Maguire",
-                "character": "Group Leader - Remaining Men Together"
+                "character": "Group Leader - Remaining Men Together",
+                "imdbID": "nm0536574"
             },
             {
-                "id": "cas_2c77c0ed-d",
+                "id": "cas_ca103724-c",
                 "name": "Eugenie Bondurant",
-                "character": "Weeping Woman - Onward and Upward"
+                "character": "Weeping Woman - Onward and Upward",
+                "imdbID": "nm0094163"
             },
             {
-                "id": "cas_10af0854-e",
+                "id": "cas_d8b79f1b-4",
                 "name": "Christina Cabot",
-                "character": "Leader - Partners in Positivity"
+                "character": "Leader - Partners in Positivity",
+                "imdbID": "nm0127680"
             },
             {
-                "id": "cas_e9400870-5",
+                "id": "cas_8721df0c-a",
                 "name": "Helena Bonham Carter",
-                "character": "Marla Singer"
+                "character": "Marla Singer",
+                "imdbID": "nm0000307"
             }
         ],
         "genres": "Drama",
@@ -920,69 +1075,81 @@
         "duration": [
             "139"
         ],
-        "trailer": "https://www.youtube.com/embed/qtRKdVHc-cE"
+        "trailer": "https://www.youtube.com/embed/qtRKdVHc-cE",
+        "imdbID": "tt0137523"
     },
     {
-        "id": "mov_d77ec830-8",
+        "id": "mov_da64af6c-6",
         "title": "Inception",
         "year": 2010,
-        "rating": 8.8,
+        "imdb_rating": 8.8,
         "directors": [
             {
-                "id": "cas_e989e887-4",
-                "name": "Christopher Nolan"
+                "id": "cas_0974e4d9-8",
+                "name": "Christopher Nolan",
+                "imdbID": "nm0634240"
             }
         ],
         "casts": [
             {
-                "id": "cas_1b7ef986-b",
+                "id": "cas_7dec1f68-5",
                 "name": "Leonardo DiCaprio",
-                "character": "Cobb"
+                "character": "Cobb",
+                "imdbID": "nm0000138"
             },
             {
-                "id": "cas_c1875014-8",
+                "id": "cas_5934ef18-e",
                 "name": "Joseph Gordon-Levitt",
-                "character": "Arthur"
+                "character": "Arthur",
+                "imdbID": "nm0330687"
             },
             {
-                "id": "cas_ccacdcb7-5",
+                "id": "cas_ccf3f3ae-8",
                 "name": "Elliot Page",
-                "character": "Ariadne"
+                "character": "Ariadne",
+                "imdbID": "nm0680983"
             },
             {
-                "id": "cas_2a8b5e0c-4",
+                "id": "cas_9b47bf1a-4",
                 "name": "Tom Hardy",
-                "character": "Eames"
+                "character": "Eames",
+                "imdbID": "nm0362766"
             },
             {
-                "id": "cas_f0c918f8-a",
+                "id": "cas_ffc5f570-7",
                 "name": "Ken Watanabe",
-                "character": "Saito"
+                "character": "Saito",
+                "imdbID": "nm0913822"
             },
             {
-                "id": "cas_38a38322-1",
+                "id": "cas_100a5cec-8",
                 "name": "Dileep Rao",
-                "character": "Yusuf"
+                "character": "Yusuf",
+                "imdbID": "nm2438307"
             },
             {
-                "id": "cas_134ce3c0-6",
+                "id": "cas_fd9bb774-e",
                 "name": "Cillian Murphy",
-                "character": "Robert Fischer"
+                "character": "Robert Fischer",
+                "imdbID": "nm0614165"
             },
             {
-                "id": "cas_3dcb1647-8",
+                "id": "cas_508185a2-3",
                 "name": "Tom Berenger",
-                "character": "Browning"
+                "character": "Browning",
+                "imdbID": "nm0000297"
             },
             {
-                "id": "cas_eadeca34-2",
+                "id": "cas_21a102d6-2",
                 "name": "Marion Cotillard",
-                "character": "Mal"
+                "character": "Mal",
+                "imdbID": "nm0182839"
             },
             {
-                "id": "cas_b7465e0e-d",
+                "id": "cas_dde0ad6e-e",
                 "name": "Pete Postlethwaite",
-                "character": "Maurice Fischer"
+                "character": "Maurice Fischer",
+                "imdbID": "nm0000592"
             }
         ],
         "genres": "Action, Adventure, Sci-Fi, Thriller",
@@ -991,69 +1158,81 @@
         "duration": [
             "148"
         ],
-        "trailer": "https://www.youtube.com/embed/YoHD9XEInc0"
+        "trailer": "https://www.youtube.com/embed/YoHD9XEInc0",
+        "imdbID": "tt1375666"
     },
     {
-        "id": "mov_e9c8b36a-4",
+        "id": "mov_27e8bce8-0",
         "title": "Star Wars: Episode V - The Empire Strikes Back",
         "year": 1980,
-        "rating": 8.7,
+        "imdb_rating": 8.7,
         "directors": [
             {
-                "id": "cas_2870a1b5-c",
-                "name": "Irvin Kershner"
+                "id": "cas_bc58e508-9",
+                "name": "Irvin Kershner",
+                "imdbID": "nm0449984"
             }
         ],
         "casts": [
             {
-                "id": "cas_4f70f783-c",
+                "id": "cas_b8ea2c3c-2",
                 "name": "Mark Hamill",
-                "character": "Luke Skywalker"
+                "character": "Luke Skywalker",
+                "imdbID": "nm0000434"
             },
             {
-                "id": "cas_58b52ed3-6",
+                "id": "cas_a6c94382-3",
                 "name": "Harrison Ford",
-                "character": "Han Solo"
+                "character": "Han Solo",
+                "imdbID": "nm0000148"
             },
             {
-                "id": "cas_13c13398-6",
+                "id": "cas_0cab0a0d-5",
                 "name": "Carrie Fisher",
-                "character": "Princess Leia"
+                "character": "Princess Leia",
+                "imdbID": "nm0000402"
             },
             {
-                "id": "cas_e3001956-0",
+                "id": "cas_707759f7-b",
                 "name": "Billy Dee Williams",
-                "character": "Lando Calrissian"
+                "character": "Lando Calrissian",
+                "imdbID": "nm0001850"
             },
             {
-                "id": "cas_8a597fa3-d",
+                "id": "cas_be5eae35-c",
                 "name": "Anthony Daniels",
-                "character": "C-3PO"
+                "character": "C-3PO",
+                "imdbID": "nm0000355"
             },
             {
-                "id": "cas_97d1c7ae-f",
+                "id": "cas_d2ce4658-5",
                 "name": "David Prowse",
-                "character": "Darth Vader"
+                "character": "Darth Vader",
+                "imdbID": "nm0001190"
             },
             {
-                "id": "cas_a4d33489-b",
+                "id": "cas_03e2fa82-e",
                 "name": "Peter Mayhew",
-                "character": "Chewbacca"
+                "character": "Chewbacca",
+                "imdbID": "nm0562679"
             },
             {
-                "id": "cas_306f4953-e",
+                "id": "cas_67b2e90e-1",
                 "name": "Kenny Baker",
-                "character": "R2-D2"
+                "character": "R2-D2",
+                "imdbID": "nm0048652"
             },
             {
-                "id": "cas_d38fac2a-1",
+                "id": "cas_f5d977a4-d",
                 "name": "Frank Oz",
-                "character": "Yoda"
+                "character": "Yoda",
+                "imdbID": "nm0000568"
             },
             {
-                "id": "cas_7a69fc5d-9",
+                "id": "cas_07bc8101-d",
                 "name": "Alec Guinness",
-                "character": "Ben"
+                "character": "Ben",
+                "imdbID": "nm0000027"
             }
         ],
         "genres": "Action, Adventure, Fantasy, Sci-Fi",
@@ -1062,73 +1241,86 @@
         "duration": [
             "124"
         ],
-        "trailer": "https://www.youtube.com/embed/JNwNXF9Y6kY"
+        "trailer": "https://www.youtube.com/embed/JNwNXF9Y6kY",
+        "imdbID": "tt0080684"
     },
     {
-        "id": "mov_8d1ce12e-b",
+        "id": "mov_822907b7-4",
         "title": "The Matrix",
         "year": 1999,
-        "rating": 8.7,
+        "imdb_rating": 8.7,
         "directors": [
             {
-                "id": "cas_17a52be4-d",
-                "name": "Lana Wachowski"
+                "id": "cas_012d200f-7",
+                "name": "Lana Wachowski",
+                "imdbID": "nm0905154"
             },
             {
-                "id": "cas_66a1667f-f",
-                "name": "Lilly Wachowski"
+                "id": "cas_bbb4b979-d",
+                "name": "Lilly Wachowski",
+                "imdbID": "nm0905152"
             }
         ],
         "casts": [
             {
-                "id": "cas_76c6f8db-1",
+                "id": "cas_f7f5802a-9",
                 "name": "Keanu Reeves",
-                "character": "Neo"
+                "character": "Neo",
+                "imdbID": "nm0000206"
             },
             {
-                "id": "cas_e1dd366f-2",
+                "id": "cas_85cb3dec-a",
                 "name": "Laurence Fishburne",
-                "character": "Morpheus"
+                "character": "Morpheus",
+                "imdbID": "nm0000401"
             },
             {
-                "id": "cas_4b3211ba-7",
+                "id": "cas_1c52cc0f-0",
                 "name": "Carrie-Anne Moss",
-                "character": "Trinity"
+                "character": "Trinity",
+                "imdbID": "nm0005251"
             },
             {
-                "id": "cas_a1ac42b3-4",
+                "id": "cas_ad028bb2-9",
                 "name": "Hugo Weaving",
-                "character": "Agent Smith"
+                "character": "Agent Smith",
+                "imdbID": "nm0915989"
             },
             {
-                "id": "cas_ab9fbdc5-0",
+                "id": "cas_c49daf78-7",
                 "name": "Gloria Foster",
-                "character": "Oracle"
+                "character": "Oracle",
+                "imdbID": "nm0287825"
             },
             {
-                "id": "cas_4317746c-7",
+                "id": "cas_28089146-7",
                 "name": "Joe Pantoliano",
-                "character": "Cypher"
+                "character": "Cypher",
+                "imdbID": "nm0001592"
             },
             {
-                "id": "cas_45fb0e0e-a",
+                "id": "cas_0e92c4cb-5",
                 "name": "Marcus Chong",
-                "character": "Tank"
+                "character": "Tank",
+                "imdbID": "nm0159059"
             },
             {
-                "id": "cas_1dd4c4b6-1",
+                "id": "cas_1918a714-8",
                 "name": "Julian Arahanga",
-                "character": "Apoc"
+                "character": "Apoc",
+                "imdbID": "nm0032810"
             },
             {
-                "id": "cas_3c69f88b-b",
+                "id": "cas_1d44ae41-d",
                 "name": "Matt Doran",
-                "character": "Mouse"
+                "character": "Mouse",
+                "imdbID": "nm0233391"
             },
             {
-                "id": "cas_64f3cf72-1",
+                "id": "cas_39b13e87-4",
                 "name": "Belinda McClory",
-                "character": "Switch"
+                "character": "Switch",
+                "imdbID": "nm0565883"
             }
         ],
         "genres": "Action, Sci-Fi",
@@ -1137,69 +1329,81 @@
         "duration": [
             "136"
         ],
-        "trailer": "https://www.youtube.com/embed/vKQi3bBA1y8"
+        "trailer": "https://www.youtube.com/embed/vKQi3bBA1y8",
+        "imdbID": "tt0133093"
     },
     {
-        "id": "mov_089379eb-2",
+        "id": "mov_725fa414-d",
         "title": "Goodfellas",
         "year": 1990,
-        "rating": 8.7,
+        "imdb_rating": 8.7,
         "directors": [
             {
-                "id": "cas_c7e59e63-3",
-                "name": "Martin Scorsese"
+                "id": "cas_eec4bd4a-a",
+                "name": "Martin Scorsese",
+                "imdbID": "nm0000217"
             }
         ],
         "casts": [
             {
-                "id": "cas_138c55fc-4",
+                "id": "cas_41fe3215-e",
                 "name": "Robert De Niro",
-                "character": "James Conway"
+                "character": "James Conway",
+                "imdbID": "nm0000134"
             },
             {
-                "id": "cas_3ff012f5-3",
+                "id": "cas_2fcdf83b-7",
                 "name": "Ray Liotta",
-                "character": "Henry Hill"
+                "character": "Henry Hill",
+                "imdbID": "nm0000501"
             },
             {
-                "id": "cas_6c44e514-0",
+                "id": "cas_3215b43d-2",
                 "name": "Joe Pesci",
-                "character": "Tommy DeVito"
+                "character": "Tommy DeVito",
+                "imdbID": "nm0000582"
             },
             {
-                "id": "cas_09758283-2",
+                "id": "cas_b98f55f7-4",
                 "name": "Lorraine Bracco",
-                "character": "Karen Hill"
+                "character": "Karen Hill",
+                "imdbID": "nm0000966"
             },
             {
-                "id": "cas_8b588b92-5",
+                "id": "cas_5659ead3-6",
                 "name": "Paul Sorvino",
-                "character": "Paul Cicero"
+                "character": "Paul Cicero",
+                "imdbID": "nm0000649"
             },
             {
-                "id": "cas_fc6ccdc4-5",
+                "id": "cas_f006e3b7-9",
                 "name": "Frank Sivero",
-                "character": "Frankie Carbone"
+                "character": "Frankie Carbone",
+                "imdbID": "nm0803370"
             },
             {
-                "id": "cas_c7171180-3",
+                "id": "cas_b7e95dd1-5",
                 "name": "Tony Darrow",
-                "character": "Sonny Bunz"
+                "character": "Sonny Bunz",
+                "imdbID": "nm0201700"
             },
             {
-                "id": "cas_c6f234e8-6",
+                "id": "cas_5321272c-5",
                 "name": "Mike Starr",
-                "character": "Frenchy"
+                "character": "Frenchy",
+                "imdbID": "nm0823563"
             },
             {
-                "id": "cas_fbb278b8-e",
+                "id": "cas_266db3ec-a",
                 "name": "Frank Vincent",
-                "character": "Billy Batts"
+                "character": "Billy Batts",
+                "imdbID": "nm0898634"
             },
             {
-                "id": "cas_119ba1cd-7",
+                "id": "cas_2e456de5-b",
                 "name": "Chuck Low",
-                "character": "Morris Kessler"
+                "character": "Morris Kessler",
+                "imdbID": "nm0522797"
             }
         ],
         "genres": "Biography, Crime, Drama",
@@ -1208,69 +1412,81 @@
         "duration": [
             "145"
         ],
-        "trailer": "https://www.youtube.com/embed/2ilzidi_J8Q"
+        "trailer": "https://www.youtube.com/embed/2ilzidi_J8Q",
+        "imdbID": "tt0099685"
     },
     {
-        "id": "mov_783ee5ab-9",
+        "id": "mov_17e304dc-3",
         "title": "One Flew Over the Cuckoo's Nest",
         "year": 1975,
-        "rating": 8.7,
+        "imdb_rating": 8.7,
         "directors": [
             {
-                "id": "cas_301dca3e-8",
-                "name": "Milos Forman"
+                "id": "cas_220d2935-8",
+                "name": "Milos Forman",
+                "imdbID": "nm0001232"
             }
         ],
         "casts": [
             {
-                "id": "cas_edbdc90e-1",
+                "id": "cas_c4ec280d-e",
                 "name": "Michael Berryman",
-                "character": "Ellis"
+                "character": "Ellis",
+                "imdbID": "nm0077720"
             },
             {
-                "id": "cas_699606a1-0",
+                "id": "cas_f8cd2e05-9",
                 "name": "Peter Brocco",
-                "character": "Col. Matterson"
+                "character": "Col. Matterson",
+                "imdbID": "nm0110480"
             },
             {
-                "id": "cas_ebac9756-5",
+                "id": "cas_f4fcd227-2",
                 "name": "Dean R. Brooks",
-                "character": "Dr. Spivey"
+                "character": "Dr. Spivey",
+                "imdbID": "nm0111954"
             },
             {
-                "id": "cas_a66957db-e",
+                "id": "cas_2eb23e12-6",
                 "name": "Alonzo Brown",
-                "character": "Miller"
+                "character": "Miller",
+                "imdbID": "nm0113000"
             },
             {
-                "id": "cas_4ede4513-5",
+                "id": "cas_0cca0432-f",
                 "name": "Scatman Crothers",
-                "character": "Turkle"
+                "character": "Turkle",
+                "imdbID": "nm0001079"
             },
             {
-                "id": "cas_83745806-e",
+                "id": "cas_ee8cb95b-f",
                 "name": "Mwako Cumbuka",
-                "character": "Warren"
+                "character": "Warren",
+                "imdbID": "nm0191784"
             },
             {
-                "id": "cas_c1965893-e",
+                "id": "cas_17130282-c",
                 "name": "Danny DeVito",
-                "character": "Martini"
+                "character": "Martini",
+                "imdbID": "nm0000362"
             },
             {
-                "id": "cas_67c0409b-b",
+                "id": "cas_5012528c-9",
                 "name": "William Duell",
-                "character": "Sefelt"
+                "character": "Sefelt",
+                "imdbID": "nm0240239"
             },
             {
-                "id": "cas_35f7e4be-1",
+                "id": "cas_d7b12906-f",
                 "name": "Josip Elic",
-                "character": "Bancini"
+                "character": "Bancini",
+                "imdbID": "nm0253574"
             },
             {
-                "id": "cas_f1605c13-a",
+                "id": "cas_a392e6e2-2",
                 "name": "Lan Fendors",
-                "character": "Nurse Itsu"
+                "character": "Nurse Itsu",
+                "imdbID": "nm0271753"
             }
         ],
         "genres": "Drama",
@@ -1279,69 +1495,81 @@
         "duration": [
             "133"
         ],
-        "trailer": "https://www.youtube.com/embed/OXrcDonY-B8"
+        "trailer": "https://www.youtube.com/embed/OXrcDonY-B8",
+        "imdbID": "tt0073486"
     },
     {
-        "id": "mov_c28201c8-a",
+        "id": "mov_e8f22cb1-8",
         "title": "Se7en",
         "year": 1995,
-        "rating": 8.6,
+        "imdb_rating": 8.6,
         "directors": [
             {
-                "id": "cas_6b012403-8",
-                "name": "David Fincher"
+                "id": "cas_19719b7b-d",
+                "name": "David Fincher",
+                "imdbID": "nm0000399"
             }
         ],
         "casts": [
             {
-                "id": "cas_809789f8-a",
+                "id": "cas_7f2fcd08-7",
                 "name": "Morgan Freeman",
-                "character": "Somerset"
+                "character": "Somerset",
+                "imdbID": "nm0000151"
             },
             {
-                "id": "cas_47bc7a31-9",
+                "id": "cas_f81df314-e",
                 "name": "Andrew Kevin Walker",
-                "character": "Dead Man at 1st Crime Scene"
+                "character": "Dead Man at 1st Crime Scene",
+                "imdbID": "nm0001825"
             },
             {
-                "id": "cas_b8e0481e-6",
+                "id": "cas_f396f68d-7",
                 "name": "Daniel Zacapa",
-                "character": "Detective Taylor at First Murder"
+                "character": "Detective Taylor at First Murder",
+                "imdbID": "nm0669254"
             },
             {
-                "id": "cas_ef0ce3d9-e",
+                "id": "cas_7ef4976a-c",
                 "name": "Brad Pitt",
-                "character": "Mills"
+                "character": "Mills",
+                "imdbID": "nm0000093"
             },
             {
-                "id": "cas_136c9dac-8",
+                "id": "cas_9fb5e22e-3",
                 "name": "Gwyneth Paltrow",
-                "character": "Tracy"
+                "character": "Tracy",
+                "imdbID": "nm0000569"
             },
             {
-                "id": "cas_4923dbfb-4",
+                "id": "cas_ab097468-4",
                 "name": "John Cassini",
-                "character": "Officer Davis"
+                "character": "Officer Davis",
+                "imdbID": "nm0144307"
             },
             {
-                "id": "cas_563dbf7c-3",
+                "id": "cas_19d940b5-5",
                 "name": "Bob Mack",
-                "character": "Gluttony Victim"
+                "character": "Gluttony Victim",
+                "imdbID": "nm0532943"
             },
             {
-                "id": "cas_f23e34ec-2",
+                "id": "cas_bf14f75c-2",
                 "name": "Peter Crombie",
-                "character": "Dr. O'Neill"
+                "character": "Dr. O'Neill",
+                "imdbID": "nm0188598"
             },
             {
-                "id": "cas_efb66dbd-4",
+                "id": "cas_8aec05ed-8",
                 "name": "Reg E. Cathey",
-                "character": "Dr. Santiago"
+                "character": "Dr. Santiago",
+                "imdbID": "nm0146146"
             },
             {
-                "id": "cas_4f2f9102-5",
+                "id": "cas_28dfd1bd-f",
                 "name": "R. Lee Ermey",
-                "character": "Police Captain"
+                "character": "Police Captain",
+                "imdbID": "nm0000388"
             }
         ],
         "genres": "Crime, Drama, Mystery, Thriller",
@@ -1350,69 +1578,81 @@
         "duration": [
             "127"
         ],
-        "trailer": "https://www.youtube.com/embed/znmZoVkCjpI"
+        "trailer": "https://www.youtube.com/embed/znmZoVkCjpI",
+        "imdbID": "tt0114369"
     },
     {
-        "id": "mov_3fbdad43-5",
+        "id": "mov_f55a3a02-6",
         "title": "Interstellar",
         "year": 2014,
-        "rating": 8.7,
+        "imdb_rating": 8.7,
         "directors": [
             {
-                "id": "cas_c443fc11-1",
-                "name": "Christopher Nolan"
+                "id": "cas_0974e4d9-8",
+                "name": "Christopher Nolan",
+                "imdbID": "nm0634240"
             }
         ],
         "casts": [
             {
-                "id": "cas_1e9e013e-4",
+                "id": "cas_11437726-3",
                 "name": "Ellen Burstyn",
-                "character": "Murph"
+                "character": "Murph",
+                "imdbID": "nm0000995"
             },
             {
-                "id": "cas_2bac7c2a-0",
+                "id": "cas_4f63199a-7",
                 "name": "Matthew McConaughey",
-                "character": "Cooper"
+                "character": "Cooper",
+                "imdbID": "nm0000190"
             },
             {
-                "id": "cas_1bbf7de5-e",
+                "id": "cas_9fea65c7-b",
                 "name": "Mackenzie Foy",
-                "character": "Murph"
+                "character": "Murph",
+                "imdbID": "nm3237775"
             },
             {
-                "id": "cas_d7221c94-a",
+                "id": "cas_e457544c-6",
                 "name": "John Lithgow",
-                "character": "Donald"
+                "character": "Donald",
+                "imdbID": "nm0001475"
             },
             {
-                "id": "cas_94098c59-6",
+                "id": "cas_59a03ce7-3",
                 "name": "Timothée Chalamet",
-                "character": "Tom"
+                "character": "Tom",
+                "imdbID": "nm3154303"
             },
             {
-                "id": "cas_1856be41-0",
+                "id": "cas_a38c3fe4-4",
                 "name": "David Oyelowo",
-                "character": "School Principal"
+                "character": "School Principal",
+                "imdbID": "nm0654648"
             },
             {
-                "id": "cas_7cafd08b-5",
+                "id": "cas_de2d1539-2",
                 "name": "Collette Wolfe",
-                "character": "Ms. Hanley"
+                "character": "Ms. Hanley",
+                "imdbID": "nm2180792"
             },
             {
-                "id": "cas_3d0fcb8e-c",
+                "id": "cas_0e07e8dc-b",
                 "name": "Francis X. McCarthy",
-                "character": "Boots"
+                "character": "Boots",
+                "imdbID": "nm0565133"
             },
             {
-                "id": "cas_0eec9663-4",
+                "id": "cas_6c8038d2-6",
                 "name": "Bill Irwin",
-                "character": "TARS"
+                "character": "TARS",
+                "imdbID": "nm0410347"
             },
             {
-                "id": "cas_553f5559-9",
+                "id": "cas_0deb18a3-0",
                 "name": "Anne Hathaway",
-                "character": "Brand"
+                "character": "Brand",
+                "imdbID": "nm0004266"
             }
         ],
         "genres": "Adventure, Drama, Sci-Fi",
@@ -1421,69 +1661,81 @@
         "duration": [
             "169"
         ],
-        "trailer": "https://www.youtube.com/embed/2LqzF5WauAw"
+        "trailer": "https://www.youtube.com/embed/2LqzF5WauAw",
+        "imdbID": "tt0816692"
     },
     {
-        "id": "mov_9eaee6ae-1",
+        "id": "mov_161ff4d8-f",
         "title": "It's a Wonderful Life",
         "year": 1946,
-        "rating": 8.6,
+        "imdb_rating": 8.6,
         "directors": [
             {
-                "id": "cas_49b82b95-2",
-                "name": "Frank Capra"
+                "id": "cas_7bcd42a5-a",
+                "name": "Frank Capra",
+                "imdbID": "nm0001008"
             }
         ],
         "casts": [
             {
-                "id": "cas_131d3d92-2",
+                "id": "cas_fb4ce582-6",
                 "name": "James Stewart",
-                "character": "George Bailey"
+                "character": "George Bailey",
+                "imdbID": "nm0000071"
             },
             {
-                "id": "cas_90285583-6",
+                "id": "cas_0c4242f5-e",
                 "name": "Donna Reed",
-                "character": "Mary Hatch"
+                "character": "Mary Hatch",
+                "imdbID": "nm0001656"
             },
             {
-                "id": "cas_ef5564be-c",
+                "id": "cas_70653a34-c",
                 "name": "Lionel Barrymore",
-                "character": "Mr. Potter"
+                "character": "Mr. Potter",
+                "imdbID": "nm0000859"
             },
             {
-                "id": "cas_d5dd8219-9",
+                "id": "cas_cbcd5008-9",
                 "name": "Thomas Mitchell",
-                "character": "Uncle Billy"
+                "character": "Uncle Billy",
+                "imdbID": "nm0593775"
             },
             {
-                "id": "cas_873a09ed-d",
+                "id": "cas_7ab6649a-a",
                 "name": "Henry Travers",
-                "character": "Clarence"
+                "character": "Clarence",
+                "imdbID": "nm0871287"
             },
             {
-                "id": "cas_7c6ba29a-d",
+                "id": "cas_7194538f-c",
                 "name": "Beulah Bondi",
-                "character": "Mrs. Bailey"
+                "character": "Mrs. Bailey",
+                "imdbID": "nm0094135"
             },
             {
-                "id": "cas_a5115fb0-2",
+                "id": "cas_67477b2d-e",
                 "name": "Frank Faylen",
-                "character": "Ernie"
+                "character": "Ernie",
+                "imdbID": "nm0269709"
             },
             {
-                "id": "cas_5ecab64d-7",
+                "id": "cas_f49e9217-6",
                 "name": "Ward Bond",
-                "character": "Bert"
+                "character": "Bert",
+                "imdbID": "nm0000955"
             },
             {
-                "id": "cas_57ea7d58-e",
+                "id": "cas_c09f3718-7",
                 "name": "Gloria Grahame",
-                "character": "Violet"
+                "character": "Violet",
+                "imdbID": "nm0002108"
             },
             {
-                "id": "cas_0800dcf5-0",
+                "id": "cas_888ebaca-d",
                 "name": "H.B. Warner",
-                "character": "Mr. Gower"
+                "character": "Mr. Gower",
+                "imdbID": "nm0912478"
             }
         ],
         "genres": "Drama, Family, Fantasy, Romance",
@@ -1492,69 +1744,81 @@
         "duration": [
             "130"
         ],
-        "trailer": "https://www.youtube.com/embed/iLR3gZrU2Xo"
+        "trailer": "https://www.youtube.com/embed/iLR3gZrU2Xo",
+        "imdbID": "tt0038650"
     },
     {
-        "id": "mov_ede36980-5",
+        "id": "mov_7e55ffbc-9",
         "title": "Seven Samurai",
         "year": 1954,
-        "rating": 8.6,
+        "imdb_rating": 8.6,
         "directors": [
             {
-                "id": "cas_eb354bb4-5",
-                "name": "Akira Kurosawa"
+                "id": "cas_cfab72c3-e",
+                "name": "Akira Kurosawa",
+                "imdbID": "nm0000041"
             }
         ],
         "casts": [
             {
-                "id": "cas_31a7f686-a",
+                "id": "cas_238f5dda-e",
                 "name": "Toshirô Mifune",
-                "character": "Kikuchiyo"
+                "character": "Kikuchiyo",
+                "imdbID": "nm0001536"
             },
             {
-                "id": "cas_7bc8ba44-e",
+                "id": "cas_673d756a-2",
                 "name": "Takashi Shimura",
-                "character": "Kambei Shimada"
+                "character": "Kambei Shimada",
+                "imdbID": "nm0793766"
             },
             {
-                "id": "cas_a7ea6a97-9",
+                "id": "cas_e0a80d5f-b",
                 "name": "Keiko Tsushima",
-                "character": "Shino"
+                "character": "Shino",
+                "imdbID": "nm0875477"
             },
             {
-                "id": "cas_ce962d58-a",
+                "id": "cas_8f3a701f-0",
                 "name": "Yukiko Shimazaki",
-                "character": "Wife"
+                "character": "Wife",
+                "imdbID": "nm0793616"
             },
             {
-                "id": "cas_1608f08c-6",
+                "id": "cas_2543a961-c",
                 "name": "Kamatari Fujiwara",
-                "character": "Farmer Manzo"
+                "character": "Farmer Manzo",
+                "imdbID": "nm0297869"
             },
             {
-                "id": "cas_4c6b5cea-3",
+                "id": "cas_dcb8ab2c-a",
                 "name": "Daisuke Katô",
-                "character": "Shichiroji"
+                "character": "Shichiroji",
+                "imdbID": "nm0441961"
             },
             {
-                "id": "cas_6e621d26-5",
+                "id": "cas_6e4f9943-5",
                 "name": "Isao Kimura",
-                "character": "Katsushiro"
+                "character": "Katsushiro",
+                "imdbID": "nm0454087"
             },
             {
-                "id": "cas_b74fe3ba-8",
+                "id": "cas_e746941e-1",
                 "name": "Minoru Chiaki",
-                "character": "Heihachi"
+                "character": "Heihachi",
+                "imdbID": "nm0156928"
             },
             {
-                "id": "cas_108eb5c9-2",
+                "id": "cas_4ef40a2a-3",
                 "name": "Seiji Miyaguchi",
-                "character": "Kyuzo"
+                "character": "Kyuzo",
+                "imdbID": "nm0594348"
             },
             {
-                "id": "cas_9e2cee7d-e",
+                "id": "cas_2be478cb-2",
                 "name": "Yoshio Kosugi",
-                "character": "Farmer Mosuke"
+                "character": "Farmer Mosuke",
+                "imdbID": "nm0467566"
             }
         ],
         "genres": "Action, Drama",
@@ -1563,69 +1827,81 @@
         "duration": [
             "207"
         ],
-        "trailer": "https://www.youtube.com/embed/1XMJY0hYJEw"
+        "trailer": "https://www.youtube.com/embed/wJ1TOratCTo",
+        "imdbID": "tt0047478"
     },
     {
-        "id": "mov_467fa46e-9",
+        "id": "mov_fec788e7-1",
         "title": "The Silence of the Lambs",
         "year": 1991,
-        "rating": 8.6,
+        "imdb_rating": 8.6,
         "directors": [
             {
-                "id": "cas_09e12372-b",
-                "name": "Jonathan Demme"
+                "id": "cas_2a0e232d-e",
+                "name": "Jonathan Demme",
+                "imdbID": "nm0001129"
             }
         ],
         "casts": [
             {
-                "id": "cas_96bf8312-b",
+                "id": "cas_32d5b5d6-a",
                 "name": "Jodie Foster",
-                "character": "Clarice Starling"
+                "character": "Clarice Starling",
+                "imdbID": "nm0000149"
             },
             {
-                "id": "cas_72c09a87-7",
+                "id": "cas_e26c41bc-e",
                 "name": "Anthony Hopkins",
-                "character": "Dr. Hannibal Lecter"
+                "character": "Dr. Hannibal Lecter",
+                "imdbID": "nm0000164"
             },
             {
-                "id": "cas_7d390706-9",
+                "id": "cas_4d50316e-c",
                 "name": "Scott Glenn",
-                "character": "Jack Crawford"
+                "character": "Jack Crawford",
+                "imdbID": "nm0001277"
             },
             {
-                "id": "cas_5630f81b-f",
+                "id": "cas_3aaf8840-5",
                 "name": "Ted Levine",
-                "character": "Jame Gumb"
+                "character": "Jame Gumb",
+                "imdbID": "nm0505971"
             },
             {
-                "id": "cas_62ac439d-7",
+                "id": "cas_1503dc39-0",
                 "name": "Anthony Heald",
-                "character": "Dr. Frederick Chilton"
+                "character": "Dr. Frederick Chilton",
+                "imdbID": "nm0372217"
             },
             {
-                "id": "cas_61e64536-2",
+                "id": "cas_3ee0a0a0-9",
                 "name": "Brooke Smith",
-                "character": "Catherine Martin"
+                "character": "Catherine Martin",
+                "imdbID": "nm0807548"
             },
             {
-                "id": "cas_c040b64e-b",
+                "id": "cas_153b536f-9",
                 "name": "Diane Baker",
-                "character": "Senator Ruth Martin"
+                "character": "Senator Ruth Martin",
+                "imdbID": "nm0000832"
             },
             {
-                "id": "cas_283c61c3-b",
+                "id": "cas_a1e6fa2a-f",
                 "name": "Kasi Lemmons",
-                "character": "Ardelia Mapp"
+                "character": "Ardelia Mapp",
+                "imdbID": "nm0501435"
             },
             {
-                "id": "cas_7b18b97e-4",
+                "id": "cas_7d55f85f-a",
                 "name": "Charles Napier",
-                "character": "Lt. Boyle"
+                "character": "Lt. Boyle",
+                "imdbID": "nm0621008"
             },
             {
-                "id": "cas_ae376df5-6",
+                "id": "cas_fad14808-e",
                 "name": "Tracey Walter",
-                "character": "Lamar"
+                "character": "Lamar",
+                "imdbID": "nm0910145"
             }
         ],
         "genres": "Crime, Drama, Thriller",
@@ -1634,69 +1910,81 @@
         "duration": [
             "118"
         ],
-        "trailer": "https://www.youtube.com/embed/6iB21hsprAQ"
+        "trailer": "https://www.youtube.com/embed/6iB21hsprAQ",
+        "imdbID": "tt0102926"
     },
     {
-        "id": "mov_741ca8cd-1",
+        "id": "mov_cf6ff085-d",
         "title": "Saving Private Ryan",
         "year": 1998,
-        "rating": 8.6,
+        "imdb_rating": 8.6,
         "directors": [
             {
-                "id": "cas_3c738d4c-0",
-                "name": "Steven Spielberg"
+                "id": "cas_df366f5d-2",
+                "name": "Steven Spielberg",
+                "imdbID": "nm0000229"
             }
         ],
         "casts": [
             {
-                "id": "cas_8d8a6b8a-7",
+                "id": "cas_eb077494-b",
                 "name": "Tom Hanks",
-                "character": "Captain Miller"
+                "character": "Captain Miller",
+                "imdbID": "nm0000158"
             },
             {
-                "id": "cas_ce179efa-f",
+                "id": "cas_7bcf778a-7",
                 "name": "Tom Sizemore",
-                "character": "Sergeant Horvath"
+                "character": "Sergeant Horvath",
+                "imdbID": "nm0001744"
             },
             {
-                "id": "cas_21a6786f-f",
+                "id": "cas_33e2ddab-0",
                 "name": "Edward Burns",
-                "character": "Private Reiben"
+                "character": "Private Reiben",
+                "imdbID": "nm0122653"
             },
             {
-                "id": "cas_c572b8fe-d",
+                "id": "cas_a10105f4-b",
                 "name": "Barry Pepper",
-                "character": "Private Jackson"
+                "character": "Private Jackson",
+                "imdbID": "nm0001608"
             },
             {
-                "id": "cas_96d88080-c",
+                "id": "cas_fca25065-2",
                 "name": "Adam Goldberg",
-                "character": "Private Mellish"
+                "character": "Private Mellish",
+                "imdbID": "nm0004965"
             },
             {
-                "id": "cas_d48db634-e",
+                "id": "cas_cd98bd7c-9",
                 "name": "Vin Diesel",
-                "character": "Private Caparzo"
+                "character": "Private Caparzo",
+                "imdbID": "nm0004874"
             },
             {
-                "id": "cas_f7ddac6d-3",
+                "id": "cas_51a3a206-4",
                 "name": "Giovanni Ribisi",
-                "character": "T / 4 Medic Wade"
+                "character": "T / 4 Medic Wade",
+                "imdbID": "nm0000610"
             },
             {
-                "id": "cas_d54b4c57-7",
+                "id": "cas_75401db0-1",
                 "name": "Jeremy Davies",
-                "character": "Corporal Upham"
+                "character": "Corporal Upham",
+                "imdbID": "nm0001111"
             },
             {
-                "id": "cas_65b55e91-a",
+                "id": "cas_282e65e3-5",
                 "name": "Matt Damon",
-                "character": "Private Ryan"
+                "character": "Private Ryan",
+                "imdbID": "nm0000354"
             },
             {
-                "id": "cas_d632a037-5",
+                "id": "cas_c0dbe753-5",
                 "name": "Ted Danson",
-                "character": "Captain Hamill"
+                "character": "Captain Hamill",
+                "imdbID": "nm0001101"
             }
         ],
         "genres": "Drama, War",
@@ -1705,73 +1993,86 @@
         "duration": [
             "169"
         ],
-        "trailer": "https://www.youtube.com/embed/9CiW_DgxCnQ"
+        "trailer": "https://www.youtube.com/embed/9CiW_DgxCnQ",
+        "imdbID": "tt0120815"
     },
     {
-        "id": "mov_63a09c9e-1",
+        "id": "mov_ce4675ad-3",
         "title": "City of God",
         "year": 2002,
-        "rating": 8.6,
+        "imdb_rating": 8.6,
         "directors": [
             {
-                "id": "cas_0846fcc0-6",
-                "name": "Fernando Meirelles"
+                "id": "cas_4be52b02-0",
+                "name": "Fernando Meirelles",
+                "imdbID": "nm0576987"
             },
             {
-                "id": "cas_07a0bd61-3",
-                "name": "Kátia Lund"
+                "id": "cas_55d942db-1",
+                "name": "Kátia Lund",
+                "imdbID": "nm0526199"
             }
         ],
         "casts": [
             {
-                "id": "cas_f8ef32a1-d",
+                "id": "cas_166d2548-5",
                 "name": "Alexandre Rodrigues",
-                "character": "Buscapé - Rocket"
+                "character": "Buscapé - Rocket",
+                "imdbID": "nm1179105"
             },
             {
-                "id": "cas_300563a6-8",
+                "id": "cas_7c583e8d-1",
                 "name": "Leandro Firmino",
-                "character": "Zé Pequeno - Li'l Zé"
+                "character": "Zé Pequeno - Li'l Zé",
+                "imdbID": "nm1129884"
             },
             {
-                "id": "cas_30a1b3ac-8",
+                "id": "cas_ff235efd-9",
                 "name": "Phellipe Haagensen",
-                "character": "Bené - Benny"
+                "character": "Bené - Benny",
+                "imdbID": "nm1249574"
             },
             {
-                "id": "cas_2ef354d1-2",
+                "id": "cas_64a0bb65-1",
                 "name": "Douglas Silva",
-                "character": "Dadinho - Li'l Dice"
+                "character": "Dadinho - Li'l Dice",
+                "imdbID": "nm1179683"
             },
             {
-                "id": "cas_ab678ccd-0",
+                "id": "cas_e8c69c51-8",
                 "name": "Jonathan Haagensen",
-                "character": "Cabeleira - Shaggy"
+                "character": "Cabeleira - Shaggy",
+                "imdbID": "nm1178560"
             },
             {
-                "id": "cas_812f3f1b-7",
+                "id": "cas_eaf6831e-b",
                 "name": "Matheus Nachtergaele",
-                "character": "Sandro Cenoura - Carrot"
+                "character": "Sandro Cenoura - Carrot",
+                "imdbID": "nm0618690"
             },
             {
-                "id": "cas_f6c51471-e",
+                "id": "cas_92538f4f-e",
                 "name": "Seu Jorge",
-                "character": "Mané Galinha - Knockout Ned"
+                "character": "Mané Galinha - Knockout Ned",
+                "imdbID": "nm1179580"
             },
             {
-                "id": "cas_440de73a-9",
+                "id": "cas_e5db99d8-9",
                 "name": "Jefechander Suplino",
-                "character": "Alicate - Clipper"
+                "character": "Alicate - Clipper",
+                "imdbID": "nm1403603"
             },
             {
-                "id": "cas_8d914ce1-8",
+                "id": "cas_caaf7a35-4",
                 "name": "Alice Braga",
-                "character": "Angélica"
+                "character": "Angélica",
+                "imdbID": "nm0103797"
             },
             {
-                "id": "cas_15e1b5b8-1",
+                "id": "cas_ff931515-1",
                 "name": "Emerson Gomes",
-                "character": "Barbantinho - Stringy"
+                "character": "Barbantinho - Stringy",
+                "imdbID": "nm1248280"
             }
         ],
         "genres": "Crime, Drama",
@@ -1780,6 +2081,7 @@
         "duration": [
             "130"
         ],
-        "trailer": "https://www.youtube.com/embed/dcUOO4Itgmw"
+        "trailer": "https://www.youtube.com/embed/dcUOO4Itgmw",
+        "imdbID": "tt0317248"
     }
 ]
