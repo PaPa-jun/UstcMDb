@@ -23,14 +23,14 @@
                             <div class="director">
                                 <span class="explain">导演</span>:
                                 {% for one_director in movie.director %}
-                                    <a href="#">{{ one_director }}</a>
+                                    <a href="#">{{ one_director.name }}</a>
                                     {% if not loop.last %} / {% endif %}
                                 {% endfor %}
                             </div>
                             <div class="casts">
                                 <span class="explain">演员</span>:
                                 {% for one_actor in movie.casts[:5] %}
-                                    <a href="#">{{ one_actor }}</a>
+                                    <a href="#">{{ one_actor.name }}</a>
                                     {% if not loop.last %} / {% endif %}
                                 {% endfor %}
                             </div>
@@ -42,15 +42,23 @@
                                 <span class="explain">时长</span>:
                                 {{ movie.duration }}分钟
                             </div>
+                            <div class="imdb_rating">
+                                <span class="explain">IMDb评分</span>:
+                                {{ movie.imdb_rating }}
+                            </div>
+                            <div class="imdbID">
+                                <span class="explain">IMDb ID</span>:
+                                {{ movie.imdbID }}
+                            </div>
                         </td>
                         <td class="rating">
                             <div class="rating">
                                 <span class="rating_num">
                                     <span class="text">评分:</span>
-                                    <span class="num">{{ movie.rating }} / 10</span>
+                                    <span class="num">{{ movie.local_rating }} / 10</span>
                                 </span>
                                 <div class="stars">
-                                    {% set rating_int = movie.rating | int %}
+                                    {% set rating_int = movie.local_rating | int %}
                                     {% set full_stars = rating_int // 2 %}
                                     {% set empty_stars = 5 - full_stars %}
                                     
@@ -83,27 +91,26 @@
         <div class="container">
             {% for one_director in movie.director %}
                 {% for worker in workers %}
-                    {% if worker.name == one_director %}
+                    {% if worker.name == one_director.name %}
                         <div class="person">
                             <div>
                                 <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_director }}图片" width="150px"></a>
                             </div>
-                            <div>{{ one_director }}</div>
-                            <div>导演</div>
+                            <div>导演：{{ one_director.name }}</div>
+                            <div>IMDb ID: {{ one_director.imdbID }}</div>
                         </div>
                     {% endif %}
                 {% endfor %}
             {% endfor %}
             {% for one_actor in movie.casts[:3] %}
                 {% for worker in workers %}
-                    {% if worker.name == one_actor %}
+                    {% if worker.name == one_actor.name %}
                         <div class="person">
                             <div>
                                 <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_actor }}图片" width="150px"></a>
                             </div>
-                            <div>{{ one_actor }}</div>
-                            <div>角色: {{ worker.role }}</div>
-                            <div>演员</div>
+                            <div>演员：{{ one_actor.name }} ({% for role in worker.role %} {{ role }} {% endfor %})</div>
+                            <div>IMDb ID: {{ one_actor.imdbID }}</div>
                         </div>
                     {% endif %}
                 {% endfor %}

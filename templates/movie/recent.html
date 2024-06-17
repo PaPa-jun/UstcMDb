@@ -24,17 +24,17 @@
                             <div>
                                 导演
                                 {% for one_director in movie_info.director %}
-                                    {{ one_director }}{% if not loop.last %} / {% endif %}
+                                    {{ one_director.name }}{% if not loop.last %} / {% endif %}
                                 {% endfor %}
                             </div>
                             <div>
                                 演员
                                 {% for one_actor in movie_info.casts[:3] %}
-                                    {{ one_actor }}{% if not loop.last %} / {% endif %}
+                                    {{ one_actor.name }}{% if not loop.last %} / {% endif %}
                                 {% endfor %}
                             </div>
                             <div>类型 {{ movie_info.genres }}</div>
-                            <div>评分 {{ movie_info.rating }}</div>
+                            <div>评分 {{ movie_info.local_rating }}</div>
                         </td>
                     </tr>
                 </tbody>
