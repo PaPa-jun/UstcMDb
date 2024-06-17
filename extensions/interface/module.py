@@ -144,6 +144,6 @@ class Review:
 
     def get_review(self, movie_id, db):
         with db.cursor() as cursor:
-            cursor.execute("SELECT * FROM review WHERE movie_id=%s", (movie_id,))
+            cursor.execute("SELECT * FROM review WHERE movie_id=%s ORDER BY date DESC", (movie_id,))
             reviews = cursor.fetchall()
         return reviews
