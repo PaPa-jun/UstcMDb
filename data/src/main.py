@@ -9,7 +9,7 @@ path_reviews = "data/reviews/reviews.json"
 path_users = "data/users/users.json"
 
 database_host = "localhost"
-database_password = "zhangzhe777"
+database_password = "Pyf20030317"
 database_schema = "ustcMDb"
 
 def main():
@@ -36,7 +36,9 @@ def main():
     # fake_users = user.create_user_from_reviews(path_reviews)
     # scraper.to_json(fake_users, path_users)
     # database.load_user_from_json(path_users)
-    database.load_review_from_json(path_reviews)
+    # database.load_review_from_json(path_reviews)
+
+    database.update_local_rating()
 
 def update_ids():
     with open(path_top_25, 'r') as file:

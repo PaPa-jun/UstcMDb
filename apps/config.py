@@ -5,7 +5,7 @@ class Base:
         "host" : "localhost",
         "port" : 3306,
         "user" : "root", 
-        "password" : "zhangzhe777",
+        "password" : "Pyf20030317",
         "schema" : "ustcMDb",
         "charset" : 'utf8mb4'
     }
