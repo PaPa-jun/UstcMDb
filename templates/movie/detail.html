@@ -7,155 +7,200 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container">
-        <p class="title">
-            <span class="movie_name"> {{ movie.title }} </span> 
-            <span class="movie_year"> ({{ movie.year }})</span>
-        </p>
-        <div class="movie_details">
-            <table class="main_movie">
-                <tbody>
-                    <tr>
-                        <td class="pic">
-                            <img src="{{ movie.poster }}" alt="电影海报" width="250">
-                        </td>
-                        <td class="more_details">
-                            <div class="director">
-                                <span class="explain">导演</span>:
-                                {% for one_director in movie.director %}
-                                    <a href="{{ url_for('cast.cast_profile', id = one_director.id) }}">{{ one_director.name }}</a>
-                                    {% if not loop.last %} / {% endif %}
+<div class="container">
+    <p class="title">
+        <span class="movie_name"> {{ movie.title }} </span>
+        <span class="movie_year"> ({{ movie.year }})</span>
+    </p>
+    <div class="movie_details">
+        <table class="main_movie">
+            <tbody>
+                <tr>
+                    <td class="pic">
+                        <img src="{{ movie.poster }}" alt="电影海报" width="250">
+                    </td>
+                    <td class="more_details">
+                        <div class="director">
+                            <span class="explain">导演</span>:
+                            {% for one_director in movie.director %}
+                            <a href="{{ url_for('cast.cast_profile', id = one_director.id) }}">{{ one_director.name
+                                }}</a>
+                            {% if not loop.last %} / {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="casts">
+                            <span class="explain">演员</span>:
+                            {% for one_actor in movie.casts[:5] %}
+                            <a href="{{ url_for('cast.cast_profile', id = one_actor.id) }}">{{ one_actor.name }}</a>
+                            {% if not loop.last %} / {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="genres">
+                            <span class="explain">类型</span>:
+                            {{ movie.genres }}
+                        </div>
+                        <div class="duration">
+                            <span class="explain">时长</span>:
+                            {{ movie.duration }}分钟
+                        </div>
+                        <div class="imdb_rating">
+                            <span class="explain">IMDb评分</span>:
+                            {{ movie.imdb_rating }}
+                        </div>
+                        <div class="imdbID">
+                            <span class="explain">IMDb ID</span>:
+                            {{ movie.imdbID }}
+                        </div>
+                    </td>
+                    <td class="rating">
+                        <div class="rating">
+                            <span class="rating_num">
+                                <span class="text">评分:</span>
+                                <span class="num">{{ movie.local_rating }} / 10</span>
+                            </span>
+                            <div class="stars">
+                                {% set rating_int = movie.local_rating | int %}
+                                {% set full_stars = rating_int // 2 %}
+                                {% set empty_stars = 5 - full_stars %}
+
+                                {# 显示完整星星 #}
+                                {% for _ in range(full_stars) %}
+                                ★
+                                {% endfor %}
+
+                                {# 显示空星 #}
+                                {% for _ in range(empty_stars) %}
+                                ☆
                                 {% endfor %}
                             </div>
-                            <div class="casts">
-                                <span class="explain">演员</span>:
-                                {% for one_actor in movie.casts[:5] %}
-                                    <a href="{{ url_for('cast.cast_profile', id = one_actor.id) }}">{{ one_actor.name }}</a>
-                                    {% if not loop.last %} / {% endif %}
-                                {% endfor %}
-                            </div>
-                            <div class="genres">
-                                <span class="explain">类型</span>:
-                                {{ movie.genres }}
-                            </div>
-                            <div class="duration">
-                                <span class="explain">时长</span>:
-                                {{ movie.duration }}分钟
-                            </div>
-                            <div class="imdb_rating">
-                                <span class="explain">IMDb评分</span>:
-                                {{ movie.imdb_rating }}
-                            </div>
-                            <div class="imdbID">
-                                <span class="explain">IMDb ID</span>:
-                                {{ movie.imdbID }}
-                            </div>
-                        </td>
-                        <td class="rating">
-                            <div class="rating">
-                                <span class="rating_num">
-                                    <span class="text">评分:</span>
-                                    <span class="num">{{ movie.local_rating }} / 10</span>
-                                </span>
-                                <div class="stars">
-                                    {% set rating_int = movie.local_rating | int %}
-                                    {% set full_stars = rating_int // 2 %}
-                                    {% set empty_stars = 5 - full_stars %}
-                                    
-                                    {# 显示完整星星 #}
-                                    {% for _ in range(full_stars) %}
-                                        ★
-                                    {% endfor %}
-                                    
-                                    {# 显示空星 #}
-                                    {% for _ in range(empty_stars) %}
-                                        ☆
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="plot">
-            <h3 class="plot_title">剧情介绍</h3>
-            <div class="plot_content">{{ movie.plot }}</div>
-        </div>
-        <div class="video-container">
-            <h3>点击预告片链接播放视频</h2>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="plot">
+        <h3 class="plot_title">剧情介绍</h3>
+        <div class="plot_content">{{ movie.plot }}</div>
+    </div>
+    <div class="video-container">
+        <h3>点击预告片链接播放视频</h2>
             <!-- YouTube 嵌入式播放器 -->
             <iframe width="560" height="315" src="{{ movie.trailer }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="relative_pics">电影相关图片</div>
+    <div class="container">
+        {% for one_director in movie.director %}
+        {% for worker in workers %}
+        {% if worker.name == one_director.name %}
+        <div class="person">
+            <div>
+                <a href="{{ url_for('cast.cast_profile', id = one_director.id) }}"><img src="{{ worker.avatar }}"
+                        alt="{{ one_director }}图片" width="150px"></a>
+            </div>
+            <div>导演：<a href="{{ url_for('cast.cast_profile', id = one_director.id) }}">{{ one_director.name }}</a></div>
+            <div>IMDb ID: <a href="https://www.imdb.com/name/{{ one_director.imdbID }}/">{{ one_director.imdbID }}</a>
+            </div>
         </div>
-        <div class="relative_pics">电影相关图片</div>
-        <div class="container">
-            {% for one_director in movie.director %}
-                {% for worker in workers %}
-                    {% if worker.name == one_director.name %}
-                        <div class="person">
-                            <div>
-                                <a href="{{ url_for('cast.cast_profile', id = one_director.id) }}"><img src="{{ worker.avatar }}" alt="{{ one_director }}图片" width="150px"></a>
-                            </div>
-                            <div>导演：<a href="{{ url_for('cast.cast_profile', id = one_director.id) }}">{{ one_director.name }}</a></div>
-                            <div>IMDb ID: <a href="https://www.imdb.com/name/{{ one_director.imdbID }}/">{{ one_director.imdbID }}</a></div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-            {% for one_actor in movie.casts[:3] %}
-                {% for worker in workers %}
-                    {% if worker.name == one_actor.name %}
-                        <div class="person">
-                            <div>
-                                <a href="{{ url_for('cast.cast_profile', id = one_actor.id) }}"><img src="{{ worker.avatar }}" alt="{{ one_actor }}图片" width="150px"></a>
-                            </div>
-                            <div>演员：<a href="{{ url_for('cast.cast_profile', id = one_actor.id) }}">{{ one_actor.name }} ({% for role in worker.role %} {{ role }} {% endfor %})</a></div>
-                            <div>IMDb ID: <a href="https://www.imdb.com/name/{{ one_actor.imdbID }}/">{{ one_actor.imdbID }}</a></div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for one_actor in movie.casts[:3] %}
+        {% for worker in workers %}
+        {% if worker.name == one_actor.name %}
+        <div class="person">
+            <div>
+                <a href="{{ url_for('cast.cast_profile', id = one_actor.id) }}"><img src="{{ worker.avatar }}"
+                        alt="{{ one_actor }}图片" width="150px"></a>
+            </div>
+            <div>演员：<a href="{{ url_for('cast.cast_profile', id = one_actor.id) }}">{{ one_actor.name }} ({% for role in
+                    worker.role %} {{ role }} {% endfor %})</a></div>
+            <div>IMDb ID: <a href="https://www.imdb.com/name/{{ one_actor.imdbID }}/">{{ one_actor.imdbID }}</a></div>
         </div>
-        <div class="relative_comments">
-            <div>{{ movie.title }}的短评</div>
-            <div class="one_comments">
-                <div>
-                    <h3>
-                        <span class="who"></span>
-                        <span class="likes">200</span>
-                    </h3>
-                    <p class="comment_content">这个电影不错！</p>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="relative_comments">
+        <h2>{{ movie.title }}的相关评论</h2>
+        
+        <div class="comments_to_write">
+            <form id="commentForm" action="#">
+                <div class="user_info">
+                    <!-- 用户信息，例如头像等 -->
                 </div>
+                <textarea id="comment-text" name="comment_content" placeholder="请输入您的评论..."></textarea>
+                <button type="submit">提交</button>
+            </form>
+        </div>
+        
+        <div id="comments-section" class="comments_list">
+            <h3>已有的评论</h3>
+            <div class="comments_history">
+                
+                <!-- 已有的评论将会显示在这里 -->
+            </div>
+            <div>
+                已有的评论
             </div>
         </div>
     </div>
 </div>
+</div>
 <script>
-    // static/scripts.js
-    document.getElementById('comment-form').addEventListener('submit', function (event) {
-        event.preventDefault();  // 阻止表单提交的默认行为
+    document.addEventListener('DOMContentLoaded', function () {
+        const commentForm = document.getElementById('commentForm');
+        const commentsHistory = document.querySelector('.comments_history');
 
-        const commentText = document.getElementById('comment-text').value;
-        if (commentText.trim() === '') return;
+        commentForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // 阻止表单默认提交行为
 
-        const comment = {
-            id: Date.now(),
-            text: commentText
-        };
+            const commentText = document.getElementById('comment-text').value.trim();
+            if (commentText === '') return;
 
-        addCommentToDOM(comment);
-        document.getElementById('comment-text').value = '';
+            const comment = {
+                text: commentText
+            };
+
+            // 添加评论到页面
+            addCommentToDOM(comment);
+
+            // 发送评论到服务器
+            sendCommentToServer(comment);
+        });
+
+        function addCommentToDOM(comment) {
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.innerHTML = `<p>${comment.text}</p>`;
+            commentsHistory.appendChild(commentDiv);
+        }
+
+        function sendCommentToServer(comment) {
+            // 模拟 AJAX 请求发送评论到服务器
+            fetch('/save-comment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(comment),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Comment saved to database:', data);
+                    // 可选：更新评论状态，例如成功或失败的消息
+                })
+                .catch(error => {
+                    console.error('Error saving comment:', error);
+                    // 可选：更新评论状态，例如失败的消息
+                });
+        }
     });
 
-    function addCommentToDOM(comment) {
-        const commentsSection = document.getElementById('comments-section');
-
-        const commentDiv = document.createElement('div');
-        commentDiv.className = 'comment';
-        commentDiv.id = `comment-${comment.id}`;
-        commentDiv.innerHTML = `<p>${comment.text}</p>`;
-
-        commentsSection.appendChild(commentDiv);
-    }
 </script>
 {% endblock %}
