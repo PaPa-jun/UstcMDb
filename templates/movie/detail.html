@@ -5,6 +5,34 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/movie_detail.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/comment.css') }}">
+<script src="path/to/your/js/comments.js" defer></script>
+<style>
+    .star-rating {
+        direction: rtl;
+        display: inline-block;
+        padding: 20px;
+    }
+
+    .star-rating input[type="radio"] {
+        display: none;
+    }
+
+    .star-rating label {
+        color: #bbb;
+        font-size: 30px;
+        padding: 0 10px;
+        cursor: pointer;
+    }
+
+    .star-rating input[type="radio"]:checked ~ label {
+        color: #f2b600;
+    }
+
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+        color: #f2b600;
+    }
+</style>
 {% endblock %}
 
 {% block main %}
@@ -51,6 +79,39 @@
                         <div class="imdbID">
                             <span class="explain">IMDb ID</span>:
                             {{ movie.imdbID }}
+                        </div>
+                        <div class="user_rating">
+                            <span class="explain">请你进行评分</span>:
+                            <form action="#" method="post">
+                                <div class="star-rating" oninput="updateScore()">
+                                    <input type="radio" id="5-stars" name="rating" value="5" />
+                                    <label for="5-stars" class="star">&#9733;</label>
+                                    <input type="radio" id="4-stars" name="rating" value="4" />
+                                    <label for="4-stars" class="star">&#9733;</label>
+                                    <input type="radio" id="3-stars" name="rating" value="3" />
+                                    <label for="3-stars" class="star">&#9733;</label>
+                                    <input type="radio" id="2-stars" name="rating" value="2" />
+                                    <label for="2-stars" class="star">&#9733;</label>
+                                    <input type="radio" id="1-star" name="rating" value="1" />
+                                    <label for="1-star" class="star">&#9733;</label>
+                                </div>
+                                <span id="score">0/10</span>
+                                <br><br>
+                                <button type="submit">提交评分</button>
+                            </form>
+                            <script>
+                                function updateScore() {
+                                    const ratings = document.getElementsByName('rating');
+                                    let score = 0;
+                                    for (let i = 0; i < ratings.length; i++) {
+                                        if (ratings[i].checked) {
+                                            score = ratings[i].value * 2;
+                                            break;
+                                        }
+                                    }
+                                    document.getElementById('score').innerText = score + '/10';
+                                }
+                            </script>
                         </div>
                     </td>
                     <td class="rating">
@@ -126,6 +187,7 @@
     </div>
     <div class="relative_comments">
         <h2>评论</h2>
+        {% if g.current_user %}
         <div class="comments_to_write">
             <div class="user_info">
                 <!-- 头像等信息 -->
@@ -136,6 +198,14 @@
                 <button type="submit">提交</button>
             </div>
         </div>
+        {% else %}
+        <div class="comments_to_write">
+            <span class="prompt">
+                请先<a href="{{ url_for('user.login') }}">登录</a>再评论
+            </span>
+        </div>
+        {% endif %}
+
         <div id="comments-section" class="comments_list">
             <div class="comments_history" id="comments_history">
                 {% for review in reviews %}
@@ -165,9 +235,15 @@
                             <button id="like-button">点赞</button>
                             <span id="like-count">{{ review.likes }}</span>
                         </div>
+                        {% if g.current_user %}
                         <div class="reply_button">
                             <button id="reply_button">回复</button>
                         </div>
+                        {% else %}
+                        <div class="reply_button">
+                            <a href="{{ url_for('user.login') }}">回复</a>
+                        </div>
+                        {% endif %}
                     </div>
                     <div class="reply">
                         <!-- 这里是该条评论的所有回复 -->
@@ -178,6 +254,102 @@
         </div>
     </div>
 </div>
-</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const submitButton = document.querySelector('.comments_to_write button[type="submit"]');
+        const commentTextArea = document.querySelector('.comments_to_write textarea');
+        const newCommentContainer = document.getElementById('comments_history');
+
+        submitButton.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const commentText = commentTextArea.value.trim();
+
+            if (commentText !== '') {
+                const newCommentHTML = `
+                <div class="single_comment">
+                    <table class="writer_info">
+                        <tbody>
+                            <tr>
+                                <td class="writer_profile">
+                                    <a href="#">
+                                        <img src="{{ url_for('static', filename=g.current_user.avatar) }}" alt="评论者图片" width="100px">
+                                    </a>
+                                </td>
+                                <td class="writer_name">
+                                    <a href="#">{{ g.current_user.username }}</a>
+                                    <span style="color: grey;">我</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="review_content">
+                        ${commentText}
+                    </div>
+                    <div class="comment_footer">
+                        <div class="comment_date">
+                            <span> 刚刚 </span>
+                        </div>
+                        <div class="comment_likes">
+                            <button class="like-button">点赞</button>
+                            <span class="like-count"> 0 </span>
+                        </div>
+                        <div class="reply_button">
+                            <button class="reply-button">回复</button>
+                        </div>
+                    </div>
+                    <div class="reply"></div>
+                </div>
+            `;
+
+                newCommentContainer.insertAdjacentHTML('afterbegin', newCommentHTML);
+
+                commentTextArea.value = '';
+                fetch('/submit_comment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ comment: commentText })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('评论已提交到数据库:', data);
+                    })
+                    .catch(error => {
+                        console.error('提交评论时出错:', error);
+                        alert('提交评论时出错，请稍后再试。');
+                    });
+            }
+        });
+
+        newCommentContainer.addEventListener('click', function (event) {
+            if (event.target.classList.contains('like-button')) {
+                const likeCountSpan = event.target.nextElementSibling;
+                let likeCount = parseInt(likeCountSpan.textContent);
+                likeCountSpan.textContent = likeCount + 1;
+            } else if (event.target.classList.contains('reply-button')) {
+                const replyContainer = event.target.closest('.single_comment').querySelector('.reply');
+                const replyTextArea = document.createElement('textarea');
+                const replySubmitButton = document.createElement('button');
+                replySubmitButton.textContent = '提交回复';
+
+                replyContainer.appendChild(replyTextArea);
+                replyContainer.appendChild(replySubmitButton);
+
+                replySubmitButton.addEventListener('click', function () {
+                    const replyText = replyTextArea.value.trim();
+                    if (replyText !== '') {
+                        const newReplyHTML = `<div class="single_reply">${replyText}</div>`;
+                        replyContainer.insertAdjacentHTML('beforeend', newReplyHTML);
+                        replyTextArea.remove();
+                        replySubmitButton.remove();
+                    }
+                });
+            }
+        });
+    });
+
+</script>
 
 {% endblock %}
