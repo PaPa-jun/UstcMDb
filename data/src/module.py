@@ -444,7 +444,7 @@ class DataBase:
                     trailer = VALUES(trailer),
                     genres = VALUES(genres);
                 """
-                cursor.execute(sql_movie, (movie['id'], movie['title'], movie['year'], movie['duration'], movie['imdb_rating'], None, movie['plot'], movie['poster'], movie['trailer'], movie['genres'], movie['imdbID']))
+                cursor.execute(sql_movie, (movie['id'], movie['title'], movie['year'], movie['duration'], movie['imdb_rating'], 0, movie['plot'], movie['poster'], movie['trailer'], movie['genres'], movie['imdbID']))
 
                 # 插入导演信息并建立关系
                 for director in movie['directors']:

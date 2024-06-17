@@ -31,7 +31,7 @@ def create_app(mode="default"):
                 query = """
                 SELECT id FROM admin WHERE id=%s;
                 """
-                cursor.execute(query, (g.current_user['id'],))
+                cursor.execute(query, (user_id,))
                 is_admin = cursor.fetchone()
                 g.current_user['admin'] = 1 if is_admin else 0
 

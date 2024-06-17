@@ -106,6 +106,7 @@
                             <span class="explain">IMDb ID</span>:
                             {{ movie.imdbID }}
                         </div>
+                        {% if g.current_user %}
                         <div class="user_rating">
                             <span class="explain">请你进行评分</span>:
                             <form action="{{ url_for('movie.rating', id=movie.id) }}" method="post">
@@ -177,6 +178,7 @@
                                 });
                             </script>
                         </div>
+                        {% endif %}
                     </td>
                     <td class="rating">
                         <div class="rating">
@@ -278,9 +280,15 @@
                         <tbody>
                             <tr>
                                 <td class="writer_profile">
+                                    {% if review.writer_info.avatar %}
                                     <a href="#">
                                         <img src="{{ review.writer_info.avatar }}" alt="评论者图片" width="100px">
                                     </a>
+                                    {% else %}
+                                    <a href="#">
+                                        <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}" alt="评论者图片" width="100px">
+                                    </a>
+                                    {% endif %}
                                 </td>
                                 <td class="writer_name">
                                     <a href="#">{{ review.writer_info.username }}</a>
@@ -383,12 +391,14 @@
         const submitButton = document.querySelector('.comments_to_write button[type="submit"]');
         const commentTextArea = document.querySelector('.comments_to_write textarea');
         const newCommentContainer = document.getElementById('comments_history');
+        const movieId = '{{ movie.id }}';  // 从模板变量获取电影ID
 
         submitButton.addEventListener('click', function (event) {
             event.preventDefault();
 
             const commentText = commentTextArea.value.trim();
-            alert(commentText)
+            const commentDate = new Date().toISOString();  // 获取当前日期时间并格式化为ISO字符串
+
             if (commentText !== '') {
                 const newCommentHTML = `
                 <div class="single_comment">
@@ -439,21 +449,22 @@
                 newCommentContainer.insertAdjacentHTML('afterbegin', newCommentHTML);
 
                 commentTextArea.value = '';
-                fetch('{{ url_for( "movie.add_comment") }}', {
+
+                fetch('{{ url_for("movie.add_comment") }}', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ comment: commentText })
+                    body: JSON.stringify({ comment: commentText, movie_id: movieId, comment_date: commentDate })
                 })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('评论已提交到数据库:', data);
-                    })
-                    .catch(error => {
-                        console.error('提交评论时出错:', error);
-                        alert('提交评论时出错，请稍后再试。');
-                    });
+                .then(response => response.json())
+                .then(data => {
+                    console.log('评论已提交到数据库:', data);
+                })
+                .catch(error => {
+                    console.error('提交评论时出错:', error);
+                    alert('提交评论时出错，请稍后再试。');
+                });
             }
         });
 
@@ -483,7 +494,9 @@
             }
         });
     });
-
 </script>
+</body>
+
+</html>
 
 {% endblock %}
