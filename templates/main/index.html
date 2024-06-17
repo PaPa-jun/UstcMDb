@@ -19,8 +19,8 @@
                     <div>
                         <p>{{onemovie.title}}</p>
                         <p>
-                            {{onemovie.rating}}
-                            {% set rating_int = onemovie.rating | int %}
+                            {{onemovie.local_rating}}
+                            {% set rating_int = onemovie.local_rating | int %}
                             {% set full_stars = rating_int // 2 %}
                             {% set empty_stars = 5 - full_stars %}
                                     
@@ -50,8 +50,8 @@
                     <div>
                         <p>{{onemovie.title}}</p>
                         <p>
-                            {{onemovie.rating}}
-                            {% set rating_int = onemovie.rating | int %}
+                            {{onemovie.local_rating}}
+                            {% set rating_int = onemovie.local_rating | int %}
                             {% set full_stars = rating_int // 2 %}
                             {% set empty_stars = 5 - full_stars %}
                                     
@@ -81,8 +81,8 @@
                     <div>
                         <p>{{onemovie.title}}</p>
                         <p>
-                            {{onemovie.rating}}
-                            {% set rating_int = onemovie.rating | int %}
+                            {{onemovie.local_rating}}
+                            {% set rating_int = onemovie.local_rating | int %}
                             {% set full_stars = rating_int // 2 %}
                             {% set empty_stars = 5 - full_stars %}
                                     

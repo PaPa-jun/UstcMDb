@@ -18,11 +18,13 @@ CREATE TABLE IF NOT EXISTS admin(
 -- 电影表
 CREATE TABLE IF NOT EXISTS movie (
     id CHAR(14) PRIMARY KEY,
+    imdbID VARCHAR(10) UNIQUE,
     poster TEXT,
     title VARCHAR(255) NOT NULL,
     year INT,
     duration INT,
-    rating DECIMAL(2, 1),
+    imdb_rating DECIMAL(2, 1),
+    local_rating DECIMAL(2, 1),
     plot TEXT,
     trailer TEXT,
     genres TEXT
@@ -31,6 +33,7 @@ CREATE TABLE IF NOT EXISTS movie (
 -- 工作人员表
 CREATE TABLE IF NOT EXISTS worker (
     id CHAR(14) PRIMARY KEY,
+    imdbID VARCHAR(10) UNIQUE,
     avatar TEXT,
     srcset TEXT,
     name VARCHAR(255) NOT NULL,
@@ -69,7 +72,7 @@ CREATE TABLE IF NOT EXISTS review (
 CREATE TABLE IF NOT EXISTS movie_figure (
     id CHAR(14) PRIMARY KEY,  -- 使用UUID
     movie_id CHAR(14),  -- 外键指向movie
-    path TEXT,
+    url TEXT,
     FOREIGN KEY (movie_id) REFERENCES movie(id)
 );
 
@@ -77,6 +80,6 @@ CREATE TABLE IF NOT EXISTS movie_figure (
 CREATE TABLE IF NOT EXISTS worker_figure (
     id CHAR(14) PRIMARY KEY,  -- 使用UUID
     worker_id CHAR(14),  -- 外键指向worker
-    path TEXT,
+    url TEXT,
     FOREIGN KEY (worker_id) REFERENCES worker(id)
 );

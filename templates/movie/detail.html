@@ -18,13 +18,13 @@
                         <div>
                             导演 
                             {% for one_director in movie.director %}
-                                {{ one_director }}{% if not loop.last %} / {% endif %}
+                                {{ one_director.name }}{% if not loop.last %} / {% endif %}
                             {% endfor %}
                         </div>
                         <div>
                             演员
                             {% for one_actor in movie.casts[:5] %}
-                                {{ one_actor }}{% if not loop.last %} / {% endif %}
+                                {{ one_actor.name }}{% if not loop.last %} / {% endif %}
                                 {% if loop.index % 3 == 0 and not loop.last %}
                                     <br>
                                 {% endif %}
@@ -32,12 +32,14 @@
                         </div>
                         <div>类型 {{ movie.genres }}</div>
                         <div>时长 {{ movie.duration }}</div>
+                        <div>IMDb ID: {{ movie.imdbID }}</div>
+                        <div>IMDb 评分：{{ movie.imdb_rating }} / 10</div>
                     </td>
                     <td>
                         <div>
-                            评分: {{ movie.rating }} / 10
+                            本站评分: {{ movie.local_rating }} / 10
                             <div class="stars">
-                                {% set rating_int = movie.rating | int %}
+                                {% set rating_int = movie.local_rating | int %}
                                 {% set full_stars = rating_int // 2 %}
                                 {% set empty_stars = 5 - full_stars %}
                                 
@@ -70,27 +72,26 @@
     <div class="container">
         {% for one_director in movie.director %}
             {% for worker in workers %}
-                {% if worker.name == one_director %}
+                {% if worker.name == one_director.name %}
                     <div class="person">
                         <div>
                             <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_director }}图片" width="150px"></a>
                         </div>
-                        <div>{{ one_director }}</div>
-                        <div>导演</div>
+                        <div>导演：{{ one_director.name }}</div>
+                        <div>IMDb ID: {{ one_director.imdbID }}</div>
                     </div>
                 {% endif %}
             {% endfor %}
         {% endfor %}
         {% for one_actor in movie.casts[:3] %}
             {% for worker in workers %}
-                {% if worker.name == one_actor %}
+                {% if worker.name == one_actor.name %}
                     <div class="person">
                         <div>
                             <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_actor }}图片" width="150px"></a>
                         </div>
-                        <div>{{ one_actor }}</div>
-                        <div>角色: {{ worker.role }}</div>
-                        <div>演员</div>
+                        <div>演员：{{ one_actor.name }} ({% for one_role in worker.role %} {{ one_role }} {% endfor %})</div>
+                        <div>IMDb ID: {{ one_actor.imdbID }}</div>
                     </div>
                 {% endif %}
             {% endfor %}

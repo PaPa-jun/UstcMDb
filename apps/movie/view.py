@@ -28,10 +28,12 @@ def movie_detail(id):
     workers = []
     
     for director in current_movie['director']:
-        worker_id = worker.get_id_by_name(director, g.db)
+        director_name = director['name']
+        worker_id = worker.get_id_by_name(director_name, g.db)
         worker_info = worker.get_info(worker_id, g.db)
         workers.append({
-            'name': director,
+            'name': director_name,
+            'imdbID' : director['imdbID'],
             'avatar': worker_info['avatar'].split(',')[0] if worker_info['avatar'] else None,
             'photo_set': worker_info['avatar'],
             'bio': worker_info['bio'],
@@ -42,10 +44,12 @@ def movie_detail(id):
         })
     
     for cast in current_movie['casts']:
-        worker_id = worker.get_id_by_name(cast, g.db)
+        cast_name = cast['name']
+        worker_id = worker.get_id_by_name(cast_name, g.db)
         worker_info = worker.get_info(worker_id, g.db)
         workers.append({
-            'name': cast,
+            'name': cast_name,
+            'imdbID' : cast['imdbID'],
             'avatar': worker_info['avatar'].split(',')[0] if worker_info['avatar'] else None,
             'photo_set': worker_info['avatar'],
             'bio': worker_info['bio'],
