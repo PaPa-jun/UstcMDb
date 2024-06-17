@@ -71,11 +71,11 @@
             </table>
         </div>
         <div class="plot">
-            <h3>剧情介绍</h3>
-            <div class="plot_content"> {{movie.plot}}</div>
+            <h3 class="plot_title">剧情介绍</h3>
+            <div class="plot_content">{{ movie.plot }}</div>
         </div>
         <div class="video-container">
-            <h2>点击预告片链接播放视频</h2>
+            <h3>点击预告片链接播放视频</h2>
             <!-- YouTube 嵌入式播放器 -->
             <iframe width="560" height="315" src="{{ movie.trailer }}" frameborder="0" allowfullscreen></iframe>
         </div>
