@@ -2,19 +2,32 @@
 
 {% block title %}注册{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
 {% block header %}
     <h1>用户登陆</h1>
 {% endblock %}
 
 {% block main %}
-<form action="{{ url_for('user.login') }}" method="post">
-    <p><input type="text" name="username" placeholder="用户名" /></p>
-    <p><input type="password" name="password" placeholder="密码" /></p>
-    <p>
-        <input type="submit" value="登陆" />
-        <input type="button" value="注册" onclick="redirectToRegister()"/>
-    </p>
-</form>
+<div class="welcome">
+    <h1>登录USTC电影交流平台</h1>
+</div>
+<div class="login-container">
+    <form action="{{ url_for('user.login') }}" method="post" class="login-form">
+        <div class="form-group">
+            <input type="text" name="username" id="username" placeholder="用户名" class="form-input" />
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" id="password" placeholder="密码" class="form-input" />
+        </div>
+        <div class="form-actions">
+            <input type="submit" value="登陆" class="btn btn-login" />
+            <input type="button" value="注册" class="btn btn-register" onclick="redirectToRegister()"/>
+        </div>
+    </form>
+</div>
 <script>
     function redirectToRegister() {
         window.location.href = "{{ url_for('user.register') }}";

@@ -54,7 +54,7 @@ nav a:hover {
 }
 
 .search-form input {
-    width: 200px;
+    width: 500px;
 }
 
 .search-form button {
@@ -117,4 +117,79 @@ footer a:hover {
 .alert-warning {
     background-color: #ff9800;
     color: #fff;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-section h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #f5c518;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section ul {
+    margin-top: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ddd;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
 }

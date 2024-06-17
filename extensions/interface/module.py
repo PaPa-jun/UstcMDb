@@ -113,9 +113,9 @@ class Cast:
             worker_info['movies'] = []
             for movie in attended_movies:
                 for value in movie.values():
-                    cursor.execute("SELECT title FROM movie WHERE id=%s", (value,))
-                    movie_title = cursor.fetchone()
-                    worker_info['movies'].append(movie_title['title'] if movie_title else None)
+                    cursor.execute("SELECT * FROM movie WHERE id=%s", (value,))
+                    movie_info = cursor.fetchone()
+                    worker_info['movies'].append(movie_info if movie_info else None)
         return worker_info
 
     def get_id_by_name(self, name, db):
