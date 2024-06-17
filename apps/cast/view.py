@@ -7,5 +7,4 @@ blueprint = Blueprint("cast", __name__)
 def cast_profile(id):
     cast = Cast()
     cast_info = cast.get_info(id, g.db)
-    print(cast_info)
     return render_template("casts/detail.html", cast = cast_info)

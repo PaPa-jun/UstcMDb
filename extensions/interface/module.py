@@ -69,7 +69,7 @@ class Movie:
 
     def top(self, db, range):
         with db.cursor() as cursor:
-            cursor.execute("SELECT id FROM movie ORDER BY imdb_rating DESC, local_rating DESC LIMIT %s", (range,))
+            cursor.execute("SELECT id FROM movie ORDER BY local_rating DESC, imdb_rating DESC LIMIT %s", (range,))
             movies = cursor.fetchall()  # fetchall instead of fetchone to get multiple records
             
         movies_info = []
@@ -148,3 +148,36 @@ class Review:
             cursor.execute("SELECT * FROM review WHERE movie_id=%s ORDER BY date DESC", (movie_id,))
             reviews = cursor.fetchall()
         return reviews
+
+class Genres:
+    """
+    分类接口
+    """
+    def __init__(self) -> None:
+        pass
+
+    def by_year(self, db):
+        with db.cursor() as cursor:
+            query = """
+            SELECT year FROM movie;
+            """
+            cursor.execute(query)
+            years = cursor.fetchall()
+        all_years = []
+        for year in years:
+            if year['year'] not in all_years:
+                all_years.append(year['year'])
+        
+        all_movies = {}
+        with db.cursor() as cursor:
+            for year in all_years:
+                query = """
+                SELECT * FROM movie WHERE year=%s;
+                """
+                cursor.execute(query, (year,))
+                movies = cursor.fetchall()
+                all_movies[year] = movies
+        
+        return all_movies
+                
+        

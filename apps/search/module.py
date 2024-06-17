@@ -19,7 +19,7 @@ class Search:
 
     def search_movie(self):
         with self.db.cursor() as cursor:
-            sql = "SELECT id FROM movie WHERE title LIKE %s ORDER BY imdb_rating DESC"
+            sql = "SELECT id FROM movie WHERE title LIKE %s ORDER BY local_rating DESC, imdb_rating DESC"
             cursor.execute(sql, ('%' + self.keywords + '%',))
             ids = cursor.fetchall()
         movie = Movie()

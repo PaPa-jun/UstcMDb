@@ -578,3 +578,42 @@ class DataBase:
                         review['rating']
                     ))
         self.connection.commit()
+
+    def updating_movie_rating_from_reviews(self):
+        with self.connection.cursor() as cursor:
+            query = """
+            SELECT writer_id, movie_id, rating FROM review;
+            """
+            cursor.execute(query)
+            rating_info = cursor.fetchall()
+
+        with self.connection.cursor() as cursor:
+            for info in rating_info:
+                query = """
+                INSERT INTO user_movie_rating (user_id, movie_id, rating)
+                VALUES (%s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                rating = VALUES(rating);
+                """
+                cursor.execute(query, (info['writer_id'], info['movie_id'], info['rating']))
+        self.connection.commit()
+
+    def update_local_rating(self):
+        with self.connection.cursor() as cursor:
+            query = """
+            SELECT id FROM movie;
+            """
+            cursor.execute(query)
+            movies = cursor.fetchall()
+
+            for movie in movies:
+                query = """
+                SELECT AVG(rating) FROM user_movie_rating WHERE movie_id=%s;
+                """
+                cursor.execute(query, movie['id'])
+                avg = cursor.fetchone()
+                query = """
+                UPDATE movie SET local_rating=%s WHERE id=%s;
+                """
+                cursor.execute(query, (avg['AVG(rating)'], movie['id']))
+        self.connection.commit()

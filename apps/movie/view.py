@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, g
-from extensions import Movie, Cast, Review, User
+from flask import Blueprint, render_template, g, request, flash, redirect, url_for
+from extensions import Movie, Cast, Review, User, Genres
 
 blueprint = Blueprint("movie", __name__)
 
@@ -17,8 +17,10 @@ def recent25():
 
 @blueprint.route("/classification")
 def classification():
-    return "电影分类"
-
+    genres = Genres()
+    year_and_movies = genres.by_year(g.db)
+    print(year_and_movies)
+    return render_template("movie/classification.html", movies = year_and_movies)
 
 @blueprint.route("/<id>")
 def movie_detail(id):
@@ -66,3 +68,42 @@ def movie_detail(id):
         user.get_info(g.db)
         review['writer_info'] = user.return_info()
     return render_template("movie/detail.html", movie=current_movie, workers=workers, reviews=reviews)
+
+@blueprint.route("/<id>", methods=['GET', 'POST'])
+def rating(id):
+    if request.method == 'POST':
+        rating = request.form['rating']
+        with g.db.cursor() as cursor:
+            query = """
+            SELECT rating FROM user_movie_rating WHERE user_id=%s AND movie_id=%s;
+            """
+            cursor.execute(query, (g.current_user['id'], id))
+            rating = cursor.fetchone()
+        
+        if not rating:
+            with g.db.cursor() as cursor:
+                query = """
+                INSERT INTO user_movie_rating (user_id, movie_id, rating)
+                VALUES (%s, %s, %s);
+                """
+                cursor.execute(query, (g.current_user['id'], id, rating))
+            g.db.commit()
+            with g.db.cursor() as cursor:
+                query = """
+                SELECT AVG(rating) FROM user_movie_rating WHERE movie_id=%s;
+                """
+                cursor.execute(query, (id,))
+                rating_avg = cursor.fetchone()
+                query = """
+                UPDATE movie
+                SET local_rating=%s;
+                """
+                cursor.execute(query, (rating_avg['AVG(rating)'],))
+            g.db.commit()
+        else:
+            flash("您已评过分。")
+    return redirect(url_for('movie.movie_detail', id=id))
+
+@blueprint.route("/")
+def add_comment():
+    return request.json
