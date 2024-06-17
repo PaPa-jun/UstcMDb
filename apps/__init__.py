@@ -28,6 +28,12 @@ def create_app(mode="default"):
             with g.db.cursor() as cursor:
                 cursor.execute('SELECT id, username, avatar FROM user WHERE id=%s', (user_id))
                 g.current_user = cursor.fetchone()
+                query = """
+                SELECT id FROM admin WHERE id=%s;
+                """
+                cursor.execute(query, (g.current_user['id'],))
+                is_admin = cursor.fetchone()
+                g.current_user['admin'] = 1 if is_admin else 0
 
     app.register_blueprint(main_bp)
     app.register_blueprint(user_bp, url_prefix="/user")

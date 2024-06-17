@@ -24,12 +24,12 @@
         cursor: pointer;
     }
 
-    .star-rating input[type="radio"]:checked ~ label {
+    .star-rating input[type="radio"]:checked~label {
         color: #f2b600;
     }
 
     .star-rating label:hover,
-    .star-rating label:hover ~ label {
+    .star-rating label:hover~label {
         color: #f2b600;
     }
 </style>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="user_rating">
                             <span class="explain">请你进行评分</span>:
-                            <form action="#" method="post">
+                            <form action="{{ url_for('movie.rating', id=movie.id) }}" method="post">
                                 <div class="star-rating" oninput="updateScore()">
                                     <input type="radio" id="5-stars" name="rating" value="5" />
                                     <label for="5-stars" class="star">&#9733;</label>
@@ -215,7 +215,7 @@
                             <tr>
                                 <td class="writer_profile">
                                     <a href="#">
-                                        <img src="{{review.writer_info.avatar }}" alt="评论者图片" width="100px">
+                                        <img src="{{ review.writer_info.avatar }}" alt="评论者图片" width="100px">
                                     </a>
                                 </td>
                                 <td class="writer_name">
@@ -273,7 +273,11 @@
                             <tr>
                                 <td class="writer_profile">
                                     <a href="#">
-                                        <img src="{{ url_for('static', filename=g.current_user.avatar) }}" alt="评论者图片" width="100px">
+                                        {% if g.current_user.avatar %}
+                                        <img src="{{ url_for('static', filename=g.current_user.avatar)}}" alt="评论者图片" width="100px">
+                                        {% else %}
+                                        <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg')}}" alt="评论者图片" width="100px">
+                                        {% endif %}
                                     </a>
                                 </td>
                                 <td class="writer_name">
@@ -305,7 +309,7 @@
                 newCommentContainer.insertAdjacentHTML('afterbegin', newCommentHTML);
 
                 commentTextArea.value = '';
-                fetch('/submit_comment', {
+                fetch('{{ url_for( "movie.add_comment") }}', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
