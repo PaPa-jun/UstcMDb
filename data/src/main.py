@@ -9,7 +9,7 @@ path_reviews = "data/reviews/reviews.json"
 path_users = "data/users/users.json"
 
 database_host = "localhost"
-database_password = "Pyf20030317"
+database_password = "zhangzhe777"
 database_schema = "ustcMDb"
 
 def main():
@@ -38,6 +38,7 @@ def main():
     # database.load_user_from_json(path_users)
     # database.load_review_from_json(path_reviews)
 
+    database.updating_movie_rating_from_reviews()
     database.update_local_rating()
 
 def update_ids():

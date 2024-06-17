@@ -3,12 +3,47 @@
 {% block title %}电影分类{% endblock %}
 
 {% block extra_css %}
-<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/top_25.css') }}"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/classification.css') }}">
 {% endblock %}
 
 {% block main %}
 <div class="container">
-    <div class="classification
-    "></div>
+    <div id="head1">按发行年份分类</div>
+    {% for year, one_year_movies in movies.items() %}
+    <div class="one_year">
+        <div class="head2">
+            {{ year }}s
+        </div>
+        <div class="movies">
+            {% for movie in one_year_movies %}
+            <div class="movie">
+                <div class="pic">
+                    <a href="{{ url_for('movie.movie_detail', id=movie.id) }}">
+                        <img src="{{ movie.poster }}" alt="电影图片" width="150px">
+                    </a>
+                </div>
+                <div class="movie_title">
+                    <a href="{{ url_for('movie.movie_detail', id=movie.id) }}">
+                        <span class="movie_name">{{ movie.title }}</span>
+                    </a>
+                </div>
+                <div class="local_rating">
+                    <div class="num_rating">
+                        {{ movie.local_rating }}
+                    </div>
+                    <div class="stars">
+                        {% set rating_int = movie.local_rating | int %}
+                        {% set full_stars = rating_int // 2 %}
+                        {% set empty_stars = 5 - full_stars %}
+                        {% for _ in range(full_stars) %}★{% endfor %}
+                        {% for _ in range(empty_stars) %}☆{% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+    <div class="divider"></div>
 </div>
 {% endblock %}
