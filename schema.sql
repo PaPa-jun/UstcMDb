@@ -86,7 +86,8 @@ CREATE TABLE IF NOT EXISTS worker_figure (
 
 -- 用户给电影评分的表
 CREATE TABLE IF NOT EXISTS user_movie_rating (
-    user_id CHAR(14) PRIMARY KEY,
-    movie_id CHAR(14) PRIMARY KEY,
-    rating DECIMAL(2, 1)
+    user_id CHAR(14),
+    movie_id CHAR(14),
+    rating DECIMAL(2, 1),
+    PRIMARY KEY (user_id, movie_id)
 )

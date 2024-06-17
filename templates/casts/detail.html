@@ -3,13 +3,61 @@
 {% block title %}演职员个人信息{% endblock %}
 
 {% block extra_css %}
-<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/movie_detail.css') }}"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cast_detail.css') }}">
 {% endblock %}
 
 {% block main %}
-    <div class="container">
-        <p class="title">
-            <span class="movie_name"> {{ cast.name }} </span> 
-        </p>
+<div class="container">
+    <div class="title">
+        <span class="cast_name">{{ cast.name }}</span>
     </div>
+    <div class="cast_details">
+        <table class="main_cast">
+            <tbody>
+                <tr>
+                    <td class="pic">
+                        <img src="{{ cast.avatar }}" srcset="{{ cast.srcset }}" alt="{{ cast.name }}" class="cast_avatar">
+                    </td>
+                    <td class="more_details">
+                        <div class="birth">
+                            <span class="explain">出生日期</span>:
+                            {{ cast.birth.strftime('%Y-%m-%d') if cast.birth else '未知'}}
+                        </div>
+                        <div class="job">
+                            <span class="explain">职业</span>:
+                            {{ cast.job if cast.job else '未知' }}
+                        </div>
+                        <div class="imdbID">
+                            <span class="explain">IMDb ID</span>:
+                            <a href="https://www.imdb.com/name/{{ cast.imdbID }}/">{{ cast.imdbID }}</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="bio">
+                        <h3 class="bio_title">简介</h3>
+                        <div class="bio_content">{{ cast.bio }}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="movies">
+        <h3 class="movies_title">出演电影</h3>
+        <div class="movie_list">
+            {% for movie in cast.movies %}
+                <div class="movie">
+                    <img src="{{ movie.poster }}" alt="{{ movie.title }} 海报" class="movie_poster">
+                    <div class="movie_info">
+                        <span class="movie_name">{{ movie.title }} ({{ movie.year }})</span>
+                        <span class="movie_duration">{{ movie.duration }}分钟</span>
+                        <span class="movie_genres">{{ movie.genres }}</span>
+                        <span class="movie_rating">IMDb评分: {{ movie.imdb_rating }}</span>
+                        <a href="{{ url_for('movie.movie_detail', id=movie.id) }}" class="movie_detail_link">查看详情</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}
