@@ -38,6 +38,7 @@ def main():
     # database.load_user_from_json(path_users)
     # database.load_review_from_json(path_reviews)
 
+    database.updating_movie_rating_from_reviews()
     database.update_local_rating()
 
 def update_ids():

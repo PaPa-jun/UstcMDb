@@ -179,5 +179,3 @@ class Genres:
                 all_movies[year] = movies
         
         return all_movies
-                
-        

@@ -1,5 +1,8 @@
-from flask import Blueprint, render_template, g, request, flash, redirect, url_for
+from flask import Blueprint, render_template, g, request, flash, redirect, url_for, jsonify
 from extensions import Movie, Cast, Review, User, Genres
+from datetime import datetime
+import uuid
+
 
 blueprint = Blueprint("movie", __name__)
 
@@ -19,7 +22,6 @@ def recent25():
 def classification():
     genres = Genres()
     year_and_movies = genres.by_year(g.db)
-    print(year_and_movies)
     return render_template("movie/classification.html", movies = year_and_movies)
 
 @blueprint.route("/<id>")
@@ -95,15 +97,34 @@ def rating(id):
                 cursor.execute(query, (id,))
                 rating_avg = cursor.fetchone()
                 query = """
-                UPDATE movie
-                SET local_rating=%s;
+                UPDATE movie SET local_rating=%s WHERE id=%s;
                 """
-                cursor.execute(query, (rating_avg['AVG(rating)'],))
+                cursor.execute(query, (rating_avg['AVG(rating)'], id))
             g.db.commit()
         else:
             flash("您已评过分。")
     return redirect(url_for('movie.movie_detail', id=id))
 
-@blueprint.route("/")
+@blueprint.route('/add_comment', methods=['POST'])
 def add_comment():
-    return request.json
+    data = request.get_json()
+    movie_id = data.get('movie_id')
+    comment_text = data.get('comment')
+    comment_date = data.get('comment_date')
+    
+    if not movie_id or not comment_text or not comment_date:
+        return jsonify({'error': '缺少必要的评论信息'}), 400
+    
+    # 将ISO 8601日期格式转换为YYYY-MM-DD HH:MM:SS
+    comment_date = datetime.strptime(comment_date, "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%Y-%m-%d %H:%M:%S")
+    
+    with g.db.cursor() as cursor:
+        query = """
+        INSERT INTO review (id, movie_id, writer_id, content, date)
+        VALUES (%s, %s, %s, %s, %s);
+        """
+        cursor.execute(query, ('rev_' + str(uuid.uuid4())[:10], movie_id, g.current_user['id'], comment_text, comment_date))
+    g.db.commit()
+    response = {'message': '评论已成功提交', 'comment': comment_text, 'movie_id': movie_id, 'comment_date': comment_date}
+
+    return jsonify(response)
