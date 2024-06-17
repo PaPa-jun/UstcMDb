@@ -12,7 +12,7 @@
             {% if current_user.avatar %}
                 <img src="{{ url_for('static', filename=current_user.avatar) }}" alt="你的头像被外星人偷走了～"/>
             {% else %}
-                <img src="{{ url_for('static', filename='images/avatars/fixed_pics/logo.jpg') }}" alt="默认头像">
+                <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}" alt="默认头像">
             {% endif %}
         </div>
     

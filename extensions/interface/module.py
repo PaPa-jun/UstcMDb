@@ -100,7 +100,7 @@ class Cast:
             attended_movies = cursor.fetchall()
             worker_info['movies'] = []
             for movie in attended_movies:
-                for value in movie.keys():
+                for value in movie.values():
                     cursor.execute("SELECT title FROM movie WHERE id=%s", (value,))
                     movie_title = cursor.fetchone()
                     worker_info['movies'].append(movie_title['title'] if movie_title else None)

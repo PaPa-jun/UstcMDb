@@ -1,0 +1,160 @@
+.title {
+    font-size: 28px;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-align: left;
+    background-color: #f5f5f5; /* 浅灰色背景 */
+    border-left: 4px solid #4caf50; /* 左侧绿色边框 */
+}
+
+.movie_name {
+    font-weight: bold;
+    color: #000;
+    font-size: 32px;
+    margin-right: 10px;
+}
+
+.movie_year {
+    color: #555;
+    font-size: 24px;
+    font-style: italic;
+}
+
+
+
+
+/* 整体容器样式 */
+.movie_details {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 主要表格样式 */
+.main_movie {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.main_movie td {
+    padding: 20px 10px;
+    vertical-align: top;
+}
+
+/* 海报图片样式 */
+.pic img {
+    display: block;
+    width: 100%;
+    max-width: 250px; /* 控制最大宽度 */
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 修饰导演、演员、类型和时长信息部分 */
+.more_details {
+    padding: 20px;
+    background-color: #f9f9f9; /* 背景色 */
+    border-left: 1px solid #ccc;
+}
+
+.explain {
+    font-weight: bold; /* 加粗 */
+    margin-right: 5px; /* 右侧间距 */
+    color: #333; /* 黑色文本 */
+    font-size: 14px; /* 字体大小 */
+}
+
+.director, .casts, .genres, .duration {
+    margin-bottom: 30px; /* 增加上下间距 */
+    font-size: 16px; /* 字体大小 */
+    line-height: 1.6; /* 行高 */
+}
+
+.director a, .casts a {
+    text-decoration: none; /* 去除链接下划线 */
+    color: blue; /* 链接颜色 */
+    transition: color 0.3s ease; /* 链接颜色过渡效果 */
+}
+
+.director a:hover, .casts a:hover {
+    color: green; /* 悬停时链接颜色 */
+}
+
+
+
+
+
+
+.rating {
+    text-align: center; /* 文本居中 */
+    padding: 10px; /* 内边距 */
+}
+
+.rating_num {
+    display: inline-block; /* 块级元素 */
+    background-color: #f0f0f0; /* 背景色 */
+    padding: 10px; /* 内边距 */
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 阴影 */
+}
+
+.rating_num .text {
+    font-weight: bold; /* 加粗 */
+    font-size: 16px; /* 字体大小 */
+    color: grey; /* 文本颜色 */
+    margin-right: 5px; /* 右侧间距 */
+}
+
+.rating_num .num {
+    font-size: 18px; /* 字体大小 */
+    color: black; /* 星星颜色 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* 文本阴影 */
+}
+
+.stars {
+    font-size: 24px; /* 星星大小 */
+    color: #fdd835; /* 星星颜色 */
+    margin-top: 8px; /* 顶部间距 */
+}
+
+.stars .full-star {
+    display: inline-block; /* 内联块元素 */
+    margin-right: 3px; /* 右侧间距 */
+}
+
+.stars .empty-star {
+    display: inline-block; /* 内联块元素 */
+    margin-right: 3px; /* 右侧间距 */
+    color: #ccc; /* 空星颜色 */
+}
+
+
+.plot {
+    background-color: #f9f9f9; /* 背景色 */
+    padding: 20px; /* 内边距 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+    margin-top: 20px; /* 顶部外边距 */
+}
+
+.plot_title {
+    font-size: 24px; /* 标题字体大小 */
+    font-weight: bold; /* 加粗 */
+    color: #333; /* 字体颜色 */
+    border-bottom: 2px solid #fdd835; /* 底部边框 */
+    padding-bottom: 10px; /* 底部内边距 */
+    margin-bottom: 15px; /* 底部外边距 */
+}
+
+.plot_content {
+    font-size: 16px; /* 内容字体大小 */
+    line-height: 1.6; /* 行高 */
+    color: #555; /* 字体颜色 */
+    text-align: justify; /* 对齐方式 */
+}
+
