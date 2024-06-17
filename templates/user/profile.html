@@ -15,9 +15,14 @@
                 <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}" alt="默认头像">
             {% endif %}
         </div>
-    
+
         <div>
-            <h1>{{ current_user.username }} 的个人主页</h1>
+            <h1>
+                {{ current_user.username }}
+                {% if g.current_user.admin == 1 %}
+                (管理员)
+                {% endif %} 
+                 的个人主页</h1>
             <div class="log_off">
                 <a href="{{ url_for('user.logout') }}">退出登录</a>
             </div>

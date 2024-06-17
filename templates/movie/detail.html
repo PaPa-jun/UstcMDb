@@ -244,6 +244,14 @@
                             <a href="{{ url_for('user.login') }}">回复</a>
                         </div>
                         {% endif %}
+                        {% if g.current_user.admin %}
+                        <div class="delete">
+                            <form action="#">
+                                <input type="hidden" name="comment_id" id="comment_id" value="{{ review.id }}">
+                                <input type="submit" name="delete" id="delete" style="color: red;" value="删除">
+                            </form>
+                        </div>
+                        {% endif %}
                     </div>
                     <div class="reply">
                         <!-- 这里是该条评论的所有回复 -->
@@ -264,7 +272,7 @@
             event.preventDefault();
 
             const commentText = commentTextArea.value.trim();
-
+            alert(commentText)
             if (commentText !== '') {
                 const newCommentHTML = `
                 <div class="single_comment">
@@ -272,9 +280,15 @@
                         <tbody>
                             <tr>
                                 <td class="writer_profile">
+                                    {% if g.current_user.avatar %}
                                     <a href="#">
                                         <img src="{{ url_for('static', filename=g.current_user.avatar) }}" alt="评论者图片" width="100px">
                                     </a>
+                                    {% else %}
+                                    <a href="#">
+                                        <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}" alt="评论者图片" width="100px">
+                                    </a>
+                                    {% endif %}
                                 </td>
                                 <td class="writer_name">
                                     <a href="#">{{ g.current_user.username }}</a>
