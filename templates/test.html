@@ -3,155 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Carousel</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .carousel-container {
-            width: 80%;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .movie {
-            min-width: 20%;
-            box-sizing: border-box;
-            padding: 20px;
-            text-align: center;
-        }
-        .movie img {
-            width: 100%;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .movie-title {
-            margin-top: 10px;
-            font-size: 16px;
-            color: #333;
-        }
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-            background: rgba(255, 255, 255, 0.8);
-            border: none;
-            cursor: pointer;
-            z-index: 1;
-            padding: 10px;
-            border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        .arrow-left {
-            left: 10px;
-        }
-        .arrow-right {
-            right: 10px;
-        }
-    </style>
+    <title>评论系统</title>
+    <link rel="stylesheet" href="./test.css">
 </head>
 <body>
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="movie">
-                <img src="movie1.jpg" alt="Movie 1">
-                <div class="movie-title">Movie 1</div>
-            </div>
-            <div class="movie">
-                <img src="movie2.jpg" alt="Movie 2">
-                <div class="movie-title">Movie 2</div>
-            </div>
-            <div class="movie">
-                <img src="movie3.jpg" alt="Movie 3">
-                <div class="movie-title">Movie 3</div>
-            </div>
-            <div class="movie">
-                <img src="movie4.jpg" alt="Movie 4">
-                <div class="movie-title">Movie 4</div>
-            </div>
-            <div class="movie">
-                <img src="movie5.jpg" alt="Movie 5">
-                <div class="movie-title">Movie 5</div>
-            </div>
-            <div class="movie">
-                <img src="movie6.jpg" alt="Movie 6">
-                <div class="movie-title">Movie 6</div>
-            </div>
-            <div class="movie">
-                <img src="movie7.jpg" alt="Movie 7">
-                <div class="movie-title">Movie 7</div>
-            </div>
-            <div class="movie">
-                <img src="movie8.jpg" alt="Movie 8">
-                <div class="movie-title">Movie 8</div>
-            </div>
-            <div class="movie">
-                <img src="movie9.jpg" alt="Movie 9">
-                <div class="movie-title">Movie 9</div>
-            </div>
-            <div class="movie">
-                <img src="movie10.jpg" alt="Movie 10">
-                <div class="movie-title">Movie 10</div>
-            </div>
-            <div class="movie">
-                <img src="movie11.jpg" alt="Movie 11">
-                <div class="movie-title">Movie 11</div>
-            </div>
-            <div class="movie">
-                <img src="movie12.jpg" alt="Movie 12">
-                <div class="movie-title">Movie 12</div>
-            </div>
-            <div class="movie">
-                <img src="movie13.jpg" alt="Movie 13">
-                <div class="movie-title">Movie 13</div>
-            </div>
-            <div class="movie">
-                <img src="movie14.jpg" alt="Movie 14">
-                <div class="movie-title">Movie 14</div>
-            </div>
-            <div class="movie">
-                <img src="movie15.jpg" alt="Movie 15">
-                <div class="movie-title">Movie 15</div>
-            </div>
+    <div class="container">
+        <h1>评论系统</h1>
+        <form id="comment-form" class="comment-form">
+            <textarea id="comment-text" placeholder="输入你的评论..." required></textarea>
+            <button type="submit">提交评论</button>
+        </form>
+        <div id="comments-section">
+            <!-- 评论将会被添加到这里 -->
         </div>
-        <button class="arrow arrow-left">&lt;</button>
-        <button class="arrow arrow-right">&gt;</button>
+        <div>
+            已有评论
+        </div>
     </div>
-
-    <script>
-        const carousel = document.querySelector('.carousel');
-        const arrowLeft = document.querySelector('.arrow-left');
-        const arrowRight = document.querySelector('.arrow-right');
-        let currentIndex = 0;
-
-        arrowRight.addEventListener('click', () => {
-            if (currentIndex < 2) { // 因为有15部电影，每次展示5部，总共有3个页面
-                currentIndex++;
-                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-            }
-        });
-
-        arrowLeft.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-            }
-        });
-    </script>
+    <script src="./test.js"></script>
 </body>
 </html>

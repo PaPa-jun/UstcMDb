@@ -7,126 +7,155 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container">
-        <p class="title">
-            <span class="movie_name"> {{ movie.title }} </span> 
-            <span class="movie_year"> ({{ movie.year }})</span>
-        </p>
-        <div class="movie_details">
-            <table class="main_movie">
-                <tbody>
-                    <tr>
-                        <td class="pic">
-                            <img src="{{ movie.poster }}" alt="电影海报" width="250">
-                        </td>
-                        <td class="more_details">
-                            <div class="director">
-                                <span class="explain">导演</span>:
-                                {% for one_director in movie.director %}
-                                    <a href="#">{{ one_director.name }}</a>
-                                    {% if not loop.last %} / {% endif %}
+<div class="container">
+    <p class="title">
+        <span class="movie_name"> {{ movie.title }} </span>
+        <span class="movie_year"> ({{ movie.year }})</span>
+    </p>
+    <div class="movie_details">
+        <table class="main_movie">
+            <tbody>
+                <tr>
+                    <td class="pic">
+                        <img src="{{ movie.poster }}" alt="电影海报" width="250">
+                    </td>
+                    <td class="more_details">
+                        <div class="director">
+                            <span class="explain">导演</span>:
+                            {% for one_director in movie.director %}
+                            <a href="#">{{ one_director.name }}</a>
+                            {% if not loop.last %} / {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="casts">
+                            <span class="explain">演员</span>:
+                            {% for one_actor in movie.casts[:5] %}
+                            <a href="#">{{ one_actor.name }}</a>
+                            {% if not loop.last %} / {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="genres">
+                            <span class="explain">类型</span>:
+                            {{ movie.genres }}
+                        </div>
+                        <div class="duration">
+                            <span class="explain">时长</span>:
+                            {{ movie.duration }}分钟
+                        </div>
+                        <div class="imdb_rating">
+                            <span class="explain">IMDb评分</span>:
+                            {{ movie.imdb_rating }}
+                        </div>
+                        <div class="imdbID">
+                            <span class="explain">IMDb ID</span>:
+                            {{ movie.imdbID }}
+                        </div>
+                    </td>
+                    <td class="rating">
+                        <div class="rating">
+                            <span class="rating_num">
+                                <span class="text">评分:</span>
+                                <span class="num">{{ movie.local_rating }} / 10</span>
+                            </span>
+                            <div class="stars">
+                                {% set rating_int = movie.local_rating | int %}
+                                {% set full_stars = rating_int // 2 %}
+                                {% set empty_stars = 5 - full_stars %}
+
+                                {# 显示完整星星 #}
+                                {% for _ in range(full_stars) %}
+                                ★
+                                {% endfor %}
+
+                                {# 显示空星 #}
+                                {% for _ in range(empty_stars) %}
+                                ☆
                                 {% endfor %}
                             </div>
-                            <div class="casts">
-                                <span class="explain">演员</span>:
-                                {% for one_actor in movie.casts[:5] %}
-                                    <a href="#">{{ one_actor.name }}</a>
-                                    {% if not loop.last %} / {% endif %}
-                                {% endfor %}
-                            </div>
-                            <div class="genres">
-                                <span class="explain">类型</span>:
-                                {{ movie.genres }}
-                            </div>
-                            <div class="duration">
-                                <span class="explain">时长</span>:
-                                {{ movie.duration }}分钟
-                            </div>
-                            <div class="imdb_rating">
-                                <span class="explain">IMDb评分</span>:
-                                {{ movie.imdb_rating }}
-                            </div>
-                            <div class="imdbID">
-                                <span class="explain">IMDb ID</span>:
-                                {{ movie.imdbID }}
-                            </div>
-                        </td>
-                        <td class="rating">
-                            <div class="rating">
-                                <span class="rating_num">
-                                    <span class="text">评分:</span>
-                                    <span class="num">{{ movie.local_rating }} / 10</span>
-                                </span>
-                                <div class="stars">
-                                    {% set rating_int = movie.local_rating | int %}
-                                    {% set full_stars = rating_int // 2 %}
-                                    {% set empty_stars = 5 - full_stars %}
-                                    
-                                    {# 显示完整星星 #}
-                                    {% for _ in range(full_stars) %}
-                                        ★
-                                    {% endfor %}
-                                    
-                                    {# 显示空星 #}
-                                    {% for _ in range(empty_stars) %}
-                                        ☆
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="plot">
-            <h3 class="plot_title">剧情介绍</h3>
-            <div class="plot_content">{{ movie.plot }}</div>
-        </div>
-        <div class="video-container">
-            <h3>点击预告片链接播放视频</h2>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="plot">
+        <h3 class="plot_title">剧情介绍</h3>
+        <div class="plot_content">{{ movie.plot }}</div>
+    </div>
+    <div class="video-container">
+        <h3>点击预告片链接播放视频</h2>
             <!-- YouTube 嵌入式播放器 -->
             <iframe width="560" height="315" src="{{ movie.trailer }}" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="relative_pics">电影相关图片</div>
-        <div class="container">
-            {% for one_director in movie.director %}
-                {% for worker in workers %}
-                    {% if worker.name == one_director.name %}
-                        <div class="person">
-                            <div>
-                                <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_director }}图片" width="150px"></a>
-                            </div>
-                            <div>导演：{{ one_director.name }}</div>
-                            <div>IMDb ID: {{ one_director.imdbID }}</div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-            {% for one_actor in movie.casts[:3] %}
-                {% for worker in workers %}
-                    {% if worker.name == one_actor.name %}
-                        <div class="person">
-                            <div>
-                                <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_actor }}图片" width="150px"></a>
-                            </div>
-                            <div>演员：{{ one_actor.name }} ({% for role in worker.role %} {{ role }} {% endfor %})</div>
-                            <div>IMDb ID: {{ one_actor.imdbID }}</div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-        </div>
-        <div class="relative_comments">
-            <div>{{ movie.title }}的短评</div>
-            <div class="one_comments">
-                <div>
-                    <h3>
-                        <span class="who"></span>
-                        <span class="likes">200</span>
-                    </h3>
-                    <p class="comment_content">这个电影不错！</p>
-                </div>
+    </div>
+    <div class="relative_pics">电影相关图片</div>
+    <div class="container">
+        {% for one_director in movie.director %}
+        {% for worker in workers %}
+        {% if worker.name == one_director.name %}
+        <div class="person">
+            <div>
+                <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_director }}图片" width="150px"></a>
             </div>
+            <div>导演：{{ one_director.name }}</div>
+            <div>IMDb ID: {{ one_director.imdbID }}</div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for one_actor in movie.casts[:3] %}
+        {% for worker in workers %}
+        {% if worker.name == one_actor.name %}
+        <div class="person">
+            <div>
+                <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_actor }}图片" width="150px"></a>
+            </div>
+            <div>演员：{{ one_actor.name }} ({% for role in worker.role %} {{ role }} {% endfor %})</div>
+            <div>IMDb ID: {{ one_actor.imdbID }}</div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="container">
+        <h1>评论系统</h1>
+        <form id="comment-form" class="comment-form">
+            <textarea id="comment-text" placeholder="输入你的评论..." required></textarea>
+            <button type="submit">提交评论</button>
+        </form>
+        <div id="comments-section">
+            <!-- 评论将会被添加到这里 -->
+        </div>
+        <div>
+            已有评论
         </div>
     </div>
+</div>
+<script>
+    // static/scripts.js
+    document.getElementById('comment-form').addEventListener('submit', function (event) {
+        event.preventDefault();  // 阻止表单提交的默认行为
+
+        const commentText = document.getElementById('comment-text').value;
+        if (commentText.trim() === '') return;
+
+        const comment = {
+            id: Date.now(),
+            text: commentText
+        };
+
+        addCommentToDOM(comment);
+        document.getElementById('comment-text').value = '';
+    });
+
+    function addCommentToDOM(comment) {
+        const commentsSection = document.getElementById('comments-section');
+
+        const commentDiv = document.createElement('div');
+        commentDiv.className = 'comment';
+        commentDiv.id = `comment-${comment.id}`;
+        commentDiv.innerHTML = `<p>${comment.text}</p>`;
+
+        commentsSection.appendChild(commentDiv);
+    }
+</script>
 {% endblock %}
