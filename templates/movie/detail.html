@@ -23,14 +23,14 @@
                             <div class="director">
                                 <span class="explain">导演</span>:
                                 {% for one_director in movie.director %}
-                                    <a href="#">{{ one_director.name }}</a>
+                                    <a href="{{ url_for('cast.cast_profile', id = one_director.id) }}">{{ one_director.name }}</a>
                                     {% if not loop.last %} / {% endif %}
                                 {% endfor %}
                             </div>
                             <div class="casts">
                                 <span class="explain">演员</span>:
                                 {% for one_actor in movie.casts[:5] %}
-                                    <a href="#">{{ one_actor.name }}</a>
+                                    <a href="{{ url_for('cast.cast_profile', id = one_actor.id) }}">{{ one_actor.name }}</a>
                                     {% if not loop.last %} / {% endif %}
                                 {% endfor %}
                             </div>
@@ -94,10 +94,10 @@
                     {% if worker.name == one_director.name %}
                         <div class="person">
                             <div>
-                                <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_director }}图片" width="150px"></a>
+                                <a href="{{ url_for('cast.cast_profile', id = one_director.id) }}"><img src="{{ worker.avatar }}" alt="{{ one_director }}图片" width="150px"></a>
                             </div>
-                            <div>导演：{{ one_director.name }}</div>
-                            <div>IMDb ID: {{ one_director.imdbID }}</div>
+                            <div>导演：<a href="{{ url_for('cast.cast_profile', id = one_director.id) }}">{{ one_director.name }}</a></div>
+                            <div>IMDb ID: <a href="https://www.imdb.com/name/{{ one_director.imdbID }}/">{{ one_director.imdbID }}</a></div>
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -107,10 +107,10 @@
                     {% if worker.name == one_actor.name %}
                         <div class="person">
                             <div>
-                                <a href="#"><img src="{{ worker.avatar }}" alt="{{ one_actor }}图片" width="150px"></a>
+                                <a href="{{ url_for('cast.cast_profile', id = one_actor.id) }}"><img src="{{ worker.avatar }}" alt="{{ one_actor }}图片" width="150px"></a>
                             </div>
-                            <div>演员：{{ one_actor.name }} ({% for role in worker.role %} {{ role }} {% endfor %})</div>
-                            <div>IMDb ID: {{ one_actor.imdbID }}</div>
+                            <div>演员：<a href="{{ url_for('cast.cast_profile', id = one_actor.id) }}">{{ one_actor.name }} ({% for role in worker.role %} {{ role }} {% endfor %})</a></div>
+                            <div>IMDb ID: <a href="https://www.imdb.com/name/{{ one_actor.imdbID }}/">{{ one_actor.imdbID }}</a></div>
                         </div>
                     {% endif %}
                 {% endfor %}

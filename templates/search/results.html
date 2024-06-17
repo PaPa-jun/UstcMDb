@@ -25,7 +25,7 @@
                                         <div class="rating">
                                             <div>
                                                 <span class="stars">
-                                                    {% set rating_int = result.rating | int %}
+                                                    {% set rating_int = result.local_rating | int %}
                                                     {% set full_stars = rating_int // 2 %}
                                                     {% set empty_stars = 5 - full_stars %}
                                                     
@@ -39,7 +39,7 @@
                                                         ☆
                                                     {% endfor %}
                                                 </span>
-                                                <span>{{ result.rating }}</span>
+                                                <span>{{ result.local_rating }}</span>
                                             </div>
                                         </div>
                                         <div class="details">

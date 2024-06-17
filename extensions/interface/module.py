@@ -26,6 +26,16 @@ class User:
             cursor.execute(query, (content, self.id))
             db.commit()
 
+    def return_info(self):
+        info = {
+            'id' : self.id,
+            'username' : self.username,
+            'email' : self.email,
+            'bio' : self.bio,
+            'birthday' : self.birthday
+        }
+        return info
+
 class Movie:
     """
     电影接口
@@ -47,13 +57,13 @@ class Movie:
                     info = cursor.fetchone()
                     name = info['name']
                     imdbID = info['imdbID']
-                    movie_info['director'].append({'name':name, 'imdbID':imdbID})
+                    movie_info['director'].append({'name':name, 'id':worker['worker_id'] , 'imdbID':imdbID})
                 if worker['job'] == 'actor':
                     cursor.execute("SELECT name, imdbID FROM worker WHERE id=%s", (worker['worker_id'],))
                     info = cursor.fetchone()
                     name = info['name']
                     imdbID = info['imdbID']
-                    movie_info['casts'].append({'name':name, 'imdbID':imdbID})
+                    movie_info['casts'].append({'name':name, 'id':worker['worker_id'], 'imdbID':imdbID})
         return movie_info
 
     def top(self, db, range):
@@ -131,3 +141,9 @@ class Review:
 
     def __init__(self) -> None:
         pass
+
+    def get_review(self, movie_id, db):
+        with db.cursor() as cursor:
+            cursor.execute("SELECT * FROM review WHERE movie_id=%s", (movie_id,))
+            reviews = cursor.fetchall()
+        return reviews
