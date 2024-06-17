@@ -1,68 +1,195 @@
-/* General reset: 清除默认的边距和内边距，并设置box-sizing为border-box */
-* {
+/* base.css */
+
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Header styles: 设置header的背景颜色、文字颜色、内边距和文本对齐方式 */
 header {
-    background-color: #333; /* 设置header的背景颜色为深灰色 */
-    color: white; /* 设置header中的文字颜色为白色 */
-    padding: 20px; /* 设置header的内边距为20px */
-    display: flex; /* 使用flexbox布局 */
-    align-items: center; /* 使header中的项目在垂直方向上居中对齐 */
-    justify-content: space-between; /* 在主轴方向上均匀分布项目 */
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
 }
 
-/* Navigation list styles: 设置导航列表的样式 */
-header ul {
-    list-style: none; /* 移除列表的默认样式（圆点） */
-    display: flex; /* 将导航列表设置为弹性盒模型，以便水平排列列表项 */
-    align-items: center; /* 使列表项在垂直方向上居中对齐 */
-    padding: 0; /* 移除导航列表的内边距 */
-    margin: 0; /* 移除导航列表的边距 */
-    width: 100%; /* 使导航列表占满父元素的宽度 */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Navigation list item styles: 设置导航列表项的左右边距 */
-header ul li {
-    margin: 0 15px; /* 设置导航列表项的左右边距为15px */
+.logo img {
+    width: 200px;
+    height: 80px;
 }
 
-/* Move the last two list items (Contact Us and Login) to the right */
-header ul li.right {
-    margin-left: auto; /* 使该列表项占据所有剩余的可用空间 */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
 }
 
-/* Navigation link styles: 设置导航链接的颜色、无下划线和字体大小 */
-header ul li a {
-    color: white; /* 设置导航链接的颜色为白色 */
-    text-decoration: none; /* 移除导航链接的下划线 */
-    font-size: 1.2em; /* 设置导航链接的字体大小为1.2倍的默认字体大小 */
+nav a:hover {
+    color: #ddd;
 }
 
-/* Navigation link hover styles: 悬停时显示下划线 */
-header ul li a:hover {
-    text-decoration: underline; /* 悬停时显示导航链接的下划线 */
+.search-form {
+    display: flex;
+    align-items: center;
 }
 
-/* Search form styles: 设置搜索表单的样式 */
-header form {
-    display: flex; /* 使用flexbox布局 */
-    align-items: center; /* 使表单元素在垂直方向上居中对齐 */
+.search-form select, .search-form input, .search-form button {
+    margin: 0 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
 }
 
-/* Search input styles: 设置搜索输入框的样式 */
-header form input[type="search"] {
-    padding: 5px; /* 设置搜索输入框的内边距为5px */
-    font-size: 1em; /* 设置搜索输入框的字体大小为1倍的默认字体大小 */
-    margin-right: 10px; /* 设置搜索输入框的右边距为10px */
+.search-form input {
+    width: 500px;
 }
 
-/* Submit button styles: 设置提交按钮的样式 */
-header form input[type="submit"] {
-    padding: 5px 10px; /* 设置提交按钮的内边距为5px上/下和10px左/右 */
-    font-size: 1em; /* 设置提交按钮的字体大小为1倍的默认字体大小 */
-    cursor: pointer; /* 设置提交按钮的光标样式为指针 */
+.search-form button {
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #444;
+}
+
+.user a {
+    background-color: #555;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.user a:hover {
+    background-color: #444;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer div {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ddd;
+}
+
+.alert {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-warning {
+    background-color: #ff9800;
+    color: #fff;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-section h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #f5c518;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section ul {
+    margin-top: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ddd;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
 }

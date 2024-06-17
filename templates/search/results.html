@@ -2,12 +2,86 @@
 
 {% block title %}搜索结果{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/search_results.css') }}">
+{% endblock %}
+
 {% block main %}
-    <h1>搜索结果</h1>
-    <p>搜索关键词: {{ keyword }}</p>
-    <ul>
-        {% for result in results %}
-            <li>{{ result }}</li>
-        {% endfor %}
-    </ul>
+<div class="container">
+    {% if results %}
+    <!-- 搜索结果不为空 -->
+        {% if search_type == "movies" %}
+        <div class="movies">
+            <h2 class="section_title">相关电影:</h2>
+            {% for result in results %}
+            <div class="movie_item">
+                <div class="movie_info">
+                    <div class="head_of_film">
+                        <span class="label">[电影]</span>
+                        <span class="title_of_film">
+                            <a href="{{ url_for('movie.movie_detail', id=result.id) }}">{{ result.title }}</a>
+                        </span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">
+                            {% set rating_int = result.local_rating | int %}
+                            {% set full_stars = rating_int // 2 %}
+                            {% set empty_stars = 5 - full_stars %}
+                            
+                            {# 显示完整星星 #}
+                            {% for _ in range(full_stars) %}
+                                ★
+                            {% endfor %}
+                            
+                            {# 显示空星 #}
+                            {% for _ in range(empty_stars) %}
+                                ☆
+                            {% endfor %}
+                        </span>
+                        <span class="rating_value">{{ result.local_rating }}</span>
+                    </div>
+                    <div class="details">
+                        {{ result.year }} / {{ result.genres }}<br>
+                        {% for person in result.casts[:3] %}
+                            {{ person.name }}{% if not loop.last %} / {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="movie_poster_container">
+                    <a href="{{ url_for('movie.movie_detail', id=result.id) }}">
+                        <img src="{{ result.poster }}" alt="{{ result.title }}" class="movie_poster">
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="people">
+            <h2 class="section_title">相关人员</h2>
+            {% for result in results %}
+            <div class="person_item">
+                <div class="person_avatar_container">
+                    <a href="{{ url_for('cast.cast_profile', id=result.id) }}">
+                        <img src="{{ result.avatar }}" srcset="{{ result.srcset }}" alt="{{ result.name }}" class="person_avatar">
+                    </a>
+                </div>
+                <div class="person_info">
+                    <a href="{{ url_for('cast.cast_profile', id=result.id) }}" class="person_name">{{ result.name }}</a>
+                    <div class="person_details">
+                        出生日期: {{ result.birth.strftime('%Y-%m-%d') if result.birth else '未知'}}<br>
+                        职业: {{ result.job if result.job else '未知' }}
+                    </div>
+                    <div class="person_bio">{{ result.bio[:200] }}...</div> <!-- 显示简介的前200个字符 -->
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% else %}
+    <!-- 搜索结果为空 -->
+    <div class="no_results">
+        很抱歉，没有搜索到与“{{ keyword }}”有关的信息。
+    </div>
+    {% endif %}
+</div>
 {% endblock %}

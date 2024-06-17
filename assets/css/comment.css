@@ -1,0 +1,177 @@
+/* 通用样式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* 评论部分整体布局 */
+.relative_comments {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.relative_comments h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* 评论输入部分 */
+.comments_to_write {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.comments_to_write .user_info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comments_to_write .user_info img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.comments_to_write .comment_content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.comments_to_write .comment_content textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: vertical;
+    font-size: 14px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comments_to_write .comment_content button {
+    align-self: flex-end;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.comments_to_write .comment_content button:hover {
+    background-color: #0056b3;
+}
+
+/* 评论列表部分 */
+.comments_list {
+    margin-top: 20px;
+}
+
+.comments_history .single_comment {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.single_comment .writer_info {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.single_comment .writer_info td {
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.single_comment .writer_profile {
+    width: 50px;
+    padding-right: 10px;
+}
+
+.single_comment .writer_profile img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.single_comment .writer_name {
+    font-weight: bold;
+}
+
+.single_comment .writer_name a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.single_comment .writer_name a:hover {
+    text-decoration: underline;
+}
+
+.single_comment .review_content {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.single_comment .comment_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #888;
+}
+
+.comment_footer .comment_date {
+    font-style: italic;
+}
+
+.comment_footer .comment_likes,
+.comment_footer .reply_button {
+    display: flex;
+    align-items: center;
+}
+
+.comment_footer button {
+    background: none;
+    border: none;
+    color: #007BFF;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+}
+
+.comment_footer button:hover {
+    text-decoration: underline;
+}
+
+.comment_footer .comment_likes span,
+.comment_footer .reply_button span {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.reply {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid #ddd;
+}

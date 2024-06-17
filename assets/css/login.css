@@ -1,0 +1,69 @@
+.welcome {
+    text-align: center; /* 文字居中对齐 */
+    margin-top: 50px; /* 顶部外边距 */
+    padding: 20px; /* 内边距 */
+    background-color: #f2f2f2; /* 背景颜色 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ffffff; /* 背景颜色改为白色 */
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* 边框颜色保持不变 */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login {
+    background-color: #007bff; /* 按钮颜色改为蓝色 */
+    color: #fff;
+}
+
+.btn-login:hover {
+    background-color: #0056b3; /* 按钮悬停颜色改为深蓝色 */
+}
+
+.btn-register {
+    background-color: #28a745; /* 注册按钮颜色改为绿色 */
+    color: #fff;
+}
+
+.btn-register:hover {
+    background-color: #218838; /* 注册按钮悬停颜色改为深绿色 */
+}

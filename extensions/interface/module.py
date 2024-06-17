@@ -26,6 +26,17 @@ class User:
             cursor.execute(query, (content, self.id))
             db.commit()
 
+    def return_info(self):
+        info = {
+            'id' : self.id,
+            'avatar' : self.avatar,
+            'username' : self.username,
+            'email' : self.email,
+            'bio' : self.bio,
+            'birthday' : self.birthday
+        }
+        return info
+
 class Movie:
     """
     电影接口
@@ -43,20 +54,22 @@ class Movie:
             movie_info['casts'] = []
             for worker in movie_workers:
                 if worker['job'] == 'director':
-                    cursor.execute("SELECT name FROM worker WHERE id=%s", (worker['worker_id'],))
-                    name = cursor.fetchone()['name']
-
-                    movie_info['director'].append(name)
+                    cursor.execute("SELECT name, imdbID FROM worker WHERE id=%s", (worker['worker_id'],))
+                    info = cursor.fetchone()
+                    name = info['name']
+                    imdbID = info['imdbID']
+                    movie_info['director'].append({'name':name, 'id':worker['worker_id'] , 'imdbID':imdbID})
                 if worker['job'] == 'actor':
-                    cursor.execute("SELECT name FROM worker WHERE id=%s", (worker['worker_id'],))
-                    name = cursor.fetchone()['name']
-                    movie_info['casts'].append(name)
-
+                    cursor.execute("SELECT name, imdbID FROM worker WHERE id=%s", (worker['worker_id'],))
+                    info = cursor.fetchone()
+                    name = info['name']
+                    imdbID = info['imdbID']
+                    movie_info['casts'].append({'name':name, 'id':worker['worker_id'], 'imdbID':imdbID})
         return movie_info
 
     def top(self, db, range):
         with db.cursor() as cursor:
-            cursor.execute("SELECT id FROM movie ORDER BY rating DESC LIMIT %s", (range,))
+            cursor.execute("SELECT id FROM movie ORDER BY local_rating DESC, imdb_rating DESC LIMIT %s", (range,))
             movies = cursor.fetchall()  # fetchall instead of fetchone to get multiple records
             
         movies_info = []
@@ -101,9 +114,9 @@ class Cast:
             worker_info['movies'] = []
             for movie in attended_movies:
                 for value in movie.values():
-                    cursor.execute("SELECT title FROM movie WHERE id=%s", (value,))
-                    movie_title = cursor.fetchone()
-                    worker_info['movies'].append(movie_title['title'] if movie_title else None)
+                    cursor.execute("SELECT * FROM movie WHERE id=%s", (value,))
+                    movie_info = cursor.fetchone()
+                    worker_info['movies'].append(movie_info if movie_info else None)
         return worker_info
 
     def get_id_by_name(self, name, db):
@@ -129,3 +142,40 @@ class Review:
 
     def __init__(self) -> None:
         pass
+
+    def get_review(self, movie_id, db):
+        with db.cursor() as cursor:
+            cursor.execute("SELECT * FROM review WHERE movie_id=%s ORDER BY date DESC", (movie_id,))
+            reviews = cursor.fetchall()
+        return reviews
+
+class Genres:
+    """
+    分类接口
+    """
+    def __init__(self) -> None:
+        pass
+
+    def by_year(self, db):
+        with db.cursor() as cursor:
+            query = """
+            SELECT year FROM movie;
+            """
+            cursor.execute(query)
+            years = cursor.fetchall()
+        all_years = []
+        for year in years:
+            if year['year'] not in all_years:
+                all_years.append(year['year'])
+        
+        all_movies = {}
+        with db.cursor() as cursor:
+            for year in all_years:
+                query = """
+                SELECT * FROM movie WHERE year=%s;
+                """
+                cursor.execute(query, (year,))
+                movies = cursor.fetchall()
+                all_movies[year] = movies
+        
+        return all_movies

@@ -1,0 +1,86 @@
+/* 顶部标题样式 */
+.page_title {
+    font-size: 32px;
+    font-family: 'Roboto', Arial, sans-serif;
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* 电影列表容器样式 */
+.movies_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 单个电影条目样式 */
+.movie_item {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
+}
+
+/* 电影排名样式 */
+.movie_rank {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50;
+    margin-right: 20px;
+}
+
+/* 电影海报样式 */
+.movie_poster {
+    width: 180px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 电影信息样式 */
+.movie_info {
+    font-size: 14px;
+    color: #555;
+    flex-grow: 1;
+}
+
+/* 电影标题样式 */
+.movie_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.movie_title:hover {
+    color: #4caf50;
+}
+
+/* 其他电影信息样式 */
+.movie_year,
+.movie_duration,
+.movie_director,
+.movie_casts,
+.movie_genres,
+.movie_rating {
+    margin-bottom: 8px;
+}
+
+/* 导演和演员的名字 */
+.movie_director span,
+.movie_casts span {
+    color: #333;
+    font-weight: bold;
+}

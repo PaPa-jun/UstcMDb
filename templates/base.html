@@ -1,75 +1,102 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}{% endblock %}</title>
-        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"> -->
-        {% block extra_css %}{% endblock %}
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="logo">
-                    <a href="{{ url_for('main.index') }}">
-                        <img src="{{ url_for('static', filename='images/avatars/fixed_pics/logo.jpg') }}" alt="logo" width="50px">
-                    </a>
-                </div>
-                <div class="main">
-                    <a href="{{ url_for('main.index') }}">主页</a>
-                </div>
-                <div class="menu">
-                    <a href="{{ url_for('menu.index') }}">菜单</a>
-                </div>
-                <div class="search-form">
-                    <form action="{{ url_for('search.search') }}" method="get">
-                        <select id="searchType" name="type">
-                            <option value="movies">搜索电影</option>
-                            <option value="actors">搜索演员</option>
-                        </select>
-                        <input type="text" id="searchKeyword" name="keyword" placeholder="请输入关键词">
-                        <button type="submit">搜索</button>
-                    </form>
-                </div>
-                <div class="user">
-                    {% if g.current_user %}
-                        <a href="{{ url_for('user.profile', username = g.current_user.username) }}">{{ g.current_user.username }}</a>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{{ url_for('main.index') }}">
+                    <svg width="64" height="32" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="64" height="32" fill="#F5C518" rx="6" ry="6" />
+                        <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="13" font-weight="bold"
+                            text-anchor="middle" fill="#000000" dy=".35em">UstcMDb</text>
+                    </svg>
+                </a>
+            </div>
+            <div class="menu">
+                <a href="{{ url_for('menu.index') }}">菜单</a>
+            </div>
+            <div class="search-form">
+                <form action="{{ url_for('search.search') }}" method="get">
+                    <select id="searchType" name="type">
+                        <option value="movies">搜索电影</option>
+                        <option value="actors">搜索人员</option>
+                    </select>
+                    <input type="text" id="searchKeyword" name="keyword" placeholder="请输入关键词">
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+            <div class="user">
+                {% if g.current_user %}
+                <div class="user-info">
+                    {% if g.current_user.avatar %}
+                        <img src="{{ url_for('static', filename=g.current_user.avatar) }}" alt="{{ g.current_user.username }}" class="user-avatar">
                     {% else %}
-                        <a href="{{ url_for('user.login') }}">登陆</a>
+                        <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}" alt="{{ g.current_user.username }}" class="user-avatar">
                     {% endif %}
+                    <a href="{{ url_for('user.profile', username = g.current_user.username) }}">{{ g.current_user.username }}</a>
                 </div>
-            </nav>
-        </header>
-        <main>
-            {% for message in get_flashed_messages() %}
-                <div class="alert alert-warning" role="alert">{{ message }}</div>
-            {% endfor %}
-            {% block main %}{% endblock %}
-        </main>
-        <script>
-            function search() {
-                var searchType = document.getElementById("searchType").value;
-                var keyword = document.getElementById("searchKeyword").value;
-                
-                // 根据选择的搜索类型执行相应的搜索操作，这里只是示例，具体实现需根据实际情况调整
-                if (searchType === "movies") {
-                    alert("搜索电影: " + keyword);
-                    // 可以添加实际的搜索逻辑，例如跳转到搜索结果页面等
-                } else if (searchType === "actors") {
-                    alert("搜索演员: " + keyword);
-                    // 可以添加实际的搜索逻辑，例如跳转到搜索结果页面等
-                }
+                {% else %}
+                <a href="{{ url_for('user.login') }}">登陆</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning" role="alert">{{ message }}</div>
+        {% endfor %}
+        {% block main %}{% endblock %}
+    </main>
+    <script>
+        function search() {
+            var searchType = document.getElementById("searchType").value;
+            var keyword = document.getElementById("searchKeyword").value;
+
+            // 根据选择的搜索类型执行相应的搜索操作，这里只是示例，具体实现需根据实际情况调整
+            if (searchType === "movies") {
+                alert("搜索电影: " + keyword);
+                // 可以添加实际的搜索逻辑，例如跳转到搜索结果页面等
+            } else if (searchType === "actors") {
+                alert("搜索演员: " + keyword);
+                // 可以添加实际的搜索逻辑，例如跳转到搜索结果页面等
             }
-        </script>
-        <footer>
-            <div>
-                制作人：彭煜峰 and 张哲
+        }
+    </script>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>关于我们</h2>
+                <p>我们是一个致力于提供电影和演员信息的数据库。我们的目标是为用户提供准确和全面的信息。</p>
             </div>
-            <div>
-                <a href="#">联系我们</a>    
+            <div class="footer-section links">
+                <h2>快速链接</h2>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">关于</a></li>
+                    <li><a href="#">服务</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
             </div>
-        </footer>
-        
-    </body>
+            <div class="footer-section contact">
+                <h2>联系我们</h2>
+                <p>Email: info@ustcmdb.com</p>
+                <p>电话: +86 123 4567 8901</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>制作人：彭煜峰 and 张哲</p>
+            <p>&copy; 2024 UstcMDb. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
 </html>

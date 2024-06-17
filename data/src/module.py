@@ -7,7 +7,7 @@ from faker import Faker
 from werkzeug.security import generate_password_hash
 import json, pymysql, uuid, requests
 
-GOOGLE_YOUTUBE_API_KEY = "Your API Key"
+GOOGLE_YOUTUBE_API_KEY = 'AIzaSyB5c1QIKDxvy7-93gyNtgevj2dwB7Xk4ao'
 
 class IMDb:
     """
@@ -17,12 +17,14 @@ class IMDb:
         self.ia = Cinemagoer()
         self.youtube_api_key = GOOGLE_YOUTUBE_API_KEY
         self.youtube_service = build('youtube', 'v3', developerKey=self.youtube_api_key)
+
 class HtmlScraper(IMDb):
     """
     利用 HTML 抓取网页信息
     """
 
     def __init__(self) -> None:
+        super().__init__()
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
             'Accept-Language': 'en-US,en;q=0.9',
@@ -31,8 +33,8 @@ class HtmlScraper(IMDb):
             'DNT': '1',
         }
         self.url_map = {
-            "cast": "https://www.imdb.com/name/nm{}/",
-            "review": "https://www.imdb.com/title/tt{}/reviews/"
+            "cast": "https://www.imdb.com/name/{}/",
+            "review": "https://www.imdb.com/title/{}/reviews/"
         }
 
     def get_response(self, url_key, id):
@@ -42,13 +44,16 @@ class HtmlScraper(IMDb):
             self.html = response.content
             self.soup = BeautifulSoup(self.html, 'html.parser')
         else:
-            print(f"Failed to retrieve content: {self.response.status_code}")
+            print(f"Failed to retrieve content: {response.status_code} for url: {url}")
             self.soup = None
 
 class MovieScraper(HtmlScraper):
     """
     获取电影信息
     """
+
+    def __init__(self) -> None:
+        super().__init__()
 
     def get_trailer_url(self, movie_title):
         """
@@ -76,23 +81,47 @@ class MovieScraper(HtmlScraper):
             'id': 'mov_' + str(uuid.uuid4())[:10],
             'title': movie_info.get('title'),
             'year': movie_info.get('year'),
-            'rating': movie_info.get('rating'),
-            'directors': [{'id': 'cas_' + str(uuid.uuid4())[:10], 'name': director['name']} for director in movie_info.get('directors', [])],
+            'imdb_rating': movie_info.get('rating'),
+            'directors': [
+                {
+                    'id': None, 
+                    'name': director['name'], 
+                    'imdbID': f"nm{director.personID}"
+                } for director in movie_info.get('directors', [])
+            ],
             'casts': [
                 {
-                    'id': 'cas_' + str(uuid.uuid4())[:10],
+                    'id': None,
                     'name': actor['name'],
-                    'character': str(actor.currentRole) if actor.currentRole else None  # 添加角色信息
+                    'character': str(actor.currentRole) if actor.currentRole else None,
+                    'imdbID': f"nm{actor.personID}"
                 } for actor in movie_info.get('cast', [])[:10]
             ],
-            'genres': ", ".join(movie_info.get('genres', [])),  # 将 genres 列表转换为逗号分隔的字符串
+            'genres': ", ".join(movie_info.get('genres', [])),
             'plot': movie_info.get('plot outline'),
             'poster': movie_info.get('full-size cover url'),
             'duration': movie_info.get('runtime'),
-            'trailer': trailer_url
+            'trailer': trailer_url,
+            'imdbID': f"tt{movie_id}"
         }
         
         return movie_details
+
+    def gen_id(self, movies):
+        visited = {}
+        for movie in movies:
+            for director in movie['directors']:
+                if director['imdbID'] not in visited or director['imdbID'] is None:
+                    director['id'] = 'cas_' + str(uuid.uuid4())[:10]
+                    visited[director['imdbID']] = director['id']
+                else:
+                    director['id'] = visited[director['imdbID']]
+            for cast in movie['casts']:
+                if cast['imdbID'] not in visited or cast['imdbID'] is None:
+                    cast['id'] = 'cas_' + str(uuid.uuid4())[:10]
+                    visited[cast['imdbID']] = cast['id']
+                else:
+                    cast['id'] = visited[cast['imdbID']]
     
     def search_movie_by_name(self, movie):
         """
@@ -157,6 +186,10 @@ class CastScraper(HtmlScraper):
     """
     获取演职人员信息
     """
+
+    def __init__(self) -> None:
+        super().__init__()
+
     def get_name(self):
         if self.soup:
             name_tag = self.soup.find('span', {'class': 'hero__primary-text', 'data-testid': 'hero__primary-text'})
@@ -214,10 +247,26 @@ class CastScraper(HtmlScraper):
             'avatar' : self.get_avatar_url()['src'] if self.get_avatar_url()['src'] else None,
             'srcset': self.get_avatar_url()['srcset'] if self.get_avatar_url()['srcset'] else None,
             'job': self.get_other_works() if self.get_other_works() else None,
-            'bio': self.get_bio() if self.get_bio() else None
+            'bio': self.get_bio() if self.get_bio() else None,
+            'imdbID' : f"{person_id}"
         }
         
         return person_details
+    
+    def fetch_all_casts_info_from_db(self, db):
+        with db.cursor() as cursor:
+            cursor.execute("SELECT id, name, imdbID FROM worker;")
+            worker_names = cursor.fetchall()
+
+        workers_info = []
+        for worker in tqdm(worker_names, desc="Fetching and updating worker info"):
+            info = self.fetch_cast_info(worker['imdbID'])
+            worker_info = info if info else {}
+            worker_info['id'] = worker['id']
+            worker_info['name'] = worker['name']
+            workers_info.append(worker_info)
+        
+        return workers_info
     
     def search_cast(self, name):
         """
@@ -228,25 +277,13 @@ class CastScraper(HtmlScraper):
             return None
         return self.fetch_cast_info(search_results[0].personID)
     
-    def fetch_all_casts_info_from_db(self, db):
-        with db.cursor() as cursor:
-            cursor.execute("SELECT id, name FROM worker;")
-            worker_names = cursor.fetchall()
-
-        workers_info = []
-        for worker in tqdm(worker_names, desc="Fetching and updating worker info"):
-            info = self.search_cast(worker['name'])
-            worker_info = info if info else {}
-            worker_info['id'] = worker['id']
-            worker_info['name'] = worker['name']
-            workers_info.append(worker_info)
-        
-        return workers_info
-    
 class ReviewScraper(HtmlScraper):
     """
     评论信息获取
     """
+
+    def __init__(self) -> None:
+        super().__init__()
 
     def get_reviews(self, id):
         self.get_response("review", id)
@@ -287,12 +324,12 @@ class ReviewScraper(HtmlScraper):
         all_reviews = {}
         imdb = IMDb()
         with db.cursor() as cursor:
-            cursor.execute("SELECT title FROM movie;")
-            movie_titles = cursor.fetchall()
+            cursor.execute("SELECT title, imdbID FROM movie;")
+            movies = cursor.fetchall()
 
-        for movie in tqdm(movie_titles, desc="Fetching reviews"):
+        for movie in tqdm(movies, desc="Fetching reviews"):
             movie_title = movie['title']
-            movie_id = imdb.ia.search_movie(movie_title)[0].movieID
+            movie_id = movie['imdbID']
             reviews = self.get_reviews(movie_id)
             all_reviews[movie_title] = reviews
         
@@ -347,16 +384,14 @@ class User:
         with open(reviews, 'r', encoding='utf-8') as file:
             movies = json.load(file)
 
-        total_reviews = sum(len(movie_reviews) for movie_reviews in movies.values())
-
-        for movie_title, movie_reviews in tqdm(movies.items(), desc="Creating users"):
+        for movie_reviews in tqdm(movies.values(), desc="Creating users"):
             for review in movie_reviews:
                 username = review['author']
                 if not username:
                     username = self.fake.user_name()
-                while username in usernames:
-                    username = self.fake.user_name()
-                usernames.add(username)
+                    usernames.add(username)
+                if username in usernames:
+                    continue
 
                 email = self.fake.email()
                 while email in emails:
@@ -396,30 +431,31 @@ class DataBase:
             for movie in tqdm(movies, desc="Inserting Movies: "):
                 # 插入电影信息
                 sql_movie = """
-                INSERT INTO movie (id, title, year, duration, rating, plot, poster, trailer, genres)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO movie (id, title, year, duration, imdb_rating, local_rating, plot, poster, trailer, genres, imdbID)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 ON DUPLICATE KEY UPDATE
                     title = VALUES(title),
                     year = VALUES(year),
                     duration = VALUES(duration),
-                    rating = VALUES(rating),
+                    imdb_rating = VALUES(imdb_rating),
+                    local_rating = VALUES(local_rating),
                     plot = VALUES(plot),
                     poster = VALUES(poster),
                     trailer = VALUES(trailer),
                     genres = VALUES(genres);
                 """
-                cursor.execute(sql_movie, (movie['id'], movie['title'], movie['year'], movie['duration'], movie['rating'], movie['plot'], movie['poster'], movie['trailer'], movie['genres']))
-                
+                cursor.execute(sql_movie, (movie['id'], movie['title'], movie['year'], movie['duration'], movie['imdb_rating'], 0, movie['plot'], movie['poster'], movie['trailer'], movie['genres'], movie['imdbID']))
+
                 # 插入导演信息并建立关系
                 for director in movie['directors']:
                     sql_worker = """
-                    INSERT INTO worker (id, name)
-                    VALUES (%s, %s)
+                    INSERT INTO worker (id, name, imdbID)
+                    VALUES (%s, %s, %s)
                     ON DUPLICATE KEY UPDATE
                         name = VALUES(name);
                     """
-                    cursor.execute(sql_worker, (director['id'], director['name']))
-                    
+                    cursor.execute(sql_worker, (director['id'], director['name'], director['imdbID']))
+
                     sql_movie_worker = """
                     INSERT INTO movie_worker (movie_id, worker_id, job, role)
                     VALUES (%s, %s, %s, %s)
@@ -427,17 +463,17 @@ class DataBase:
                         job = VALUES(job);
                     """
                     cursor.execute(sql_movie_worker, (movie['id'], director['id'], 'director', None))
-                
+
                 # 插入演员信息并建立关系
                 for actor in movie['casts']:
                     sql_worker = """
-                    INSERT INTO worker (id, name)
-                    VALUES (%s, %s)
+                    INSERT INTO worker (id, name, imdbID)
+                    VALUES (%s, %s, %s)
                     ON DUPLICATE KEY UPDATE
                         name = VALUES(name);
                     """
-                    cursor.execute(sql_worker, (actor['id'], actor['name']))
-                    
+                    cursor.execute(sql_worker, (actor['id'], actor['name'], actor['imdbID']))
+
                     sql_movie_worker = """
                     INSERT INTO movie_worker (movie_id, worker_id, job, role)
                     VALUES (%s, %s, %s, %s)
@@ -446,7 +482,9 @@ class DataBase:
                         role = VALUES(role);
                     """
                     cursor.execute(sql_movie_worker, (movie['id'], actor['id'], 'actor', actor['character']))
+
         self.connection.commit()
+
 
     def update_worker_from_json(self, json_file):
         with open(json_file, 'r', encoding='utf-8') as file:
@@ -458,17 +496,20 @@ class DataBase:
                 UPDATE worker
                 SET birth = %s,
                     avatar = %s,
+                    srcset = %s,
                     bio = %s,
                     job = %s
-                WHERE id = %s AND name = %s
+                WHERE id = %s AND name = %s and imdbID=%s
                 """
                 cursor.execute(sql_query, (
                     worker.get('birth'),
                     worker.get('avatar'),
+                    worker.get('srcset'),
                     worker.get('bio'),
                     worker.get('job'),
-                    worker['id'],
-                    worker['name']
+                    worker.get('id'),
+                    worker.get('name'),
+                    worker.get('imdbID')
                 ))
         self.connection.commit()
 
@@ -536,4 +577,43 @@ class DataBase:
                         review['date'],
                         review['rating']
                     ))
+        self.connection.commit()
+
+    def updating_movie_rating_from_reviews(self):
+        with self.connection.cursor() as cursor:
+            query = """
+            SELECT writer_id, movie_id, rating FROM review;
+            """
+            cursor.execute(query)
+            rating_info = cursor.fetchall()
+
+        with self.connection.cursor() as cursor:
+            for info in rating_info:
+                query = """
+                INSERT INTO user_movie_rating (user_id, movie_id, rating)
+                VALUES (%s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                rating = VALUES(rating);
+                """
+                cursor.execute(query, (info['writer_id'], info['movie_id'], info['rating']))
+        self.connection.commit()
+
+    def update_local_rating(self):
+        with self.connection.cursor() as cursor:
+            query = """
+            SELECT id FROM movie;
+            """
+            cursor.execute(query)
+            movies = cursor.fetchall()
+
+            for movie in movies:
+                query = """
+                SELECT AVG(rating) FROM user_movie_rating WHERE movie_id=%s;
+                """
+                cursor.execute(query, movie['id'])
+                avg = cursor.fetchone()
+                query = """
+                UPDATE movie SET local_rating=%s WHERE id=%s;
+                """
+                cursor.execute(query, (avg['AVG(rating)'], movie['id']))
         self.connection.commit()

@@ -1,9 +1,21 @@
 {% extends "base.html" %}
 
-{% block  main %}
-    <ul>
-        <li><a href="{{ url_for('movie.top25') }}">Top 25的电影</a></li>
-        <li><a href="{{ url_for('movie.recent25') }}">最新上映的25部电影</a></li>
-        <li><a href="{{ url_for('movie.classification') }}">电影分类</a></li>
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+{% endblock %}
+
+{% block main %}
+<div class="menu-container">
+    <h1>菜单</h1>
+    <ul class="menu-list">
+        <li class="menu-item"><a href="{{ url_for('movie.top25') }}">Top 25的电影</a></li>
+        <li class="menu-item"><a href="{{ url_for('movie.recent25') }}">最新上映的25部电影</a></li>
+        <li class="menu-item"><a href="{{ url_for('movie.classification') }}">电影分类</a></li>
     </ul>
+    <div class="menu-info">
+        <p>欢迎浏览我们的电影数据库！我们提供最新的电影信息和分类，以便您找到最适合的电影。</p>
+        <p>请点击以上选项以获取更多详细信息。</p>
+    </div>
+</div>
 {% endblock %}

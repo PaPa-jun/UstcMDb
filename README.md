@@ -46,15 +46,9 @@
 │   └── js
 │       └── base.js
 ├── data
-│   ├── casts
-│   ├── movies
-│   ├── reviews
-│   ├── src
-│   │   ├── __pycache__
-│   │   │   └── module.cpython-312.pyc
-│   │   ├── main.py
-│   │   └── module.py
-│   └── users
+│   └── src
+│       ├── main.py
+│       └── module.py
 ├── extensions
 │   ├── __init__.py
 │   ├── interface
@@ -90,7 +84,7 @@
         ├── profile_modify.html
         └── register.html
 
-30 directories, 51 files
+26 directories, 50 files
 ```
 
 ## 项目运行
