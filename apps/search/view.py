@@ -10,7 +10,4 @@ def search():
     search = Search(search_type, keyword, g.db)
     search.search()
 
-    if not search.results:
-        flash('No results found!')
-
     return render_template('search/results.html', results=search.results, keyword=keyword, search_type=search_type)

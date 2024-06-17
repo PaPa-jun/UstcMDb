@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}首页{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_index.css') }}">
+{% endblock %}
+
+{% block  main %}
+    <div class="content_right">
+        <div>
+            <h1>欢迎来到USTC电影交流平台!</h1>
+            <div class="recent_hot">
+                <h2>正在热映</h2>
+                {% for onemovie in recent[:5] %}
+                <div>
+                    <div class="pic">
+                        <a href="{{ url_for('movie.movie_detail', id=onemovie.id) }}">
+                            <img src="{{ onemovie.poster }}" alt="电影的图片" width="150">
+                        </a>
+                    </div>
+                    <div class="rating">
+                        <p class="title">{{onemovie.title}}</p>
+                        <p class="stars">
+                            {{onemovie.rating}}
+                            {% set rating_int = onemovie.rating | int %}
+                            {% set full_stars = rating_int // 2 %}
+                            {% set empty_stars = 5 - full_stars %}
+                                    
+                            {# 显示完整星星 #}
+                            {% for _ in range(full_stars) %}
+                                ★
+                            {% endfor %}
+                                    
+                            {# 显示空星 #}
+                            {% for _ in range(empty_stars) %}
+                                ☆
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="recommendation">
+                <h2>今日推荐</h2>
+                {% for onemovie in random[:5] %}
+                <div>
+                    <div class="pic">
+                        <a href="{{ url_for('movie.movie_detail', id=onemovie.id) }}">
+                            <img src="{{ onemovie.poster }}" alt="电影的图片" width="150">
+                        </a>
+                    </div>
+                    <div class="rating">
+                        <p class="title">{{onemovie.title}}</p>
+                        <p class="stars">
+                            {{onemovie.rating}}
+                            {% set rating_int = onemovie.rating | int %}
+                            {% set full_stars = rating_int // 2 %}
+                            {% set empty_stars = 5 - full_stars %}
+                                    
+                            {# 显示完整星星 #}
+                            {% for _ in range(full_stars) %}
+                                ★
+                            {% endfor %}
+                                    
+                            {# 显示空星 #}
+                            {% for _ in range(empty_stars) %}
+                                ☆
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="classic">
+                <h2>影史经典</h2>
+                {% for onemovie in top[:5] %}
+                <div>
+                    <div class="pic">
+                        <a href="{{ url_for('movie.movie_detail', id=onemovie.id) }}">
+                            <img src="{{ onemovie.poster }}" alt="电影的图片" width="150">
+                        </a>
+                    </div>
+                    <div class="rating">
+                        <p class="title">{{onemovie.title}}</p>
+                        <p class="stars">
+                            {{onemovie.rating}}
+                            {% set rating_int = onemovie.rating | int %}
+                            {% set full_stars = rating_int // 2 %}
+                            {% set empty_stars = 5 - full_stars %}
+                                    
+                            {# 显示完整星星 #}
+                            {% for _ in range(full_stars) %}
+                                ★
+                            {% endfor %}
+                                    
+                            {# 显示空星 #}
+                            {% for _ in range(empty_stars) %}
+                                ☆
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

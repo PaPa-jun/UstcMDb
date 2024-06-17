@@ -29,7 +29,7 @@ def main():
 
     # update_casts = scraper.cast_scraper.fetch_all_casts_info_from_db(database.connection)
     # scraper.to_json(update_casts, path_casts)
-    database.update_worker_from_json(path_casts)
+    # database.update_worker_from_json(path_casts)
 
     # reviews = scraper.review_scraper.fetch_all_reviews(database.connection)
     # scraper.to_json(reviews, path_reviews)
