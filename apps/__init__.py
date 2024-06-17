@@ -26,7 +26,7 @@ def create_app(mode="default"):
             g.current_user = None
         else:
             with g.db.cursor() as cursor:
-                cursor.execute('SELECT id, username FROM user WHERE id=%s', (user_id))
+                cursor.execute('SELECT id, username, avatar FROM user WHERE id=%s', (user_id))
                 g.current_user = cursor.fetchone()
 
     app.register_blueprint(main_bp)

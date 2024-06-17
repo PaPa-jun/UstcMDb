@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, g
-from extensions import Movie, Cast
+from extensions import Movie, Cast, Review, User
 
 blueprint = Blueprint("movie", __name__)
 
@@ -59,4 +59,11 @@ def movie_detail(id):
             'this_work': 'actor'
         })
 
+    review_scraper = Review()
+    reviews = review_scraper.get_review(id, g.db)
+    for review in reviews:
+        user = User(review['writer_id'])
+        user.get_info(g.db)
+        review['writer_info'] = user.return_info()
+    print(reviews)
     return render_template("movie/detail.html", movie=current_movie, workers=workers)
