@@ -29,6 +29,7 @@ class User:
     def return_info(self):
         info = {
             'id' : self.id,
+            'avatar' : self.avatar,
             'username' : self.username,
             'email' : self.email,
             'bio' : self.bio,

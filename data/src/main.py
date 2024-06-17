@@ -23,8 +23,8 @@ def main():
     # popular_movies = scraper.movie_scraper.fetch_popular_25_movies()
     # scraper.to_json(popular_movies, path_popular_25)
 
-    database.load_movie_from_json(path_top_25)
-    database.load_movie_from_json(path_popular_25)
+    # database.load_movie_from_json(path_top_25)
+    # database.load_movie_from_json(path_popular_25)
     # database.load_movie_from_json(path_top_india)
 
     # update_casts = scraper.cast_scraper.fetch_all_casts_info_from_db(database.connection)
@@ -35,7 +35,7 @@ def main():
     # scraper.to_json(reviews, path_reviews)
     # fake_users = user.create_user_from_reviews(path_reviews)
     # scraper.to_json(fake_users, path_users)
-    database.load_user_from_json(path_users)
+    # database.load_user_from_json(path_users)
     database.load_review_from_json(path_reviews)
 
 def update_ids():

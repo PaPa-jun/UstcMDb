@@ -65,5 +65,4 @@ def movie_detail(id):
         user = User(review['writer_id'])
         user.get_info(g.db)
         review['writer_info'] = user.return_info()
-    print(reviews)
-    return render_template("movie/detail.html", movie=current_movie, workers=workers)
+    return render_template("movie/detail.html", movie=current_movie, workers=workers, reviews=reviews)

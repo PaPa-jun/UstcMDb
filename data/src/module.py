@@ -573,7 +573,7 @@ class DataBase:
                         None,
                         review['text'],
                         user_id,
-                        None,
+                        0,
                         review['date'],
                         review['rating']
                     ))

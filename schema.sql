@@ -83,3 +83,10 @@ CREATE TABLE IF NOT EXISTS worker_figure (
     url TEXT,
     FOREIGN KEY (worker_id) REFERENCES worker(id)
 );
+
+-- 用户给电影评分的表
+CREATE TABLE IF NOT EXISTS user_movie_rating (
+    user_id CHAR(14) PRIMARY KEY,
+    movie_id CHAR(14) PRIMARY KEY,
+    rating DECIMAL(2, 1)
+)
