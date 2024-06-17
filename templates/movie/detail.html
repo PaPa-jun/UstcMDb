@@ -442,7 +442,14 @@
                             <button class="reply-button">回复</button>
                         </div>
                     </div>
-                    <div class="reply"></div>
+                    <div class="reply">
+                        <!-- 这里是该条评论的所有回复 -->
+                    </div>
+                    <form action="#" class="reply-form">
+                        <textarea name="content_text" id="content_text"></textarea>
+                        <input type="hidden" name="towhom" id="towhom" value="测试数据">
+                        <button type="submit">发布</button>
+                    </form>
                 </div>
             `;
 
