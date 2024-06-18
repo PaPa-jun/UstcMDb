@@ -423,7 +423,6 @@
             </div>
             <div class="comment_content">
                 <textarea name="comment_text"></textarea>
-                <textarea name="comment_text"></textarea>
                 <button type="submit">提交</button>
             </div>
         </div>
@@ -444,13 +443,8 @@
                         <tbody>
                             <tr>
                                 <td class="writer_profile">
-                                    <a href="#">
-                                        <img src="{{ review.writer_info.avatar }}" alt="评论者图片" width="100px">
-                                    </a>
-                                    {% else %}
-                                    <a href="#">
-                                        <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}"
-                                            alt="评论者图片" width="100px">
+                                    <a href="{{ url_for('user.profile', username=review.writer_info.username) }}">
+                                        <img src="{{ url_for('static', filename=review.writer_info.avatar) }}" alt="评论者图片" width="100px">
                                     </a>
                                 </td>
                                 <td class="writer_name">
