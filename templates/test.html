@@ -1,51 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Display Example</title>
-    <style>
-        .form-container {
-            display: none; /* 初始隐藏表单 */
-            margin-top: 10px; /* 与按钮的间距 */
-            border: 1px solid #ccc;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .btn {
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-    </style>
+    <title>测试</title>
 </head>
+
 <body>
-
-<button id="showFormBtn" class="btn">显示表单</button>
-
-<div id="formContainer" class="form-container">
-    <form id="myForm">
-        <label for="name">姓名:</label>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="email">电子邮件:</label>
-        <input type="email" id="email" name="email"><br><br>
-        <input type="submit" value="提交">
-    </form>
-</div>
-
-<script>
-    document.getElementById('showFormBtn').addEventListener('click', function() {
-        var formContainer = document.getElementById('formContainer');
-        if (formContainer.style.display === 'none' || formContainer.style.display === '') {
-            formContainer.style.display = 'block';
-        } else {
-            formContainer.style.display = 'none';
-        }
-    });
-</script>
-
+    <textarea name="name" id="name"></textarea>
 </body>
+
 </html>
