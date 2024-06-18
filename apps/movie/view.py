@@ -21,7 +21,8 @@ def recent25():
 @blueprint.route("/classification")
 def classification():
     genres = Genres()
-    year_and_movies = genres.by_year(g.db)
+    year_and_movies = genres.by_decade(g.db)
+    print(year_and_movies)
     return render_template("movie/classification.html", movies = year_and_movies)
 
 @blueprint.route("/<id>")

@@ -156,26 +156,32 @@ class Genres:
     def __init__(self) -> None:
         pass
 
-    def by_year(self, db):
+    def by_decade(self, db):
         with db.cursor() as cursor:
             query = """
-            SELECT year FROM movie;
+            SELECT year FROM movie ORDER BY year DESC;
             """
             cursor.execute(query)
             years = cursor.fetchall()
-        all_years = []
+
+        # 获取所有年份，并按照每10年一个分类
+        all_decades = []
         for year in years:
-            if year['year'] not in all_years:
-                all_years.append(year['year'])
-        
+            decade = (year['year'] // 10) * 10  # 计算年份所在的十年
+            if decade not in all_decades:
+                all_decades.append(decade)
+
         all_movies = {}
         with db.cursor() as cursor:
-            for year in all_years:
+            for decade in all_decades:
                 query = """
-                SELECT * FROM movie WHERE year=%s;
+                SELECT * FROM movie WHERE year >= %s AND year < %s;
                 """
-                cursor.execute(query, (year,))
+                cursor.execute(query, (decade, decade + 10))
                 movies = cursor.fetchall()
-                all_movies[year] = movies
-        
+                all_movies[decade] = movies
+
         return all_movies
+
+                
+        

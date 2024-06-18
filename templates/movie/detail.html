@@ -6,6 +6,59 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/movie_detail.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/comment.css') }}">
 <script src="path/to/your/js/comments.js" defer></script>
+<style>
+    .star-rating {
+        direction: rtl;
+        display: inline-block;
+        padding: 20px;
+    }
+
+    .star-rating input[type="radio"] {
+        display: none;
+    }
+
+    .star-rating label {
+        color: #bbb;
+        font-size: 30px;
+        padding: 0 10px;
+        cursor: pointer;
+    }
+
+    .star-rating input[type="radio"]:checked~label {
+        color: #f2b600;
+    }
+
+    .star-rating label:hover,
+    .star-rating label:hover~label {
+        color: #f2b600;
+    }
+</style>
+
+<style>
+    .reply-form {
+        display: none; /* 初始隐藏回复表单 */
+        margin-top: 10px;
+    }
+    .single_comment {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .comment_footer {
+        margin-top: 10px;
+    }
+    .reply_button {
+        margin-top: 10px;
+    }
+    .reply {
+        margin-top: 10px;
+        padding-left: 20px;
+        border-left: 2px solid #ddd;
+    }
+    .reply-content {
+        margin-bottom: 10px;
+    }
+</style>
 {% endblock %}
 
 {% block main %}
@@ -74,17 +127,55 @@
                                 <button type="submit">提交评分</button>
                             </form>
                             <script>
-                                function updateScore() {
-                                    const ratings = document.getElementsByName('rating');
-                                    let score = 0;
-                                    for (let i = 0; i < ratings.length; i++) {
-                                        if (ratings[i].checked) {
-                                            score = ratings[i].value * 2;
-                                            break;
+                                document.querySelectorAll('.reply_button button').forEach(button => {
+                                    button.addEventListener('click', function() {
+                                        var replyForm = this.closest('.single_comment').querySelector('.reply-form');
+                                        if (replyForm.style.display === 'none' || replyForm.style.display === '') {
+                                            replyForm.style.display = 'block';
+                                        } else {
+                                            replyForm.style.display = 'none';
                                         }
-                                    }
-                                    document.getElementById('score').innerText = score + '/10';
-                                }
+                                    });
+                                });
+                            
+                                document.querySelectorAll('.reply-form').forEach(form => {
+                                    form.addEventListener('submit', function(event) {
+                                        event.preventDefault(); // 防止表单默认提交
+                            
+                                        var replyContent = this.querySelector('#content_text').value;
+                                        if (replyContent.trim() === '') {
+                                            alert('回复内容不能为空');
+                                            return;
+                                        }
+                            
+                                        var replyDiv = this.closest('.single_comment').querySelector('.reply');
+                                        var newReply = document.createElement('div');
+                                        newReply.className = 'reply-content';
+                                        newReply.textContent = replyContent;
+                            
+                                        replyDiv.appendChild(newReply);
+                            
+                                        // 清空文本框内容
+                                        this.querySelector('#content_text').value = '';
+                            
+                                        // 模拟发送数据到后端
+                                        var xhr = new XMLHttpRequest();
+                                        xhr.open('POST', '/submit_reply', true);
+                                        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+                                        xhr.send(JSON.stringify({
+                                            comment_id: this.querySelector('#towhom').value,
+                                            content: replyContent
+                                        }));
+                            
+                                        xhr.onload = function () {
+                                            if (xhr.status === 200) {
+                                                console.log('回复已发送');
+                                            } else {
+                                                console.log('发送失败');
+                                            }
+                                        };
+                                    });
+                                });
                             </script>
                         </div>
                         {% endif %}
@@ -237,6 +328,58 @@
                     <div class="reply">
                         <!-- 这里是该条评论的所有回复 -->
                     </div>
+                    <form action="#" class="reply-form">
+                        <textarea name="content_text" id="content_text"></textarea>
+                        <input type="hidden" name="towhom" id="towhom" value="测试数据">
+                        <button type="submit">发布</button>
+                    </form>
+                    <script>
+                        document.querySelectorAll('.reply_button button').forEach(button => {
+                            button.addEventListener('click', function() {
+                                var replyForm = this.closest('.single_comment').querySelector('.reply-form');
+                                if (replyForm.style.display === 'none' || replyForm.style.display === '') {
+                                    replyForm.style.display = 'block';
+                                } else {
+                                    replyForm.style.display = 'none';
+                                }
+                            });
+                        });
+                    
+                        document.querySelectorAll('.reply-form').forEach(form => {
+                            form.addEventListener('submit', function(event) {
+                                event.preventDefault(); // 阻止表单默认提交
+                    
+                                var replyContent = this.querySelector('#content_text').value;
+                    
+                                var replyDiv = this.closest('.single_comment').querySelector('.reply');
+                                var newReply = document.createElement('div');
+                                newReply.className = 'reply-content';
+                                newReply.textContent = replyContent;
+                    
+                                replyDiv.appendChild(newReply);
+                    
+                                // 清空文本框内容
+                                this.querySelector('#content_text').value = '';
+                    
+                                // 模拟发送数据到后端
+                                var xhr = new XMLHttpRequest();
+                                xhr.open('POST', '/submit_reply', true);
+                                xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+                                xhr.send(JSON.stringify({
+                                    comment_id: this.querySelector('#towhom').value,
+                                    content: replyContent
+                                }));
+                    
+                                xhr.onload = function () {
+                                    if (xhr.status === 200) {
+                                        console.log('回复已发送');
+                                    } else {
+                                        console.log('发送失败');
+                                    }
+                                };
+                            });
+                        });
+                    </script>
                 </div>
                 {% endfor %}
             </div>
@@ -299,7 +442,14 @@
                             <button class="reply-button">回复</button>
                         </div>
                     </div>
-                    <div class="reply"></div>
+                    <div class="reply">
+                        <!-- 这里是该条评论的所有回复 -->
+                    </div>
+                    <form action="#" class="reply-form">
+                        <textarea name="content_text" id="content_text"></textarea>
+                        <input type="hidden" name="towhom" id="towhom" value="测试数据">
+                        <button type="submit">发布</button>
+                    </form>
                 </div>
             `;
 
