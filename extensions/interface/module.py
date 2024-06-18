@@ -45,7 +45,6 @@ class User:
         }
         return info
 
-
 class Movie:
     """
     电影接口
@@ -105,7 +104,7 @@ class Movie:
         for movie in movies:
             movies_info.append(self.get_info(db, movie['id']))
         return movies_info
-    
+
 class Cast:
     """
     演职人员接口
@@ -194,6 +193,3 @@ class Genres:
                 all_movies[decade] = movies
 
         return all_movies
-
-                
-        
