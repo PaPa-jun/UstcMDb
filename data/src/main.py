@@ -9,7 +9,7 @@ path_reviews = "data/reviews/reviews.json"
 path_users = "data/users/users.json"
 
 database_host = "localhost"
-database_password = "zhangzhe777"
+database_password = "Pyf20030317"
 database_schema = "ustcMDb"
 
 def main():
@@ -71,6 +71,16 @@ def update_ids():
 
     scraper = Scraper()
     scraper.to_json(popular, "data/movies/imdb_popular_25_movies_new.json")
+
+def update_user_avatar():
+    with open(path_users, 'r') as file:
+        users = json.load(file)
+    
+    for user in users:
+        user['avatar'] = "images/avatars/fixed_pics/default.jpg"
+
+    scraper = Scraper()
+    scraper.to_json(users, "data/users/new_users.json")
 
 if __name__ == "__main__":
     main()

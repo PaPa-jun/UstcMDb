@@ -129,3 +129,18 @@ def add_comment():
     response = {'message': '评论已成功提交', 'comment': comment_text, 'movie_id': movie_id, 'comment_date': comment_date}
 
     return jsonify(response)
+
+@blueprint.route('/delete_comment', methods=['POST'])
+def delete_comment():
+    comment_id = request.form.get('comment_id')
+    movie_id = request.form.get('movie_id')
+    
+    if not comment_id:
+        print(request.form.get('comment_date'))
+        return redirect(url_for('movie.movie_detail', id=movie_id))
+
+    with g.db.cursor() as cursor:
+        cursor.execute("DELETE FROM review WHERE id=%s", (comment_id,))
+    g.db.commit()
+    flash("评论已删除。")
+    return redirect(url_for('movie.movie_detail', id=movie_id))

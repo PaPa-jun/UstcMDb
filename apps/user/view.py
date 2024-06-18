@@ -40,11 +40,16 @@ def register():
 
 @blueprint.route("/<username>/profile")
 def profile(username):
-    # 加载用户信息
-    current_user = User(g.current_user['id'])
+    with g.db.cursor() as cursor:
+        query = """
+        SELECT id FROM user WHERE username=%s;
+        """
+        cursor.execute(query, (username,))
+        id = cursor.fetchone().get('id')
+    user = User(id)
 
-    current_user.get_info(g.db)
-    return render_template("./user/profile.html", current_user = current_user)
+    user.get_info(g.db)
+    return render_template("./user/profile.html", user = user)
 
 @blueprint.route("/<username>/profile/modify", methods=['GET', 'POST'])
 def profile_modify(username):

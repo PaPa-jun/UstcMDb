@@ -6,59 +6,6 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/movie_detail.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/comment.css') }}">
 <script src="path/to/your/js/comments.js" defer></script>
-<style>
-    .star-rating {
-        direction: rtl;
-        display: inline-block;
-        padding: 20px;
-    }
-
-    .star-rating input[type="radio"] {
-        display: none;
-    }
-
-    .star-rating label {
-        color: #bbb;
-        font-size: 30px;
-        padding: 0 10px;
-        cursor: pointer;
-    }
-
-    .star-rating input[type="radio"]:checked~label {
-        color: #f2b600;
-    }
-
-    .star-rating label:hover,
-    .star-rating label:hover~label {
-        color: #f2b600;
-    }
-</style>
-
-<style>
-    .reply-form {
-        display: none; /* 初始隐藏回复表单 */
-        margin-top: 10px;
-    }
-    .single_comment {
-        border: 1px solid #ddd;
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-    .comment_footer {
-        margin-top: 10px;
-    }
-    .reply_button {
-        margin-top: 10px;
-    }
-    .reply {
-        margin-top: 10px;
-        padding-left: 20px;
-        border-left: 2px solid #ddd;
-    }
-    .reply-content {
-        margin-bottom: 10px;
-    }
-</style>
 {% endblock %}
 
 {% block main %}
@@ -259,8 +206,7 @@
                 <!-- 头像等信息 -->
             </div>
             <div class="comment_content">
-                <textarea name="comment_text">
-                </textarea>
+                <textarea name="comment_text"></textarea>
                 <button type="submit">提交</button>
             </div>
         </div>
@@ -280,18 +226,12 @@
                         <tbody>
                             <tr>
                                 <td class="writer_profile">
-                                    {% if review.writer_info.avatar %}
                                     <a href="#">
-                                        <img src="{{ review.writer_info.avatar }}" alt="评论者图片" width="100px">
+                                        <img src="{{ url_for('static', filename=review.writer_info.avatar) }}" alt="评论者图片" width="100px">
                                     </a>
-                                    {% else %}
-                                    <a href="#">
-                                        <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}" alt="评论者图片" width="100px">
-                                    </a>
-                                    {% endif %}
                                 </td>
                                 <td class="writer_name">
-                                    <a href="#">{{ review.writer_info.username }}</a>
+                                    <a href="{{ url_for('user.profile', username=review.writer_info.username) }}">{{ review.writer_info.username }}</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -318,8 +258,10 @@
                         {% endif %}
                         {% if g.current_user.admin %}
                         <div class="delete">
-                            <form action="#">
+                            <form action="{{ url_for('movie.delete_comment') }}" method="POST">
+                                <input type="hidden" name="movie_id" value="{{ movie.id }}">
                                 <input type="hidden" name="comment_id" id="comment_id" value="{{ review.id }}">
+                                <input type="hidden" name="comment_date" id="comment_date" value="{{ review.date }}">
                                 <input type="submit" name="delete" id="delete" style="color: red;" value="删除">
                             </form>
                         </div>
@@ -421,7 +363,7 @@
                                     {% endif %}
                                 </td>
                                 <td class="writer_name">
-                                    <a href="#">{{ g.current_user.username }}</a>
+                                    <a href="{{ url_for('user.profile', username=g.current_user.username) }}">{{ g.current_user.username }}</a>
                                     <span style="color: grey;">我</span>
                                 </td>
                             </tr>
@@ -441,6 +383,15 @@
                         <div class="reply_button">
                             <button class="reply-button">回复</button>
                         </div>
+                        {% if g.current_user.admin %}
+                        <div class="delete">
+                            <form action="{{ url_for('movie.delete_comment') }}" method="POST">
+                                <input type="hidden" name="movie_id" value="{{ movie.id }}">
+                                <input type="hidden" name="comment_date" id="comment_date" value='just_now'>
+                                <input type="submit" name="delete" id="delete" style="color: red;" value="删除">
+                            </form>
+                        </div>
+                        {% endif %}
                     </div>
                     <div class="reply">
                         <!-- 这里是该条评论的所有回复 -->
