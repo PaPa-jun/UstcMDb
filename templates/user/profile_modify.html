@@ -22,11 +22,7 @@
             <div class="form-group">
                 <label>当前头像：</label>
                 <div class="current-avatar">
-                    {% if current_user.avatar %}
-                        <img src="{{ url_for('static', filename=current_user.avatar) }}" alt="当前头像" class="avatar-img"/>
-                    {% else %}
-                        未上传头像
-                    {% endif %}
+                    <img src="{{ url_for('static', filename=current_user.avatar) }}" alt="当前头像" class="avatar-img"/>
                 </div>
                 <input type="file" name="avatar" class="form-input-file"/>
             </div>

@@ -59,7 +59,7 @@ class Auth:
                 user_id = 'usr_' + str(uuid.uuid4())[:10]  # Generate a unique ID with 'usr_' prefix and 10-digit UUID
                 with g.db.cursor() as cursor:
                     cursor.execute('''
-                        INSERT INTO user (id, username, email, password) 
-                        VALUES (%s, %s, %s, %s)
+                        INSERT INTO user (id, username, email, password, avatar) 
+                        VALUES (%s, %s, %s, %s, '/images/avatars/fixed_pics/default.jpg')
                     ''', (user_id, self.username, self.email, hashed_password))
                     g.db.commit()
