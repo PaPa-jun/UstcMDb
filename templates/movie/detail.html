@@ -188,8 +188,11 @@
                 // 获取提交的回复表单
                 var replyForm = event.target;
 
-                // 获取回复内容
-                var replyContent = event.target.querySelector('#content_text').value;
+                var replyContent = replyForm.querySelector('#content_text').value;
+                var movieId = replyForm.querySelector('#movie_id').value;
+                var writerId = replyForm.querySelector('#writer_id').value;
+                var userId = replyForm.querySelector('#user_id').value;
+
 
                 // 如果回复内容为空，则直接返回，不执行后续操作
                 if (replyContent.trim() === '') {
@@ -237,9 +240,15 @@
                             <button class="like-button">点赞</button>
                             <span class="like-count"> 0 </span>
                         </div>
+                        {% if g.current_user %}
                         <div class="reply_button">
                             <button class="reply-button">回复</button>
                         </div>
+                        {% else %}
+                        <div class="reply_button">
+                            <a href="{{ url_for('user.login') }}">回复</a>
+                        </div>
+                        {% endif %}
                     </div>
                 `;
                 // 将新回复添加到 .reply 容器中
@@ -256,16 +265,18 @@
                 xhr.open('POST', '/submit_reply', true); // 设置请求方法和URL
                 xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8'); // 设置请求头
                 xhr.send(JSON.stringify({
-                    comment_id: event.target.querySelector('#towhom').value, // 获取要回复的评论 ID
-                    content: replyContent, // 回复的内容
+                    movie_id: movieId,
+                    writer_id: writerId,
+                    user_id: userId,
+                    content: replyContent
                 }));
 
                 // 处理请求响应
                 xhr.onload = function () {
                     if (xhr.status === 200) {
-                        console.log('回复已发送'); // 成功响应日志
+                        alert("回复已经提交到数据库");
                     } else {
-                        console.log('发送失败'); // 失败响应日志
+                        alert("回复没有提交到数据库"); // 失败响应日志
                     }
                 };
             }
@@ -488,8 +499,9 @@
                     </div>
                     <form action="#" class="reply-form">
                         <textarea name="content_text" id="content_text"></textarea>
-                        <input type="hidden" name="towhom" id="towhom" value="测试数据">
-                        <input type="hidden" name="to_comment_id" id="to_comment_id" value="{{ review.id }}">
+                        <input type="hidden" id="movie_id" value="{{ movie.id }}">
+                        <input type="hidden" id="writer_id" value="{{ g.current_user.id }}">
+                        <input type="hidden" id="user_id" value="{{ review.writer_id }}"> 
                         <button type="submit">发布</button>
                     </form>
                 </div>
