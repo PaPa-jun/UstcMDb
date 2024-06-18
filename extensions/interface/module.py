@@ -79,7 +79,7 @@ class Movie:
     
     def recent(self, db, range):
         with db.cursor() as cursor:
-            cursor.execute("SELECT id FROM movie ORDER BY year DESC LIMIT %s", (range,))
+            cursor.execute("SELECT id FROM movie ORDER BY year DESC, local_rating DESC LIMIT %s", (range,))
             movies = cursor.fetchall()  # fetchall instead of fetchone to get multiple records
             
         movies_info = []
