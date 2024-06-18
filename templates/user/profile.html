@@ -9,7 +9,7 @@
 {% block main %}
     <div class="container">
         <div class="avatar">
-            <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}" alt="默认头像">
+            <img src="{{ url_for('static', filename=user.avatar) }}" alt="默认头像">
         </div>
 
         <div>

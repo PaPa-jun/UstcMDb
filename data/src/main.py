@@ -9,7 +9,7 @@ path_reviews = "data/reviews/reviews.json"
 path_users = "data/users/users.json"
 
 database_host = "localhost"
-database_password = "zhangzhe777"
+database_password = "Pyf20030317"
 database_schema = "ustcMDb"
 
 def main():

@@ -156,6 +156,9 @@ class Review:
         with db.cursor() as cursor:
             cursor.execute("SELECT * FROM review WHERE movie_id=%s ORDER BY date DESC", (movie_id,))
             reviews = cursor.fetchall()
+            for review in reviews:
+                cursor.execute("SELECT * FROM review WHERE user_id=%s ORDER BY date DESC", (movie_id,))
+            
         return reviews
 
 class Genres:

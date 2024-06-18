@@ -443,11 +443,13 @@
                             <tr>
                                 <td class="writer_profile">
                                     <a href="{{ url_for('user.profile', username=review.writer_info.username) }}">
-                                        <img src="{{ url_for('static', filename=review.writer_info.avatar) }}" alt="评论者图片" width="100px">
+                                        <img src="{{ url_for('static', filename=review.writer_info.avatar) }}"
+                                            alt="评论者图片" width="100px">
                                     </a>
                                 </td>
                                 <td class="writer_name">
-                                    <a href="{{ url_for('user.profile', username=review.writer_info.username) }}">{{ review.writer_info.username }}</a>
+                                    <a href="{{ url_for('user.profile', username=review.writer_info.username) }}">{{
+                                        review.writer_info.username }}</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -460,7 +462,7 @@
                             <span>{{ review.date }}</span>
                         </div>
                         <div class="comment_likes">
-                            <button id="like-button">点赞</button>
+                            <button id="like-button" onclick="likeReview('{{ review.id }}')">点赞</button>
                             <span id="like-count">{{ review.likes }}</span>
                         </div>
                         {% if g.current_user %}
@@ -578,6 +580,7 @@
         });
     });
 </script>
+<script src="{{ url_for('static', filename='js/onclick.js') }}"></script>
 </body>
 
 </html>

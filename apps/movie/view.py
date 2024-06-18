@@ -144,3 +144,12 @@ def delete_comment():
     g.db.commit()
     flash("评论已删除。")
     return redirect(url_for('movie.movie_detail', id=movie_id))
+
+@blueprint.route('/like', methods=['POST'])
+def like_review():
+    data = request.get_json()
+    review_id = data.get('review_id')
+
+    return review_id
+
+    # return jsonify({'success': True, 'likes': review.likes})

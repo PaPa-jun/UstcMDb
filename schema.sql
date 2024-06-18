@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS review (
     id CHAR(14) PRIMARY KEY,  -- 使用UUID
     movie_id CHAR(14),  -- 外键指向movie
     user_id CHAR(14),  -- 外键指向user
+    review_id CHAR(14),
     content TEXT NOT NULL,
     writer_id CHAR(14),
     likes INT DEFAULT 0,
@@ -65,7 +66,8 @@ CREATE TABLE IF NOT EXISTS review (
     rating DECIMAL(2, 1),
     FOREIGN KEY (movie_id) REFERENCES movie(id),
     FOREIGN KEY (user_id) REFERENCES user(id),
-    FOREIGN KEY (writer_id) REFERENCES user(id)
+    FOREIGN KEY (writer_id) REFERENCES user(id),
+    FOREIGN KEY (review_id) REFERENCES review(id)
 );
 
 -- 电影图表
