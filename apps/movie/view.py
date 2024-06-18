@@ -66,10 +66,6 @@ def movie_detail(id):
 
     review_scraper = Review()
     reviews = review_scraper.get_review(id, g.db)
-    for review in reviews:
-        user = User(review['writer_id'])
-        user.get_info(g.db)
-        review['writer_info'] = user.return_info()
     return render_template("movie/detail.html", movie=current_movie, workers=workers, reviews=reviews)
 
 @blueprint.route("/<id>", methods=['GET', 'POST'])
@@ -111,13 +107,8 @@ def add_comment():
     data = request.get_json()
     movie_id = data.get('movie_id')
     comment_text = data.get('comment')
-    comment_date = data.get('comment_date')
     
-    if not movie_id or not comment_text or not comment_date:
-        return jsonify({'error': '缺少必要的评论信息'}), 400
-    
-    # 将ISO 8601日期格式转换为YYYY-MM-DD HH:MM:SS
-    comment_date = datetime.strptime(comment_date, "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%Y-%m-%d %H:%M:%S")
+    comment_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
     with g.db.cursor() as cursor:
         query = """
@@ -153,3 +144,16 @@ def like_review():
     return review_id
 
     # return jsonify({'success': True, 'likes': review.likes})
+
+@blueprint.route('/reply', methods=['POST'])
+def reply_comment():
+    data = request.get_json()
+    with g.db.cursor() as cursor:
+        query = """
+        INSERT INTO review (id, movie_id, writer_id, user_id, content, review_id, date)
+        VALUES (%s, %s, %s, %s, %s, %s, %s);
+        """
+        cursor.execute(query, ('rev_' + str(uuid.uuid4())[:10], data.get('movie_id'), data.get('writer_id'), data.get('user_id'), data.get('content'), data.get('review_id'), datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+    g.db.commit()
+
+    return jsonify({"status" : "success"}), 200

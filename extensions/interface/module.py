@@ -156,8 +156,19 @@ class Review:
             cursor.execute("SELECT * FROM review WHERE movie_id=%s ORDER BY date DESC", (movie_id,))
             reviews = cursor.fetchall()
             for review in reviews:
-                cursor.execute("SELECT * FROM review WHERE user_id=%s ORDER BY date DESC", (movie_id,))
-            
+                user = User(review['writer_id'])
+                user.get_info(db)
+                review['writer_info'] = user.return_info()
+                cursor.execute("SELECT * FROM review WHERE review_id=%s ORDER BY date DESC", (review.get('id'),))
+                review['sub_reviews'] = cursor.fetchall()
+                for sub_review in review['sub_reviews']:
+                    user = User(sub_review.get('writer_id'))
+                    user.get_info(db)
+                    sub_review['writer_info'] = user.return_info()
+                    user = User(sub_review.get('user_id'))
+                    user.get_info(db)
+                    sub_review['user_info'] = user.return_info()
+                
         return reviews
 
 class Genres:

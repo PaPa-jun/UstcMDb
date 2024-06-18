@@ -178,6 +178,18 @@
                     replyForm.style.display = 'none'; // 隐藏表单
                 }
             }
+
+
+            if (event.target && event.target.matches('.reply_button-b button')) {
+                // 找到最近的 .single_comment 元素并获取其中的 .reply-form 表单
+                var replyForm = event.target.closest('.single_comment').querySelector('.reply-form-b');
+                // 切换 reply-form 表单的显示状态
+                if (replyForm.style.display === 'none' || replyForm.style.display === '') {
+                    replyForm.style.display = 'block'; // 显示表单
+                } else {
+                    replyForm.style.display = 'none'; // 隐藏表单
+                }
+            }
         });
 
         document.body.addEventListener('submit', function (event) {
@@ -192,6 +204,7 @@
                 var movieId = replyForm.querySelector('#movie_id').value;
                 var writerId = replyForm.querySelector('#writer_id').value;
                 var userId = replyForm.querySelector('#user_id').value;
+                var reviewID = replyForm.querySelector('#review_id').value;
 
 
                 // 如果回复内容为空，则直接返回，不执行后续操作
@@ -241,8 +254,8 @@
                             <span class="like-count"> 0 </span>
                         </div>
                         {% if g.current_user %}
-                        <div class="reply_button">
-                            <button class="reply-button">回复</button>
+                        <div class="reply_button-b">
+                            <button class="reply-button" id="reply-button-level-b">回复</button>
                         </div>
                         {% else %}
                         <div class="reply_button">
@@ -262,20 +275,117 @@
 
                 // 模拟发送数据到后端
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', '/submit_reply', true); // 设置请求方法和URL
+                xhr.open('POST', '{{ url_for("movie.reply_comment") }}', true); // 设置请求方法和URL
                 xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8'); // 设置请求头
                 xhr.send(JSON.stringify({
                     movie_id: movieId,
                     writer_id: writerId,
                     user_id: userId,
-                    content: replyContent
+                    content: replyContent,
+                    review_id: reviewID
                 }));
 
-                // 处理请求响应
+                处理请求响应
                 xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        alert("回复已经提交到数据库");
-                    } else {
+                    if (!xhr.status === 200) {
+                        alert("回复没有提交到数据库"); // 失败响应日志
+                    }
+                };
+            }
+            if (event.target && event.target.matches('.reply-form-b')) {
+                event.preventDefault(); // 阻止表单默认提交
+
+                // 获取提交的回复表单
+                var replyForm = event.target;
+
+                var replyContent = replyForm.querySelector('#content_text').value;
+                var movieId = replyForm.querySelector('#movie_id').value;
+                var writerId = replyForm.querySelector('#writer_id').value;
+                var userId = replyForm.querySelector('#user_id').value;
+                var reviewID = replyForm.querySelector('#review_id').value;
+
+
+                // 如果回复内容为空，则直接返回，不执行后续操作
+                if (replyContent.trim() === '') {
+                    // 将表单设置成隐藏
+                    replyForm.style.display = 'none';
+                    alert("评论内容不能为空！");
+                    return;
+                }
+
+                // 找到最近的 .single_comment 元素并获取其中的 .reply 容器
+                var replyDiv = event.target.closest('.single_comment').querySelector('.reply');
+                // 创建一个新的 div 来显示回复内容
+                var newReply = document.createElement('div');
+                newReply.className = 'reply-content';
+                // 自定义新回复 div 的 HTML 结构
+                newReply.innerHTML = `
+                    <table class="reply_header">
+                        <tbody>
+                            <tr>
+                                <td class="reply_avatar">
+                                    <a href="{{ url_for('user.profile', username = g.current_user.username) }}">
+                                        {% if g.current_user.avatar %}
+                                        <img src="{{ url_for('static', filename=g.current_user.avatar) }}" alt="{{ g.current_user.username }}" class="user-avatar">
+                                        {% else %}
+                                        <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}" alt="{{ g.current_user.username }}" class="user-avatar">
+                                    {% endif %}
+                                    </a>
+                                </td>
+                                <td class="reply_username">
+                                    <a href="{{ url_for('user.profile', username = g.current_user.username) }}">
+                                        {{ g.current_user.username }}
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="reply_text">
+                        ${replyContent}
+                    </div>
+                    <div class="reply_footer">
+                        <div class="reply_date">
+                            <span> 刚刚 </span>
+                        </div>
+                        <div class="reply_likes">
+                            <button class="like-button">点赞</button>
+                            <span class="like-count"> 0 </span>
+                        </div>
+                        {% if g.current_user %}
+                        <div class="reply_button-b">
+                            <button class="reply-button" id="reply-button-level-b">回复</button>
+                        </div>
+                        {% else %}
+                        <div class="reply_button">
+                            <a href="{{ url_for('user.login') }}">回复</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                `;
+                // 将新回复添加到 .reply 容器中
+                replyDiv.appendChild(newReply);
+
+                // 清空文本框内容
+                event.target.querySelector('#content_text').value = '';
+
+                // 将表单设置成隐藏
+                replyForm.style.display = 'none';
+
+                // 模拟发送数据到后端
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '{{ url_for("movie.reply_comment") }}', true); // 设置请求方法和URL
+                xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8'); // 设置请求头
+                xhr.send(JSON.stringify({
+                    movie_id: movieId,
+                    writer_id: writerId,
+                    user_id: userId,
+                    content: replyContent,
+                    review_id: reviewID
+                }));
+
+                处理请求响应
+                xhr.onload = function () {
+                    if (!xhr.status === 200) {
                         alert("回复没有提交到数据库"); // 失败响应日志
                     }
                 };
@@ -497,12 +607,70 @@
                         {% endif %}
                     </div>
                     <div class="reply">
-                        <!-- 这里是该条评论的所有回复 -->
+                        {% for sub_review in review.sub_reviews %}
+                        <div class="sub_reply">
+                            <table class="reply_header">
+                                <tbody>
+                                    <tr>
+                                        <td class="reply_avatar">
+                                            <a href="{{ url_for('user.profile', username = sub_review.writer_info.username) }}">
+                                                <img src="{{ url_for('static', filename=sub_review.writer_info.avatar) }}" alt="{{ sub_review.writer_info.username }}" class="user-avatar">
+                                            </a>
+                                        </td>
+                                        <td class="reply_username">
+                                            <a href="{{ url_for('user.profile', username = sub_review.writer_info.username) }}">
+                                                {% if sub_review.user_id == review.writer_id %}
+                                                    {{ sub_review.writer_info.username  }}
+                                                {% else %}
+                                                    {{ sub_review.writer_info.username  }}
+                                                {% endif %}
+                                            </a>
+                                            {% if sub_review.user_id != review.writer_id %}
+                                            @<a href="{{ url_for('user.profile', username = sub_review.writer_info.username) }}">
+                                                {{ sub_review.user_info.username }}
+                                            </a>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="reply_text">
+                                {{ sub_review.content }}
+                            </div>
+                            <div class="reply_footer">
+                                <div class="reply_date">
+                                    <span> {{ sub_review.date }} </span>
+                                </div>
+                                <div class="reply_likes">
+                                    <button class="like-button">点赞</button>
+                                    <span class="like-count"> {{ sub_review.likes }} </span>
+                                </div>
+                                {% if g.current_user %}
+                                <div class="reply_button-b">
+                                    <button class="reply-button" id="reply-button-level-a">回复</button>
+                                </div>
+                                {% else %}
+                                <div class="reply_button">
+                                    <a href="{{ url_for('user.login') }}">回复</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <form action="#" class="reply-form-b" style="display: none;">
+                            <textarea name="content_text" id="content_text"></textarea>
+                            <input type="hidden" id="movie_id" value="{{ movie.id }}">
+                            <input type="hidden" id="writer_id" value="{{ g.current_user.id }}">
+                            <input type="hidden" id="review_id" value="{{ review.id }}">
+                            <input type="hidden" id="user_id" value="{{ sub_review.writer_id }}"> 
+                            <button type="submit">发布</button>
+                        </form>
+                        {% endfor %}
                     </div>
                     <form action="#" class="reply-form">
                         <textarea name="content_text" id="content_text"></textarea>
                         <input type="hidden" id="movie_id" value="{{ movie.id }}">
                         <input type="hidden" id="writer_id" value="{{ g.current_user.id }}">
+                        <input type="hidden" id="review_id" value="{{ review.id }}">
                         <input type="hidden" id="user_id" value="{{ review.writer_id }}"> 
                         <button type="submit">发布</button>
                     </form>
@@ -523,7 +691,6 @@
             event.preventDefault();
 
             const commentText = commentTextArea.value.trim();
-            const commentDate = new Date().toISOString();  // 获取当前日期时间并格式化为ISO字符串
 
             if (commentText !== '') {
                 const newCommentHTML = `
@@ -578,7 +745,7 @@
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ comment: commentText, movie_id: movieId, comment_date: commentDate })
+                    body: JSON.stringify({ comment: commentText, movie_id: movieId })
                 })
                     .then(response => response.json())
                     .then(data => {
