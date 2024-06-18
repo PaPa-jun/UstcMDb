@@ -367,7 +367,7 @@ class User:
     def gen_fake_user(self, username, email, id=None):
         user = {
             'id': id if id else 'usr_' + str(uuid.uuid4())[:10],
-            'avatar': self.fake.image_url(width=480, height=480),
+            'avatar': "images/avatars/fixed_pics/default.jpg",
             'username': username,
             'password': generate_password_hash(self.fake.password()),
             'email': email,

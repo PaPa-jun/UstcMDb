@@ -397,7 +397,7 @@
             {% endif %}
             {% endfor %}
             {% endfor %}
-            {% for one_actor in movie.casts[:3] %}
+            {% for one_actor in movie.casts[:5] %}
             {% for worker in workers %}
             {% if worker.name == one_actor.name %}
             <div class="person">
@@ -423,6 +423,7 @@
             </div>
             <div class="comment_content">
                 <textarea name="comment_text"></textarea>
+                <textarea name="comment_text"></textarea>
                 <button type="submit">提交</button>
             </div>
         </div>
@@ -443,7 +444,6 @@
                         <tbody>
                             <tr>
                                 <td class="writer_profile">
-                                    {% if review.writer_info.avatar %}
                                     <a href="#">
                                         <img src="{{ review.writer_info.avatar }}" alt="评论者图片" width="100px">
                                     </a>
@@ -452,10 +452,9 @@
                                         <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}"
                                             alt="评论者图片" width="100px">
                                     </a>
-                                    {% endif %}
                                 </td>
                                 <td class="writer_name">
-                                    <a href="#">{{ review.writer_info.username }}</a>
+                                    <a href="{{ url_for('user.profile', username=review.writer_info.username) }}">{{ review.writer_info.username }}</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -482,8 +481,10 @@
                         {% endif %}
                         {% if g.current_user.admin %}
                         <div class="delete">
-                            <form action="#">
+                            <form action="{{ url_for('movie.delete_comment') }}" method="POST">
+                                <input type="hidden" name="movie_id" value="{{ movie.id }}">
                                 <input type="hidden" name="comment_id" id="comment_id" value="{{ review.id }}">
+                                <input type="hidden" name="comment_date" id="comment_date" value="{{ review.date }}">
                                 <input type="submit" name="delete" id="delete" style="color: red;" value="删除">
                             </form>
                         </div>
@@ -539,7 +540,7 @@
                                     {% endif %}
                                 </td>
                                 <td class="writer_name">
-                                    <a href="#">{{ g.current_user.username }}</a>
+                                    <a href="{{ url_for('user.profile', username=g.current_user.username) }}">{{ g.current_user.username }}</a>
                                     <span style="color: grey;">我</span>
                                 </td>
                             </tr>
@@ -559,6 +560,15 @@
                         <div class="reply_button">
                             <button class="reply-button">回复</button>
                         </div>
+                        {% if g.current_user.admin %}
+                        <div class="delete">
+                            <form action="{{ url_for('movie.delete_comment') }}" method="POST">
+                                <input type="hidden" name="movie_id" value="{{ movie.id }}">
+                                <input type="hidden" name="comment_date" id="comment_date" value='just_now'>
+                                <input type="submit" name="delete" id="delete" style="color: red;" value="删除">
+                            </form>
+                        </div>
+                        {% endif %}
                     </div>
                     <div class="reply">
                         <!-- 这里是该条评论的所有回复 -->

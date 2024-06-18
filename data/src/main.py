@@ -9,7 +9,7 @@ path_reviews = "data/reviews/reviews.json"
 path_users = "data/users/users.json"
 
 database_host = "localhost"
-database_password = "zhangzhe777"
+database_password = "Pyf20030317"
 database_schema = "ustcMDb"
 
 def main():
@@ -23,20 +23,20 @@ def main():
     # popular_movies = scraper.movie_scraper.fetch_popular_25_movies()
     # scraper.to_json(popular_movies, path_popular_25)
 
-    # database.load_movie_from_json(path_top_25)
-    # database.load_movie_from_json(path_popular_25)
+    database.load_movie_from_json(path_top_25)
+    database.load_movie_from_json(path_popular_25)
     # database.load_movie_from_json(path_top_india)
 
     # update_casts = scraper.cast_scraper.fetch_all_casts_info_from_db(database.connection)
     # scraper.to_json(update_casts, path_casts)
-    # database.update_worker_from_json(path_casts)
+    database.update_worker_from_json(path_casts)
 
     # reviews = scraper.review_scraper.fetch_all_reviews(database.connection)
     # scraper.to_json(reviews, path_reviews)
     # fake_users = user.create_user_from_reviews(path_reviews)
     # scraper.to_json(fake_users, path_users)
-    # database.load_user_from_json(path_users)
-    # database.load_review_from_json(path_reviews)
+    database.load_user_from_json(path_users)
+    database.load_review_from_json(path_reviews)
 
     database.updating_movie_rating_from_reviews()
     database.update_local_rating()
@@ -71,6 +71,16 @@ def update_ids():
 
     scraper = Scraper()
     scraper.to_json(popular, "data/movies/imdb_popular_25_movies_new.json")
+
+def update_user_avatar():
+    with open(path_users, 'r') as file:
+        users = json.load(file)
+    
+    for user in users:
+        user['avatar'] = "images/avatars/fixed_pics/default.jpg"
+
+    scraper = Scraper()
+    scraper.to_json(users, "data/users/new_users.json")
 
 if __name__ == "__main__":
     main()

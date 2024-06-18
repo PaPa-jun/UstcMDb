@@ -9,8 +9,8 @@
 {% block main %}
     <div class="container">
         <div class="avatar">
-            {% if current_user.avatar %}
-                <img src="{{ url_for('static', filename=current_user.avatar) }}" alt="你的头像被外星人偷走了～"/>
+            {% if user.avatar %}
+                <img src="{{ url_for('static', filename=user.avatar) }}" alt="你的头像被外星人偷走了～"/>
             {% else %}
                 <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}" alt="默认头像">
             {% endif %}
@@ -18,28 +18,30 @@
 
         <div>
             <h1>
-                {{ current_user.username }}
-                {% if g.current_user.admin == 1 %}
+                {{ user.username }}
+                {% if user.admin == 1 %}
                 (管理员)
                 {% endif %} 
                  的个人主页</h1>
+            {% if user.id == g.current_user.id %}
             <div class="log_off">
                 <a href="{{ url_for('user.logout') }}">退出登录</a>
             </div>
+            {% endif %}
         </div>
         
         <div class="mail">
             <h3>邮箱</h3>
-            {% if current_user.email %}
-                <p>{{ current_user.email }}</p>
+            {% if user.email %}
+                <p>{{ user.email }}</p>
             {% else %}
                 <p>未设置邮箱</p>
             {% endif %}
         </div>
         <div class="bio">
             <h3>个人简介</h3>
-            {% if current_user.bio %}
-                <p>{{ current_user.bio }}</p>
+            {% if user.bio %}
+                <p>{{ user.bio }}</p>
             {% else %}
                 <p>暂无介绍</p>
             {% endif %}
@@ -47,18 +49,20 @@
     
         <div class="birthday">
             <h3>生日</h3>
-            {% if current_user.birthday %}
-                <p>{{ current_user.birthday }}</p>
+            {% if user.birthday %}
+                <p>{{ user.birthday }}</p>
             {% else %}
                 <p>未设置出生日期</p>
             {% endif %}
         </div>
         
+        {% if user.id == g.current_user.id %}
         <button id="profile_modify" onclick="redirectToModify()">修改个人资料</button>
+        {% endif %}
     
         <script>
             function redirectToModify() {
-                window.location.href = "{{ url_for('user.profile_modify', username=current_user.username) }}";
+                window.location.href = "{{ url_for('user.profile_modify', username=user.username) }}";
             }
         </script>
     </div>

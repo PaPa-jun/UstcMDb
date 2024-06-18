@@ -9,12 +9,19 @@ class User:
         with db.cursor() as cursor:
             cursor.execute('SELECT username, avatar, email, bio, birthday FROM user WHERE id=%s', (self.id,))
             current_user = cursor.fetchone()
+            query = """
+            SELECT id FROM admin WHERE id=%s;
+            """
+            cursor.execute(query, (self.id,))
+            is_admin = cursor.fetchone()
+            current_user['admin'] = 1 if is_admin else 0
 
         self.username = current_user['username']
         self.avatar = current_user['avatar']
         self.email = current_user['email']
         self.bio = current_user['bio']
         self.birthday = current_user['birthday']
+        self.admin = current_user.get('admin')
 
     def update_info(self, db, item_name, content):
         if item_name not in ['username', 'avatar', 'email', 'bio', 'birthday']:
@@ -33,9 +40,11 @@ class User:
             'username' : self.username,
             'email' : self.email,
             'bio' : self.bio,
-            'birthday' : self.birthday
+            'birthday' : self.birthday,
+            'admin' : self.admin
         }
         return info
+
 
 class Movie:
     """
@@ -79,7 +88,7 @@ class Movie:
     
     def recent(self, db, range):
         with db.cursor() as cursor:
-            cursor.execute("SELECT id FROM movie ORDER BY year DESC LIMIT %s", (range,))
+            cursor.execute("SELECT id FROM movie ORDER BY year DESC, local_rating DESC LIMIT %s", (range,))
             movies = cursor.fetchall()  # fetchall instead of fetchone to get multiple records
             
         movies_info = []
