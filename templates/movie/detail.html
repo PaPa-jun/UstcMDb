@@ -425,9 +425,13 @@
                             <span>{{ review.date }}</span>
                         </div>
                         <div class="comment_likes">
-                            <button id="like-button" onclick="likeReview('{{ review.id }}')">点赞</button>
-                            <span id="like-count">{{ review.likes }}</span>
-                        </div>
+                            {% if g.current_user %}
+                            <button id="like-button-{{ review.id }}" onclick="likeReview('{{ review.id }}', '/movie/like_review')">点赞</button>
+                            {% else %}
+                            <a href="{{ url_for('user.login') }}"></a><button id="like-button-{{ review.id }}">点赞</button></a>
+                            {% endif %}
+                            <span id="like-count-{{ review.id }}">{{ review.likes }}</span>
+                        </div>                     
                         {% if g.current_user %}
                         <div class="reply_button">
                             <button class="reply_button_main">回复</button>
@@ -488,8 +492,12 @@
                                     <span> {{ sub_review.date }} </span>
                                 </div>
                                 <div class="reply_likes">
-                                    <button class="like-button">点赞</button>
-                                    <span class="like-count"> {{ sub_review.likes }} </span>
+                                    {% if g.current_user %}
+                                    <button id="like-button-{{ sub_review.id }}" onclick="likeReview('{{ sub_review.id }}', '/movie/like_review')">点赞</button>
+                                    {% else %}
+                                    <a href="{{ url_for('user.login') }}"></a><button id="like-button-{{ sub_review.id }}">点赞</button></a>
+                                    {% endif %}
+                                    <span id="like-count-{{ sub_review.id }}" class="like-count-{{ sub_review.id }}"> {{ sub_review.likes }} </span>
                                 </div>
                                 {% if g.current_user %}
                                 <div class="reply_button-b">
@@ -498,6 +506,16 @@
                                 {% else %}
                                 <div class="reply_button-b">
                                     <a href="{{ url_for('user.login') }}">回复</a>
+                                </div>
+                                {% endif %}
+                                {% if g.current_user.admin %}
+                                <div class="delete">
+                                    <form action="{{ url_for('movie.delete_comment') }}" method="POST">
+                                        <input type="hidden" name="movie_id" value="{{ movie.id }}">
+                                        <input type="hidden" name="comment_id" id="comment_id" value="{{ sub_review.id }}">
+                                        <input type="hidden" name="comment_date" id="comment_date" value="{{ sub_review.date }}">
+                                        <input type="submit" name="delete" id="delete" style="color: red;" value="删除">
+                                    </form>
                                 </div>
                                 {% endif %}
                             </div>

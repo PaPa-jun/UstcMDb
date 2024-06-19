@@ -1,5 +1,5 @@
-function likeReview(reviewId) {
-    fetch('{{ movie.like_review }}', {
+function likeReview(reviewId, reviewURL) {
+    fetch(reviewURL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -9,7 +9,7 @@ function likeReview(reviewId) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            document.getElementById('like-count').textContent = data.likes;
+            document.getElementById('like-count-' + reviewId).textContent = data.likes;
         } else {
             alert('点赞失败，请稍后再试。');
         }

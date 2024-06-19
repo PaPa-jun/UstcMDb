@@ -125,25 +125,48 @@ def add_comment():
 def delete_comment():
     comment_id = request.form.get('comment_id')
     movie_id = request.form.get('movie_id')
-    
+
     if not comment_id:
         print(request.form.get('comment_date'))
         return redirect(url_for('movie.movie_detail', id=movie_id))
 
     with g.db.cursor() as cursor:
-        cursor.execute("DELETE FROM review WHERE id=%s", (comment_id,))
-    g.db.commit()
+        try:
+            # 删除与该评论相关的所有子评论（如果有）
+            cursor.execute("DELETE FROM review WHERE review_id=%s", (comment_id,))
+            # 最后删除评论
+            cursor.execute("DELETE FROM review WHERE id=%s", (comment_id,))
+            g.db.commit()
+        except Exception as e:
+            g.db.rollback()
+            flash("删除评论失败: {}".format(str(e)))
+            return redirect(url_for('movie.movie_detail', id=movie_id))
+
     flash("评论已删除。")
     return redirect(url_for('movie.movie_detail', id=movie_id))
 
-@blueprint.route('/like', methods=['POST'])
+
+@blueprint.route('/like_review', methods=['POST'])
 def like_review():
     data = request.get_json()
     review_id = data.get('review_id')
+    
+    # 获取当前的点赞数
+    with g.db.cursor() as cursor:
+        cursor.execute("SELECT likes FROM review WHERE id=%s", (review_id,))
+        result = cursor.fetchone()
+        if not result:
+            return jsonify({'success': False, 'message': '评论不存在'})
+        current_likes = result['likes']
+    
+    # 更新点赞数
+    new_likes = current_likes + 1
+    with g.db.cursor() as cursor:
+        cursor.execute("UPDATE review SET likes=%s WHERE id=%s", (new_likes, review_id))
+    g.db.commit()
+    
+    return jsonify({'success': True, 'likes': new_likes})
 
-    return review_id
-
-    # return jsonify({'success': True, 'likes': review.likes})
 
 @blueprint.route('/reply', methods=['POST'])
 def reply_comment():

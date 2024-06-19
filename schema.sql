@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS review (
     FOREIGN KEY (movie_id) REFERENCES movie(id),
     FOREIGN KEY (user_id) REFERENCES user(id),
     FOREIGN KEY (writer_id) REFERENCES user(id),
-    FOREIGN KEY (review_id) REFERENCES review(id)
+    FOREIGN KEY (review_id) REFERENCES review(id) ON DELETE CASCADE
 );
 
 -- 电影图表
