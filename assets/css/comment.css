@@ -54,6 +54,7 @@
     background-color: #fff;
 }
 
+/* 评论者信息样式 */
 .single_comment .writer_info {
     display: flex;
     align-items: center;
@@ -71,10 +72,16 @@
     text-decoration: none;
 }
 
+.single_comment .writer_info .writer_name a:hover {
+    text-decoration: underline;
+}
+
+/* 评论内容样式 */
 .single_comment .review_content {
     margin-bottom: 10px;
 }
 
+/* 评论底部样式 */
 .single_comment .comment_footer {
     display: flex;
     align-items: center;
@@ -97,6 +104,7 @@
     text-decoration: underline;
 }
 
+/* 回复按钮样式 */
 .single_comment .comment_footer .reply_button button,
 .single_comment .comment_footer .reply_button a {
     background: none;
@@ -111,6 +119,7 @@
     text-decoration: underline;
 }
 
+/* 删除按钮样式 */
 .single_comment .comment_footer .delete form {
     margin: 0;
 }
@@ -126,15 +135,94 @@
     text-decoration: underline;
 }
 
+/* 回复区域样式 */
 .single_comment .reply {
     margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid #ddd;
 }
 
-.single_comment .reply-form {
+/* 子回复样式 */
+.single_comment .sub_reply {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.single_comment .sub_reply .reply_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.single_comment .sub_reply .reply_avatar img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.single_comment .sub_reply .reply_username a {
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.single_comment .sub_reply .reply_username a:hover {
+    text-decoration: underline;
+}
+
+/* 回复内容样式 */
+.single_comment .sub_reply .reply_text {
+    margin-bottom: 10px;
+}
+
+/* 回复底部样式 */
+.single_comment .sub_reply .reply_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 10px;
 }
 
-.single_comment .reply-form textarea {
+.single_comment .sub_reply .reply_date span {
+    color: #888;
+}
+
+.single_comment .sub_reply .reply_likes button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.single_comment .sub_reply .reply_likes button:hover {
+    text-decoration: underline;
+}
+
+.single_comment .sub_reply .reply_button-b button,
+.single_comment .sub_reply .reply_button-b a {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.single_comment .sub_reply .reply_button-b button:hover,
+.single_comment .sub_reply .reply_button-b a:hover {
+    text-decoration: underline;
+}
+
+/* 回复表单样式 */
+.single_comment .reply-form,
+.single_comment .reply-form-b {
+    margin-top: 10px;
+    display: none;
+}
+
+.single_comment .reply-form textarea,
+.single_comment .reply-form-b textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -142,7 +230,8 @@
     border-radius: 5px;
 }
 
-.single_comment .reply-form button {
+.single_comment .reply-form button,
+.single_comment .reply-form-b button {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
@@ -151,10 +240,12 @@
     cursor: pointer;
 }
 
-.single_comment .reply-form button:hover {
+.single_comment .reply-form button:hover,
+.single_comment .reply-form-b button:hover {
     background-color: #0056b3;
 }
 
+/* 星级评分样式 */
 .star-rating {
     direction: rtl;
     display: inline-block;
@@ -179,34 +270,4 @@
 .star-rating label:hover,
 .star-rating label:hover~label {
     color: #f2b600;
-}
-
-.reply-form {
-    display: none;
-    /* 初始隐藏回复表单 */
-    margin-top: 10px;
-}
-
-.single_comment {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.comment_footer {
-    margin-top: 10px;
-}
-
-.reply_button {
-    margin-top: 10px;
-}
-
-.reply {
-    margin-top: 10px;
-    padding-left: 20px;
-    border-left: 2px solid #ddd;
-}
-
-.reply-content {
-    margin-bottom: 10px;
 }

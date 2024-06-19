@@ -1,94 +1,111 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const submitButton = document.querySelector('.comments_to_write button[type="submit"]');
-    const commentTextArea = document.querySelector('.comments_to_write textarea');
-    const newCommentContainer = document.getElementById('comments_history');
+document.addEventListener('DOMContentLoaded', () => {
+    // 使用事件委托来绑定点击事件
+    document.body.addEventListener('click', (event) => {
+        // 检查点击的目标是否是 .reply_button_main 内的 button 元素
+        if (event.target && event.target.matches('.reply_button_main')) {
+            // 找到最近的 .single_comment 元素并获取其中的 .reply-form 表单
+            var replyForm = event.target.closest('.single_comment').querySelector('.reply-form');
+            // 切换 reply-form 表单的显示状态
+            replyForm.style.display = replyForm.style.display === 'block' ? 'none' : 'block';
+        }
 
-    submitButton.addEventListener('click', function (event) {
-        event.preventDefault();
-
-        const commentText = commentTextArea.value.trim();
-
-        if (commentText !== '') {
-            const newCommentHTML = `
-                <div class="single_comment">
-                    <table class="writer_info">
-                        <tbody>
-                            <tr>
-                                <td class="writer_profile">
-                                    <a href="#">
-                                        <img src="{{ url_for('static', filename=g.current_user.avatar) }}" alt="评论者图片" width="100px">
-                                    </a>
-                                </td>
-                                <td class="writer_name">
-                                    <a href="#">{{ g.current_user.username }}</a>
-                                    <span style="color: grey;">我</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="review_content">
-                        ${commentText}
-                    </div>
-                    <div class="comment_footer">
-                        <div class="comment_date">
-                            <span> 刚刚 </span>
-                        </div>
-                        <div class="comment_likes">
-                            <button class="like-button">点赞</button>
-                            <span class="like-count"> 0 </span>
-                        </div>
-                        <div class="reply_button">
-                            <button class="reply-button">回复</button>
-                        </div>
-                    </div>
-                    <div class="reply"></div>
-                </div>
-            `;
-
-            newCommentContainer.insertAdjacentHTML('afterbegin', newCommentHTML);
-
-            commentTextArea.value = '';
-            fetch('/submit_comment', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ comment: commentText })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('评论已提交到数据库:', data);
-                })
-                .catch(error => {
-                    console.error('提交评论时出错:', error);
-                    alert('提交评论时出错，请稍后再试。');
-                });
+        // 检查点击的目标是否是 .reply_button_sub 内的 button 元素
+        if (event.target && event.target.matches('.reply_button_sub')) {
+            // 找到最近的 .sub_reply 元素并获取其中的 .reply-form-b 表单
+            var replyForm = event.target.closest('.sub_reply').querySelector('.reply-form-b');
+            // 切换 reply-form 表单的显示状态
+            replyForm.style.display = replyForm.style.display === 'block' ? 'none' : 'block';
         }
     });
 
-    newCommentContainer.addEventListener('click', function (event) {
-        if (event.target.classList.contains('like-button')) {
-            const likeCountSpan = event.target.nextElementSibling;
-            let likeCount = parseInt(likeCountSpan.textContent);
-            likeCountSpan.textContent = likeCount + 1;
-        } else if (event.target.classList.contains('reply-button')) {
-            const replyContainer = event.target.closest('.single_comment').querySelector('.reply');
-            const replyTextArea = document.createElement('textarea');
-            const replySubmitButton = document.createElement('button');
-            replySubmitButton.textContent = '提交回复';
+    document.body.addEventListener('submit', (event) => {
+        // 检查提交的目标是否是 .reply-form 表单
+        if (event.target && event.target.matches('.reply-form')) {
+            event.preventDefault(); // 阻止表单默认提交
+            handleReplyFormSubmit(event, 'single_comment', 'reply', 'reply-content', 'reply_button-b', 'reply-form');
+        }
 
-            replyContainer.appendChild(replyTextArea);
-            replyContainer.appendChild(replySubmitButton);
-
-            replySubmitButton.addEventListener('click', function () {
-                const replyText = replyTextArea.value.trim();
-                if (replyText !== '') {
-                    const newReplyHTML = `<div class="single_reply">${replyText}</div>`;
-                    replyContainer.insertAdjacentHTML('beforeend', newReplyHTML);
-                    replyTextArea.remove();
-                    replySubmitButton.remove();
-                }
-            });
+        if (event.target && event.target.matches('.reply-form-b')) {
+            event.preventDefault(); // 阻止表单默认提交
+            handleReplyFormSubmit(event, 'sub_reply', 'reply', 'reply-content', 'reply_button_sub', 'reply-form-b');
         }
     });
 });
+
+function handleReplyFormSubmit(event, commentClass, replyClass, replyContentClass, replyButtonClass, replyFormClass) {
+    var replyForm = event.target;
+    var replyContent = replyForm.querySelector('#content_text').value;
+    var movieId = replyForm.querySelector('#movie_id').value;
+    var writerId = replyForm.querySelector('#writer_id').value;
+    var userId = replyForm.querySelector('#user_id').value;
+    var reviewID = replyForm.querySelector('#review_id').value;
+
+    if (replyContent.trim() === '') {
+        replyForm.style.display = 'none';
+        alert("评论内容不能为空！");
+        return;
+    }
+
+    var replyDiv = event.target.closest(`.${commentClass}`).querySelector(`.${replyClass}`);
+    var newReply = document.createElement('div');
+    newReply.className = replyContentClass;
+    newReply.innerHTML = `
+        <table class="reply_header">
+            <tbody>
+                <tr>
+                    <td class="reply_avatar">
+                        <a href="{{ url_for('user.profile', username = g.current_user.username) }}">
+                            {% if g.current_user.avatar %}
+                            <img src="{{ url_for('static', filename=g.current_user.avatar) }}" alt="{{ g.current_user.username }}" class="user-avatar">
+                            {% else %}
+                            <img src="{{ url_for('static', filename='images/avatars/fixed_pics/default.jpg') }}" alt="{{ g.current_user.username }}" class="user-avatar">
+                        {% endif %}
+                        </a>
+                    </td>
+                    <td class="reply_username">
+                        <a href="{{ url_for('user.profile', username = g.current_user.username) }}">
+                            {{ g.current_user.username }}
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="reply_text">${replyContent}</div>
+        <div class="reply_footer">
+            <div class="reply_date"><span> 刚刚 </span></div>
+            <div class="reply_likes">
+                <button class="like-button">点赞</button>
+                <span class="like-count"> 0 </span>
+            </div>
+            {% if g.current_user %}
+            <div class="${replyButtonClass}">
+                <button class="reply-button" id="reply-button-level-b">回复</button>
+            </div>
+            {% else %}
+            <div class="reply_button">
+                <a href="{{ url_for('user.login') }}">回复</a>
+            </div>
+            {% endif %}
+        </div>
+    `;
+    replyDiv.appendChild(newReply);
+    event.target.querySelector('#content_text').value = '';
+    replyForm.style.display = 'none';
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '{{ url_for("movie.reply_comment") }}', true);
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.send(JSON.stringify({
+        movie_id: movieId,
+        writer_id: writerId,
+        user_id: userId,
+        content: replyContent,
+        review_id: reviewID
+    }));
+
+    xhr.onload = function () {
+        if (!xhr.status === 200) {
+            alert("回复没有提交到数据库");
+        }
+    };
+}

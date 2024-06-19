@@ -5,170 +5,12 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/movie_detail.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/comment.css') }}">
-<style>
-    .star-rating {
-        direction: rtl;
-        display: inline-block;
-        padding: 20px;
-    }
-
-    .star-rating input[type="radio"] {
-        display: none;
-    }
-
-    .star-rating label {
-        color: #bbb;
-        font-size: 30px;
-        padding: 0 10px;
-        cursor: pointer;
-    }
-
-    .star-rating input[type="radio"]:checked~label {
-        color: #f2b600;
-    }
-
-    .star-rating label:hover,
-    .star-rating label:hover~label {
-        color: #f2b600;
-    }
-</style>
-
-<!-- 评论回复的css -->
-<style>
-    /* 样式化评论回复 */
-    .reply-content {
-        margin-top: 10px;
-        /* 上边距 */
-        padding: 10px;
-        /* 内边距 */
-        border: 1px solid #ccc;
-        /* 边框 */
-        background-color: #f9f9f9;
-        /* 背景色 */
-    }
-
-    /* 头部表格样式 */
-    .reply_header {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    .reply_header .reply_avatar {
-        width: 50px;
-        /* 头像列宽度 */
-        vertical-align: top;
-    }
-
-    .reply_header .reply_avatar img {
-        width: 40px;
-        /* 头像大小 */
-        height: 40px;
-        border-radius: 50%;
-        /* 圆角 */
-    }
-
-    .reply_header .reply_username {
-        vertical-align: top;
-        padding-left: 10px;
-        /* 用户名列内边距 */
-    }
-
-    /* 回复内容样式 */
-    .reply_text {
-        margin-top: 10px;
-        /* 上边距 */
-        font-size: 14px;
-        /* 字体大小 */
-        line-height: 1.5;
-        /* 行高 */
-    }
-
-    /* 底部信息样式 */
-    .reply_footer {
-        margin-top: 10px;
-        /* 上边距 */
-        display: flex;
-        /* 使用弹性盒子布局 */
-        justify-content: space-between;
-        /* 两端对齐 */
-        align-items: center;
-        /* 垂直居中对齐 */
-        font-size: 12px;
-        /* 字体大小 */
-        color: #888;
-        /* 字体颜色 */
-    }
-
-    .reply_footer .reply_date {
-        flex: 1;
-        /* 弹性增长 */
-    }
-
-    .reply_footer .reply_likes {
-        flex: 1;
-        /* 弹性增长 */
-        text-align: center;
-        /* 文本居中对齐 */
-    }
-
-    .reply_footer .reply_button {
-        flex: 1;
-        /* 弹性增长 */
-        text-align: right;
-        /* 文本右对齐 */
-    }
-
-    /* 点赞按钮样式 */
-    .like-button {
-        padding: 5px 10px;
-        /* 按钮内边距 */
-        border: none;
-        /* 去掉边框 */
-        background-color: #3498db;
-        /* 背景色 */
-        color: #fff;
-        /* 字体颜色 */
-        cursor: pointer;
-        /* 光标指示 */
-        border-radius: 3px;
-        /* 圆角 */
-    }
-
-    .like-button:hover {
-        background-color: #2980b9;
-        /* 鼠标悬停时背景色 */
-    }
-
-    /* 回复按钮样式 */
-    .reply-button {
-        padding: 5px 10px;
-        /* 按钮内边距 */
-        border: none;
-        /* 去掉边框 */
-        background-color: #2ecc71;
-        /* 背景色 */
-        color: #fff;
-        /* 字体颜色 */
-        cursor: pointer;
-        /* 光标指示 */
-        border-radius: 3px;
-        /* 圆角 */
-    }
-
-    .reply-button:hover {
-        background-color: #27ae60;
-        /* 鼠标悬停时背景色 */
-    }
-</style>
-
-
-
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         // 使用事件委托来绑定点击事件
         document.body.addEventListener('click', function (event) {
             // 检查点击的目标是否是 .reply_button 内的 button 元素
-            if (event.target && event.target.matches('.reply_button button')) {
+            if (event.target && event.target.matches('.reply_button_main')) {
                 // 找到最近的 .single_comment 元素并获取其中的 .reply-form 表单
                 var replyForm = event.target.closest('.single_comment').querySelector('.reply-form');
                 // 切换 reply-form 表单的显示状态
@@ -179,10 +21,10 @@
                 }
             }
 
-
-            if (event.target && event.target.matches('.reply_button-b button')) {
-                // 找到最近的 .single_comment 元素并获取其中的 .reply-form 表单
-                var replyForm = event.target.closest('.single_comment').querySelector('.reply-form-b');
+            // 检查点击的目标是否是 .reply_button-b 内的 button 元素
+            if (event.target && event.target.matches('.reply_button_sub')) {
+                // 找到最近的 .sub_reply 元素并获取其中的 .reply-form-b 表单
+                var replyForm = event.target.closest('.sub_reply').querySelector('.reply-form-b');
                 // 切换 reply-form 表单的显示状态
                 if (replyForm.style.display === 'none' || replyForm.style.display === '') {
                     replyForm.style.display = 'block'; // 显示表单
@@ -191,7 +33,6 @@
                 }
             }
         });
-
         document.body.addEventListener('submit', function (event) {
             // 检查提交的目标是否是 .reply-form 表单
             if (event.target && event.target.matches('.reply-form')) {
@@ -353,7 +194,7 @@
                         </div>
                         {% if g.current_user %}
                         <div class="reply_button-b">
-                            <button class="reply-button" id="reply-button-level-b">回复</button>
+                            <button class="reply-button-b" id="reply-button-level-b">回复</button>
                         </div>
                         {% else %}
                         <div class="reply_button">
@@ -558,6 +399,7 @@
             <div class="comments_history" id="comments_history">
 
                 {% for review in reviews %}
+                {% if not review.review_id %}
                 <div class="single_comment" id="{{ review.id }}">
                     <table class="writer_info">
                         <tbody>
@@ -588,7 +430,7 @@
                         </div>
                         {% if g.current_user %}
                         <div class="reply_button">
-                            <button id="reply_button">回复</button>
+                            <button class="reply_button_main">回复</button>
                         </div>
                         {% else %}
                         <div class="reply_button">
@@ -613,20 +455,24 @@
                                 <tbody>
                                     <tr>
                                         <td class="reply_avatar">
-                                            <a href="{{ url_for('user.profile', username = sub_review.writer_info.username) }}">
-                                                <img src="{{ url_for('static', filename=sub_review.writer_info.avatar) }}" alt="{{ sub_review.writer_info.username }}" class="user-avatar">
+                                            <a
+                                                href="{{ url_for('user.profile', username = sub_review.writer_info.username) }}">
+                                                <img src="{{ url_for('static', filename=sub_review.writer_info.avatar) }}"
+                                                    alt="{{ sub_review.writer_info.username }}" class="user-avatar">
                                             </a>
                                         </td>
                                         <td class="reply_username">
-                                            <a href="{{ url_for('user.profile', username = sub_review.writer_info.username) }}">
+                                            <a
+                                                href="{{ url_for('user.profile', username = sub_review.writer_info.username) }}">
                                                 {% if sub_review.user_id == review.writer_id %}
-                                                    {{ sub_review.writer_info.username  }}
+                                                {{ sub_review.writer_info.username }}
                                                 {% else %}
-                                                    {{ sub_review.writer_info.username  }}
+                                                {{ sub_review.writer_info.username }}
                                                 {% endif %}
                                             </a>
                                             {% if sub_review.user_id != review.writer_id %}
-                                            @<a href="{{ url_for('user.profile', username = sub_review.writer_info.username) }}">
+                                            @<a
+                                                href="{{ url_for('user.profile', username = sub_review.user_info.username) }}">
                                                 {{ sub_review.user_info.username }}
                                             </a>
                                             {% endif %}
@@ -647,34 +493,35 @@
                                 </div>
                                 {% if g.current_user %}
                                 <div class="reply_button-b">
-                                    <button class="reply-button" id="reply-button-level-a">回复</button>
+                                    <button class="reply_button_sub">回复</button>
                                 </div>
                                 {% else %}
-                                <div class="reply_button">
+                                <div class="reply_button-b">
                                     <a href="{{ url_for('user.login') }}">回复</a>
                                 </div>
                                 {% endif %}
                             </div>
+                            <form action="#" class="reply-form-b" style="display: none;">
+                                <textarea name="content_text" id="content_text"></textarea>
+                                <input type="hidden" id="movie_id" value="{{ movie.id }}">
+                                <input type="hidden" id="writer_id" value="{{ g.current_user.id }}">
+                                <input type="hidden" id="review_id" value="{{ review.id }}">
+                                <input type="hidden" id="user_id" value="{{ sub_review.writer_id }}">
+                                <button type="submit">发布</button>
+                            </form>
                         </div>
-                        <form action="#" class="reply-form-b" style="display: none;">
-                            <textarea name="content_text" id="content_text"></textarea>
-                            <input type="hidden" id="movie_id" value="{{ movie.id }}">
-                            <input type="hidden" id="writer_id" value="{{ g.current_user.id }}">
-                            <input type="hidden" id="review_id" value="{{ review.id }}">
-                            <input type="hidden" id="user_id" value="{{ sub_review.writer_id }}"> 
-                            <button type="submit">发布</button>
-                        </form>
                         {% endfor %}
                     </div>
-                    <form action="#" class="reply-form">
+                    <form action="#" class="reply-form" style="display: none;">
                         <textarea name="content_text" id="content_text"></textarea>
                         <input type="hidden" id="movie_id" value="{{ movie.id }}">
                         <input type="hidden" id="writer_id" value="{{ g.current_user.id }}">
                         <input type="hidden" id="review_id" value="{{ review.id }}">
-                        <input type="hidden" id="user_id" value="{{ review.writer_id }}"> 
+                        <input type="hidden" id="user_id" value="{{ review.writer_id }}">
                         <button type="submit">发布</button>
                     </form>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
