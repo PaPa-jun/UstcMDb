@@ -8,9 +8,9 @@ path_casts = "data/casts/casts.json"
 path_reviews = "data/reviews/reviews.json"
 path_users = "data/users/users.json"
 
-database_host = "localhost"
-database_password = "Pyf20030317"
-database_schema = "ustcMDb"
+database_host = "your host"
+database_password = "your password"
+database_schema = "your schema"
 
 def main():
     scraper = Scraper()
