@@ -52,9 +52,6 @@ class MovieScraper(HtmlScraper):
     获取电影信息
     """
 
-    def __init__(self) -> None:
-        super().__init__()
-
     def get_trailer_url(self, movie_title):
         """
         获取预告片链接
@@ -187,9 +184,6 @@ class CastScraper(HtmlScraper):
     获取演职人员信息
     """
 
-    def __init__(self) -> None:
-        super().__init__()
-
     def get_name(self):
         if self.soup:
             name_tag = self.soup.find('span', {'class': 'hero__primary-text', 'data-testid': 'hero__primary-text'})
@@ -281,9 +275,6 @@ class ReviewScraper(HtmlScraper):
     """
     评论信息获取
     """
-
-    def __init__(self) -> None:
-        super().__init__()
 
     def get_reviews(self, id):
         self.get_response("review", id)
