@@ -92,4 +92,12 @@ CREATE TABLE IF NOT EXISTS user_movie_rating (
     movie_id CHAR(14),
     rating DECIMAL(2, 1),
     PRIMARY KEY (user_id, movie_id)
-)
+);
+
+CREATE TABLE IF NOT EXISTS user_review_like (
+    writer_id CHAR(14),
+    review_id CHAR(14),
+    PRIMARY KEY (writer_id, review_id),
+    FOREIGN KEY (writer_id) REFERENCES user(id) ON DELETE CASCADE,
+    FOREIGN KEY (review_id) REFERENCES review(id) ON DELETE CASCADE
+);

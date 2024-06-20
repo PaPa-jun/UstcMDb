@@ -35,20 +35,42 @@
 ├── assets
 │   ├── css
 │   │   ├── base.css
-│   │   └── profile.css
+│   │   ├── cast_detail.css
+│   │   ├── classification.css
+│   │   ├── comment.css
+│   │   ├── login.css
+│   │   ├── main_index.css
+│   │   ├── menu.css
+│   │   ├── movie_detail.css
+│   │   ├── profile.css
+│   │   ├── profile_modify.css
+│   │   ├── recent_25.css
+│   │   ├── register.css
+│   │   ├── search_results.css
+│   │   └── top_25.css
 │   ├── images
 │   │   └── avatars
-│   │       ├── fixed_pics
-│   │       │   └── logo.jpg
-│   │       ├── usr_17791ad2-5.png
-│   │       ├── usr_1be1d467-c.png
-│   │       └── usr_40809fbb-4.png
+│   │       └── fixed_pics
+│   │           └── default.jpg
 │   └── js
-│       └── base.js
+│       ├── base.js
+│       ├── comments.js
+│       └── onclick.js
 ├── data
-│   └── src
-│       ├── main.py
-│       └── module.py
+│   ├── casts
+│   │   └── casts.json
+│   ├── movies
+│   │   ├── imdb_popular_25_movies.json
+│   │   └── imdb_top_25_movies.json
+│   ├── reviews
+│   │   └── reviews.json
+│   ├── src
+│   │   ├── __pycache__
+│   │   │   └── module.cpython-312.pyc
+│   │   ├── main.py
+│   │   └── module.py
+│   └── users
+│       └── users.json
 ├── extensions
 │   ├── __init__.py
 │   ├── interface
@@ -66,6 +88,7 @@
     ├── casts
     │   └── detail.html
     ├── main
+    │   ├── back_up_index.html
     │   └── index.html
     ├── menu
     │   └── index.html
@@ -77,14 +100,16 @@
     ├── new_base.html
     ├── search
     │   └── results.html
+    ├── test.css
     ├── test.html
+    ├── test.js
     └── user
         ├── login.html
         ├── profile.html
         ├── profile_modify.html
         └── register.html
 
-26 directories, 50 files
+31 directories, 70 files
 ```
 
 ## 项目运行
@@ -157,4 +182,9 @@ python ./data/src/main.py
 
 - 2024-6-6：完成基础用户登陆验证模块，创建 IMDb 对象爬取 Top 25 的电影；
 - 2024-6-15：优化数据库表结构，完成用户信息展示与修改，定义基础用户交互接口； 
-- 2024-6-16: 爬虫更新；实现搜索功能；实现比较完整的交叉信息展示
+- 2024-6-16: 爬虫更新；实现搜索功能；实现比较完整的交叉信息展示；
+- 2024-6-19：修复一些 bug，完成点赞功能。
+
+## 暂停更新说明
+
+由于作者在期末考试，本仓库目前暂时停止更新，可能会在考完后完善项目功能，重构项目代码。

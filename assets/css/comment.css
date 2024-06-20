@@ -271,3 +271,69 @@
 .star-rating label:hover~label {
     color: #f2b600;
 }
+
+/* Reply header */
+.reply_header {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reply_header .reply_avatar img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    border-radius: 50%; /* Make the avatar round */
+}
+
+.reply_header .reply_username {
+    padding-left: 10px; /* Adjust spacing between avatar and username */
+}
+
+/* Reply text */
+.reply_text {
+    margin-top: 10px; /* Adjust spacing between header and text */
+    padding: 10px;
+    background-color: #f0f0f0; /* Example background color */
+}
+
+/* Reply footer */
+.reply_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #ccc; /* Example border top */
+}
+
+.reply_footer .reply_date {
+    font-size: 14px;
+}
+
+.reply_footer .reply_likes {
+    display: flex;
+    align-items: center;
+}
+
+.reply_footer .like-button {
+    margin-right: 10px; /* Adjust spacing between like button and count */
+    padding: 5px 10px;
+    border: 1px solid #ccc; /* Example border */
+    background-color: #f0f0f0; /* Example background color */
+    cursor: pointer;
+}
+
+.reply_footer .like-count {
+    font-weight: bold;
+}
+
+.reply_footer .reply_button-b {
+    /* Styles for reply button when user is logged in */
+}
+
+.reply_footer .reply_button {
+    /* Styles for reply button when user is not logged in */
+}
+
+.reply_footer .reply_button a {
+    text-decoration: none;
+    color: #007bff; /* Example link color */
+}

@@ -23,7 +23,7 @@
                         </a>
                     </div>
                     <div class="rating">
-                        <p class="title">{{onemovie.title}}</p>
+                        <a href="{{ url_for('movie.movie_detail', id=onemovie.id) }}"><p class="title">{{onemovie.title}}</p></a>
                         <p class="stars">
                             {{ onemovie.local_rating }}
                             {% set rating_int = onemovie.local_rating | int %}
@@ -50,7 +50,7 @@
                         </a>
                     </div>
                     <div class="rating">
-                        <p class="title">{{onemovie.title}}</p>
+                        <a href="{{ url_for('movie.movie_detail', id=onemovie.id) }}"><p class="title">{{onemovie.title}}</p></a>
                         <p class="stars">
                             {{ onemovie.local_rating }}
                             {% set rating_int = onemovie.local_rating | int %}
@@ -77,7 +77,7 @@
                         </a>
                     </div>
                     <div class="rating">
-                        <p class="title">{{onemovie.title}}</p>
+                        <a href="{{ url_for('movie.movie_detail', id=onemovie.id) }}"><p class="title">{{onemovie.title}}</p></a>
                         <p class="stars">
                             {{ onemovie.local_rating }}
                             {% set rating_int = onemovie.local_rating | int %}

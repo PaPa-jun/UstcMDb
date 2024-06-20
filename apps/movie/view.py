@@ -22,7 +22,6 @@ def recent25():
 def classification():
     genres = Genres()
     year_and_movies = genres.by_decade(g.db)
-    print(year_and_movies)
     return render_template("movie/classification.html", movies = year_and_movies)
 
 @blueprint.route("/<id>")
@@ -109,15 +108,15 @@ def add_comment():
     comment_text = data.get('comment')
     
     comment_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
+    comment_id = 'rev_' + str(uuid.uuid4())[:10]
     with g.db.cursor() as cursor:
         query = """
         INSERT INTO review (id, movie_id, writer_id, content, date)
         VALUES (%s, %s, %s, %s, %s);
         """
-        cursor.execute(query, ('rev_' + str(uuid.uuid4())[:10], movie_id, g.current_user['id'], comment_text, comment_date))
+        cursor.execute(query, (comment_id, movie_id, g.current_user['id'], comment_text, comment_date))
     g.db.commit()
-    response = {'message': '评论已成功提交', 'comment': comment_text, 'movie_id': movie_id, 'comment_date': comment_date}
+    response = {'message': '评论已成功提交', 'comment': comment_text, 'movie_id': movie_id, 'comment_date': comment_date, 'id' : comment_id}
 
     return jsonify(response)
 
@@ -127,7 +126,6 @@ def delete_comment():
     movie_id = request.form.get('movie_id')
 
     if not comment_id:
-        print(request.form.get('comment_date'))
         return redirect(url_for('movie.movie_detail', id=movie_id))
 
     with g.db.cursor() as cursor:
@@ -150,6 +148,7 @@ def delete_comment():
 def like_review():
     data = request.get_json()
     review_id = data.get('review_id')
+    writer_id = data.get('writer_id')
     
     # 获取当前的点赞数
     with g.db.cursor() as cursor:
@@ -158,11 +157,16 @@ def like_review():
         if not result:
             return jsonify({'success': False, 'message': '评论不存在'})
         current_likes = result['likes']
+        cursor.execute("SELECT * FROM user_review_like WHERE writer_id=%s AND review_id=%s", (writer_id, review_id))
+        result = cursor.fetchall()
+        if result:
+            return jsonify({'success': False, 'message': '您已点过赞'})
     
     # 更新点赞数
     new_likes = current_likes + 1
     with g.db.cursor() as cursor:
         cursor.execute("UPDATE review SET likes=%s WHERE id=%s", (new_likes, review_id))
+        cursor.execute("INSERT INTO user_review_like (writer_id, review_id) VALUES (%s, %s)", (writer_id, review_id))
     g.db.commit()
     
     return jsonify({'success': True, 'likes': new_likes})
